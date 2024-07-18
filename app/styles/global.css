@@ -15,14 +15,14 @@
     --secondary: 220 14.3% 95.9%;
     --secondary-foreground: 220.9 39.3% 11%;
     --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
+    --muted-foreground: 215.38 16.32% 46.86%;
     --accent: 220 14.3% 95.9%;
     --accent-foreground: 220.9 39.3% 11%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 20% 98%;
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 224 71.4% 4.1%;
+    --ring: var(--primary);
     --radius: 0.5rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
