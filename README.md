@@ -2,6 +2,23 @@
 
 - 📖 [Remix docs](https://remix.run/docs)
 
+## Clone this repository
+
+```shellscript
+git clone <git@github.com:hngprojects/hng_boilerplate_remix.git
+```
+# Access the folder repository
+
+```shellscript
+cd hng_boilerplate_remix
+```
+
+## Install dependencies
+
+```shellscript
+npm install
+```
+
 ## Development
 
 Run the dev server:
