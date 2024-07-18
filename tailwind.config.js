@@ -51,6 +51,15 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        content: {
+          muted: "hsl(var(--content-muted) / <alpha-value>)",
+        },
+      },
+      backgroundColor: {
+        overlay: "hsl(var(--overlay-background) / 0.26)",
+      },
+      backdropBlur: {
+        overlay: "1.75px",
       },
       borderRadius: {
         lg: "var(--radius)",
