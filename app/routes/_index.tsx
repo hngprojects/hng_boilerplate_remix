@@ -1,5 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
+import { DollarSign } from "lucide-react";
 import { Button } from "~/components/ui/button";
+import DataCard from "~/components/ui/DataCard";
 
 export const meta: MetaFunction = () => {
   return [
@@ -45,6 +47,8 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      <DataCard amount='45,000' icon={<DollarSign />} subText='+20% from last month' title='Total Revenue' />
+
     </div>
   );
 }
