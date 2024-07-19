@@ -10,7 +10,6 @@ import styles from "./styles/global.css?url";
 import { cssBundleHref } from "@remix-run/css-bundle";
 import MobileSidebarComponent from "./components/sidebar/sidebar";
 import { ThemeProvider } from "./context/ThemeContext";
-import "@fontsource-variable/inter/wght.css";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
