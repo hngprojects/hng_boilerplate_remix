@@ -23,21 +23,21 @@ const JobId = () => {
   return (
     <div className="py-10 px-[25px] lg:px-[120px] ">
       <span className="text-[12px] font-normal lg:flex gap-[16px] hidden lg:pb-[41px]">
-        <Link to="/" className="hover:text-[#F97316]">
+        <Link to="/" className="hover:text-destructive">
           Home
-        </Link>{" "}
-        &gt;{" "}
-        <Link to="#" className="hover:text-[#F97316]">
-          Job Listing
-        </Link>{" "}
+        </Link>
         &gt;
-        <span className="text-[#6A6A6A]">Job Details</span>
+        <Link to="#" className="hover:text-destructive">
+          Job Listing
+        </Link>
+        &gt;
+        <span className="text-muted-foreground">Job Details</span>
       </span>
       <span className="text-[12px] font-normal flex gap-[16px] lg:hidden lg:pb-[20px]">
-        <Link to="/" className="hover:text-[#F97316]">
+        <Link to="/" className="hover:text-destructive">
           Career
-        </Link>{" "}
-        &gt; <span className="text-[#F97316]">Job Details</span>
+        </Link>
+        &gt; <span className="text-card-foreground">Job Details</span>
       </span>
       <div className=" pb-[21px] max-w-[1444px] flex flex-col lg:flex-row justify-between gap-[23px] sm:gap-[23px] md:gap-[50px] lg:gap-[228px]  items-start">
         <div>
@@ -45,28 +45,28 @@ const JobId = () => {
             {jobInfo.name}
           </h2>
           <div className="pb-[19px]">
-            <h3 className="font-semibold lg:font-bold text-[20px] lg:text-[28px] pb-[6px] text-[#525252] lg:text-[#0A0A0A]">
+            <h3 className="font-semibold lg:font-bold text-[20px] lg:text-[28px] pb-[6px] text-muted-foreground lg:text-primary">
               Job Description
             </h3>
-            <p className="font-normal lg:text-[18px] text-[#525252] lg:text-[#0A0A0A]">
+            <p className="font-normal lg:text-[18px] text-muted-foreground lg:text-primary">
               {jobInfo.job_description}
             </p>
           </div>
           <div className="pb-[19px]">
-            <h3 className="font-semibold lg:font-bold text-[20px] lg:text-[28px] pb-[6px] text-[#525252] lg:text-[#0A0A0A]">
+            <h3 className="font-semibold lg:font-bold text-[20px] lg:text-[28px] pb-[6px] text-muted-foreground lg:text-primary">
               Key Responsibilities
             </h3>
-            <ul className="list-disc pl-5 lg:text-[18px] text-[#525252] lg:text-[#0A0A0A]">
+            <ul className="list-disc pl-5 lg:text-[18px] text-muted-foreground lg:text-primary">
               {jobInfo.key_responsibility.map((res) => (
                 <li>{res}</li>
               ))}
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold lg:font-bold text-[20px] lg:text-[28px] pb-[6px] text-[#525252] lg:text-[#0A0A0A]">
+            <h3 className="font-semibold lg:font-bold text-[20px] lg:text-[28px] pb-[6px] text-muted-foreground lg:text-primary">
               Qualification
             </h3>
-            <ul className="list-disc pl-5 lg:text-[18px] text-[#525252] lg:text-[#0A0A0A]">
+            <ul className="list-disc pl-5 lg:text-[18px] text-muted-foreground lg:text-primary">
               {jobInfo.qualification.map((res) => (
                 <li>{res}</li>
               ))}
@@ -80,8 +80,11 @@ const JobId = () => {
         </div>
       </div>
       <div className="flex justify-center items-center mt-[19px]">
-        <Button className="sm:w-full w-[342px] lg:w-[412px] h-[56px] bg-[#F97316] text-[16px] font-medium flex items-center gap-2 !hover:opacity-90 ">
-          <img src="../../public/svgs/icon.svg" alt="" className="lg:hidden" />
+        <Button
+          variant={"destructive"}
+          className="sm:w-full w-[342px] lg:w-[412px] h-[56px]  text-[16px] font-medium flex items-center gap-2 "
+        >
+          <img src="/svgs/icon.svg" alt="" className="lg:hidden" />
           Apply Now
         </Button>
       </div>
