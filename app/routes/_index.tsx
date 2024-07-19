@@ -53,7 +53,6 @@ export default function Index() {
           </a>
         </li>
       </ul>
-
     </div>
   );
 }
