@@ -19,13 +19,15 @@ export default function MobileSidebarComponent() {
   const [isExpanded, setIsExpanded] = useState(true);
   const { isDark, toggleTheme } = useTheme();
 
+  function toggleMenu() {
+    setIsExpanded((prev) => !prev);
+  }
+
   return (
     <aside
-      className={`flex flex-col items-start gap-14 transition duration-200 ease-in-out ${
+      className={`h-screen fixed z-10 text-primary-foreground bg-primary flex flex-col items-start gap-14 transition duration-200 ease-in-out ${
         isExpanded ? "w-full" : "w-fit px-2"
-      } h-screen fixed z-10 text-primary-foreground bg-primary ${
-        isDark ? "" : "dark"
-      }`}
+      } ${isDark ? "" : "dark"}`}
     >
       <div
         className={`flex w-full ${
@@ -36,7 +38,7 @@ export default function MobileSidebarComponent() {
       >
         <Logo expanded={isExpanded} />
         <div
-          className={`flex gap-3 ${
+          className={`flex gap-5 ${
             isExpanded ? "items-center" : "flex-col justify-center items-start"
           }`}
         >
@@ -47,7 +49,7 @@ export default function MobileSidebarComponent() {
             {isDark ? <Sun /> : <Moon />}
           </button>
           <button
-            onClick={() => setIsExpanded((prev) => !prev)}
+            onClick={toggleMenu}
             className={`${!isExpanded && "scale-75"}`}
           >
             {isExpanded ? <ArrowLeft /> : <ArrowRight />}
