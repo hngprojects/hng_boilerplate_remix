@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Button } from "~/components/ui/button";
+import CookieConsent from "~/components/ui/CookieConsent/CookieConsent";
 
 export const meta: MetaFunction = () => {
   return [
@@ -10,7 +11,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="font-sans p-4">
+    <div>
       <h1 className="text-3xl">Welcome to Remix</h1>
       <ul className="list-disc mt-4 pl-6 space-y-2">
         <li>
@@ -45,6 +46,7 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      <CookieConsent/>
     </div>
   );
 }
