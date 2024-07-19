@@ -37,7 +37,7 @@ export default function MobileSidebarComponent() {
         <nav>
           <ul className="flex flex-col gap-[13px]">
             <Navlink
-              path="/home"
+              path="/"
               text="Home"
               icon={<User />}
               expanded={isExpanded}

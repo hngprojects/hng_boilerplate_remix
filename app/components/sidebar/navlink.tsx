@@ -12,17 +12,17 @@ export default function Navlink({ path, icon, text, expanded }: NavlinkProps) {
   const { pathname } = useLocation();
   return (
     <li
-      className={`flex items-center gap-[0.81rem] py-[0.63rem] pl-[1.25rem] w-fit pr-2 transition duration-300 ease-in-out h-[2.7rem] ml-1 cursor-pointer ${
+      className={`flex items-center gap-[0.81rem] transition duration-300 ease-in-out cursor-pointer ${
         pathname === path ? "bg-[#F97316] text-[#fafafa]" : ""
       } ${
         expanded
-          ? "rounded-[8px]"
-          : " ml-2 w-[2.7rem] rounded-full justify-center pl-0 pr-0"
+          ? "rounded-[8px] pl-[1.25rem] pr-2 w-[12.25rem] ml-1 py-[0.63rem]"
+          : " ml-2 w-[3rem] h-[3rem] rounded-full justify-center"
       }`}
     >
       <Link
         className={`flex items-center justify-center ${
-          expanded ? "gap-3" : ""
+          expanded ? "gap-3" : "gap-0"
         }`}
         to={path}
       >
