@@ -76,7 +76,7 @@ const PaginationComponent: React.FC<PaginationComponentProps> = ({
   return (
     <nav
       aria-label="Pagination"
-      className="flex justify-center my-4 font-[inter]">
+      className="flex justify-center my-4  font-[inter]">
       <ul className="flex list-none p-0 space-x-1 items-center">
         <li className="mx-1">
           <Link
@@ -88,7 +88,9 @@ const PaginationComponent: React.FC<PaginationComponentProps> = ({
             }`}
             aria-disabled={currentPage === 1}>
             <span style={{ fontSize: "14px" }}>&lt;</span>{" "}
-            <span className="font-[600] text-[20px]">Previous</span>
+            <span className="font-[600] text-[20px] font-[inter]">
+              Previous
+            </span>
           </Link>
         </li>
         {generatePageNumbers().map((page, index) =>
@@ -121,7 +123,7 @@ const PaginationComponent: React.FC<PaginationComponentProps> = ({
                 : "hover:bg-[#F4F4F5]"
             }`}
             aria-disabled={currentPage === totalPages}>
-            <span className="font-[600] text-[20px]">Next </span>
+            <span className="font-[600] text-[20px] font-[inter]">Next </span>
             <span style={{ fontSize: "14px" }}>&gt;</span>
           </Link>
         </li>
