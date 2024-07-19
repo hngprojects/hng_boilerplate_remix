@@ -1,7 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import { DollarSign } from "lucide-react";
 import { Button } from "~/components/ui/button";
-import DataCard from "~/components/ui/DataCard";
 
 export const meta: MetaFunction = () => {
   return [
