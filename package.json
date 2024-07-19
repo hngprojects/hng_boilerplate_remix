@@ -11,7 +11,6 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@fontsource-variable/inter": "^5.0.19",
     "@radix-ui/react-slot": "^1.1.0",
     "@remix-run/css-bundle": "^2.10.3",
     "@remix-run/node": "^2.10.3",
