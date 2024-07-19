@@ -47,8 +47,6 @@ export default function Index() {
           </a>
         </li>
       </ul>
-      <DataCard amount='45,000' icon={<DollarSign />} subText='+20% from last month' title='Total Revenue' />
-
     </div>
   );
 }
