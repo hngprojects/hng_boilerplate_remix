@@ -25,7 +25,7 @@ export default function CookieConsent(){
                                         <img src='/chevron-up.svg' alt=''/>
                                     </div>
                                 </div>
-                                <p className="text-sm text-gray-600">
+                                <p className="text-sm text-gray-600 hidden">
                                     These cookies are essential for the website to function properly.
                                     They enable basic functions like page navigation, secure login, 
                                     and access to protected areas of the site. Without these cookies, 
@@ -43,7 +43,7 @@ export default function CookieConsent(){
                                     <p className="text-lg font-medium">Performance cookies</p>
                                     <img src='/chevron-up.svg' alt='' className="ml-4"/>
                                 </div>
-                                <p className="text-sm text-gray-600">
+                                <p className="text-sm text-gray-600 hidden">
                                     These cookies are essential for the website to function properly.
                                     They enable basic functions like page navigation, secure login, 
                                     and access to protected areas of the site. Without these cookies, 
@@ -64,7 +64,7 @@ export default function CookieConsent(){
                                     <p className="text-lg font-medium">Functionality cookies</p>
                                     <img src='/chevron-up.svg' alt='' className="ml-4"/>
                                 </div>
-                                <p className="text-sm text-gray-600">
+                                <p className="text-sm text-gray-600 hidden">
                                     These cookies are essential for the website to function properly.
                                     They enable basic functions like page navigation, secure login, 
                                     and access to protected areas of the site. Without these cookies, 
@@ -85,7 +85,7 @@ export default function CookieConsent(){
                                     <p className="text-lg font-medium">Targeting cookies</p>
                                     <img src='/chevron-up.svg' alt='' className="ml-4"/>
                                 </div>
-                                <p className="text-sm text-gray-600">
+                                <p className="text-sm text-gray-600 hidden">
                                     These cookies are essential for the website to function properly.
                                     They enable basic functions like page navigation, secure login, 
                                     and access to protected areas of the site. Without these cookies, 
