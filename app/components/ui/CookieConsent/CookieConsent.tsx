@@ -5,8 +5,8 @@ export default function CookieConsent(){
 
     return (
         <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"'>
-            <div className="bg-white p-6 rounded-lg shadow-xl max-w-3xl w-full m-10">
-                <div className={`${styles.modal_content} mb-6`}>
+            <div className={`${styles.modal} bg-white p-6 rounded-lg shadow-xl max-w-3xl w-full m-10`}>
+                <div className={`mb-6`}>
                     <p className="text-xl font-semibold">Customize cookies</p>
                     <p className="text-sm text-gray-600 mt-2 mb-10">
                         Cookies are small text files that are stored on your device when you visit websites. 
@@ -16,26 +16,39 @@ export default function CookieConsent(){
                         They also help website owners analyze traffic and user behavior to improve their services. 
                         Read our <a href="#" className="text-orange-600 hover:underline" target="_blank">Privacy Policy</a> for more details
                     </p>
-                    <div className="space-y-4">
-                        <div >
-                            <div className='flex justify-between items-center mb-2'>
-                                <p className={styles.strictly_necessary}>Strictly necessary</p>
-                                <img src='/chevron-up.svg' alt=''/>
+                    <div className="relative mb-2">
+                        <div className="flex justify-between items-start">
+                            <div className="pr-8 flex-grow">
+                                <div className='flex justify-between items-center mb-2'>
+                                    <p className="font-medium">Strictly necessary</p>
+                                    <div className="ml-4">
+                                        <img src='/chevron-up.svg' alt=''/>
+                                    </div>
+                                </div>
+                                <p className="text-sm text-gray-600">
+                                    These cookies are essential for the website to function properly.
+                                    They enable basic functions like page navigation, secure login, 
+                                    and access to protected areas of the site. Without these cookies, 
+                                    the website cannot perform properly.
+                                </p>
+                                <hr className="my-6" />
                             </div>
-                            <p className= "text-sm text-gray-600">
-                                These cookies are essential for the website to function properly.
-                                 They enable basic functions like page navigation, secure login, 
-                                 and access to protected areas of the site. Without these cookies, 
-                                 the website cannot perform properly.
-                            </p>
-                            <hr className="my-6" />
+                            <p className="text-gray-500 text-sm whitespace-nowrap">Always Enabled</p>
                         </div>
-                        <p className="text-gray-500 text-sm">Always Enabled</p>
                     </div>
                     <div className="mb-6">
-                        <div className="flex justify-between items-center mb-2">
-                            <div>
-                                <p className="text-lg font-medium">Performance cookies</p>
+                        <div className="flex justify-between items-start">
+                            <div className="flex-grow pr-20">
+                                <div className="flex justify-between items-center mb-2">
+                                    <p className="text-lg font-medium">Performance cookies</p>
+                                    <img src='/chevron-up.svg' alt='' className="ml-4"/>
+                                </div>
+                                <p className="text-sm text-gray-600">
+                                    These cookies are essential for the website to function properly.
+                                    They enable basic functions like page navigation, secure login, 
+                                    and access to protected areas of the site. Without these cookies, 
+                                    the website cannot perform properly.
+                                </p>
                                 <hr className="my-6" />
                             </div>
                             <label className="relative inline-flex items-center cursor-pointer" htmlFor="pc">
@@ -45,9 +58,18 @@ export default function CookieConsent(){
                         </div>
                     </div>
                     <div className="mb-6">
-                        <div className="flex justify-between items-center mb-2">
-                            <div>
-                                <p className="text-lg font-medium">Functionality cookies</p>
+                        <div className="flex justify-between items-start">
+                            <div className="flex-grow pr-20">
+                                <div className="flex justify-between items-center mb-2">
+                                    <p className="text-lg font-medium">Functionality cookies</p>
+                                    <img src='/chevron-up.svg' alt='' className="ml-4"/>
+                                </div>
+                                <p className="text-sm text-gray-600">
+                                    These cookies are essential for the website to function properly.
+                                    They enable basic functions like page navigation, secure login, 
+                                    and access to protected areas of the site. Without these cookies, 
+                                    the website cannot perform properly.
+                                </p>
                                 <hr className="my-6" />
                             </div>
                             <label className="relative inline-flex items-center cursor-pointer" htmlFor="fc">
@@ -57,9 +79,18 @@ export default function CookieConsent(){
                         </div>
                     </div>
                     <div className="mb-6">
-                        <div className="flex justify-between items-center mb-2">
-                            <div>
-                                <p className="text-lg font-medium">Targeting cookies</p>
+                        <div className="flex justify-between items-start">
+                            <div className="flex-grow pr-20">
+                                <div className="flex justify-between items-center mb-2">
+                                    <p className="text-lg font-medium">Targeting cookies</p>
+                                    <img src='/chevron-up.svg' alt='' className="ml-4"/>
+                                </div>
+                                <p className="text-sm text-gray-600">
+                                    These cookies are essential for the website to function properly.
+                                    They enable basic functions like page navigation, secure login, 
+                                    and access to protected areas of the site. Without these cookies, 
+                                    the website cannot perform properly.
+                                </p>
                                 <hr className="my-6" />
                             </div>
                             <label className="relative inline-flex items-center cursor-pointer" htmlFor="tc">
