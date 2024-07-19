@@ -18,9 +18,8 @@ export default function Index() {
             className="text-blue-700 underline visited:text-purple-900"
             target="_blank"
             href="https://remix.run/start/quickstart"
-            rel="noreferrer"
-          >
-            5m Quick Start
+            rel="noreferrer">
+            5m Quick Start.
           </a>
         </li>
         <li>
@@ -28,8 +27,7 @@ export default function Index() {
             className="text-blue-700 underline visited:text-purple-900"
             target="_blank"
             href="https://remix.run/start/tutorial"
-            rel="noreferrer"
-          >
+            rel="noreferrer">
             30m Tutorial
           </a>
         </li>
@@ -39,8 +37,7 @@ export default function Index() {
             className="text-blue-700 underline visited:text-purple-900"
             target="_blank"
             href="https://remix.run/docs"
-            rel="noreferrer"
-          >
+            rel="noreferrer">
             Remix Docs
           </a>
         </li>
