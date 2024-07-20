@@ -1,9 +1,5 @@
-"use client";
-/* eslint-disable import/no-named-as-default */
-import type { MetaFunction } from "@remix-run/node";
-import { useState } from "react";
-import { defaultFormError, defaultFormState, FormField } from "~/components/constant";
-import TextAreaField from "~/components/textarea";
+import { MetaFunction } from "@remix-run/react";
+import Bio from "~/components/bio";
 
 export const meta: MetaFunction = () => {
   return [
@@ -12,41 +8,12 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+
 export default function Index() {
-  const [formState, setFormState] = useState(defaultFormState);
-  const [formError, setFormError] = useState(defaultFormError);
-
-  const updateFormData = (key: string, value: string) => {
-    if (value.length > 64) {
-      setFormError({
-        ...formError,
-        [key]: "Your bio cannot exceed 64 characters",
-      });
-    } else {
-      setFormError({
-        ...formError,
-        [key]: null,
-      });
-    }
-
-    setFormState({
-      ...formState,
-      [key]: value,
-    });
-  };
 
   return (
-    <div className="font-sans p-6">
-      <TextAreaField
-        label="Bio"
-        placeholder="A seasoned Frontend developer with fulfilling duties"
-        name={FormField.bio}
-        value={formState[FormField.bio]}
-        error={formError[FormField.bio]}
-        handleChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-          updateFormData(FormField.bio, e.target.value)
-        }
-      />
+    <div>
+      <Bio />
     </div>
   );
 }
