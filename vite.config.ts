@@ -15,22 +15,22 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '~': '/app', // Adjust the alias to point to the 'app' folder
+      "~": "/app", // Adjust the alias to point to the 'app' folder
     },
   },
   build: {
     rollupOptions: {
       external: [
         // Exclude your test files from being bundled
-        '**/tests/**'
+        "**/tests/**",
       ],
     },
   },
   test: {
     globals: true,
-    environment: 'jsdom',
-    setupFiles: './setupTests.ts',
-    include: ['*.test.{js,ts,jsx,tsx}', 'app/**/*.test.{js,ts,jsx,tsx}'],
-    exclude: ['node_modules/**', 'dist/**'],
-  }
+    environment: "jsdom",
+    setupFiles: "./setupTests.ts",
+    include: ["*.test.{js,ts,jsx,tsx}", "app/**/*.test.{js,ts,jsx,tsx}"],
+    exclude: ["node_modules/**", "dist/**"],
+  },
 });

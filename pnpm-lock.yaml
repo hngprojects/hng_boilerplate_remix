@@ -29,9 +29,6 @@ importers:
       '@remix-run/css-bundle':
         specifier: ^2.10.3
         version: 2.10.3
-      '@remix-run/node':
-        specifier: ^2.10.3
-        version: 2.10.3(typescript@5.5.3)
       '@remix-run/react':
         specifier: ^2.10.3
         version: 2.10.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3)
@@ -45,7 +42,7 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       isbot:
-        specifier: ^4.1.0
+        specifier: ^4.4.0
         version: 4.4.0
       lucide-react:
         specifier: ^0.408.0
