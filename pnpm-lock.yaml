@@ -4417,7 +4417,7 @@ snapshots:
       '@babel/plugin-syntax-typescript': 7.24.7(@babel/core@7.24.9)
       '@vanilla-extract/babel-plugin-debug-ids': 1.0.6
       '@vanilla-extract/css': 1.15.3
-      esbuild: 0.17.6
+      esbuild: 0.19.11
       eval: 0.1.8
       find-up: 5.0.0
       javascript-stringify: 2.1.0
@@ -7467,7 +7467,6 @@ snapshots:
     optionalDependencies:
       '@types/node': 20.14.11
       fsevents: 2.3.3
-
   wcwidth@1.0.1:
     dependencies:
       defaults: 1.0.4
