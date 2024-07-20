@@ -6,45 +6,24 @@ interface ResetPasswordEmailProps {
 }
 
 const ResetPasswordEmail: React.FC<ResetPasswordEmailProps> = ({ recipientName, resetLink }) => (
-  <div style={{
-    fontFamily: 'Inter, sans-serif',
-    backgroundColor: '#ffffff',
-    margin: '0',
-    padding: '0',
-  }}>
-    <div style={{
-      maxWidth: '600px',
-      margin: '0 auto',
-      backgroundColor: '#ffffff',
-      padding: '20px',
-    }}>
-      <div style={{ textAlign: 'center', padding: '20px 0' }}>
-        <h1 style={{ margin: '0', color: '#0A0A0A', fontSize: '29px', fontWeight: '600' }}>Reset Your Password</h1>
+  <div className="font-inter bg-white m-0 p-0">
+    <div className="max-w-2xl mx-auto bg-white p-5">
+      <div className="text-center py-5">
+        <h1 className="m-0 text-black text-2xl font-semibold">Reset Your Password</h1>
       </div>
-      <div style={{ padding: '20px 0' }}>
-        <p style={{ margin: '0 0 20px', color: '#111111E5', fontSize: '18px', fontWeight: 600  }}>Hi {recipientName},</p>
-        <p style={{ margin: '0 0 20px', color: '#111111E5', fontSize: "14px" }}>You recently requested to reset your password. If you did not make this request, you can ignore this email.</p>
-        <p style={{ margin: '0 0 20px', color: '#111111E5', fontSize: "14px" }}>To reset your password, please click the button below.</p>
-        <p style={{ textAlign: 'center' }}>
-          <a href={resetLink} style={{
-            display: 'inline-block',
-            padding: '10px 40px',
-            backgroundColor: '#F97316',
-            color: '#ffffff',
-            textDecoration: 'none',
-            borderRadius: '5px',
-            fontWeight: '500',
-          }}>Reset Password</a>
+      <div className="py-5">
+        <p className="m-0 mb-5 text-gray-900 text-lg font-semibold">Hi {recipientName},</p>
+        <p className="m-0 mb-5 text-gray-900 text-base">You recently requested to reset your password. If you did not make this request, you can ignore this email.</p>
+        <p className="m-0 mb-5 text-gray-900 text-base">To reset your password, please click the button below.</p>
+        <p className="text-center">
+          <a href={resetLink} className="inline-block py-2.5 px-10 bg-orange-500 text-white no-underline rounded font-medium">
+            Reset Password
+          </a>
         </p>
       </div>
-      <div style={{
-        padding: '20px 0',
-        color: '#111111',
-        fontSize: '14px',
-        fontWeight: 500
-      }}>
-        <p style={{ margin: '0' }}>Regards,</p>
-        <p style={{ margin: '0' }}>Boilerplate</p>
+      <div className="py-5 text-gray-900 text-base font-medium">
+        <p className="m-0">Regards,</p>
+        <p className="m-0">Boilerplate</p>
       </div>
     </div>
   </div>

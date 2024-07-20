@@ -18,7 +18,7 @@ export const loader: LoaderFunction = async () => {
 export default function ResetPasswordEmailRoute() {
   const data = useLoaderData<LoaderData>();
   return (
-    <div style={{ padding: "20px" }}>
+    <div className='p-5'>
       <ResetPasswordEmail recipientName={data.recipientName} resetLink={data.resetLink} />
     </div>
   );
