@@ -2,10 +2,10 @@ import { Link } from "@remix-run/react";
 import React, { ChangeEvent, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
-import { Input, OtpAuthProps } from "~/types/otpauth";
+import { Input, OtpAuthProperties } from "~/types/otpauth";
 import { Button } from "../button";
 
-const OtpAuth: React.FC<OtpAuthProps> = ({
+const OtpAuth: React.FC<OtpAuthProperties> = ({
   isModalOpen = false,
   inputs = [],
   setIsModalOpen,
@@ -97,6 +97,7 @@ const OtpAuth: React.FC<OtpAuthProps> = ({
                   id={input.name}
                   inputMode="numeric"
                   pattern="[0-9]*"
+                  tabIndex={index}
                 />
               );
             })}

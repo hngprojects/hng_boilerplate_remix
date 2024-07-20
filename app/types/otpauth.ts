@@ -3,7 +3,7 @@ export type Input = {
   value: string;
 };
 
-export type OtpAuthProps = {
+export type OtpAuthProperties = {
   setIsModalOpen?: (isOpen: boolean) => void;
   handleSubmit?: (values: Input[]) => void;
   isModalOpen?: boolean;
