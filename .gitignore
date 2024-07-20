@@ -1,4 +1,5 @@
 node_modules
+/.react-email
 
 /.cache
 /build
