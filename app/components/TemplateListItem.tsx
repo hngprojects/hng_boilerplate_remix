@@ -1,4 +1,4 @@
-interface TemplateListItemProp {
+interface TemplateListItemProperty {
   templateImage: string;
   templateName: string;
   isPreviewActive: boolean;
@@ -10,17 +10,17 @@ export default function TemplateListItem({
   templateName,
   isPreviewActive,
   onPreview,
-}: TemplateListItemProp) {
+}: TemplateListItemProperty) {
   return (
-    <div className="py-4 md:py-8  pr-8 md:pr-16 pl-4 md:pl-10 flex items-center border-b border-gray-300 w-full max-w-full md:max-w-3xl">
-      <div className="w-8 sm:w-24 md:w-32 flex-shrink-0">
+    <div className="flex w-full max-w-full items-center border-b border-gray-300 py-4 pl-4 pr-8 md:max-w-3xl md:py-8 md:pl-10 md:pr-16">
+      <div className="w-8 flex-shrink-0 sm:w-24 md:w-32">
         <img
           src={templateImage}
           alt="template preview"
-          className="w-full h-auto"
+          className="h-auto w-full"
         />
       </div>
-      <p className="text-gray-700 flex-1 mx-5 md:mx-8 text-[12px] sm:text-[14px] md:text-[16px]">
+      <p className="mx-5 flex-1 text-[12px] text-gray-700 sm:text-[14px] md:mx-8 md:text-[16px]">
         {templateName}
       </p>
       <div className="flex gap-x-8">

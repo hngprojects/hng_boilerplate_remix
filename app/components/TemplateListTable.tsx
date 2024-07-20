@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import TemplateListItem from "./TemplateListItem";
 import TemplateListPagination from "./TemplateListPagination";
 
@@ -164,7 +165,7 @@ export default function TemplateListTable() {
     }
   };
 
-  const handlePrev = () => {
+  const handlePrevious = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
@@ -175,12 +176,12 @@ export default function TemplateListTable() {
   };
 
   const handlePreview = (id: number) => {
-    setTemplatesData((prevTemplates) =>
-      prevTemplates.map((template) =>
+    setTemplatesData((previousTemplates) =>
+      previousTemplates.map((template) =>
         template.id === id
           ? { ...template, isPreviewActive: !template.isPreviewActive }
-          : { ...template, isPreviewActive: false }
-      )
+          : { ...template, isPreviewActive: false },
+      ),
     );
   };
 
@@ -189,7 +190,7 @@ export default function TemplateListTable() {
   const currentTemplates = templatesData.slice(startIndex, endIndex);
 
   return (
-    <div className="border-[1px] border-[rgba(203, 213, 225, 0.60)] rounded-[19px] w-full max-w-full md:max-w-3xl">
+    <div className="border-[rgba(203, 213, 225, 0.60)] w-full max-w-full rounded-[19px] border-[1px] md:max-w-3xl">
       <div>
         {currentTemplates.map((template) => (
           <TemplateListItem
@@ -205,7 +206,7 @@ export default function TemplateListTable() {
         currentPage={currentPage}
         totalPages={totalPages}
         handleNext={handleNext}
-        handlePrev={handlePrev}
+        handlePrev={handlePrevious}
         handleEachPageClick={handleEachPageClick}
       />
     </div>

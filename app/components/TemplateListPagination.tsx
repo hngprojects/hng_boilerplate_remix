@@ -1,4 +1,4 @@
-interface TemplateListPaginationProp {
+interface TemplateListPaginationProperty {
   currentPage: number;
   totalPages: number;
   handleEachPageClick: (pageNumber: number) => void;
@@ -12,26 +12,26 @@ export default function TemplateListPagination({
   handleEachPageClick,
   handleNext,
   handlePrev,
-}: TemplateListPaginationProp) {
+}: TemplateListPaginationProperty) {
   const startPage = Math.max(1, currentPage - 2);
   const endPage = Math.min(totalPages, startPage + 4);
 
   const pageNumbers = [];
-  for (let i = startPage; i <= endPage; i++) {
-    pageNumbers.push(i);
+  for (let index = startPage; index <= endPage; index++) {
+    pageNumbers.push(index);
   }
 
   return (
-    <div className="flex flex-col sm:flex-row justify-between items-center flex-wrap py-[16px] px-[24px] w-full max-w-full md:max-w-3xl bg-[#F8F8F8] rounded-b-[19px]">
+    <div className="flex w-full max-w-full flex-col flex-wrap items-center justify-between rounded-b-[19px] bg-[#F8F8F8] px-[24px] py-[16px] sm:flex-row md:max-w-3xl">
       <p className="mb-4 sm:mb-0">{`Page ${currentPage} of ${totalPages}`}</p>
-      <div className="flex space-x-2 mb-4 sm:mb-0">
+      <div className="mb-4 flex space-x-2 sm:mb-0">
         {pageNumbers.map((pageNumber) => (
           <button
             key={pageNumber}
             onClick={() => handleEachPageClick(pageNumber)}
-            className={`p-[10px] flex items-center justify-center rounded-[6px] sm:text-[14px] w-[30px] sm:w-[36px] h-[30px] sm:h-[36px] ${
+            className={`flex h-[30px] w-[30px] items-center justify-center rounded-[6px] p-[10px] sm:h-[36px] sm:w-[36px] sm:text-[14px] ${
               pageNumber === currentPage
-                ? " text-[#344054] border-[1px] bg-[#FFECE5] border-[#F97316]"
+                ? "border-[1px] border-[#F97316] bg-[#FFECE5] text-[#344054]"
                 : "bg-white text-[#98A2B3]"
             }`}
           >
@@ -42,13 +42,13 @@ export default function TemplateListPagination({
       <div className="flex space-x-2">
         <button
           onClick={handlePrev}
-          className="p-[10px] flex items-center justify-center rounded-[6px] sm:text-[14px] w-[30px] sm:w-[36px] h-[30px] sm:h-[36px] bg-white border-[1px] border-[#E2E8F0]"
+          className="flex h-[30px] w-[30px] items-center justify-center rounded-[6px] border-[1px] border-[#E2E8F0] bg-white p-[10px] sm:h-[36px] sm:w-[36px] sm:text-[14px]"
         >
           <img src="/prevArrow.svg" alt="Previous" />
         </button>
         <button
           onClick={handleNext}
-          className="p-[10px] flex items-center justify-center rounded-[6px] sm:text-[14px] w-[30px] sm:w-[36px] h-[30px] sm:h-[36px] bg-white border-[1px] border-[#E2E8F0]"
+          className="flex h-[30px] w-[30px] items-center justify-center rounded-[6px] border-[1px] border-[#E2E8F0] bg-white p-[10px] sm:h-[36px] sm:w-[36px] sm:text-[14px]"
         >
           <img src="/nextArrow.svg" alt="Next" />
         </button>
