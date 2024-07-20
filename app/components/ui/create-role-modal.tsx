@@ -7,12 +7,9 @@ import {
   CardContent,
   CardFooter,
   CardHeader,
-  CardTitle
+  CardTitle,
 } from "~/components/ui/card";
 import { Input } from "~/components/ui/input";
-
-import { cn } from "app/lib/utils/cn";
-
 
 export type ModalsType = {
   className?: string;
@@ -24,20 +21,17 @@ const CreateRoleModal: FunctionComponent<ModalsType> = ({
   onClose,
 }) => {
   return (
-    <Card
-      className={cn("relative mx-auto my-4 max-w-lg bg-zinc-50 p-6", className)}
-      >
+    <Card className={`relative mx-auto my-4 max-w-lg bg-zinc-50 p-6 ${className}`}>
       <CardHeader className="relative flex items-start">
         <CardTitle className="!p-0">Create Role</CardTitle>
         <div
           onClick={onClose}
-          className="absolute right-2 top-2  cursor-pointer"
+          className="absolute right-2 top-2 cursor-pointer"
           style={{ fontSize: "1.5rem" }}
         >
           <span aria-hidden="true">&times;</span>
         </div>
       </CardHeader>
-      
       <CardContent>
         <p className="mb-4 text-sm text-gray-600">
           Define customized responsibilities for collaborative success.
