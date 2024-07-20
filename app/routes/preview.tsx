@@ -1,8 +1,6 @@
 import { getImages } from "~/lib/utils/utils";
 import { useState, useEffect } from "react";
 import Navbar from "~/Components/Navbar/Navbar";
-
-
 function Preview() {
   const [htmlContent, setHtmlContent] = useState("");
   const [allowEdit, setAllow] = useState(false);

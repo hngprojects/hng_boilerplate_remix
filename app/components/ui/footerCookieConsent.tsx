@@ -1,6 +1,5 @@
 import React from "react";
-import Button from "~/components/ui/button";
-
+import Button from "./cookieButtons";
 const FooterCookieConsent: React.FC = () => {
   const handleAccept = () => {
     console.log("Cookie consent accepted");
