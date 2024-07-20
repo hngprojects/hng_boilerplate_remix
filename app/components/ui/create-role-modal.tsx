@@ -43,8 +43,8 @@ const CreateRoleModal: FunctionComponent<ModalsType> = ({
       </div>
       <Form action="" method="post" className="flex flex-col gap-6">
         <div className="flex flex-col items-start gap-2">
-          <label 
-          htmlFor="roleName" 
+          <label
+          htmlFor="roleName"
           className="text-base font-semibold text-gray-900"
           >
             Name of role
@@ -60,7 +60,7 @@ const CreateRoleModal: FunctionComponent<ModalsType> = ({
         </div>
         <div className="flex flex-col items-start gap-2">
           <label
-          htmlFor="roleDescription" 
+          htmlFor="roleDescription"
           className="text-base font-semibold text-gray-900"
           >
             Role description
