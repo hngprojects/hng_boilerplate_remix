@@ -1,6 +1,4 @@
 import type { MetaFunction } from "@remix-run/node";
-import Bio from "~/components/bio";
-
 import { Button } from "~/components/ui/button";
 import CardPlatform from "~/components/ui/card/card-platform";
 
@@ -56,7 +54,6 @@ export default function Index() {
           </a>
         </li>
       </ul>
-    <Bio />
     </div>
   );
 }
