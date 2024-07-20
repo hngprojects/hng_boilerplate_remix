@@ -27,7 +27,19 @@ export default function CookieConsent(){
                             <div className="pr-8 flex-grow">
                                 <div className='flex justify-between items-center mb-2'>
                                     <p className="font-medium">Strictly necessary</p>
-                                    <div className="ml-4" onClick={toggleExpand} role="button" tabIndex="0">
+                                    <div 
+                                        className="ml-4" 
+                                        onClick={toggleExpand} 
+                                        role="button" 
+                                        tabIndex={0}
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter' || e.key === ' ') {
+                                                toggleExpand();
+                                                e.preventDefault()
+                                            }
+                                        }}
+                                        aria-expanded={isExpanded}
+                                        >
                                         <img 
                                             src={isExpanded ? '/chevron-down.svg' : '/chevron-up.svg'}
                                             alt={isExpanded ? 'Collapse' : 'Expand'}

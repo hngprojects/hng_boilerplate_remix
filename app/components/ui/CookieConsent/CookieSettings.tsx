@@ -9,17 +9,38 @@ interface CookieSetting {
 interface CookiePreferenceProps extends CookieSetting {
     isExpanded: boolean;
     onToggle: () => void;
+    isChecked: boolean;
+    onCheckChange: (checked: boolean) => void;
 }
 
-
-const  CookiePreference: React.FC<CookiePreferenceProps>= ({ title, description, isExpanded, onToggle, id }) => {
+const CookiePreference: React.FC<CookiePreferenceProps> = ({ 
+    title, 
+    description, 
+    isExpanded, 
+    onToggle, 
+    id, 
+    isChecked, 
+    onCheckChange 
+}) => {
     return (
         <div className="mb-6">
             <div className="flex justify-between items-start">
                 <div className="flex-grow pr-20">
                     <div className="flex justify-between items-center mb-2">
                         <p className="text-lg font-medium">{title}</p>
-                        <div className="ml-4 cursor-pointer" onClick={onToggle}  role="button" tabIndex="0">
+                        <div 
+                            className="ml-4 cursor-pointer" 
+                            onClick={onToggle}  
+                            role="button" 
+                            tabIndex={0}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    onToggle();
+                                    e.preventDefault()
+                                }
+                            }}
+                            aria-expanded={isExpanded}
+                        >
                             <img 
                                 src={isExpanded ? '/chevron-down.svg' : '/chevron-up.svg'} 
                                 alt={isExpanded ? 'Collapse' : 'Expand'}
@@ -32,7 +53,13 @@ const  CookiePreference: React.FC<CookiePreferenceProps>= ({ title, description,
                     <hr className="my-6" />
                 </div>
                 <label className="relative inline-flex items-center cursor-pointer" htmlFor={id}>
-                    <input type="checkbox" className="sr-only peer" id={id}/>
+                    <input 
+                        type="checkbox" 
+                        className="sr-only peer" 
+                        id={id}
+                        checked={isChecked}
+                        onChange={(e) => onCheckChange(e.target.checked)}
+                    />
                     <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-500"></div>
                 </label>
             </div>
@@ -42,26 +69,32 @@ const  CookiePreference: React.FC<CookiePreferenceProps>= ({ title, description,
 
 const CookieSettings: React.FC = () => {
     const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+    const [checkedStates, setCheckedStates] = useState<{ [key: string]: boolean }>({});
+
     const cookieSettings = [
         {
             title: "Performance Cookies",
-            id:"pc",
+            id: "pc",
             description: "These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site."
         },
         {
             title: "Functional Cookies",
-            id:"fc",
+            id: "fc",
             description: "These cookies enable the website to provide enhanced functionality and personalisation. They may be set by us or by third party providers whose services we have added to our pages."
         },
         {
             title: "Targeting Cookies",
-            id:"tc",
+            id: "tc",
             description: "These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant adverts on other sites."
         }
     ];
 
     const handleToggle = (index: number) => {
         setExpandedIndex(expandedIndex === index ? null : index);
+    };
+
+    const handleCheckChange = (id: string, checked: boolean) => {
+        setCheckedStates(prev => ({ ...prev, [id]: checked }));
     };
 
     return (
@@ -74,6 +107,8 @@ const CookieSettings: React.FC = () => {
                     isExpanded={expandedIndex === index}
                     onToggle={() => handleToggle(index)}
                     id={setting.id}
+                    isChecked={checkedStates[setting.id] || false}
+                    onCheckChange={(checked) => handleCheckChange(setting.id, checked)}
                 />
             ))}
         </div>
