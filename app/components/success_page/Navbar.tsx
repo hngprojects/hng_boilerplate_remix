@@ -7,9 +7,9 @@ const Navbar = () => {
       <div className="text-gray-600 flex justify-between items-center max-w-[1100px] h-[70px] mx-auto">
         <h1 className="font-bold text-[23px]">HNG Boilerplate</h1>
         <ul className='hidden md:flex items-center'>
-          <li className='p-4'>Pricing</li>
-          <li className='p-4'>Home</li>
-          <li className='p-4'>Career</li>
+          <a href="/"><li className='p-4'>Pricing</li></a>
+          <a href="/"><li className='p-4'>Home</li></a>
+          <a href="/"><li className='p-4'>Career</li></a>
         </ul>
 
         <div className="hidden md:flex">
