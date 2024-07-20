@@ -1,3 +1,14 @@
 {
+<<<<<<< HEAD
   "cSpell.words": ["alloc", "ampproject", "postcss", "vite"]
 }
+=======
+    "[javascript][javascriptreact][typescript][typescriptreact]": {
+        "editor.formatOnSave": false,
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "always"
+    },
+}
+>>>>>>> 0c94655f2b8fa0170b63e941cc4debc374f089e9
