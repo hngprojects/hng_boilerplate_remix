@@ -1,5 +1,5 @@
-import { FunctionComponent } from "react";
 import { Form } from "@remix-run/react";
+import { FunctionComponent } from "react";
 import { Button } from "~/components/ui/button";
 
 export type ModalsType = {
@@ -13,14 +13,11 @@ const CreateRoleModal: FunctionComponent<ModalsType> = ({ className = "", onClos
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
-      className={`max-w-[465px] min-h-[435px] shadow-lg rounded-md bg-zinc-50 m-auto flex flex-col py-6 px-6 ${className}`}
+      className={`m-auto flex min-h-[435px] max-w-[465px] flex-col rounded-md bg-zinc-50 px-6 py-6 shadow-lg ${className}`}
     >
-      <div className="flex flex-row items-start justify-between mb-4">
+      <div className="mb-4 flex flex-row items-start justify-between">
         <div className="flex flex-col items-start">
-          <h2
-            id="modal-title"
-            className="text-xl font-semibold text-gray-900"
-          >
+          <h2 id="modal-title" className="text-xl font-semibold text-gray-900">
             Create Role
           </h2>
           <p className="text-sm text-gray-600">
@@ -30,48 +27,33 @@ const CreateRoleModal: FunctionComponent<ModalsType> = ({ className = "", onClos
         <div
           onClick={onClose}
           aria-label="Close"
-          className="h-6 w-6 relative cursor-pointer overflow-hidden shrink-0 bg-transparent hover:bg-transparent"
+          className="relative h-6 w-6 cursor-pointer overflow-hidden"
         >
-          <img
-            className="h-full w-full"
-            loading="lazy"
-            alt="Close"
-            src="/closeicon.png"
-          />
+          <img className="h-full w-full" loading="lazy" alt="Close" src="/closeicon.png" />
         </div>
       </div>
-      <Form
-        action=""
-        method="post"
-        className="flex flex-col gap-6"
-      >
-        <div className="flex flex-col items-start gap-2 ">
-          <label
-            htmlFor="roleName"
-            className="font-semibold text-base text-gray-900"
-          >
+      <Form action="" method="post" className="flex flex-col gap-6">
+        <div className="flex flex-col items-start gap-2">
+          <label htmlFor="roleName" className="text-base font-semibold text-gray-900">
             Name of role
           </label>
           <input
             id="roleName"
             name="roleName"
-            className="w-full h-10 px-3 py-2 bg-zinc-50 rounded-md border border-gray-300 text-sm text-gray-700"
+            className="h-10 w-full rounded-md border border-gray-300 bg-zinc-50 px-3 py-2 text-sm text-gray-700"
             placeholder="e.g: IT Staff"
             type="text"
             required
           />
         </div>
         <div className="flex flex-col items-start gap-2">
-          <label
-            htmlFor="roleDescription"
-            className="font-semibold text-base text-gray-900"
-          >
+          <label htmlFor="roleDescription" className="text-base font-semibold text-gray-900">
             Role description
           </label>
           <textarea
             id="roleDescription"
             name="roleDescription"
-            className="w-full h-28 px-3 py-2 rounded-md border bg-zinc-50 border-gray-300 text-sm text-gray-700 resize-none"
+            className="h-28 w-full resize-none rounded-md border border-gray-300 bg-zinc-50 px-3 py-2 text-sm text-gray-700"
             placeholder="Describe role"
             required
           ></textarea>
@@ -80,13 +62,13 @@ const CreateRoleModal: FunctionComponent<ModalsType> = ({ className = "", onClos
           <Button
             type="button"
             onClick={onClose}
-            className="py-2 px-4 bg-[#F1F5F9] hover:bg-[#F1F5F9] text-gray-700 rounded-md"
+            className="rounded-md bg-[#F1F5F9] px-4 py-2 text-gray-700 hover:bg-[#F1F5F9]"
           >
             Cancel
           </Button>
           <Button
             type="submit"
-            className="py-2 px-4 bg-orange-500 text-white rounded-md hover:bg-orange-600"
+            className="rounded-md bg-orange-500 px-4 py-2 text-white hover:bg-orange-600"
           >
             Create Role
           </Button>
