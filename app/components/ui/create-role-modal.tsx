@@ -1,5 +1,6 @@
 import { Form } from "@remix-run/react";
 import { FunctionComponent } from "react";
+
 import { Button } from "~/components/ui/button";
 
 export type ModalsType = {
@@ -42,7 +43,10 @@ const CreateRoleModal: FunctionComponent<ModalsType> = ({
       </div>
       <Form action="" method="post" className="flex flex-col gap-6">
         <div className="flex flex-col items-start gap-2">
-          <label htmlFor="roleName" className="text-base font-semibold text-gray-900">
+          <label 
+          htmlFor="roleName" 
+          className="text-base font-semibold text-gray-900"
+          >
             Name of role
           </label>
           <input
@@ -55,7 +59,10 @@ const CreateRoleModal: FunctionComponent<ModalsType> = ({
           />
         </div>
         <div className="flex flex-col items-start gap-2">
-          <label htmlFor="roleDescription" className="text-base font-semibold text-gray-900">
+          <label 
+          htmlFor="roleDescription" 
+          className="text-base font-semibold text-gray-900"
+          >
             Role description
           </label>
           <textarea
