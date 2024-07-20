@@ -8,6 +8,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import SuperAdminSideNavBar from "./components/SuperAdminSideNavBar";
 import styles from "./styles/global.css?url";
 
 export const links: LinksFunction = () => [
@@ -25,9 +26,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
+        <div className="flex">
+          <SuperAdminSideNavBar />
+          {children}
+          <ScrollRestoration />
+          <Scripts />
+        </div>
       </body>
     </html>
   );
