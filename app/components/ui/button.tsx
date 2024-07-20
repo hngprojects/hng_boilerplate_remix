@@ -35,7 +35,7 @@ const buttonVariants = cva(
 export interface ButtonProperties
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
+  asChild?: boolean
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProperties>(
@@ -52,4 +52,4 @@ const Button = forwardRef<HTMLButtonElement, ButtonProperties>(
 );
 Button.displayName = "Button";
 
-export { Button, buttonVariants };
+export { Button, buttonVariants }
