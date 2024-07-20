@@ -15,10 +15,10 @@ interface props {
 export default function LatestArticle({ article }: { article: props }) {
     return (
         <Link to={article.link}>
-            <article className="text-[#525252] max-w-[1000px] bg-[#fafafa]">
-                <div className="grid md:grid-cols-2 gap-[24px] p-[24px] md:border-b-[1px] border-[#525252]">
-                    <div className="space-y-[16px] md:px-[8px] lg:p-[16px] p-[16px]">
-                        <span className="bg-[#F97316] pl-[10px] pr-[12px] py-[4px] rounded-full inline-flex justify-center items-center gap-[6px] text-[12px] font-[700]">
+            <article className="text-muted-foreground max-w-[1000px] bg-[#fafafa]">
+                <div className="grid md:grid-cols-2 gap-[24px] md:py-[32px] py-[16px]">
+                    <div className="order-2 md:order-1 space-y-[8px] md:space-y-[16px]">
+                        <span className="bg-border pl-[10px] pr-[12px] py-[4px] rounded-full inline-flex justify-center items-center gap-[6px] text-[12px] font-[700]">
                             <span className="h-[8px] w-[8px] rounded-full bg-black"></span>
                             <div className="uppercase">
                                 {article.tag}
@@ -33,27 +33,27 @@ export default function LatestArticle({ article }: { article: props }) {
                             {article.description}
                         </p>
 
-                        <div className="flex justify-between items-center md:font-[500] font-[400] text-[14px] md:text-[16px]">
-                            <div className="flex items-center gap-[8px]">
-                                <img src={article.profileImage} alt={article.name} className="rounded-full w-[24px] md:w-[40px] h-[24px] md:h-[40px] object-cover object-top" />
-                                <p className="font-[500] text-center">
+                        <div className="flex md:justify-between items-center gap-[16px] md:gap-0 flex-wrap font-[500] text-[14px] md:text-[16px]">
+                            <div className="flex items-center gap-[12px] w-full md:w-auto order-3 md:order-1">
+                                <img src={article.profileImage} alt={article.name} className="rounded-full w-[32px] md:w-[40px] h-[32px] md:h-[40px] object-cover object-top" />
+                                <p className="">
                                     {article.name}
                                 </p>
                             </div>
-                            <p className="text-center">
+                            <p className="order-1 md:order-2">
                                 {article.time}
                                 {" "}
                                 Read
                             </p>
 
-                            <p className="text-center">
+                            <p className="order-2 md:order-3">
                                 {article.creationDate}
                             </p>
                         </div>
 
                     </div>
-                    <div className="flex items-center">
-                        <img src={article.image} alt={article.title} className="w-full md:h-[300px] h-[250px] object-cover rounded-[6px] md:rounded-[8px] border-b-[1px] md:border-0 border-[#525252]" />
+                    <div className="order-1 md:order-2 flex md:items-end">
+                        <img src={article.image} alt={article.title} className="w-full md:h-[250px] h-[230px] object-cover rounded-[6px] md:rounded-[8px]" />
                     </div>
                 </div>
             </article>
