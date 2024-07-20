@@ -34,7 +34,7 @@ export default function CookieConsent(){
                                         tabIndex={0}
                                         onKeyDown={(e) => {
                                             if (e.key === 'Enter' || e.key === ' ') {
-                                                toggleExpand();
+                                                toggleExpandimplement();
                                                 e.preventDefault()
                                             }
                                         }}
