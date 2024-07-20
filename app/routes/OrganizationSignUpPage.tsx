@@ -2,6 +2,8 @@ import { MetaFunction, ActionFunction, json } from "@remix-run/node";
 import { Link, Form, useActionData } from "@remix-run/react";
 import { useState } from "react";
 import { Button } from "~/components/ui/button";
+import { Label } from "~/components/ui/label";
+import { Input } from "~/components/ui/input";
 
 // Define the types for the form fields
 interface FormData {
@@ -39,10 +41,8 @@ export const action: ActionFunction = async ({ request }) => {
     return json({ errors }, { status: 400 });
   }
 
-  console.log(data);
   
-  // Process the valid data (e.g., save to database)
-  // ...
+  
 
   return json({ success: true });
 };
@@ -128,13 +128,13 @@ export default function Signup() {
     <>
       <div className="flex items-center justify-center">
         <div className="h-[1010px] w-[342px] mt-[80px] bg-white lg:h-[836px] lg:w-[820px] lg:mt-[208px] mx-[25px] lg:m-3 w-full max-w-mid gap-[24px]">
-          <h1 className="text-[13px] lg:text-[32px] text-[#141414]-600 mb-6 text-center font-bold hidden lg:block">Create Organisation Account</h1>
+          <h1 className="text-[13px] lg:text-[32px] text-[#141414]-600 mb-6 text-center hidden lg:block">Create Organisation Account</h1>
           <h1 className="text-[24px] font-bold lg:hidden">Sign up</h1>
           <p className="text-[13px] lg:text-[20px] text-[#525252]-400 lg:text-center">Create an account to get started with us.</p>
           <Form method="post" className="gap-[24px]" onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label htmlFor="company_name" className="text-[13px] block text-[#0A0A0A]-400 lg:text-[20px]">Company's Name</label>
-              <input
+              <Label htmlFor="company_name" className="text-[13px] block text-[#0A0A0A]-400 lg:text-[20px]">Company's Name</Label>
+              <Input
                 id="company_name"
                 type="text"
                 name="companyName"
@@ -147,8 +147,8 @@ export default function Signup() {
               {(clientErrors.companyName || actionData?.errors?.companyName) && <p className="text-red-500">{clientErrors.companyName || actionData?.errors?.companyName}</p>}
             </div>
             <div className="mb-4">
-              <label htmlFor="email" className="text-[13px] block text-[#0A0A0A]-400 lg:text-[20px]">Company's Email Address</label>
-              <input
+              <Label htmlFor="email" className="text-[13px] block text-[#0A0A0A]-400 lg:text-[20px]">Company's Email Address</Label>
+              <Input
                 id="email"
                 type="email"
                 name="companyEmail"
@@ -162,7 +162,7 @@ export default function Signup() {
             </div>
             <div className="mb-4 grid lg:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="industry" className="text-[13px] block text-[#0A0A0A]-400 lg:text-[20px]">Industry</label>
+                <Label htmlFor="industry" className="text-[13px] block text-[#0A0A0A]-400 lg:text-[20px]">Industry</Label>
                 <select
                   id="industry"
                   name="industry"
@@ -182,7 +182,7 @@ export default function Signup() {
                 {(clientErrors.industry || actionData?.errors?.industry) && <p className="text-red-500">{clientErrors.industry || actionData?.errors?.industry}</p>}
               </div>
               <div>
-                <label htmlFor="organizationType" className="text-[13px] block text-[#0A0A0A]-400 lg:text-[20px]">Organization Type</label>
+                <Label htmlFor="organizationType" className="text-[13px] block text-[#0A0A0A]-400 lg:text-[20px]">Organization Type</Label>
                 <select
                   name="organizationType"
                   id="organizationType"
@@ -206,7 +206,7 @@ export default function Signup() {
             </div>
             <div className="mb-4 grid lg:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="country" className="text-[13px] block text-[#0A0A0A]-400 lg:text-[20px]">Country</label>
+                <Label htmlFor="country" className="text-[13px] block text-[#0A0A0A]-400 lg:text-[20px]">Country</Label>
                 <select
                   name="country"
                   id="country"
@@ -226,7 +226,7 @@ export default function Signup() {
                 {(clientErrors.country || actionData?.errors?.country) && <p className="text-red-500">{clientErrors.country || actionData?.errors?.country}</p>}
               </div>
               <div>
-                <label htmlFor="state" className="text-[13px] block text-[#0A0A0A]-400 lg:text-[20px]">State</label>
+                <Label htmlFor="state" className="text-[13px] block text-[#0A0A0A]-400 lg:text-[20px]">State</Label>
                 <select
                   name="state"
                   id="state"
@@ -245,8 +245,8 @@ export default function Signup() {
                 {(clientErrors.state || actionData?.errors?.state) && <p className="text-red-500">{clientErrors.state || actionData?.errors?.state}</p>}
               </div>
               <div>
-                <label htmlFor="address" className="block text-[#0A0A0A]-400 lg:text-[20px]">Address</label>
-                <input
+                <Label htmlFor="address" className="block text-[#0A0A0A]-400 lg:text-[20px]">Address</Label>
+                <Input
                   name="address"
                   id="address"
                   className={`rounded-[8px] border-[1px] py-[8px] px-[12px] lg:pt-[20px] lg:pr-[24px] lg:pb-[20px] lg:pl-[16px] h-[48px] lg:h-[64px] w-full ${formData.address ? 'border-[#F97316]' : 'border-[#CBD5E1]'} rounded mt-2`}
@@ -259,7 +259,7 @@ export default function Signup() {
                 {(clientErrors.address || actionData?.errors?.address) && <p className="text-red-500">{clientErrors.address || actionData?.errors?.address}</p>}
               </div>
               <div className="text-[20px] lg:hidden">
-                <label htmlFor="lga" className="text-[13px] block text-[#0A0A0A]-400">LGA</label>
+                <Label htmlFor="lga" className="text-[13px] block text-[#0A0A0A]-400">LGA</Label>
                 <select
                   name="lga"
                   id="lga"
