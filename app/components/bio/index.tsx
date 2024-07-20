@@ -16,7 +16,7 @@ export default function Bio() {
       } else {
         setFormError({
           ...formError,
-          [key]: null,
+          [key]: undefined,
         });
       }
   
@@ -34,8 +34,8 @@ export default function Bio() {
           name={FormField.bio}
           value={formState[FormField.bio]}
           error={formError[FormField.bio]}
-          handleChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-            updateFormData(FormField.bio, e.target.value)
+          handleChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
+            updateFormData(FormField.bio, event.target.value)
           }
         />
       </div>

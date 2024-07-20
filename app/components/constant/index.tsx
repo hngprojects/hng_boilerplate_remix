@@ -5,14 +5,14 @@ export enum FormField {
 }
 
 export const defaultFormState: IFormState = {
-  [FormField.bio]: "",
+  [FormField.bio]: "" ,
 };
 
 export const defaultFormError: IFormError = {
-  [FormField.bio]: null,
+  [FormField.bio]: undefined,
 };
 
-export const defaultAlert: { message: string | null; classType?: string } = {
-  message: null,
+export const defaultAlert: { message: string | undefined; classType?: string } = {
+  message: undefined,
   classType: undefined,
 };

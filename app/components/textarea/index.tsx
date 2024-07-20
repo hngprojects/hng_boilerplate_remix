@@ -7,7 +7,7 @@ interface Props {
   placeholder?: string;
   disabled?: boolean;
   error?: string | null;
-  handleChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  handleChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   style?: React.CSSProperties;
 }
 

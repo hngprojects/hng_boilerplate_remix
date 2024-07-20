@@ -13,5 +13,5 @@ export interface IFormState {
 }
 
 export interface IFormError {
-  [FormField.bio]: string | null;
+  [FormField.bio]: string | undefined;
 }
