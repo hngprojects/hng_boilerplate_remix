@@ -20,26 +20,27 @@ const CommentBox = ({
 }: // setLikeCount,
 CommentProps) => {
   return (
-    <div className={classes.commentCard}>
-      <img
-        src={userPicUrl}
-        alt="Profile Pic"
-        className={classes.userProfilePic}
-      />
-      <div className={classes.commentDetail}>
-        <div className={classes.commentDetailNames}>
-          <h1>{userDisplayName}</h1>
-          <p>@{userTagName}</p>
+    <div className="w-full max-w-[54rem] bg-white flex items-start gap-[0.75rem] self-stretch rounded-[.5rem] border-solid border-[.8px] border-[#cbd5e1] py-[1.2rem] lg:py-4 px-[1rem]">
+      <img src={userPicUrl} alt="Profile Pic" className="w-10 h-10" />
+      <div className="flex flex-col gap-[.88rem]">
+        <div className="flex flex-col gap-[.25rem] lg:gap-[.38rem]">
+          <h1 className="w-fit text-[#0a0a0a] text-base lg:text-2xl font-semibold font-inter">
+            {userDisplayName}
+          </h1>
+          <p className="text-[#71717a] text-xs lg:text-sm font-medium font-inter">
+            @{userTagName}
+          </p>
         </div>
-        <div className={classes.commentDetailContent}>{commentContent}</div>
-        <div className={classes.commentDetailPubDate}>
-          <p>{pubDate}</p>
+        <div className="w-full text-[#71717a] text-sm lg:text-base font-normal font-inter">
+          {commentContent}
         </div>
-        <div className={classes.commentDetailActions}>
-          <div
-            className={`${classes.commentDetailActionsLike},
-              ${classes.commentDetailActionsBtn}`}
-          >
+        <div className="flex gap-3 mt-[-.13rem]">
+          <p className="text-[#525252] text-xs font-normal font-inter">
+            {pubDate}
+          </p>
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          <button className="like-btn flex gap-1 items-center rounded-[.24863rem] border-solid border-[.669px] border-[#cbd5e1] bg-[#fafafa] py-1 px-[.33rem]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -62,12 +63,9 @@ CommentProps) => {
                 stroke-linejoin="round"
               />
             </svg>
-            <p>{likeCount !== 0 && likeCount}</p>
-          </div>
-          <div
-            className={`${classes.commentDetailActionsDislike},
-              ${classes.commentDetailActionsBtn}`}
-          >
+            <p className="font-inter">{likeCount !== 0 && likeCount}</p>
+          </button>
+          <button className="dislike-btn flex gap-1 items-center rounded-[.24863rem] border-solid border-[.669px] border-[#cbd5e1] bg-[#fafafa] py-1 px-[.33rem]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -90,11 +88,8 @@ CommentProps) => {
                 stroke-linejoin="round"
               />
             </svg>
-          </div>
-          <div
-            className={`${classes.commentDetailActionsShare},
-              ${classes.commentDetailActionsBtn}`}
-          >
+          </button>
+          <button className="share-btn flex gap-1 items-center rounded-[.24863rem] border-solid border-[.669px] border-[#cbd5e1] bg-[#fafafa] py-1 px-[.33rem]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -138,11 +133,8 @@ CommentProps) => {
                 stroke-linejoin="round"
               />
             </svg>
-          </div>
-          <div
-            className={`${classes.commentDetailActionsForward},
-              ${classes.commentDetailActionsBtn}`}
-          >
+          </button>
+          <button className="forward-btn flex gap-1 items-center rounded-[.24863rem] border-solid border-[.669px] border-[#cbd5e1] bg-[#fafafa] py-1 px-[.33rem]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -165,11 +157,8 @@ CommentProps) => {
                 stroke-linejoin="round"
               />
             </svg>
-          </div>
-          <div
-            className={`${classes.commentDetailActionsReply},
-              ${classes.commentDetailActionsBtn}`}
-          >
+          </button>
+          <button className="reply-btn flex gap-1 items-center rounded-[.24863rem] border-solid border-[.669px] border-[#cbd5e1] bg-[#fafafa] py-1 px-[.33rem]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -185,7 +174,7 @@ CommentProps) => {
                 stroke-linejoin="round"
               />
             </svg>
-          </div>
+          </button>
         </div>
       </div>
     </div>

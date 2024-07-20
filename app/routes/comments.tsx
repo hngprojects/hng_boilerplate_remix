@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CommentBox from "~/components/CommentBox/CommentBox";
+import CommentBox from "~/components/CommentBox";
 
 const CommentPage = () => {
   // Dummy Data representing a Comment Object -> to be deleted and replaced after real comment data are fetched from Backend API endpoints
