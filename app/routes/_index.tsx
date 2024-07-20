@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Button } from "~/components/ui/button";
+import CardPlatform from "~/components/ui/card/card-platform";
 
 export const meta: MetaFunction = () => {
   return [
@@ -34,6 +35,14 @@ export default function Index() {
           </a>
         </li>
         <Button>Hello</Button>
+        <div className="p-2">
+          <CardPlatform
+            logo="/images/g-drive-icon.svg"
+            heading="Drive"
+            description="Store, share, and collaborate on documents and files securely"
+            containerClassName="max-w-[341px]"
+          />
+        </div>
         <li>
           <a
             className="text-blue-700 underline visited:text-purple-900"
