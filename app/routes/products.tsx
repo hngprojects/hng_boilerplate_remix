@@ -15,23 +15,23 @@ interface Product {
 const products: Product[] = [
   {
     id: 1,
-    name: 'Product 1',
+    name: 'P001',
     imageUrl: 'https://via.placeholder.com/150',
-    category: 'Category 1',
-    dateAdded: '2024-07-01',
+    category: 'Breakfast',
+    dateAdded: '2024-06-06, 12:34:56',
     stock: 10,
-    price: 29.99,
-    description: 'Description for Product 1.',
+    price: 19.00,
+    description: 'A fusion of ripe bananas, pure honey, and succulent raspberries with our bread. Crafted to perfection smiles.',
   },
   {
     id: 2,
-    name: 'Product 2',
+    name: 'P002',
     imageUrl: 'https://via.placeholder.com/150',
-    category: 'Category 2',
-    dateAdded: '2024-07-02',
+    category: 'Appetizers',
+    dateAdded: '2024-06-06, 12:34:56',
     stock: 20,
-    price: 39.99,
-    description: 'Description for Product 2.',
+    price: 29.00,
+    description: 'A fusion of ripe bananas, pure honey, and succulent raspberries with our bread. Crafted to perfection smiles.',
   },
 ];
 
