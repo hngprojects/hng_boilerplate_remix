@@ -1,0 +1,16 @@
+services:
+  remix-staging-frontend-1:
+    build:
+      context: ../../
+      dockerfile: docker/staging/Dockerfile
+    ports:
+      - 4200:3000
+    restart: always
+
+  # remix-staging-frontend-2:
+  #   build:
+  #     context: ../../
+  #     dockerfile: docker/staging/Dockerfile
+  #   ports:
+  #     - 4230:3000
+  #   restart: always
