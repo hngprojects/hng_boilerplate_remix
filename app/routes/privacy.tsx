@@ -1,26 +1,24 @@
 const PrivacyPage = () => {
   return (
     <div>
-      <div className="text-secondary bg-foreground container h-[342px] flex items-center justify-center flex-col">
-        <h1 className="font-inter text-[28px]   font-bold leading-[72.61px] md:text-[60px]">
+      <div className="container flex h-[342px] flex-col items-center justify-center bg-foreground text-secondary">
+        <h1 className="font-inter text-[28px] font-bold leading-[72.61px] md:text-[60px]">
           Privacy Policy
         </h1>
-        <p className="font-inter text-[12px] font-medium  leading-[33.89px]  sm:text-[18px] md:text-[28px]">
+        <p className="font-inter text-[12px] font-medium leading-[33.89px] sm:text-[18px] md:text-[28px]">
           Achieve your dreams with us today
         </p>
       </div>
 
-      <div className=" mx-auto mt-16 p-5 max-w-[1000px]">
+      <div className="mx-auto mt-16 max-w-[1000px] p-5">
         <p>home &gt; Legal Terms &gt; Privacy</p>
-        <div
-          className="flex flex-col-reverse justify-between mt-10 gap-8 md:flex-row"
-        >
+        <div className="mt-10 flex flex-col-reverse justify-between gap-8 md:flex-row">
           <div className="max-w-[6170px]">
             <div className="mt-10">
-              <h3 className="font-inter text-gray-600 text-[28px] font-bold">
+              <h3 className="text-[28px] font-bold text-gray-600">
                 Introduction
               </h3>
-              <p className="  font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
                 At Boilerplate Hng, we prioritize your privacy and are committed
                 to protecting your personal information. This Privacy Policy
                 outlines the types of information we collect, how we use it, and
@@ -31,16 +29,16 @@ const PrivacyPage = () => {
             </div>
 
             <div className="mt-10">
-              <h3 className="font-inter text-[28px] font-bold text-gray-600 ">
+              <h3 className="font-inter text-[28px] font-bold text-gray-600">
                 Information We Collect
               </h3>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
                 We collect various types of information in connection with the
                 services we provide, including:
               </p>
 
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
-                <span className="font-inter text-[16px] font-bold mt-2">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
+                <span className="font-inter mt-2 text-[16px] font-bold">
                   Personal Information:{" "}
                 </span>
                 This includes any information that can be used to identify you
@@ -49,8 +47,8 @@ const PrivacyPage = () => {
                 create an account, make a purchase, or interact with our
                 customer support.
               </p>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
-                <span className="font-inter text-[16px] font-bold mt-2">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
+                <span className="font-inter mt-2 text-[16px] font-bold">
                   Usage Information:{" "}
                 </span>
                 This refers to information about how you use our services, such
@@ -59,8 +57,8 @@ const PrivacyPage = () => {
                 how our users interact with our services and to improve our
                 offerings.
               </p>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
-                <span className="font-inter text-[16px] font-bold mt-2">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
+                <span className="font-inter mt-2 text-[16px] font-bold">
                   Cookies and Tracking Technologies:{" "}
                 </span>
                 We use cookies and other tracking technologies to enhance your
@@ -72,45 +70,45 @@ const PrivacyPage = () => {
             </div>
 
             <div className="mt-10">
-              <h3 className="font-inter text-[28px] font-bold text-gray-600 ">
+              <h3 className="font-inter text-[28px] font-bold text-gray-600">
                 How We Use Your Information
               </h3>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
                 We use the information we collect to:
               </p>
 
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
-                <span className="font-inter text-[16px] font-bold mt-2">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
+                <span className="font-inter mt-2 text-[16px] font-bold">
                   Provide and Improve Our Services:{" "}
                 </span>
                 Your information helps us deliver the services you request and
                 improve our offerings based on your feedback and interactions.
               </p>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
-                <span className="font-inter text-[16px] font-bold mt-2">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
+                <span className="font-inter mt-2 text-[16px] font-bold">
                   Personalize Your Experience:{" "}
                 </span>
                 We use your information to tailor our services to your
                 preferences and provide you with relevant content and
                 recommendations.
               </p>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
-                <span className="font-inter text-[16px] font-bold mt-2">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
+                <span className="font-inter mt-2 text-[16px] font-bold">
                   Communicate with You:{" "}
                 </span>
                 We may use your contact information to send you updates,
                 newsletters, and promotional materials. You can opt-out of
                 receiving marketing communications at any time.
               </p>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
-                <span className="font-inter text-[16px] font-bold mt-2">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
+                <span className="font-inter mt-2 text-[16px] font-bold">
                   Ensure Security and Prevent Fraud:{" "}
                 </span>
                 Your information helps us protect your account and our services
                 from unauthorized access and other security threats.
               </p>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
-                <span className="font-inter text-[16px] font-bold mt-2">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
+                <span className="font-inter mt-2 text-[16px] font-bold">
                   Comply with Legal Obligations:{" "}
                 </span>
                 We may use your information to comply with legal requirements,
@@ -119,16 +117,16 @@ const PrivacyPage = () => {
             </div>
 
             <div className="mt-10">
-              <h3 className="font-inter text-[28px] font-bold text-gray-600 ">
+              <h3 className="font-inter text-[28px] font-bold text-gray-600">
                 Sharing Your Information
               </h3>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
                 We do not sell your personal information to third parties. We
                 may share your information with:
               </p>
 
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
-                <span className="font-inter text-[16px] font-bold mt-2">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
+                <span className="font-inter mt-2 text-[16px] font-bold">
                   Service Providers:{" "}
                 </span>
                 We work with trusted third-party companies that perform services
@@ -137,16 +135,16 @@ const PrivacyPage = () => {
                 information only to perform these tasks and are obligated to
                 protect your information.
               </p>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
-                <span className="font-inter text-[16px] font-bold mt-2">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
+                <span className="font-inter mt-2 text-[16px] font-bold">
                   Legal Authorities:{" "}
                 </span>
                 We may disclose your information if required by law or if we
                 believe that such action is necessary to comply with legal
                 processes, protect our rights, or ensure the safety of our users
               </p>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
-                <span className="font-inter text-[16px] font-bold mt-2">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
+                <span className="font-inter mt-2 text-[16px] font-bold">
                   Business Transfers:{" "}
                 </span>
                 If we are involved in a merger, acquisition, or sale of assets,
@@ -157,39 +155,39 @@ const PrivacyPage = () => {
             </div>
 
             <div className="mt-10">
-              <h3 className="font-inter text-[28px] font-bold text-gray-600 ">
+              <h3 className="font-inter text-[28px] font-bold text-gray-600">
                 Your Choices and Rights
               </h3>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
                 You have certain rights regarding your personal information,
                 including:
               </p>
 
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
-                <span className="font-inter text-[16px] font-bold mt-2">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
+                <span className="font-inter mt-2 text-[16px] font-bold">
                   Access and Correction:{" "}
                 </span>
                 You can request access to and correction of your personal
                 information by contacting us at [Your Contact Information].
               </p>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
-                <span className="font-inter text-[16px] font-bold mt-2">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
+                <span className="font-inter mt-2 text-[16px] font-bold">
                   Deletion:{" "}
                 </span>
                 You can request the deletion of your personal information,
                 subject to certain legal obligations we may have to retain your
                 information
               </p>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
-                <span className="font-inter text-[16px] font-bold mt-2">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
+                <span className="font-inter mt-2 text-[16px] font-bold">
                   Opt-Out of Marketing Communications:{" "}
                 </span>
                 You can opt-out of receiving marketing communications from us by
                 following the unsubscribe instructions in the emails or
                 contacting us directly.
               </p>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
-                <span className="font-inter text-[16px] font-bold mt-2">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
+                <span className="font-inter mt-2 text-[16px] font-bold">
                   Cookies Management:{" "}
                 </span>
                 You can manage your cookie preferences through your browser
@@ -199,10 +197,10 @@ const PrivacyPage = () => {
             </div>
 
             <div className="mt-10">
-              <h3 className="font-inter text-[28px] font-bold text-gray-600 ">
+              <h3 className="font-inter text-[28px] font-bold text-gray-600">
                 Security Measures
               </h3>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
                 We implement robust security measures to protect your
                 information from unauthorized access, disclosure, alteration,
                 and destruction. These measures include encryption, secure
@@ -213,10 +211,10 @@ const PrivacyPage = () => {
             </div>
 
             <div className="mt-10">
-              <h3 className="font-inter text-[28px] font-bold text-gray-600 ">
+              <h3 className="font-inter text-[28px] font-bold text-gray-600">
                 Changes to This Privacy Policy
               </h3>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
                 We may update this Privacy Policy from time to time to reflect
                 changes in our practices or legal requirements. When we make
                 changes, we will notify you by updating the date at the top of
@@ -228,10 +226,10 @@ const PrivacyPage = () => {
             </div>
 
             <div className="mt-10">
-              <h3 className="font-inter text-[28px] font-bold text-gray-600 ">
+              <h3 className="font-inter text-[28px] font-bold text-gray-600">
                 Contact Us
               </h3>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
                 If you have any questions or concerns about this Privacy Policy
                 or our data practices, please contact us at [Your Contact
                 Information].
@@ -239,16 +237,15 @@ const PrivacyPage = () => {
             </div>
 
             <div className="mt-10">
-              <h3 className="font-inter text-[28px] font-bold text-gray-600 ">
+              <h3 className="font-inter text-[28px] font-bold text-gray-600">
                 Last Updated
               </h3>
-              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))] ">
+              <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
                 This Privacy Policy was last updated on 13/07/2024.
               </p>
             </div>
 
-            <div
-              className="font-inter  mb-1 text-[15px] text-[hsl(var(--muted-foreground))] ">
+            <div className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))]">
               For more information about our terms and conditions, please visit
               our{" "}
               <a className="text-[hsl(var(--chart-5))]" href="#">
@@ -258,39 +255,39 @@ const PrivacyPage = () => {
             </div>
           </div>
 
-          <div className="md:min-w-[316px] mt-10 p-4">
-            <h3 className="font-inter text-[28px] font-bold text-[hsl(var(--muted-foreground))] ">
+          <div className="mt-10 p-4 md:min-w-[316px]">
+            <h3 className="font-inter text-[28px] font-bold text-[hsl(var(--muted-foreground))]">
               Table of Content
             </h3>
-            <ul className=" list-disc ml-6 mt-3">
-              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))] ">
+            <ul className="ml-6 mt-3 list-disc">
+              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))]">
                 Introductions
               </li>
-              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))] ">
+              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))]">
                 Information We Collect
               </li>
-              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))] ">
+              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))]">
                 How We Use Your Information
               </li>
-              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))] ">
+              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))]">
                 Sharing Your Information
               </li>
-              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))] ">
+              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))]">
                 Your choices and Rights
               </li>
-              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))] ">
+              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))]">
                 Security Measures
               </li>
-              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))] ">
+              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))]">
                 Security Measures{" "}
               </li>
-              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))] ">
+              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))]">
                 Changes to This Privacy Policy
               </li>
-              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))] ">
+              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))]">
                 Contact Us{" "}
               </li>
-              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))] ">
+              <li className="font-inter mb-1 text-[15px] text-[hsl(var(--muted-foreground))]">
                 Last Updated
               </li>
             </ul>
@@ -304,7 +301,7 @@ const PrivacyPage = () => {
 };
 
 export const loader = async () => {
-  return null;
+  return undefined;
 };
 
 export default PrivacyPage;
