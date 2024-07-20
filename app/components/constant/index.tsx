@@ -5,7 +5,7 @@ export enum FormField {
 }
 
 export const defaultFormState: IFormState = {
-  [FormField.bio]: "" ,
+  [FormField.bio]: "",
 };
 
 export const defaultFormError: IFormError = {
