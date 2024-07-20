@@ -1,10 +1,11 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 type DataCardType = {
     title: string,
     amount: string,
     subText: string,
     icon: ReactNode,
 }
+
 
 const DataCard = ({ title, amount, subText, icon }: DataCardType) => {
     return (
