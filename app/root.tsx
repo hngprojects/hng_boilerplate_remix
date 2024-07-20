@@ -1,3 +1,5 @@
+import { cssBundleHref } from "@remix-run/css-bundle";
+import { LinksFunction } from "@remix-run/node";
 import {
   Links,
   Meta,
@@ -5,9 +7,8 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import { LinksFunction } from "@remix-run/node";
+
 import styles from "./styles/global.css?url";
-import { cssBundleHref } from "@remix-run/css-bundle";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },

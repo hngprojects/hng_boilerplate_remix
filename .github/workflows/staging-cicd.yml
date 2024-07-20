@@ -1,9 +1,9 @@
-name: Production CI/CD Pipeline
+name: Staging CI/CD Pipeline
 
 on:
   push:
     branches:
-      - main
+      - staging
     paths-ignore:
       - .github/workflows/**
 
@@ -51,11 +51,11 @@ jobs:
     needs: build
 
     steps:
-      - name: Deploy to prod environment
+      - name: Deploy to staging environment
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            ./deploy_prod.sh remix
+            ./deploy_staging.sh remix
