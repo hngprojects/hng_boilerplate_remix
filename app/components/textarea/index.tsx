@@ -26,7 +26,7 @@ export const TextAreaField: React.FC<Props> = ({
         {label}
       </label>
       <div className="flex flex-col gap-1">
-        <div className="w-full bg-white text-base text-black outline-0 rounded-md">
+        <div className="w-full rounded-md bg-white text-base text-black outline-0">
           <textarea
             id={name}
             placeholder={placeholder}
