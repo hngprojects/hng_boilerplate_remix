@@ -1,6 +1,4 @@
-// app/components/ui/FooterCookieConsent.tsx
-import React from "react";
-import { Button } from "./button"; // Adjust the path if necessary
+import { Button } from "./button";
 
 const FooterCookieConsent: React.FC = () => {
   const handleAccept = () => {
