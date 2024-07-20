@@ -5,23 +5,34 @@ import google from "public/icons/google.svg";
 import SocialSignin from "~/components/ui/social_signin";
 import { Form, json, redirect, useActionData } from "@remix-run/react";
 import { ActionFunctionArgs } from "@remix-run/node";
+import { EyeIcon } from "lucide-react";
+import { EyeOff } from "lucide-react";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const actionData = useActionData<typeof action>();
+
+  const togglePasswordVisibility = () => {
+    // setShowPassword(!showPassword);
+    setShowPassword((prevState) => !prevState);
+  };
 
   return (
     <div className="w-full h-auto mt-24">
       {/* <Nav /> */}
-      <div className="w-[100%] bg-white  md:h-auto flex flex-col items-center justify-center py-6">
+      <div className="w-full  md:h-auto flex flex-col items-center justify-center py-6">
         <p className=""></p>
-        <Form className="w-[90%] lg:w-[50%] rounded-lg" method="post">
+        <Form
+          className="w-[80%] md:w-[70%] lg:w-[552px] h-20 rounded-lg"
+          method="post"
+        >
           <div className="flex flex-col items-center justify-center" id="login">
             <div className="text-center">
               <header
                 className={
-                  "md:w-[552px] h-6 mb-4 text-[28px] font-semibold text-black font-inter"
+                  "lg:w-[552px] h-6 mb-4 text-[28px] font-semibold text-black font-inter"
                 }
               >
                 Login
@@ -32,7 +43,7 @@ export default function Login() {
               </p>
             </div>
             <br />
-            <div className="w-full py-6 lg:flex items-center justify-between gap-6 pb-5 ">
+            <div className="w-full pt-6 pb-0 md:pb-1 lg:flex items-center justify-between gap-6  ">
               <SocialSignin msg="Sign in with Google" icon={google} />
               <SocialSignin msg="Sign in with Facebook" icon={facebook} />
             </div>
@@ -65,18 +76,29 @@ export default function Login() {
             <div className="w-full flex flex-col ">
               <p className="text-xl leading-6 font-normal mb-2">Password</p>
               <div
-                className=" relative py-5 ps-4 pe-6 border-2 border-[
+                className="relative py-5 ps-4 pe-6 border-2 border-[
 #CBD5E1] rounded-xl"
               >
                 <input
                   className="w-[366px] h-[22px] bg-transparent text-lg leading-5 font-normal text-
               gray-600 outline-none"
                   id="password"
-                  type="password"
-                  placeholder="********"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Enter Password"
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
                 />
+
+                <div
+                  className="absolute border-none outline-none inset-y-0 right-0 px-3 pb-2 my-3 text-black"
+                  onClick={togglePasswordVisibility}
+                >
+                  {showPassword ? (
+                    <EyeOff size={20} className="text-grey-400" />
+                  ) : (
+                    <EyeIcon size={20} className="text-black" />
+                  )}
+                </div>
               </div>
               <p className="text-red-500 text-xs italic">
                 {actionData?.errors?.password ? (
