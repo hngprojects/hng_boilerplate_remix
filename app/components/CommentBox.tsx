@@ -31,7 +31,7 @@ CommentProps) => {
             @{userTagName}
           </p>
         </div>
-        <div className="w-full text-[#71717a] text-sm lg:text-base font-normal font-inter">
+        <div className="comment-content w-full text-[#71717a] text-sm lg:text-base font-normal font-inter">
           {commentContent}
         </div>
         <div className="flex gap-3 mt-[-.13rem]">
