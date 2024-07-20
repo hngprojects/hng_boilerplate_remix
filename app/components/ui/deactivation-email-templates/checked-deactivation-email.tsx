@@ -1,6 +1,37 @@
-import { Html, Container, Head, Body, Preview, Section, Row, Column, Img, Text, Heading } from "@react-email/components";
+/**
+ * Author: Bravin Atonya (bravin-atonya)
+ * 
+ * Concept: Deactivation Email template component
+ * 
+ * params: deactivationDetails:{name: string, email: string, dateTime: string}
+ * 
+ * figmaFile Link: https://www.figma.com/design/VEItfX6St5NSAqqNHImcxD/HNG-Boilerplate-Designs?node-id=1995-24485&m=dev
+ * 
+ */
 
-const DeactivationEmail = ({ deactivationDetails={name: 'John Doe',email: 'johndoe@gmail.com', dateTime: '20th July, 2024 / 11:56pm'}}: {deactivationDetails: {name: string, email: string, dateTime: string}} ) => {
+import { Html, Container, Head, Body, Preview, Section, Row, Column, Img, Text, Heading } from "@react-email/components";
+import { useState, useEffect } from "react";
+
+//This Component is an email template that is used to push mails of deactivation to users of BoilerPlate
+
+/**
+ * 
+ * @param deactivationDetails: {name: string, email: string, dateTime: string} 
+ * @returns Jsx object
+ */
+const CheckedDeactivationEmail = ({ deactivationDetails={name: 'John Doe', email: 'johndoe@gmail.com', dateTime: '20th July, 2024 / 11:56pm'}}: {deactivationDetails: {name: string, email: string, dateTime: string}} ) => {
+    //state to help in ensurering that the checkmark is present to be included in the email template
+    const [checkImageExists, setCheckImageExists] = useState(false);
+    const checkImageSrc = "./Deactivation_Email_assets/deactivation_check.png"; // Image source
+
+    //This method is used to ensure that the checkmark is present in the file location provided before adding it
+    useEffect(() => {
+        const img = new Image();
+        img.src = checkImageSrc;
+        img.onload = () => setCheckImageExists(true);
+        img.onerror = () => setCheckImageExists(false);
+    }, [checkImageSrc]);
+
     return(
         <Html>
             <Head />
@@ -11,7 +42,7 @@ const DeactivationEmail = ({ deactivationDetails={name: 'John Doe',email: 'johnd
                         <Row>
                             <Column style={email_intro}>
                                 <Img
-                                    src="./Logo.png"
+                                    src="./Deactivation_Email_assets//Logo.png"
                                     width="160px"
                                     height="29px"
                                 />
@@ -19,10 +50,20 @@ const DeactivationEmail = ({ deactivationDetails={name: 'John Doe',email: 'johnd
                         </Row>
                     </Section>
                     <Section>
-                        <Column style={email_container_holder}>
+                        <Column style={email_container_holder} className="deactivation_email_container_holder">
+                            {checkImageExists ? (
+                                <Column style={check_container}>
+                                    <Img 
+                                        style={check_image}
+                                        src={checkImageSrc}
+                                        width='132px'
+                                        height='132px'
+                                    />
+                                </Column>
+                            ) : <span></span>}
                             <Row>
                                 <Section>
-                                    <Heading as='h4' style={email_title} className="deactivation_email_title">
+                                    <Heading style={email_title}>
                                         Account Successfully Deactivated
                                     </Heading>
                                 </Section>
@@ -52,11 +93,11 @@ const DeactivationEmail = ({ deactivationDetails={name: 'John Doe',email: 'johnd
                                                         </Row>
                                                         <Column style={deactivation_detail}>
                                                             <div style={listIndicator}></div>
-                                                            <div><span style={deactivation_title}>Account Email:</span> {deactivationDetails.email}</div>
+                                                            <div><span style={deactivation_title}>Account Email:</span>{deactivationDetails.email}</div>
                                                         </Column>
                                                         <Column style={deactivation_detail}>
                                                             <div style={listIndicator}></div>
-                                                            <div><span style={deactivation_title}>Deactivation Date:</span> {deactivationDetails.dateTime}</div>
+                                                            <div><span style={deactivation_title}>Deactivation Date:</span>{deactivationDetails.dateTime}</div>
                                                         </Column>
                                                     </Column>
                                                     <Row>
@@ -99,35 +140,35 @@ const DeactivationEmail = ({ deactivationDetails={name: 'John Doe',email: 'johnd
                             <Column style={socials_container}>
                                 <Row>
                                     <Img
-                                        src="./Footer_Icons/X.png"
+                                        src="./Deactivation_Email_assets/Footer_Icons/X.png"
                                         width="24px"
                                         height="24px"
                                     />
                                 </Row>
                                 <Row>
                                     <Img
-                                        src="./Footer_Icons/Instagram.png"
+                                        src="./Deactivation_Email_assets/Footer_Icons/Instagram.png"
                                         width="24px"
                                         height="24px"
                                     />
                                 </Row>
                                 <Row>
                                     <Img
-                                        src="./Footer_Icons/tik_tok.png"
+                                        src="./Deactivation_Email_assets/Footer_Icons/tik_tok.png"
                                         width="24px"
                                         height="24px"
                                     />
                                 </Row>
                                 <Row>
                                     <Img
-                                        src="./Footer_Icons/redit.png"
+                                        src="./Deactivation_Email_assets/Footer_Icons/redit.png"
                                         width="24px"
                                         height="24px"
                                     />
                                 </Row>
                                 <Row>
                                     <Img
-                                        src="./Footer_Icons/linkedIn.png"
+                                        src="./Deactivation_Email_assets/Footer_Icons/linkedIn.png"
                                         width="24px"
                                         height="24px"
                                     />
@@ -157,14 +198,15 @@ const DeactivationEmail = ({ deactivationDetails={name: 'John Doe',email: 'johnd
     );
 };
 
-export default DeactivationEmail;
+export default CheckedDeactivationEmail;
 
-
+//This is the overal container of the email template.
 const container = {
     margin: 'auto',
     maxWidth: '790px'
 }
 
+//This is the section containing the company logo which is centered both vertically and horizontally
 const email_intro={
     height: '108px',
     backgroundColor: '#E1D6D6',
@@ -173,6 +215,7 @@ const email_intro={
     justifyContent: 'center'
 }
 
+//This is the section containing the Image intro title.
 const email_title ={
     textAlign: 'center',
     height: '29px',
@@ -181,6 +224,7 @@ const email_title ={
     text: '#0A0A0A',
 }
 
+//This section is used to provide padding in the email content
 const email_container_holder = {
     padding: "clamp(40px, 7.08%, 56px)",
     display: 'flex',
@@ -188,36 +232,44 @@ const email_container_holder = {
     gap: 'clamp(40px, 7.08%, 56px)'
 }
 
+//This section is used to provide the gap between the greetings and the main email
 const email_content_container = {
     display: 'flex',
     flexDirection: 'column',
     gap: 'clamp(28px, 4.36vw, 32px)'
 }
 
+//This is the overal container of the email content and that provides the gap between the different elements in it
 const email_text_container = {
     display: 'flex',
     flexDirection: 'column',
     gap: 'clamp(24px, 4.36vw, 28px)'
 }
 
+//This is the rule that makes sure anything in the design sized 16px has the font size applied to it
 const large_body_text = {
     fontSize: '16px'
 }
 
+//This is the rule that makes sure anything in the design sized 14px has the font size applied to it
 const small_body_text = {
     fontSize: '14px'
 }
 
+//This is the rule used to style the greetings element
 const greeting = {
     fontSize: '18px',
     fontWeight: '600'
 }
 
+//This is the rule that is used to style the deactivation title.
 const deactivation_title = {
     fontSize: '16px',
     fontWeight: '600'
 }
 
+
+//This are the rules used to style the section in the email container just before the footer
 const email_end = {
     display: 'flex',
     flexDirection: 'column',
@@ -226,12 +278,15 @@ const email_end = {
     fontWeight: '500'
 }
 
+//This are the rules used to style the deactivation details content and providing the gap between them
 const deactivation_details_container = {
     display: 'flex',
     flexDirection: 'column',
     gap: '20px',
 }
 
+
+//The list idicator is the circle infront of each deactivation detail.
 const listIndicator ={
     width: '10px',
     height: '10px',
@@ -239,6 +294,7 @@ const listIndicator ={
     backgroundColor: '#FDC7A2'
 }
 
+//This are the rules that make sure that the deactivation details look seamingly like list items.
 const deactivation_detail = {
     display: 'flex',
     flexDirection: 'row',
@@ -246,10 +302,12 @@ const deactivation_detail = {
     alignItems: 'center'
 }
 
+//The footer of the email template. The rules here ensure that the footer has a background.
 const footer = {
     backgroundColor: '#F3EFEF'
 }
 
+//These are the rules that make sure that we have a padding around the footer.
 const footer_content_container = {
     display: 'flex',
     flexDirection: 'column',
@@ -258,12 +316,14 @@ const footer_content_container = {
     gap: '30px'
 }
 
+//This is the section that holds the social links that creates a gap around them.
 const socials_container = {
     display: 'flex',
     flexDirection: 'row',
     gap: '33px'
 }
 
+//This is the horizontal line that we use the borderTop rule to make it dashed.
 const dotted_horizontal_rule = {
     borderTop: 'dashed 0.3px #5B5B5D'
 }
@@ -278,4 +338,16 @@ const reason_container = {
     display: 'flex',
     flexDirection: 'column',
     gap: '8px'
+}
+
+//This is the container that contains the image and the one that enables us to center it.
+const check_container = {
+    display: 'flex',
+    justifyContent: 'center',
+}
+
+//This rule makes sure that the image is responsive to the change in width reducing by 17.9% of it
+const check_image = {
+    width: 'clamp(100px, 17.98%, 132px)',
+    height: 'clamp(100px, 17.98%, 132px)'
 }
