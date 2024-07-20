@@ -1,14 +1,12 @@
-/* eslint-disable react/prop-types */
-
 // import { useState } from 'react';
-import { Link , NavLink } from '@remix-run/react';
+import { NavLink } from '@remix-run/react';
 import { Button } from '../ui/button';
 
-type NavbarProps = {
+interface NavbarProps {
   isUserAuthenticated: boolean;
-};
+}
 
-const Navbar: React.FC<NavbarProps> = ({ isUserAuthenticated }) => {
+const Navbar = ({ isUserAuthenticated }: NavbarProps) =>  {
 
   // const [mobileMenuOpen, setMobileMenuOpen] = useState(false);  // For Mobile Nav SideBar
 
