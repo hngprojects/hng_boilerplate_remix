@@ -15,7 +15,7 @@ export default function Login() {
 
   return (
     <div className="w-full h-auto mt-24">
-      <Nav />
+      {/* <Nav /> */}
       <div className="w-[100%] bg-white  md:h-auto flex flex-col items-center justify-center py-6">
         <p className=""></p>
         <Form className="w-[90%] lg:w-[50%] rounded-lg" method="post">
@@ -137,7 +137,7 @@ export default function Login() {
         </Form>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
