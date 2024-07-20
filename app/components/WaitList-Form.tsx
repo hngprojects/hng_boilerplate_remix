@@ -1,8 +1,8 @@
-// Import necessary modules
 import type { ActionFunction } from "@remix-run/node";
-import { Form, useActionData, useSubmit } from "@remix-run/react";
+import { Form, useActionData } from "@remix-run/react";
 import { Mail, CheckCircle2, ThumbsUp } from "lucide-react";
 import React, { useEffect, useState } from "react";
+import { Input } from "./ui/input"; // Adjust the import path accordingly
 
 interface ActionData {
   error?: string;
@@ -25,7 +25,6 @@ export const action: ActionFunction = async ({ request }) => {
   if (!name || !validateEmail(email)) {
     return { error: "Name and valid email are required" };
   }
-
 
   // for testing my backend endpoint 
   // try {
@@ -53,7 +52,7 @@ const WaitlistForm: React.FC = () => {
   const [email, setEmail] = useState("john.doe@example.com");
   const [mounted, setMounted] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [submit, setSubmit] = useState(false)
+  const [submit, setSubmit] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -81,7 +80,7 @@ const WaitlistForm: React.FC = () => {
     const formData = new FormData();
     formData.append("name", name);
     formData.append("email", email);
-    setSubmit(true)
+    setSubmit(true);
   };
 
   return (
@@ -113,12 +112,12 @@ const WaitlistForm: React.FC = () => {
           </section>
         ) : (
           <section className={`form-section ${mounted && error ? "h-[406px] lg:w-[510px] gap-[10px] lg:h-[373.78px] p-[10px] w-[383.34px]" : "lg:w-[510px] w-[383.34px] lg:h-[320px] h-[414.57px] gap-[10px] lg:gap-6"}`}>
-            <Form className="lg:w-[490px] w-[320px] h-[218px] lg:h-[204.2px] flex flex-col gap-6">
+            <Form method="post" className="lg:w-[490px] w-[320px] h-[218px] lg:h-[204.2px] flex flex-col gap-6">
               <div className="lg:w-[490px] lg:h-[90px] h-[97px] w-[320px] gap-[14.4px] flex flex-col">
                 <label htmlFor="name" className="block lg:text-[19.4px] text-[19.2px] py-2 leading-[23.24px] font-normal text-[#141414]">
                   Name
                 </label>
-                <input
+                <Input
                   type="text"
                   id="name"
                   name="name"
@@ -137,7 +136,7 @@ const WaitlistForm: React.FC = () => {
                 <label htmlFor="email" className="block lg:text-[19.4px] pt-2 text-[19.2px] leading-[23.24px] font-normal text-[#141414]">
                   Email
                 </label>
-                <input
+                <Input
                   type="email"
                   id="email"
                   name="email"

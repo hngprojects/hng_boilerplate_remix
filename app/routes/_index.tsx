@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-// import WaitlistForm from "~/components/WaitList-Form";
+import WaitlistForm from "~/components/WaitList-Form";
 
 export const meta: MetaFunction = () => {
   return [
@@ -12,7 +12,7 @@ export default function Index() {
   return (
     <>
     <h1>hello world</h1>
-    {/* <WaitlistForm/> */}
+    <WaitlistForm/>
     </>
   );
 }
