@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const phoneRegex = /^\+\d{0,3}\d{10}$/;
+const phoneRegex = /^\+\d{10,13}$/;
 
 export const schema = z.object({
   email: z
