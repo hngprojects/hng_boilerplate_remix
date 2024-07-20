@@ -46,6 +46,16 @@ const ProductsPage = () => {
   const handleClose = () => {
     setSelectedProduct(null);
   };
+  const handleEdit = (productId: string) => {
+    console.log(`Edit product with ID: ${productId}`);
+    // Implement the Edit functionality here
+  };
+
+  const handleDelete = (productId: string) => {
+    console.log(`Delete product with ID: ${productId}`);
+    // Implement the Delete functionality here
+  };
+
 
   return (
     <div className="p-6">
@@ -60,7 +70,10 @@ const ProductsPage = () => {
         ))}
       </ul>
 
-      {selectedProduct && <ProductDetails product={selectedProduct} onClose={handleClose} />}
+      {selectedProduct && <ProductDetails 
+      product={selectedProduct} 
+      onClose={handleClose} onEdit={handleEdit}
+      onDelete={handleDelete}/>}
     </div>
   );
 };

@@ -15,13 +15,15 @@ interface Product {
 interface ProductDetailsProps {
   product: Product | null;
   onClose: () => void;
+  onEdit?: (productId: string) => void;  
+  onDelete?: (productId: string) => void;  
 }
 
-const ProductDetails: React.FC<ProductDetailsProps> = ({ product, onClose }) => {
+const ProductDetails: React.FC<ProductDetailsProps> = ({ product, onClose, onEdit, onDelete  }) => {
   if (!product) {
     return <p>Product not found</p>;
   }
-
+  
   return (
     <div className="p-6 border rounded-md shadow-lg shadow-[#0A39B01F] bg-white border-[#CBD5E1] w-[340px] md:w-[403px] h-[661px]">
       <header className="flex justify-between items-center mb-4 h-6">
@@ -39,14 +41,14 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product, onClose }) => 
         <li className='flex justify-between'><span className='text-[#525252]'>Stock</span> <span className='text-[#0A0A0A]'>{product.stock}pcs</span></li>
         <li className='flex justify-between'><span className='text-[#525252]'>Price</span> <span className='text-[#0A0A0A]'>${product.price}</span></li>
       </ul>
-      <div className="mb-4 p-4 bg-[#FAFAFA] text-sm rounded-md space-y-2.5 h-auto">
+      <section className="mb-4 p-4 bg-[#FAFAFA] text-sm rounded-md space-y-2.5 h-auto">
         <h6>Description</h6>
-        <p className="text-[#525252]">{product.description}</p>
-      </div>
+        <p className="text-[#525252] line-clamp-3 whitespace-pre-wrap">{product.description}</p>
+      </section>
       </div>
       <div className="flex justify-end gap-x-2 items-center font-medium text-sm">
-        <button className="px-4 py-2 border border-[#E2E8F0] text-[#DC2626] rounded-md  ">Delete</button>
-        <button className="px-4 py-2 border border-[#E2E8F0] text-[#0F172A] rounded-md ">Edit</button>
+        <button className="px-4 py-2 border border-[#E2E8F0] text-[#DC2626] rounded-md  "  >Delete</button>
+        <button className="px-4 py-2 border border-[#E2E8F0] text-[#0F172A] rounded-md "   >Edit</button>
       </div>
     </div>
   );
