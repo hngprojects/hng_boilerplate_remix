@@ -300,8 +300,5 @@ const PrivacyPage = () => {
   );
 };
 
-export const loader = async () => {
-  return undefined;
-};
 
 export default PrivacyPage;
