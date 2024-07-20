@@ -8,9 +8,9 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
-import styles from "./styles/global.css?url";
 import MobileSidebarComponent from "./components/sidebar/sidebar";
 import { ThemeProvider } from "./context/ThemeContext";
+import styles from "./styles/global.css?url";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
@@ -31,8 +31,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <MobileSidebarComponent />
           {children}
         </ThemeProvider>
-          <ScrollRestoration />
-          <Scripts />
+        <ScrollRestoration />
+        <Scripts />
       </body>
     </html>
   );

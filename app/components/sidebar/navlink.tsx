@@ -1,23 +1,28 @@
 import { Link, useLocation } from "@remix-run/react";
 import { ReactNode } from "react";
 
-type NavlinkProps = {
+type NavlinkProperties = {
   path: string;
   icon: ReactNode;
   text: string;
   expanded: boolean;
 };
 
-export default function Navlink({ path, icon, text, expanded }: NavlinkProps) {
+export default function Navlink({
+  path,
+  icon,
+  text,
+  expanded,
+}: NavlinkProperties) {
   const { pathname } = useLocation();
   return (
     <li
-      className={`flex items-center gap-[0.81rem] transition duration-200 ease-in-out cursor-pointer ${
+      className={`flex cursor-pointer items-center gap-[0.81rem] transition duration-200 ease-in-out ${
         pathname === path ? "bg-[#F97316] text-[#fafafa]" : ""
       } ${
         expanded
-          ? "rounded-lg pl-[1.25rem] pr-2 w-fit ml-1 py-[0.63rem]"
-          : " ml-2 w-[3rem] h-[3rem] rounded-full justify-center"
+          ? "ml-1 w-fit rounded-lg py-[0.63rem] pl-[1.25rem] pr-2"
+          : "ml-2 h-[3rem] w-[3rem] justify-center rounded-full"
       }`}
     >
       <Link
@@ -28,7 +33,7 @@ export default function Navlink({ path, icon, text, expanded }: NavlinkProps) {
       >
         <div>{icon}</div>
         <span
-          className={`text-[1rem] leading-[1.2rem] font-[500] ${
+          className={`text-[1rem] font-[500] leading-[1.2rem] ${
             expanded ? "w-[8.5rem]" : "w-0 overflow-hidden"
           }`}
         >

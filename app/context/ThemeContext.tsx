@@ -1,11 +1,11 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
 
 type ThemeContextType = {
   isDark: boolean;
   toggleTheme: () => void;
 };
 
-type ThemeProviderProps = {
+type ThemeProviderProperties = {
   children: ReactNode;
 };
 
@@ -13,11 +13,11 @@ const ThemeContext = createContext({} as ThemeContextType);
 
 export const useTheme = () => useContext(ThemeContext);
 
-export function ThemeProvider({ children }: ThemeProviderProps) {
+export function ThemeProvider({ children }: ThemeProviderProperties) {
   const [isDark, setIsDark] = useState<true | false>(false);
 
   const toggleTheme = () => {
-    setIsDark((prev) => !prev);
+    setIsDark((previous) => !previous);
   };
 
   return (

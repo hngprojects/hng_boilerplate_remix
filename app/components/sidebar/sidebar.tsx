@@ -1,45 +1,46 @@
-import Logo from "../Logo";
-import { useState } from "react";
-import Navlink from "./navlink";
-import { useTheme } from "~/context/ThemeContext";
 import {
+  ArrowLeft,
+  ArrowRight,
   Briefcase,
   Building2,
   Cpu,
   Monitor,
-  SlidersHorizontal,
-  User,
-  ArrowLeft,
-  ArrowRight,
-  Sun,
   Moon,
+  SlidersHorizontal,
+  Sun,
+  User,
 } from "lucide-react";
+import { useState } from "react";
+
+import { useTheme } from "~/context/ThemeContext";
+import Logo from "../Logo";
+import Navlink from "./navlink";
 
 export default function MobileSidebarComponent() {
   const [isExpanded, setIsExpanded] = useState(true);
   const { isDark, toggleTheme } = useTheme();
 
   function toggleMenu() {
-    setIsExpanded((prev) => !prev);
+    setIsExpanded((previous) => !previous);
   }
 
   return (
     <aside
-      className={`h-screen sm:hidden fixed z-10 text-primary-foreground bg-primary flex flex-col items-start gap-14 transition duration-200 ease-in-out ${
+      className={`fixed z-10 flex h-screen flex-col items-start gap-14 bg-primary text-primary-foreground transition duration-200 ease-in-out sm:hidden ${
         isExpanded ? "w-full" : "w-fit px-2"
       } ${isDark ? "" : "dark"}`}
     >
       <div
         className={`flex w-full ${
           isExpanded
-            ? "justify-between items-center"
-            : "flex-col justify-center items-start gap-6"
-        } px-[1.25rem] mt-2 relative`}
+            ? "items-center justify-between"
+            : "flex-col items-start justify-center gap-6"
+        } relative mt-2 px-[1.25rem]`}
       >
         <Logo expanded={isExpanded} />
         <div
           className={`flex gap-5 ${
-            isExpanded ? "items-center" : "flex-col justify-center items-start"
+            isExpanded ? "items-center" : "flex-col items-start justify-center"
           }`}
         >
           <button
