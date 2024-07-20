@@ -43,7 +43,7 @@ function QuestionForm() {
     <div className="flex flex-col gap-7 md:gap-16 max-w-80 md:max-w-[676px] w-full mx-auto font-inter">
       <div className="flex flex-col gap-4 md:gap-2 text-center">
         <h6
-          className="textprimary text-primary text-xl leading-6 md:text-[28px] md:leading-[34px] font-bold"
+          className="text-[#F97316] text-xl leading-6 md:text-[28px] md:leading-[34px] font-bold"
           data-testid="header"
         >
           Still have questions ?
@@ -78,7 +78,7 @@ function QuestionForm() {
                   className="py-3 md:py-5 pr-4 md:pr-6 pl-4 text-sm max-md:leading-4 md:text-lg text-[#B2B2B2] border border-[#B2B0B0] rounded-lg"
                 />
                 {errors?.name && (
-                  <small className="text-[13px] leading-6 text-[#8A8888]">
+                  <small className="text-[13px] leading-6 text-red-500">
                     {errors?.name.message}
                   </small>
                 )}
@@ -100,7 +100,7 @@ function QuestionForm() {
                   className="py-3 md:py-5 pr-4 md:pr-6 pl-4 text-sm max-md:leading-4 md:text-lg text-[#B2B2B2] border border-[#B2B0B0] rounded-lg"
                 />
                 {errors?.email && (
-                  <small className="text-[13px] leading-6 text-[#8A8888]">
+                  <small className="text-[13px] leading-6 text-red-500">
                     {errors?.email.message}
                   </small>
                 )}
@@ -123,7 +123,7 @@ function QuestionForm() {
                   className="py-3 md:py-5 pr-4 md:pr-6 pl-4 text-sm max-md:leading-4 md:text-lg text-[#B2B2B2] border border-[#B2B0B0] rounded-lg"
                 />
                 {errors?.phoneNumber && (
-                  <small className="text-[13px] leading-6 text-[#8A8888]">
+                  <small className="text-[13px] leading-6 text-red-500">
                     {errors?.phoneNumber.message}
                   </small>
                 )}
@@ -144,7 +144,7 @@ function QuestionForm() {
                   className="py-3 md:py-5 pr-4 md:pr-6 pl-4 text-sm max-md:leading-4 md:text-lg text-[#B2B2B2] border border-[#B2B0B0] rounded-lg h-[204px]"
                 />
                 {errors?.message && (
-                  <small className="text-[13px] leading-6 text-[#8A8888]">
+                  <small className="text-[13px] leading-6 text-red-500">
                     {errors?.message.message}
                   </small>
                 )}
@@ -156,7 +156,7 @@ function QuestionForm() {
               type="submit"
               disabled={!isValid}
               data-testid="submit-button"
-              className="rounded-lg md:rounded-md bg-primary text-primary-foreground h-12 md:h-[60px] w-full px-4 py-2 leading-5 md:text-lg md:leading-snug"
+              className="rounded-lg md:rounded-md bg-[#F97316] text-primary-foreground h-12 md:h-[60px] w-full px-4 py-2 leading-5 md:text-lg md:leading-snug"
             >
               Send
             </button>
