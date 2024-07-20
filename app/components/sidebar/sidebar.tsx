@@ -25,7 +25,7 @@ export default function MobileSidebarComponent() {
 
   return (
     <aside
-      className={`h-screen fixed z-10 text-primary-foreground bg-primary flex flex-col items-start gap-14 transition duration-200 ease-in-out ${
+      className={`h-screen sm:hidden fixed z-10 text-primary-foreground bg-primary flex flex-col items-start gap-14 transition duration-200 ease-in-out ${
         isExpanded ? "w-full" : "w-fit px-2"
       } ${isDark ? "" : "dark"}`}
     >
