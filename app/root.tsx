@@ -29,9 +29,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <ThemeProvider>
           <MobileSidebarComponent />
           {children}
+        </ThemeProvider>
           <ScrollRestoration />
           <Scripts />
-        </ThemeProvider>
       </body>
     </html>
   );
