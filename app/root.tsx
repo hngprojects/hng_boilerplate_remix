@@ -1,5 +1,3 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
-import { LinksFunction } from "@remix-run/node";
 import {
 	Links,
 	Meta,
@@ -7,10 +5,11 @@ import {
 	Scripts,
 	ScrollRestoration,
 } from "@remix-run/react";
-import type { ReactNode } from "react";
+import { LinksFunction } from "@remix-run/node";import type { ReactNode } from "react";
 
 import { AdminSideNavBar } from "./components/SuperAdminSideBar/SuperAdminSideNavBar";
 import styles from "./styles/global.css?url";
+import { cssBundleHref } from "@remix-run/css-bundle";
 import Footer from "./components/ui/Footer";
 
 export const links: LinksFunction = () => [
