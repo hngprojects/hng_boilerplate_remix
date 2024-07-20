@@ -1,6 +1,6 @@
 import { useState } from "react";
-import TextAreaField from "../textarea";
 import { defaultFormState, defaultFormError, FormField } from "../constant";
+import { TextAreaField } from "../textarea";
 
 export default function Bio() {
   const [formState, setFormState] = useState(defaultFormState);

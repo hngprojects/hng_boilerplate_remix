@@ -1,6 +1,6 @@
 import React from "react";
 
-interface Props {
+interface Properties {
   label: string;
   name: string;
   value: string;
@@ -11,7 +11,7 @@ interface Props {
   style?: React.CSSProperties;
 }
 
-export const TextAreaField: React.FC<Props> = ({
+export const TextAreaField: React.FC<Properties> = ({
   label,
   name,
   placeholder,
