@@ -47,7 +47,7 @@ export default function Aboutpage() {
             <p className="w-[322px] text-center text-[16px] font-normal leading-5 text-[#525252] lg:w-[500px] lg:text-start lg:text-lg">
               Since our founding in, Hng Boilerplate has been dedicated to
               constantly evolving to stay ahead of the curve. Our agile mindset
-              and relentless pursuit of innovation ensure that you're always
+              and relentless pursuit of innovation ensure that youre always
               equipped with the most effective tools and strategies.
             </p>
           </div>
@@ -163,7 +163,7 @@ export default function Aboutpage() {
 
       <section>
         {/* executive team */}
-        <section className="lg:bg-custom-bg bg-mobile-b my-16 flex h-fit w-full items-end justify-center bg-cover bg-no-repeat lg:h-[610px] lg:pb-3">
+        <section className="my-16 flex h-fit w-full items-end justify-center bg-mobile-b bg-cover bg-no-repeat lg:h-[610px] lg:bg-custom-bg lg:pb-3">
           <div className="mt-24 md:mt-36">
             <div className="px-4 text-center lg:w-full">
               <h2 className="text-3xl font-semibold leading-9 text-[#525252] lg:text-[44px] lg:leading-[53px]">
