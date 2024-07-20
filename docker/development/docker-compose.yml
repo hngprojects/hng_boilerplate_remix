@@ -1,16 +1,16 @@
 services:
-  remix-frontend-1:
+  remix-dev-frontend-1:
     build:
       context: ../../
-      dockerfile: docker/prod/Dockerfile
+      dockerfile: docker/development/Dockerfile
     ports:
       - 4100:3000
     restart: always
 
-  remix-frontend-2:
+  remix-dev-frontend-2:
     build:
       context: ../../
-      dockerfile: docker/prod/Dockerfile
+      dockerfile: docker/development/Dockerfile
     ports:
       - 4130:3000
     restart: always
