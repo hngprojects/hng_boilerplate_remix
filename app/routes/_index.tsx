@@ -10,6 +10,8 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
+    // Comment Box Implemented in "/app/components/CommentBox"
+    // Comment Box UI to be found on the "/comments" route
     <div className="font-sans p-4">
       <h1 className="text-3xl">Welcome to Remix</h1>
       <ul className="list-disc mt-4 pl-6 space-y-2">
