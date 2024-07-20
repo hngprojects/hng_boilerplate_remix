@@ -27,7 +27,7 @@ export default function Bio() {
   };
 
   return (
-    <div className="font-sans p-6">
+    <div className="p-6 font-sans">
       <TextAreaField
         label="Bio"
         placeholder="A seasoned front-end developer with fulfilling duties."
