@@ -1,6 +1,7 @@
 import { Link } from "@remix-run/react";
 
 interface articleProperties {
+  id: string;
   title: string;
   description: string;
   profileImage: string;
