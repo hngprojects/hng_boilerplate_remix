@@ -44,13 +44,13 @@ function QuestionForm() {
     <div className="font-inter flex w-full flex-col gap-7 sm:max-w-[min(calc(100%-40px),_676px)] md:mx-auto md:gap-16">
       <div className="flex flex-col gap-4 text-center md:gap-2">
         <h6
-          className="text-xl font-bold leading-6 text-[#F97316] md:text-[28px] md:leading-[34px]"
+          className="text-xl font-bold leading-6 text-primary md:text-[28px] md:leading-[34px]"
           data-testid="header"
         >
           Still have questions ?
         </h6>
         <p
-          className="leading-5 text-[#525252] md:text-lg md:leading-snug"
+          className="leading-5 text-gray-600 md:text-lg md:leading-snug"
           data-testid="description"
         >
           Fill the form and enter your message
@@ -66,7 +66,7 @@ function QuestionForm() {
             <div className="flex flex-col gap-2 md:gap-3">
               <label
                 htmlFor="name"
-                className="capitalize leading-5 text-[#434343] md:text-xl md:leading-6"
+                className="capitalize leading-5 text-gray-700 md:text-xl md:leading-6"
               >
                 Name
               </label>
@@ -76,7 +76,7 @@ function QuestionForm() {
                   {...register("name")}
                   data-testid="name"
                   placeholder="Enter full name"
-                  className="rounded-lg border border-[#B2B0B0] py-3 pl-4 pr-4 text-sm text-[#B2B2B2] max-md:leading-4 md:py-5 md:pr-6 md:text-lg"
+                  className="rounded-lg border border-gray-400 py-3 pl-4 pr-4 text-sm text-gray-400 max-md:leading-4 md:py-5 md:pr-6 md:text-lg"
                 />
                 {errors?.name && (
                   <small className="text-[13px] leading-6 text-red-500">
@@ -88,7 +88,7 @@ function QuestionForm() {
             <div className="flex flex-col gap-2 md:gap-3">
               <label
                 htmlFor="email"
-                className="capitalize leading-5 text-[#434343] md:text-xl md:leading-6"
+                className="capitalize leading-5 text-gray-700 md:text-xl md:leading-6"
               >
                 Email
               </label>
@@ -98,7 +98,7 @@ function QuestionForm() {
                   {...register("email")}
                   placeholder="Enter email address"
                   data-testid="email"
-                  className="rounded-lg border border-[#B2B0B0] py-3 pl-4 pr-4 text-sm text-[#B2B2B2] max-md:leading-4 md:py-5 md:pr-6 md:text-lg"
+                  className="rounded-lg border border-gray-400 py-3 pl-4 pr-4 text-sm text-gray-400 max-md:leading-4 md:py-5 md:pr-6 md:text-lg"
                 />
                 {errors?.email && (
                   <small className="text-[13px] leading-6 text-red-500">
@@ -111,7 +111,7 @@ function QuestionForm() {
             <div className="flex flex-col gap-2 md:gap-3">
               <label
                 htmlFor="phoneNumber"
-                className="capitalize leading-5 text-[#434343] md:text-xl md:leading-6"
+                className="capitalize leading-5 text-gray-700 md:text-xl md:leading-6"
               >
                 Number
               </label>
@@ -121,7 +121,7 @@ function QuestionForm() {
                   {...register("phoneNumber")}
                   data-testid="phoneNumber"
                   placeholder="Enter phone number"
-                  className="rounded-lg border border-[#B2B0B0] py-3 pl-4 pr-4 text-sm text-[#B2B2B2] max-md:leading-4 md:py-5 md:pr-6 md:text-lg"
+                  className="rounded-lg border border-gray-400 py-3 pl-4 pr-4 text-sm text-gray-400 max-md:leading-4 md:py-5 md:pr-6 md:text-lg"
                 />
                 {errors?.phoneNumber && (
                   <small className="text-[13px] leading-6 text-red-500">
@@ -133,7 +133,7 @@ function QuestionForm() {
             <div className="flex flex-col gap-2 md:gap-3">
               <label
                 htmlFor="message"
-                className="capitalize leading-5 text-[#434343] md:text-xl md:leading-6"
+                className="capitalize leading-5 text-gray-700 md:text-xl md:leading-6"
               >
                 Message
               </label>
@@ -142,7 +142,7 @@ function QuestionForm() {
                   {...register("message")}
                   data-testid="message"
                   placeholder="Message..."
-                  className="h-[204px] rounded-lg border border-[#B2B0B0] py-3 pl-4 pr-4 text-sm text-[#B2B2B2] max-md:leading-4 md:py-5 md:pr-6 md:text-lg"
+                  className="h-[204px] rounded-lg border border-gray-400 py-3 pl-4 pr-4 text-sm text-gray-400 max-md:leading-4 md:py-5 md:pr-6 md:text-lg"
                 />
                 {errors?.message && (
                   <small className="text-[13px] leading-6 text-red-500">
@@ -157,7 +157,7 @@ function QuestionForm() {
               type="submit"
               disabled={!isValid}
               data-testid="submit-button"
-              className="h-12 w-full rounded-lg bg-[#F97316] px-4 py-2 leading-5 text-primary-foreground md:h-[60px] md:rounded-md md:text-lg md:leading-snug"
+              className="h-12 w-full rounded-lg bg-primary px-4 py-2 leading-5 text-primary-foreground md:h-[60px] md:rounded-md md:text-lg md:leading-snug"
             >
               Send
             </button>
