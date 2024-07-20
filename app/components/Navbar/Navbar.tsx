@@ -1,6 +1,6 @@
 // import { useState } from 'react';
 import { NavLink } from '@remix-run/react';
-import { Button } from '../ui/button';
+import { Button } from '~/components/ui/button';
 
 interface NavbarProps {
   isUserAuthenticated: boolean;
@@ -34,7 +34,7 @@ const Navbar = ({ isUserAuthenticated }: NavbarProps) =>  {
 
           <NavLink to="/">
             <div className='flex items-center gap-2'>
-              <img className="w-[180px] sm:w-[220px] lg:w-[283px]" src="../../../public/nav-icons/logo.svg" alt="App Logo" />
+              <img className="w-[180px] sm:w-[220px] lg:w-[275px]" src="../../../public/nav-icons/logo.svg" alt="App Logo" />
             </div>
           </NavLink>
         </div>
