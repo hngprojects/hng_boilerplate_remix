@@ -1,8 +1,16 @@
-import { FunctionComponent } from "react";
 import { Form } from "@remix-run/react";
+import { FunctionComponent } from "react";
+
 import { Button } from "~/components/ui/button";
-import { Card, CardHeader, CardContent, CardFooter, CardTitle } from "~/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardFooter,
+  CardTitle
+} from "~/components/ui/card";
 import { Input } from "~/components/ui/input";
+
 import { cn } from "app/lib/utils/cn";
 
 export type ModalsType = {
@@ -15,13 +23,13 @@ const CreateRoleModal: FunctionComponent<ModalsType> = ({
   onClose,
 }) => {
   return (
-    <Card className={cn("relative max-w-lg mx-auto my-4 p-6 bg-zinc-50", className)}>
+    <Card className={cn("relative mx-auto my-4 max-w-lg bg-zinc-50 p-6", className)}>
       <CardHeader className="relative flex items-start">
         <CardTitle className="!p-0">Create Role</CardTitle>
         <div
           onClick={onClose}
-          className="absolute top-2 right-2 cursor-pointer"
-          style={{ fontSize: '1.5rem' }}
+          className="absolute right-2 top-2  cursor-pointer"
+          style={{ fontSize: "1.5rem" }}
         >
           <span aria-hidden="true">&times;</span>
         </div>
