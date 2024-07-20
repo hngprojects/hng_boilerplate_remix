@@ -34,8 +34,9 @@ function About() {
                 <p className="md:text-[28px] text-2xl leading-7 md:leading-8  capitalize font-bold text-[#F97316]">
                   our services
                 </p>
-                <h3 className="md:text-[44px] text-3xl lg:w-[460px] w-[380px] capitalize leading-9 md:leading-[53px] font-semibold text-[#525252]">
+                <h3 className="md:text-[44px] text-3xl lg:w-[460px] w-[380px] capitalize leading-9 md:leading-[53px] font-semibold text-[#525252] relative">
                   Trained to give you the best
+                  <img src="images/Ellipse.png" alt="" className="md:w-28 w-14  absolute bottom-0 lg:left-24 left-44"/>
                 </h3>
               </div>
               <button className="py-2 px-4 bg-[#F97316] rounded-lg text-white font-medium text-sm leading-6 w-fit">
@@ -176,7 +177,7 @@ function About() {
               </div>
               {/* cards */}
               <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-4 gap-7 mt-8 w-72 md:w-full mx-auto">
-                <div className="lg:w-72 h-fit bg-[#FAFAFA] flex flex-col gap-4 pb-[14px]">
+                <div className="lg:w-72 h-fit bg-card flex flex-col gap-4 pb-[14px]">
                   <div className="bg-[#D3D3D3]">
                     <img src="images/team-image1.png" alt="" />
                   </div>
@@ -215,7 +216,7 @@ function About() {
                     </div>
                   </div>
                 </div>
-                <div className="lg:w-72 h-fit bg-[#FAFAFA] flex flex-col gap-4 pb-[14px]">
+                <div className="lg:w-72 h-fit bg-card flex flex-col gap-4 pb-[14px]">
                   <div className="bg-[#D3D3D3]">
                     <img src="images/team-image2.png" alt="" />
                   </div>
@@ -254,7 +255,7 @@ function About() {
                     </div>
                   </div>
                 </div>
-                <div className="lg:w-72 h-fit bg-[#FAFAFA] flex flex-col gap-4 pb-[14px]">
+                <div className="lg:w-72 h-fit bg-background flex flex-col gap-4 pb-[14px]">
                   <div className="bg-[#D3D3D3]">
                     <img src="images/team-image3.png" alt="" />
                   </div>
