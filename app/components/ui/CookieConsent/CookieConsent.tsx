@@ -1,7 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from './CookieConsent.module.css';
+import CookieSettings from "./CookieSettings";
 
 export default function CookieConsent(){
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const toggleExpand = () => {
+        setIsExpanded(!isExpanded);
+    };
 
     return (
         <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"'>
@@ -21,11 +27,14 @@ export default function CookieConsent(){
                             <div className="pr-8 flex-grow">
                                 <div className='flex justify-between items-center mb-2'>
                                     <p className="font-medium">Strictly necessary</p>
-                                    <div className="ml-4">
-                                        <img src='/chevron-up.svg' alt=''/>
+                                    <div className="ml-4" onClick={toggleExpand} role="button" tabIndex="0">
+                                        <img 
+                                            src={isExpanded ? '/chevron-down.svg' : '/chevron-up.svg'}
+                                            alt={isExpanded ? 'Collapse' : 'Expand'}
+                                        />
                                     </div>
                                 </div>
-                                <p className="text-sm text-gray-600 hidden">
+                                <p className={`text-sm text-gray-600 ${isExpanded ? '' : 'hidden'}`}>
                                     These cookies are essential for the website to function properly.
                                     They enable basic functions like page navigation, secure login, 
                                     and access to protected areas of the site. Without these cookies, 
@@ -36,69 +45,7 @@ export default function CookieConsent(){
                             <p className="text-gray-500 text-sm whitespace-nowrap">Always Enabled</p>
                         </div>
                     </div>
-                    <div className="mb-6">
-                        <div className="flex justify-between items-start">
-                            <div className="flex-grow pr-20">
-                                <div className="flex justify-between items-center mb-2">
-                                    <p className="text-lg font-medium">Performance cookies</p>
-                                    <img src='/chevron-up.svg' alt='' className="ml-4"/>
-                                </div>
-                                <p className="text-sm text-gray-600 hidden">
-                                    These cookies are essential for the website to function properly.
-                                    They enable basic functions like page navigation, secure login, 
-                                    and access to protected areas of the site. Without these cookies, 
-                                    the website cannot perform properly.
-                                </p>
-                                <hr className="my-6" />
-                            </div>
-                            <label className="relative inline-flex items-center cursor-pointer" htmlFor="pc">
-                                <input type="checkbox" className="sr-only peer" id="pc"/>
-                                <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-500"></div>
-                            </label>
-                        </div>
-                    </div>
-                    <div className="mb-6">
-                        <div className="flex justify-between items-start">
-                            <div className="flex-grow pr-20">
-                                <div className="flex justify-between items-center mb-2">
-                                    <p className="text-lg font-medium">Functionality cookies</p>
-                                    <img src='/chevron-up.svg' alt='' className="ml-4"/>
-                                </div>
-                                <p className="text-sm text-gray-600 hidden">
-                                    These cookies are essential for the website to function properly.
-                                    They enable basic functions like page navigation, secure login, 
-                                    and access to protected areas of the site. Without these cookies, 
-                                    the website cannot perform properly.
-                                </p>
-                                <hr className="my-6" />
-                            </div>
-                            <label className="relative inline-flex items-center cursor-pointer" htmlFor="fc">
-                            <input type="checkbox" className="sr-only peer" id="fc"/>
-                            <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-500"></div>
-                            </label>
-                        </div>
-                    </div>
-                    <div className="mb-6">
-                        <div className="flex justify-between items-start">
-                            <div className="flex-grow pr-20">
-                                <div className="flex justify-between items-center mb-2">
-                                    <p className="text-lg font-medium">Targeting cookies</p>
-                                    <img src='/chevron-up.svg' alt='' className="ml-4"/>
-                                </div>
-                                <p className="text-sm text-gray-600 hidden">
-                                    These cookies are essential for the website to function properly.
-                                    They enable basic functions like page navigation, secure login, 
-                                    and access to protected areas of the site. Without these cookies, 
-                                    the website cannot perform properly.
-                                </p>
-                                <hr className="my-6" />
-                            </div>
-                            <label className="relative inline-flex items-center cursor-pointer" htmlFor="tc">
-                                <input type="checkbox" className="sr-only peer" id="tc"/>
-                                <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-500"></div>
-                            </label>
-                        </div>
-                    </div>
+                    <CookieSettings/>
                     <div className="flex justify-end mt-6">
                         <button className="bg-orange-500 text-white py-2 px-4 rounded-lg">Save & Accept</button>
                     </div>
