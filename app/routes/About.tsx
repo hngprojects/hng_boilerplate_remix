@@ -163,7 +163,7 @@ export default function Aboutpage() {
 
       <section>
         {/* executive team */}
-        <section className="my-16 flex h-fit w-full items-end justify-center bg-mobile-b bg-cover bg-no-repeat lg:h-[610px] lg:bg-custom-bg lg:pb-3">
+        <section className="my-16 flex h-fit w-full items-end justify-center bg-[url('/images/Bgmobile.png')] bg-cover bg-no-repeat lg:h-[610px] lg:bg-[url('/images/background.png')] lg:pb-3">
           <div className="mt-24 md:mt-36">
             <div className="px-4 text-center lg:w-full">
               <h2 className="text-3xl font-semibold leading-9 text-[#525252] lg:text-[44px] lg:leading-[53px]">

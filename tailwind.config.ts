@@ -72,10 +72,6 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      backgroundImage: {
-        "custom-bg": "url('/images/background.png')",
-        "mobile-b": "url('/images/Bgmobile.png')",
-      },
     },
   },
   /* eslint-disable-next-line unicorn/prefer-module */
