@@ -1,7 +1,5 @@
 "use client";
 import { useState } from "react";
-import Nav from "~/components/nav";
-import Footer from "~/components/footer";
 import facebook from "public/icons/facebook.svg";
 import google from "public/icons/google.svg";
 import SocialSignin from "~/components/ui/social_signin";
