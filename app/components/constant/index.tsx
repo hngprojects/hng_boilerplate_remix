@@ -12,7 +12,7 @@ export const defaultFormError: IFormError = {
   [FormField.bio]: null,
 };
 
-export const defaultAlert: { message: string | null; classType?: string } = {
-  message: null,
+export const defaultAlert: { message: string | undefined; classType?: string } = {
+  message: undefined,
   classType: undefined,
 };
