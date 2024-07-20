@@ -8,8 +8,8 @@ export type ModalsType = {
 };
 
 const CreateRoleModal: FunctionComponent<ModalsType> = ({
-  className = "", 
-  onClose 
+  className = "",
+  onClose,
 }) => {
   return (
     <div
@@ -32,20 +32,17 @@ const CreateRoleModal: FunctionComponent<ModalsType> = ({
           aria-label="Close"
           className="relative h-6 w-6 cursor-pointer overflow-hidden"
         >
-          <img 
-          className="h-full w-full" 
-          loading="lazy" 
-          alt="Close" 
-          src="/closeicon.png" 
+          <img
+            className="h-full w-full"
+            loading="lazy"
+            alt="Close"
+            src="/closeicon.png"
           />
         </div>
       </div>
       <Form action="" method="post" className="flex flex-col gap-6">
         <div className="flex flex-col items-start gap-2">
-          <label 
-          htmlFor="roleName" 
-          className="text-base font-semibold text-gray-900"
-          >
+          <label htmlFor="roleName" className="text-base font-semibold text-gray-900">
             Name of role
           </label>
           <input
@@ -58,9 +55,7 @@ const CreateRoleModal: FunctionComponent<ModalsType> = ({
           />
         </div>
         <div className="flex flex-col items-start gap-2">
-          <label htmlFor="roleDescription" 
-          className="text-base font-semibold text-gray-900"
-          >
+          <label htmlFor="roleDescription" className="text-base font-semibold text-gray-900">
             Role description
           </label>
           <textarea
