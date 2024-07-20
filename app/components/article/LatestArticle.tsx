@@ -23,20 +23,20 @@ export default function LatestArticle({
       <article className="max-w-[792px] bg-[#fafafa] text-muted-foreground">
         <div className="grid gap-6 py-4 md:grid-cols-5 md:py-8">
           <div className="order-2 space-y-2 md:order-1 md:col-span-3 md:space-y-4">
-            <span className="inline-flex items-center justify-center gap-1.5 rounded-full bg-border py-1 pl-2.5 pr-3 text-xs font-[700]">
+            <span className="inline-flex items-center justify-center gap-1.5 rounded-full bg-border py-1 pl-2.5 pr-3 text-xs font-bold">
               <span className="h-2 w-2 rounded-full bg-black"></span>
               <div className="uppercase">{article.tag}</div>
             </span>
 
-            <h3 className="text-xl font-[700] capitalize leading-[normal] tracking-wider md:text-3xl md:font-[600]">
+            <h3 className="text-xl font-bold capitalize leading-[normal] tracking-wider md:text-3xl md:font-semibold">
               {article.title}
             </h3>
 
-            <p className="text-base font-[400] leading-[normal] tracking-wide md:text-lg">
+            <p className="text-base font-normal leading-[normal] tracking-wide md:text-lg">
               {article.description}
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 text-base font-[500] md:justify-between md:gap-0 md:text-lg">
+            <div className="flex flex-wrap items-center gap-4 text-base font-medium md:justify-between md:gap-0 md:text-lg">
               <div className="order-3 flex w-full items-center gap-3 md:order-1 md:w-auto">
                 <img
                   src={article.profileImage}
