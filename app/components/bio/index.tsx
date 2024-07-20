@@ -1,7 +1,6 @@
-/* eslint-disable import/no-named-as-default */
 import { useState } from "react";
-import { defaultFormState, defaultFormError, FormField } from "../constant";
 import TextAreaField from "../textarea";
+import { defaultFormState, defaultFormError, FormField } from "../constant";
 
 export default function Bio() {
   const [formState, setFormState] = useState(defaultFormState);
@@ -27,7 +26,7 @@ export default function Bio() {
   };
 
   return (
-    <div className="font-sans p-6">
+    <div className="p-6 font-sans">
       <TextAreaField
         label="Bio"
         placeholder="A seasoned front-end developer with fulfilling duties."
