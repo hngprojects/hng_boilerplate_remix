@@ -59,7 +59,7 @@ const CreateRoleModal: FunctionComponent<ModalsType> = ({
           />
         </div>
         <div className="flex flex-col items-start gap-2">
-          <label 
+          <label
           htmlFor="roleDescription" 
           className="text-base font-semibold text-gray-900"
           >
