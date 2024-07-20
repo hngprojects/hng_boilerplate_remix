@@ -1,5 +1,7 @@
+// app/components/ui/FooterCookieConsent.tsx
 import React from "react";
-import Button from "./cookieButtons";
+import { Button } from "./button"; // Adjust the path if necessary
+
 const FooterCookieConsent: React.FC = () => {
   const handleAccept = () => {
     console.log("Cookie consent accepted");
@@ -17,9 +19,7 @@ const FooterCookieConsent: React.FC = () => {
     <div className="fixed bottom-0 w-full bg-white text-gray-900 border-t border-gray-200 p-6">
       <div className="flex flex-col md:flex-row items-start md:justify-between md:items-center space-y-4 md:space-y-0 md:space-x-4">
         <p className="text-sm text-left flex-1 flex flex-col">
-          <span className="font-bold text-sm sm:text-xl">
-            We Value your Privacy
-          </span>
+          <span className="font-bold text-sm sm:text-xl">We Value your Privacy</span>
           <span className="text-xs sm:text-base">
             Our website uses cookies to enhance your browsing experience,
             provide personalized content, and analyze site traffic. By clicking
@@ -27,13 +27,13 @@ const FooterCookieConsent: React.FC = () => {
           </span>
         </p>
         <div className="grid grid-cols-2 gap-2 place-content-center sm:grid-cols-3">
-          <Button variant="secondary" onClick={handleSettings}>
+          <Button variant="outline" onClick={handleSettings}>
             Cookies Settings
           </Button>
           <Button variant="destructive" onClick={handleReject}>
             Reject All
           </Button>
-          <Button variant="primary" onClick={handleAccept}>
+          <Button variant="destructive" onClick={handleAccept}>
             Accept All Cookies
           </Button>
         </div>

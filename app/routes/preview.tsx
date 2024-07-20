@@ -4,7 +4,7 @@ import Navbar from "~/Components/Navbar/Navbar";
 function Preview() {
   const [htmlContent, setHtmlContent] = useState("");
   const [allowEdit, setAllow] = useState(false);
-  const [htmlLink, setHtmlLink] = useState(typeof window !=="undefined" && localStorage.getItem("query"));
+  const [htmlLink, setHtmlLink] = useState(localStorage.getItem("query"));
 
   // if()
 
@@ -25,7 +25,8 @@ function Preview() {
       }
     };
     fetchfile()
-  },[htmlLink?.length])
+  },[htmlLink?.length
+  ])
 
 
   return (
