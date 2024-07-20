@@ -12,7 +12,7 @@ interface BlogCardProperties {
   link: string;
 }
 
-const BlogCard: FC<BlogCardProperties> = ({
+const BlogCard: React.FC<BlogCardProperties> = ({
   title,
   description,
   date,
