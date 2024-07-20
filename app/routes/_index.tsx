@@ -1,4 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
+import { useState } from "react";
+import CreateRoleForm from "~/components/CreateRoleFormModal/CreateRoleForm";
 
 import { Button } from "~/components/ui/button";
 import CardPlatform from "~/components/ui/card/card-platform";
@@ -11,6 +13,7 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="p-4 font-sans">
       <h1 className="text-3xl">Welcome to Remix</h1>
@@ -35,7 +38,7 @@ export default function Index() {
             30m Tutorial
           </a>
         </li>
-        <Button>Hello</Button>
+        <Button onClick={() => setIsModalOpen(true)}>Hello</Button>
         <div className="p-2">
           <CardPlatform
             logo="/images/g-drive-icon.svg"
@@ -55,6 +58,10 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      <CreateRoleForm
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 }
