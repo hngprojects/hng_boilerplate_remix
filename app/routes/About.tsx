@@ -337,7 +337,7 @@ function About() {
           </section>
 
           {/* join our team */}
-          <section className="mb-28">
+          <section className="">
             <div className="text-center text-[#525252] flex flex-col items-center lg:gap-6 gap-4">
               <h2 className="lg:text-[44px] text-3xl font-semibold lg:leading-[53px] leading-9">
                 Join Our Team{" "}
