@@ -29,7 +29,7 @@ export default function LatestArticle({ article }: { article: props }) {
                             {article.title}
                         </h3>
 
-                        <p className="font-[400] text-[14px] md:text-[18px] leading-[normal]">
+                        <p className="font-[400] text-[14px] md:text-[18px] leading-[normal] tracking-wide">
                             {article.description}
                         </p>
 
