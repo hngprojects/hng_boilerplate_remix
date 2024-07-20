@@ -1,6 +1,6 @@
 import React from "react";
 
-interface BlogCardProps {
+interface BlogCardProperties {
   title: string;
   description: string;
   date: string;
@@ -12,7 +12,7 @@ interface BlogCardProps {
   link: string;
 }
 
-const BlogCard: React.FC<BlogCardProps> = ({
+const BlogCard: React.FC<BlogCardProperties> = ({
   title,
   description,
   date,
@@ -24,31 +24,31 @@ const BlogCard: React.FC<BlogCardProps> = ({
   link,
 }) => {
   return (
-    <div className="max-w-sm lg:max-w-full lg:flex lg:flex-row rounded overflow-hidden shadow-lg m-4">
-      <img className="w-full lg:w-1/3 lg:order-2" src={blogImage} alt={title} />
-      <div className="p-4 lg:w-2/3 lg:order-1">
-        <div className="flex items-center mb-2">
-          <span className="inline-block w-3 h-3 rounded-full bg-gray-400 mr-2"></span>
+    <div className="m-4 max-w-sm overflow-hidden rounded shadow-lg lg:flex lg:max-w-full lg:flex-row">
+      <img className="w-full lg:order-2 lg:w-1/3" src={blogImage} alt={title} />
+      <div className="p-4 lg:order-1 lg:w-2/3">
+        <div className="mb-2 flex items-center">
+          <span className="mr-2 inline-block h-3 w-3 rounded-full bg-gray-400"></span>
           <span className="text-sm font-semibold text-gray-700">{tag}</span>
         </div>
         <div>
           <a href={link} className="text-black hover:text-blue-800">
-            <h3 className="font-bold text-xl mb-2">{title}</h3>
+            <h3 className="mb-2 text-xl font-bold">{title}</h3>
           </a>
-          <p className="text-gray-700 text-base mb-4">{description}</p>
+          <p className="mb-4 text-base text-gray-700">{description}</p>
         </div>
-        <div className="flex justify-between text-gray-500 text-sm mb-4">
+        <div className="mb-4 flex justify-between text-sm text-gray-500">
           <span>{date}</span>
           <span>{timeOfReading} mins Read</span>
         </div>
         <div className="flex items-center">
           <img
-            className="w-10 h-10 rounded-full mr-4"
+            className="mr-4 h-10 w-10 rounded-full"
             src={authorProfilePicture}
             alt={authorName}
           />
           <div className="text-sm">
-            <p className="text-gray-900 leading-none">{authorName}</p>
+            <p className="leading-none text-gray-900">{authorName}</p>
           </div>
         </div>
       </div>
