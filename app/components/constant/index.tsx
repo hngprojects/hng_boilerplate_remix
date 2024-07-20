@@ -1,4 +1,4 @@
-import { IFormState, IFormError } from "../typings";
+import { IFormError, IFormState } from "../typings";
 
 export enum FormField {
   bio = "bio",
