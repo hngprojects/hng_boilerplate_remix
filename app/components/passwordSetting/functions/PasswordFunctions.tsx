@@ -1,5 +1,3 @@
-// passwordFunctions.ts
-
 import { useState } from "react";
 
 type FormData = {

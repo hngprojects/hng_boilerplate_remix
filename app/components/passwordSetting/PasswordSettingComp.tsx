@@ -10,13 +10,13 @@ import {
   AlertDialogTrigger,
 } from "~/components/ui/alert-dialog";
 
-import { fields } from "./fieldArray";
-import { usePasswordFunctions } from "./functions/PasswordFunctions";
-import PasswordField from "./PasswordField";
-import { useEffect, useState } from "react";
-import { CheckCircle2 } from "lucide-react";
-import { Link} from "@remix-run/react";
 import { ActionFunctionArgs } from "@remix-run/node";
+import { CheckCircle2 } from "lucide-react";
+import { fields } from "../passwordSetting/fieldArray";
+import PasswordField from "./PasswordField";
+import { Link } from "@remix-run/react";
+import { usePasswordFunctions } from "../passwordSetting/functions/PasswordFunctions";
+import { useEffect, useState } from "react";
 
 type FormData = {
   [key: string]: string;
@@ -24,22 +24,21 @@ type FormData = {
 
 export default function PasswordSettingPage(props: FormData) {
   const {
-    passwordIsVisible,
+    changeVisibility,
+    clearForm,
+    currentPasswordValid,
     formData,
     handleChange,
-    changeVisibility,
-    newPasswordValidations,
     isFocused,
-    currentPasswordValid,
-    setCurrentPasswordValid,
-    clearForm,
-    requirementsMetCount,
-    
+    newPasswordValidations,
     passwordMatchError,
+    passwordIsVisible,
+    setCurrentPasswordValid,
   } = usePasswordFunctions();
 
   //Checking if all my form fields are valid
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isWeak, setIsWeak] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
 
   useEffect(() => {
@@ -61,7 +60,7 @@ export default function PasswordSettingPage(props: FormData) {
   ]);
 
   const handleCurrentPasswordValidation = () => {
-    const storedPassword = "stored_password";
+    const storedPassword = "storedPassword123";
 
     if (formData.current_password === storedPassword) {
       setCurrentPasswordValid(true);
@@ -76,32 +75,48 @@ export default function PasswordSettingPage(props: FormData) {
     }
   }, [formData.current_password]);
 
-  
+  useEffect(() => {
+    if (
+      formData.new_password.length > 0 &&
+      newPasswordValidations.containsUppercase === false &&
+      newPasswordValidations.containsNumber === false &&
+      newPasswordValidations.isLengthValid === false
+    ) {
+      setIsWeak(true);
+    } else {
+      setIsWeak(false);
+    }
+  }, [
+    formData,
+    newPasswordValidations.containsUppercase,
+    newPasswordValidations.containsNumber,
+    newPasswordValidations.isLengthValid,
+  ]);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     setIsSubmitting(true);
-    
+
     try {
       const formData = new FormData(e.currentTarget);
-      
-      const request = new Request('/path-to-your-action-endpoint', {
-        method: 'POST',
+
+      const request = new Request("/path-to-your-action-endpoint", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: new URLSearchParams(formData as any), 
+        body: new URLSearchParams(formData as any),
       });
-      
-      const params = {}; 
-      const context = {}; 
-      
+
+      const params = {};
+      const context = {};
+
       const response = await action({ request, context, params });
-      
+
       if (response) {
-       //Succes response can be handle here
+        //Succes response can be handle here
         console.log(response);
-        
       } else {
         // We can Handle failure state if necessary
       }
@@ -113,10 +128,10 @@ export default function PasswordSettingPage(props: FormData) {
     }
   };
 
-
   return (
     <div className="p-8 w-[100%] 2xl:w-[70.9%] flex flex-col gap-[32px] leading-[19.2px] text-[14px]">
-      <form method="post"
+      <form
+        method="post"
         className="flex flex-col gap-6 w-full"
         onSubmit={(e) => handleSubmit(e)}
       >
@@ -127,6 +142,13 @@ export default function PasswordSettingPage(props: FormData) {
         {fields.map((field) => (
           <div key={field.name}>
             <PasswordField
+              className={
+                (field.name === "current_password" &&
+                  currentPasswordValid === false) ||
+                (field.name === "confirmed_new_password" && passwordMatchError)
+                  ? "border-red-400 bg-input"
+                  : ""
+              }
               key={field.name}
               field={field}
               passwordIsVisible={passwordIsVisible}
@@ -261,15 +283,13 @@ export default function PasswordSettingPage(props: FormData) {
   );
 }
 
+export async function action({ request }: ActionFunctionArgs) {
+  const formData = await request.formData();
+  const current_password = formData.get("current_password");
+  const new_password = formData.get("new_password");
+  const confirmed_new_password = formData.get("confirmed_new_password");
 
+  console.log({ current_password, new_password, confirmed_new_password });
 
-export async function action({request}: ActionFunctionArgs) {
-  const formData = await request.formData()
-  const current_password = formData.get('current_password')
-  const new_password = formData.get('new_password')
-  const confirmed_new_password = formData.get('confirmed_new_password')
-
-  console.log({current_password, new_password, confirmed_new_password})
-  
-  return true
+  return true;
 }
