@@ -1,5 +1,5 @@
 import React from 'react';
-import productImage from '../../public/Frame1321315415.png'; // Ensure this path is correct
+
 
 interface Product {
   id: string;
