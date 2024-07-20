@@ -4,14 +4,15 @@ import { FunctionComponent } from "react";
 import { Button } from "~/components/ui/button";
 import {
   Card,
-  CardHeader,
   CardContent,
   CardFooter,
+  CardHeader,
   CardTitle
 } from "~/components/ui/card";
 import { Input } from "~/components/ui/input";
 
 import { cn } from "app/lib/utils/cn";
+
 
 export type ModalsType = {
   className?: string;
@@ -23,7 +24,9 @@ const CreateRoleModal: FunctionComponent<ModalsType> = ({
   onClose,
 }) => {
   return (
-    <Card className={cn("relative mx-auto my-4 max-w-lg bg-zinc-50 p-6", className)}>
+    <Card
+      className={cn("relative mx-auto my-4 max-w-lg bg-zinc-50 p-6", className)}
+      >
       <CardHeader className="relative flex items-start">
         <CardTitle className="!p-0">Create Role</CardTitle>
         <div
@@ -36,7 +39,7 @@ const CreateRoleModal: FunctionComponent<ModalsType> = ({
       </CardHeader>
       
       <CardContent>
-        <p className="text-sm text-gray-600 mb-4">
+        <p className="mb-4 text-sm text-gray-600">
           Define customized responsibilities for collaborative success.
         </p>
         <Form action="" method="post" className="flex flex-col gap-6">
