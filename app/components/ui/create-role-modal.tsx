@@ -21,7 +21,9 @@ const CreateRoleModal: FunctionComponent<ModalsType> = ({
   onClose,
 }) => {
   return (
-    <Card className={`relative mx-auto my-4 max-w-lg bg-zinc-50 p-6 ${className}`}>
+    <Card
+    className={`relative mx-auto my-4 max-w-lg bg-zinc-50 p-6 ${className}`}
+    >
       <CardHeader className="relative flex items-start">
         <CardTitle className="!p-0">Create Role</CardTitle>
         <div
