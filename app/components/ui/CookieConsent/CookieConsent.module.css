@@ -1,0 +1,47 @@
+.CookieConsent{
+    background: rgba(20, 20, 20, 1);
+
+}
+
+*{
+    box-sizing: border-box;
+}
+.modal{
+    max-width: 791px;
+    height: auto;
+    width: 50%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal_content{
+    padding: 0px 24px;
+}
+
+.roboto{
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    text-align: left;
+}
+
+.inter{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: left;
+}
+
+.cookie_info{
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0px;
+    
+    
+}
+
+.hidden{
+    display: none;
+}
