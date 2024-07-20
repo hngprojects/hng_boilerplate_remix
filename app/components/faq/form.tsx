@@ -43,7 +43,7 @@ function QuestionForm() {
     <div className="flex flex-col gap-7 md:gap-16 max-w-80 md:max-w-[676px] w-full mx-auto font-inter">
       <div className="flex flex-col gap-4 md:gap-2 text-center">
         <h6
-          className="textprimary text-[#F97316] text-xl leading-6 md:text-[28px] md:leading-[34px] font-bold"
+          className="textprimary text-primary text-xl leading-6 md:text-[28px] md:leading-[34px] font-bold"
           data-testid="header"
         >
           Still have questions ?
@@ -156,7 +156,7 @@ function QuestionForm() {
               type="submit"
               disabled={!isValid}
               data-testid="submit-button"
-              className="rounded-lg md:rounded-md bg-[#F97316] text-primary-foreground h-12 md:h-[60px] w-full px-4 py-2 leading-5 md:text-lg md:leading-snug"
+              className="rounded-lg md:rounded-md bg-primary text-primary-foreground h-12 md:h-[60px] w-full px-4 py-2 leading-5 md:text-lg md:leading-snug"
             >
               Send
             </button>

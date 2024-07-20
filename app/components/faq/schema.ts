@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+const phoneRegex = /^\+\d{0,3}\d{10}$/;
+
 export const schema = z.object({
   email: z
     .string({
@@ -11,12 +13,13 @@ export const schema = z.object({
     .string({
       required_error: "Please provide a phone number.",
     })
-    .max(11, "Maximum number of characters reached"),
+    .regex(phoneRegex, "Invalid phone number format [+(234) 701 4788 808]")
+    .max(14, "Maximum number of characters reached"),
   name: z
     .string({
       required_error: "Please enter your name.",
     })
-    .max(256),
+    .max(256, "Maximum number of characters reached"),
   message: z.string({
     required_error: "Please provide your message.",
   }),
