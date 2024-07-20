@@ -1,6 +1,6 @@
-import { FunctionComponent, useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Form } from "@remix-run/react";
-import { Check, EyeOff, Eye, CircleCheck } from 'lucide-react';
+import { EyeOff, Eye, CircleCheck } from 'lucide-react';
 import { Button } from "../ui/button";
 import { AlertDialog, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "../ui/alert-dialog";
 
@@ -14,7 +14,6 @@ const PasswordUpdate = () => {
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const [showNewPassword, setShowNewPassword] = useState<boolean>(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState<boolean>(false);
-    const inputRef = useRef<HTMLInputElement>(null)
     const [validation, setValidation] = useState({
         hasUppercase: false,
         hasNumber: false,
@@ -46,7 +45,7 @@ const PasswordUpdate = () => {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         event.preventDefault()
         const { name, value } = event.target;
-        let val: keyof PasswordValues = name as keyof PasswordValues
+        const val: keyof PasswordValues = name as keyof PasswordValues
 
         setActualValue((prevActualValue) => ({
             ...prevActualValue,

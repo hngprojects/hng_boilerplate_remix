@@ -1,4 +1,3 @@
-import React from 'react'
 import PasswordUpdate from '~/components/dashboard/PasswordUpdate'
 
 const DaashboardPasswordSettings = () => {
