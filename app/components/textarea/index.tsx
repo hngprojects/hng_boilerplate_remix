@@ -33,10 +33,10 @@ export const TextAreaField: React.FC<Props> = ({
             disabled={disabled}
             value={value}
             onChange={handleChange}
-            className="w-full h-[87px] border border-[#DC2626]  outline-0 bg-white px-2 placeholder:text-[#C2C2C2] placeholder:text-sm rounded-md text-wrap"
+            className="w-full h-[80px] border border-[#DC2626] outline-0 bg-white px-2 placeholder:text-[#C2C2C2] placeholder:text-sm rounded-md text-wrap"
           />
         </div>
-        {error && <span className="text-xs text-white">* {error}</span>}
+        {error && <span className="text-xs text-[#DC2626]">* {error}</span>}
       </div>
     </div>
   );

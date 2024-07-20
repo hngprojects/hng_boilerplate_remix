@@ -8,7 +8,6 @@ export const defaultFormState: IFormState = {
   [FormField.bio]: "",
 };
 
-
 export const defaultFormError: IFormError = {
   [FormField.bio]: null,
 };

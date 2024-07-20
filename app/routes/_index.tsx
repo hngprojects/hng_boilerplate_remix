@@ -1,4 +1,4 @@
-"use client"
+"use client";
 /* eslint-disable import/no-named-as-default */
 import type { MetaFunction } from "@remix-run/node";
 import { useState } from "react";
@@ -13,12 +13,16 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-
   const [formState, setFormState] = useState(defaultFormState);
   const [formError, setFormError] = useState(defaultFormError);
 
   const updateFormData = (key: string, value: string) => {
-    if (value.length > 0) {
+    if (value.length > 64) {
+      setFormError({
+        ...formError,
+        [key]: "Your bio cannot exceed 64 characters",
+      });
+    } else {
       setFormError({
         ...formError,
         [key]: null,
@@ -35,7 +39,7 @@ export default function Index() {
     <div className="font-sans p-6">
       <TextAreaField
         label="Bio"
-        placeholder="A seasoned Frontend developwer with fulfiling duties"
+        placeholder="A seasoned Frontend developer with fulfilling duties"
         name={FormField.bio}
         value={formState[FormField.bio]}
         error={formError[FormField.bio]}
