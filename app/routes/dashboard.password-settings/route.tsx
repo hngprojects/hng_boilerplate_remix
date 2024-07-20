@@ -1,17 +1,16 @@
-import type { MetaFunction } from "@remix-run/node";
+import React from 'react'
+// import PasswordUpdate from '~/components/dashboard/PasswordUpdate'
 
-
-export const meta: MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
-};
-
-export default function Index() {
+const DaashboardPasswordSettings = () => {
   return (
-    <div className="font-sans p-4">
-      <p>set</p>
-    </div>
-  );
+    <>
+        <div className="h-16  grid place-items-center font-extrabold">Nav</div>
+        <div className="flex">
+            <div className="w-[20%] h-svh bg-[rgba(203,213,225,.3)] grid place-items-center font-extrabold max-lg:hidden">Sidebar</div>
+            {/* <PasswordUpdate /> */}
+      </div>
+    </>
+  )
 }
+
+export default DaashboardPasswordSettings
