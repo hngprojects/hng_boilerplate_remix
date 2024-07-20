@@ -1,6 +1,7 @@
 /* eslint-disable import/no-named-as-default */
 import { useState } from "react";
-import { defaultFormState, defaultFormError, FormField } from "../constant";
+
+import { defaultFormError, defaultFormState, FormField } from "../constant";
 import TextAreaField from "../textarea";
 
 export default function Bio() {
