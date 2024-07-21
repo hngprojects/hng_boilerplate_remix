@@ -14,15 +14,11 @@ import Profile from "../Profile";
 import Navlink from "./navlink";
 
 export default function MobileSidebarComponent() {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  function toggleExpanded() {
-    setIsExpanded((previous) => !previous);
-  }
+  const [isExpanded] = useState(true);
 
   return (
     <aside
-      className={`fixed z-10 flex h-screen flex-col items-start gap-14 bg-background transition duration-200 ease-in-out sm:hidden ${
+      className={`fixed top-0 z-10 flex h-screen flex-col items-start gap-14 bg-background transition duration-200 ease-in-out sm:hidden ${
         isExpanded ? "w-full" : "w-fit px-2"
       }`}
     >
@@ -39,12 +35,6 @@ export default function MobileSidebarComponent() {
             isExpanded ? "items-center" : "flex-col items-start justify-center"
           }`}
         >
-          <button
-            onClick={toggleExpanded}
-            className={`${!isExpanded && "scale-75"}`}
-          >
-            {isExpanded ? <ArrowLeft /> : <ArrowRight />}
-          </button>
           <span></span>
         </div>
       </div>
