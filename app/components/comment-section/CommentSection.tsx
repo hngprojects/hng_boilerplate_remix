@@ -1,12 +1,7 @@
 import { FC, useState } from "react";
 import Input from "./Input";
 import "../ui/index.css";
-import icon1 from "../../../public/Ellipse 2.svg";
-import icon2 from "../../../public/ok.svg";
-import icon3 from "../../../public/notOk.svg";
-import icon4 from "../../../public/share.svg";
-import icon5 from "../../../public/back.svg";
-import icon6 from "../../../public/comment.svg";
+
 import { Button } from "../ui/button";
 import Comments from "./Comments";
 
@@ -31,7 +26,6 @@ const CommentSection: FC<FooterCommentProps> = ({ comments, onAddComment }) => {
      <Comments comments={comments}/>
       <div className="flex items-start flex-col flex-grow flex-basis-0">
         <Input value={newComment} onChange={handleInputChange} />
-        <Button className="bg-[var(--accent)]">Submit</Button>
       </div>
     </div>
   );

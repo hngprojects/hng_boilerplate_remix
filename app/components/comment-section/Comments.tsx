@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, } from "react";
 import "../ui/index.css";
 import icon1 from "../../../public/Ellipse 2.svg";
 import icon2 from "../../../public/ok.svg";
@@ -6,11 +6,11 @@ import icon3 from "../../../public/notOk.svg";
 import icon4 from "../../../public/share.svg";
 import icon5 from "../../../public/back.svg";
 import icon6 from "../../../public/comment.svg";
-import { Button } from "../ui/button";
+
 
 interface Comment {
   id: number;
-  text: string;
+  comment: string;
   handle: any;
   author: string;
   date: string;
@@ -45,7 +45,7 @@ const Comments: FC<FooterCommentProps> = ({ comments }) => {
                 </div>
               </div>
               <p className="text-[var(--text-primary)]text-14 md:text-xl lg:text-3xl font-normal leading-normal py-4 px-4">
-                {comment.text}
+                {comment.comment}
               </p>
               <span className="text-[var(--neutral)]">{comment.date}</span>
               <div className="inline-flex gap-3 md:text-xl lg:text-3xl">
@@ -53,9 +53,13 @@ const Comments: FC<FooterCommentProps> = ({ comments }) => {
                   <img
                     src={icon2}
                     alt="icon"
-                    className="border-2 border-solid p-1 relative"
+                    className="border-2 border-solid p-1 "
                   />
-                  <span className="static left-5 text-10 ">20</span>
+                  <img
+                    src={icon3}
+                    alt="icon"
+                    className="border-2 border-solid p-1 "
+                  />
                 </>
                 <img
                   src={icon4}
