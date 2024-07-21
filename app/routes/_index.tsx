@@ -1,7 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Button } from "~/components/ui/button";
 import CardPlatform from "~/components/ui/card/card-platform";
-import CookieConsent from "~/components/ui/CookieConsent/CookieConsent";
+// import CookieConsent from "~/components/ui/CookieConsent/CookieConsent";
 
 export const meta: MetaFunction = () => {
   return [
@@ -55,7 +55,6 @@ export default function Index() {
           </a>
         </li>
       </ul>
-      <CookieConsent/>
     </div>
   );
 }
