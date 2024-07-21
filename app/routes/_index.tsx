@@ -6,6 +6,8 @@ import CardPlatform from "~/components/ui/card/card-platform";
 import OtpAuth from "~/components/ui/otp/OtpAuth";
 import { Input } from "~/types/otpauth";
 
+import { Link } from "@remix-run/react";
+
 export const meta: MetaFunction = () => {
   return [
     { title: "New Remix App" },
@@ -53,10 +55,12 @@ export default function Index() {
             logo="/images/g-drive-icon.svg"
             heading="Drive"
             description="Store, share, and collaborate on documents and files securely"
-            containerClassName="max-w-[341px]"
-          />
+            containerClassName="max-w-[341px]"          />
         </div>
-        <li>
+
+        <div>
+          <Link to="/integration">Integrations</Link> 
+          </div>        <li>
           <a
             className="text-blue-700 underline visited:text-purple-900"
             target="_blank"
