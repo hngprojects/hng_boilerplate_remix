@@ -112,6 +112,7 @@
   .success-text {
     @apply text-green-500;
   }
+  
 }
 
 @layer components {
