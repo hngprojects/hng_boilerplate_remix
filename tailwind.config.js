@@ -1,6 +1,7 @@
-
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+import tailwindcssAnimate from "tailwindcss-animate";
+
+const tailwindConfig = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -27,7 +28,6 @@ module.exports = {
         backgroundColor: "hsl(var(--backgroundColor))",
         customOrange: "hsl(var(--customOrange))",
         darkText: "hsl(var(--darkText))",
-
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -78,5 +78,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 };
+
+export default tailwindConfig;
