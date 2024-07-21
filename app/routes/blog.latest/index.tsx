@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import LatestArticle from "~/components/article/LatestArticle";
 import Button from "~/components/customButton/customButton";
 import Navbar from "~/components/static-navbar/static-navbar";
-import Footer from "~/components/ui/footer";
 import { Article, fetchArticles } from "./api-call";
 
 export default function ArticlesPage() {
@@ -77,7 +76,6 @@ export default function ArticlesPage() {
           {loading ? "Loading..." : "Load More"}
         </Button>
       </div>
-      <Footer />
     </div>
   );
 }
