@@ -39,17 +39,17 @@ interface notification {
             <p className="font-semibold text-2xl leading-29.05 text-[#0A0A0A]">Notifications</p>
             <p className="text-[#525252] font-normal text-sm leading-[16.94px] mt-[6px] mb-[24px]">You have {unreadMessageCount} unread messages.</p>
             <div className="flex w-full rounded-md p-4 border border-slate-300 mb-[16px] justify-between items-center">
-                <img src="/bell-ring.svg"/>
+                <img src="/bell-ring.svg" alt="notication icon"/>
                 <div className="text-sm leading-[16.94px]">
                     <p className="font-medium text-[#0A0A0A]">Push Notifications</p>
                     <p className="text-[#71717A] mt-1">Send notifications to device.</p>
                 </div>
-                <button className="w-[46px] h-[22px] bg-[#D0D6D6] rounded-[50px] p-[2px]"><img src="Ellipse 81.svg"/></button>
+                <button className="w-[46px] h-[22px] bg-[#D0D6D6] rounded-[50px] p-[2px]"><img src="Ellipse 81.svg" alt="ellipse"/></button>
             </div>
             {
                 notificationPreview.map(({header, time})=>(
-                    <div className="flex items-start mb-[32px]">
-                        <img src="Frame 10.svg" className="mr-[16px] mt-[2px]"/>
+                    <div className="flex items-start mb-[32px]" key={time}>
+                        <img src="Frame 10.svg" className="mr-[16px] mt-[2px]" alt="bulletpoints"/>
                         <div>
                         <p className="font-medium text-[14px] leading-[16.94px] text-[#0A0A0A] mt-0">{header}</p>
                         <p className="font-normal text-[14px] leading-[16.94px] text-[#525252] mt-0">{timeAgo(time)}</p>
