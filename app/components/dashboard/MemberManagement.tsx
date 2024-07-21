@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react";
-import { ArrowRight, Check, ChevronDown, Search, X } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, Ellipsis, Search } from "lucide-react";
 import { ChangeEvent, useEffect, useState } from "react";
 
 import DeleteMemberModal from "../ui/DeleteMemberModal";
@@ -104,7 +104,7 @@ function MemberManagement() {
 
               <div className="relative flex basis-1/3 flex-row justify-end">
                 <button onClick={() => handleMemberDelete(user.name)}>
-                  <X />
+                  <Ellipsis />
                 </button>
 
                 {isModalVisible && selectedUserName === user.name && (
