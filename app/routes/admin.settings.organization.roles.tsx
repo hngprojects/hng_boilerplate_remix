@@ -23,8 +23,7 @@ export default function Index() {
 
   return (
     <div className="flex">
-      <div className="hidden h-full w-[200px] md:block"></div>
-      <div className="flex flex-1 flex-wrap items-start gap-6 p-[5%]">
+      <div className="flex flex-1 flex-wrap items-start gap-6 px-[3%] py-[5%]">
         <div className="flex w-full flex-col gap-6 md:w-[250px]">
           <h1 className="mb-8 text-xl font-bold">Roles</h1>
           {roles.map((role: role) => (
@@ -39,7 +38,7 @@ export default function Index() {
           ))}
         </div>
 
-        <div className="flex-1">
+        <div className="flex-1 border border-transparent md:border-l-[#CBD5E1] md:pl-6">
           <div className="mb-8 flex justify-end">
             <Button
               variant={"default"}
