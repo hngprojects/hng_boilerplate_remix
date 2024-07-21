@@ -1,11 +1,8 @@
 import type { MetaFunction } from "@remix-run/node";
 
 import { Button } from "~/components/ui/button";
-<<<<<<< HEAD
-=======
 import CardPlatform from "~/components/ui/card/card-platform";
 import GenerateEmailTemplate from "~/email/templates/generateNewTemplate";
->>>>>>> d768533 (create-new-email-template.tsx)
 
 export const meta: MetaFunction = () => {
   return [
