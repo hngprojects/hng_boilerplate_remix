@@ -3,7 +3,7 @@ import { Button } from "@react-email/components";
 import TailwindWrapper from "../_components/tailwindWrapper";
 import Layout from "../Layouts/Layout";
 
-interface ActLinkProps {
+interface ActLinkProperties {
   name: string;
   title: string;
   message: string;
@@ -11,7 +11,7 @@ interface ActLinkProps {
   app_name: string;
 }
 
-const ViewActLink = (property: ActLinkProps) => {
+const ViewActLink = (property: ActLinkProperties) => {
   return (
     <>
       <TailwindWrapper>
@@ -55,4 +55,4 @@ ViewActLink.PreviewProps = {
     "We have sent you a new activation link for your Boilerplate account. Please click the button below to activate your account:",
   cta_text: "Activate My Account",
   app_name: "Boiler Plate",
-} satisfies ActLinkProps;
+} satisfies ActLinkProperties;

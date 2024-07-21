@@ -1,9 +1,6 @@
 import { Img, Link } from "@react-email/components";
 
 export default function Footer() {
-  const baseUrl = process.env.PATH
-    ? `${process.env.PATH}/public/images/`
-    : "localhost:3000/images/";
   return (
     <div className="m-auto w-[4/5] justify-center bg-[#F3EFEF] px-[48px] py-[32px] leading-[normal] tracking-[normal] lg:w-auto">
       <section className="mx-auto flex flex-col items-start justify-start gap-7 text-left text-sm">
