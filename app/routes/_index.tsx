@@ -45,15 +45,21 @@ export default function Index() {
             30m Tutorial
           </a>
         </li>
-        <Button>Hello</Button>
-        <div className="p-2">
+        <li>
+          <Button>Hello</Button>
+        </li>
+
+        <li className="p-2">
           <CardPlatform
             logo="/images/g-drive-icon.svg"
             heading="Drive"
             description="Store, share, and collaborate on documents and files securely"
             containerClassName="max-w-[341px]"
           />
-        </div>
+        </li>
+        <li>
+          <Link to="/integration">Integrations</Link>
+        </li>
         <li>
           <a
             className="text-blue-700 underline visited:text-purple-900"
@@ -65,6 +71,19 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      <OtpAuth
+        isModalOpen={openModal}
+        setIsModalOpen={() => setOpenModal(!openModal)}
+        inputs={[
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+        ]}
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 }
