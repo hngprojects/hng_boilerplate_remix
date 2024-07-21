@@ -54,10 +54,8 @@ const CheckedDeactivationEmail = ({
 
     // Cleanup the event listeners on component unmount
     return () => {
-      // eslint-disable-next-line unicorn/no-invalid-remove-event-listener
       img.removeEventListener("load", () => setCheckImageExists(true));
 
-      // eslint-disable-next-line unicorn/no-invalid-remove-event-listener
       img.removeEventListener("error", () => setCheckImageExists(false));
     };
   }, [checkImageSource]);
