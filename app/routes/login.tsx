@@ -25,7 +25,7 @@ export default function Login() {
       <div className="w-full  md:h-auto flex flex-col items-center justify-center py-6">
         <p className=""></p>
         <Form
-          className="w-[80%] md:w-[70%] lg:w-[552px] h-20 rounded-lg"
+          className="w-[80%] md:w-[70%] lg:w-[552px]   rounded-lg"
           method="post"
         >
           <div className="flex flex-col items-center justify-center" id="login">
@@ -49,9 +49,9 @@ export default function Login() {
             </div>
 
             <div className="w-full flex flex-col ">
-              <p className="text-xl leading-6 font-normal mb-2">Email</p>
+              <p className="text-xl leading-6 font-normal mb-2 lg:mt-6">Email</p>
               <div
-                className="py-5 ps-4 pe-6 border-2 border-[
+                className="py-5 ps-4 pe-6 border-2 border-gray-300
 #CBD5E1] rounded-xl "
               >
                 <input
@@ -76,8 +76,7 @@ export default function Login() {
             <div className="w-full flex flex-col ">
               <p className="text-xl leading-6 font-normal mb-2">Password</p>
               <div
-                className="relative py-5 ps-4 pe-6 border-2 border-[
-#CBD5E1] rounded-xl"
+                className="relative py-5 ps-4 pe-6 border-2 border-gray-300 rounded-xl"
               >
                 <input
                   className="w-[366px] h-[22px] bg-transparent text-lg leading-5 font-normal text-
@@ -90,13 +89,13 @@ export default function Login() {
                 />
 
                 <div
-                  className="absolute border-none outline-none inset-y-0 right-0 px-3 pb-2 my-3 text-black"
+                  className="absolute border-none outline-none inset-y-0 right-0 px-3 pt-5 text-black"
                   onClick={togglePasswordVisibility}
                 >
                   {showPassword ? (
-                    <EyeOff size={20} className="text-grey-400" />
+                    <EyeOff size={20} className="text-gray-500" />
                   ) : (
-                    <EyeIcon size={20} className="text-black" />
+                    <EyeIcon size={20} className="text-gray-500" />
                   )}
                 </div>
               </div>
