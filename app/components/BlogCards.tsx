@@ -12,8 +12,6 @@ interface BlogCardProperties {
   link: string;
 }
 
-
-
 const BlogCard: FC<BlogCardProperties> = ({
   title,
   description,
