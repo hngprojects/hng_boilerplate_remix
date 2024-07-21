@@ -2,7 +2,7 @@ import { Eye, EyeOff } from "lucide-react";
 import React from "react";
 
 
-type PasswordFieldProps = {
+type PasswordFieldPropperties = {
   changeVisibility: (event: React.MouseEvent<HTMLButtonElement>, id: number) => void;
   className: string;
   field: {
@@ -16,7 +16,7 @@ type PasswordFieldProps = {
   passwordIsVisible: boolean;
 };
 
-const PasswordField: React.FC<PasswordFieldProps> = ({
+const PasswordField: React.FC<PasswordFieldPropperties> = ({
   className,
   changeVisibility,
   field,
