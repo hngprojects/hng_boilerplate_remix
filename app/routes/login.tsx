@@ -7,7 +7,6 @@ import facebook from "public/icons/facebook.svg";
 import google from "public/icons/google.svg";
 import { useState } from "react";
 
-import Footer from "~/components/ui/footer";
 import Header from "~/components/ui/header";
 import SocialSignin from "~/components/ui/socialSignin";
 
@@ -150,7 +149,6 @@ export default function Login() {
           </div>
         </Form>
       </div>
-
     </div>
   );
 }
