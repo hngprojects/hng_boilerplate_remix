@@ -9,14 +9,22 @@ import {
 import { useState } from "react";
 
 import Profile from "../Profile";
+import MenuButton from "./menu-button";
 import Navlink from "./navlink";
 
-export default function MobileSidebarComponent() {
+type SideBarProperties = {
+  isMenuOpen: boolean;
+  handleToggleMenu: () => void;
+};
+export default function MobileSidebarComponent({
+  isMenuOpen,
+  handleToggleMenu,
+}: SideBarProperties) {
   const [isExpanded] = useState(true);
 
   return (
     <aside
-      className={`fixed top-0 z-10 flex h-screen flex-col items-start gap-14 bg-background transition duration-200 ease-in-out sm:hidden ${
+      className={`fixed left-0 top-0 z-30 flex h-screen w-full flex-col items-start gap-14 bg-background transition duration-200 ease-in-out sm:hidden ${
         isExpanded ? "w-full" : "w-fit px-2"
       }`}
     >
@@ -33,7 +41,10 @@ export default function MobileSidebarComponent() {
             isExpanded ? "items-center" : "flex-col items-start justify-center"
           }`}
         >
-          <span></span>
+          <MenuButton
+            isMenuOpen={isMenuOpen}
+            handleToggleMenu={handleToggleMenu}
+          />
         </div>
       </div>
 

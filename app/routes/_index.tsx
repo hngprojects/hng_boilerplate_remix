@@ -1,10 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
-import { useState } from "react";
 
 import BlogPost from "~/components/BlogPost";
 import HeroSection from "~/components/HeroSection";
-import MenuButton from "~/components/sidebar/menu-button";
-import MobileSidebarComponent from "~/components/sidebar/sidebar";
 import Footer from "~/components/ui/footer";
 import Header from "~/components/ui/header";
 
@@ -16,22 +13,8 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  function handleToggleMenu() {
-    setIsMenuOpen((previous: boolean) => !previous);
-  }
   return (
     <div>
-      <div className="fixed left-0 h-full">
-        {isMenuOpen && <MobileSidebarComponent />}
-      </div>
-      <div className="fixed right-5 top-10 sm:hidden">
-        <MenuButton
-          IsMenuOpen={isMenuOpen}
-          handleToggleMenu={handleToggleMenu}
-        />
-      </div>
       <Header />
       <HeroSection />
       <BlogPost />

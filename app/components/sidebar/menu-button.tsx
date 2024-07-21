@@ -1,15 +1,15 @@
 import { Menu, X } from "lucide-react";
 
 type MenuButtonProperties = {
-  IsMenuOpen: boolean;
+  isMenuOpen: boolean;
   handleToggleMenu: () => void;
 };
 
 export default function MenuButton({
-  IsMenuOpen,
+  isMenuOpen,
   handleToggleMenu,
 }: MenuButtonProperties) {
   return (
-    <button onClick={handleToggleMenu}>{IsMenuOpen ? <X /> : <Menu />}</button>
+    <button onClick={handleToggleMenu}>{isMenuOpen ? <X /> : <Menu />}</button>
   );
 }
