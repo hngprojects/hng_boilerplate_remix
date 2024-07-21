@@ -1,24 +1,23 @@
 import React from 'react';
+import { useNavigate } from '@remix-run/react';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 import { Button } from './ui/button';
-import { useNavigate } from '@remix-run/react';
 
-
-interface SubscripptionCancelModalProperties {
+interface SubscriptionCancelModalProperties {
   children: React.ReactNode;
   onReactivateSubscription?: () => void;
 }
 
-
-export default function SubscripptionCancelModal({
+export default function SubscriptionCancelModal({
   children,
   onReactivateSubscription
-}: SubscripptionCancelModalProperties) {
+}: SubscriptionCancelModalProperties) {
   const navigate = useNavigate();
 
   const onGoToDashboard = () => {
-    navigate('/dashboard');
-  }
+    navigate("/dashboard");
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -26,18 +25,20 @@ export default function SubscripptionCancelModal({
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Subscription canceled</DialogTitle>
+          <DialogTitle>Subscription Canceled</DialogTitle>
           <DialogDescription>
-            Your subscription has been successfully canceled. If you change your mind,
-            you can reactivate your subscription anytime
+            Your subscription has been successfully canceled. If you change your mind, you can reactivate your subscription anytime
           </DialogDescription>
         </DialogHeader>
-
         <DialogFooter>
-          <Button variant="outline" onClick={onReactivateSubscription}>Reactivate Subscription</Button>
-          <Button type="submit" onClick={onGoToDashboard}>Go to Dashboard</Button>
+          <Button variant="outline" onClick={onReactivateSubscription}>
+            Reactivate Subscription
+          </Button>
+          <Button type="submit" onClick={onGoToDashboard}>
+            Go to Dashboard
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
