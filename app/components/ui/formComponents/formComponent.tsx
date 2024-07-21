@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import clsx from "clsx";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -14,6 +15,7 @@ import {
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
 import { Button } from "../button";
+import styles from "./form.module.css";
 import { FormSchema } from "./formSchema";
 
 export function InputForm() {
@@ -42,15 +44,33 @@ export function InputForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>name</FormLabel>
+              <FormLabel
+                className={clsx(
+                  "font-inter text-[14px] font-[500] text-[#0F172A]",
+                  {
+                    "text-red-500": form.formState.errors.name,
+                  },
+                )}
+              >
+                name
+              </FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input
+                  placeholder="shadcn"
+                  {...field}
+                  className={clsx(
+                    `${styles.placeholderCustom} placeholderCustom`,
+                    {
+                      "border-red-500": form.formState.errors.name,
+                    },
+                  )}
+                />
               </FormControl>
             </FormItem>
           )}
@@ -60,9 +80,27 @@ export function InputForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel
+                className={clsx(
+                  "font-inter text-[14px] font-[500] text-[#0F172A]",
+                  {
+                    "text-red-500": form.formState.errors.email,
+                  },
+                )}
+              >
+                Email
+              </FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input
+                  placeholder="shadcn"
+                  {...field}
+                  className={clsx(
+                    `${styles.placeholderCustom} placeholderCustom`,
+                    {
+                      "border-red-500": form.formState.errors.email,
+                    },
+                  )}
+                />
               </FormControl>
             </FormItem>
           )}
@@ -72,14 +110,36 @@ export function InputForm() {
           name="number"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Phone Number</FormLabel>
+              <FormLabel
+                className={clsx(
+                  "font-inter text-[14px] font-[500] text-[#0F172A]",
+                  {
+                    "text-red-500": form.formState.errors.number,
+                  },
+                )}
+              >
+                Phone Number
+              </FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input
+                  placeholder="shadcn"
+                  {...field}
+                  className={clsx(
+                    `${styles.placeholderCustom} placeholderCustom`,
+                    {
+                      "border-red-500": form.formState.errors.number,
+                    },
+                  )}
+                />
               </FormControl>
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <div className="flex pt-2">
+          <Button type="submit" className="font-inter ml-auto">
+            Add New User
+          </Button>
+        </div>
       </form>
     </Form>
   );

@@ -10,10 +10,10 @@ export function UploadPicture() {
     string | null | undefined
   >();
   return (
-    <div className="mb-3 flex items-center gap-1.5">
+    <div className="mb-3 flex items-center gap-[13px]">
       <div
         className={clsx(
-          "image h-[59px] w-[59px] rounded-full bg-gray-500 bg-cover bg-center bg-no-repeat",
+          "image h-[59px] w-[59px] rounded-full bg-[#D9D9D9] bg-cover bg-center bg-no-repeat",
           {
             "image-background": backgroundImage,
           },
@@ -23,7 +23,9 @@ export function UploadPicture() {
         }
       ></div>
       <div className="flex flex-col gap-1">
-        <Label>Upload Picture</Label>
+        <Label className="text-[16px] font-[400] text-[#0A0A0A]">
+          Upload Picture
+        </Label>
         <Label
           htmlFor="picture"
           className="cursor-pointer text-xs text-orange-500"
