@@ -100,7 +100,7 @@ function Navbar() {
 function Sidebar({ on }: { on: boolean }) {
   return (
     <aside
-      className={`absolute top-0 flex h-screen w-full flex-row items-start duration-1000 ${on ? "left-0" : "-left-full"}`}
+      className={`absolute top-0 flex h-screen w-full flex-row items-start z-50 duration-1000 ${on ? "left-0" : "-left-full"}`}
     >
       <div className="flex h-full w-[85%] flex-col items-start bg-[#E4E4E7]">
         <div className="flex w-full flex-row items-center justify-between p-8">
