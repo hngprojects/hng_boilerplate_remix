@@ -1,6 +1,10 @@
+import Footer from "~/components/ui/footer";
+import Header from "~/components/ui/header";
+
 const PrivacyPage = () => {
   return (
     <div>
+      <Header></Header>
       <div className="container flex h-[342px] flex-col items-center justify-center bg-foreground text-secondary">
         <h1 className="font-inter text-[28px] font-bold leading-[72.61px] md:text-[60px]">
           Privacy Policy
@@ -34,7 +38,7 @@ const PrivacyPage = () => {
               </h3>
               <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
                 We collect various types of information in connection with the
-                services we provide, including:
+                services we provide , including:
               </p>
 
               <p className="font-inter mb-1 mt-2 text-[15px] text-[hsl(var(--muted-foreground))]">
@@ -293,12 +297,9 @@ const PrivacyPage = () => {
             </ul>
           </div>
         </div>
+        <Footer></Footer>
       </div>
-
-      {/* footer goes here */}
     </div>
   );
 };
-
-
 export default PrivacyPage;
