@@ -1,12 +1,15 @@
 "use client";
-import { useState } from "react";
+
+import { ActionFunctionArgs } from "@remix-run/node";
+import { Form, json, redirect, useActionData } from "@remix-run/react";
+import { EyeIcon, EyeOff } from "lucide-react";
 import facebook from "public/icons/facebook.svg";
 import google from "public/icons/google.svg";
-import SocialSignin from "~/components/ui/social_signin";
-import { Form, json, redirect, useActionData } from "@remix-run/react";
-import { ActionFunctionArgs } from "@remix-run/node";
-import { EyeIcon } from "lucide-react";
-import { EyeOff } from "lucide-react";
+import { useState } from "react";
+
+import Footer from "~/components/ui/footer";
+import Header from "~/components/ui/header";
+import SocialSignin from "~/components/ui/socialSignin";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -16,48 +19,44 @@ export default function Login() {
 
   const togglePasswordVisibility = () => {
     // setShowPassword(!showPassword);
-    setShowPassword((prevState) => !prevState);
+    setShowPassword((previousState) => !previousState);
   };
 
   return (
-    <div className="w-full h-auto mt-24">
-      {/* <Nav /> */}
-      <div className="w-full  md:h-auto flex flex-col items-center justify-center py-6">
-        <p className=""></p>
-        <Form
-          className="w-[80%] md:w-[70%] lg:w-[552px]   rounded-lg"
-          method="post"
-        >
+    <div className="">
+      <Header />
+
+      <div className="flex w-full flex-col items-center justify-center py-6 md:h-auto">
+        <Form className="w-[70%] rounded-lg lg:w-[552px]" method="post">
           <div className="flex flex-col items-center justify-center" id="login">
             <div className="text-center">
               <header
                 className={
-                  "lg:w-[552px] h-6 mb-4 text-[28px] font-semibold text-black font-inter"
+                  "font-inter mb-4 h-6 text-[28px] font-semibold text-secondary-foreground lg:w-[552px]"
                 }
               >
                 Login
               </header>
-              <p className="text-xl font-normal leading-6">
-                {" "}
-                Welcome Back, you've been missed!
+
+              <p className="p-3 text-xl font-normal leading-6">
+                {" Welcome Back, you've been missed! "}
               </p>
             </div>
+
             <br />
-            <div className="w-full pt-6 pb-0 md:pb-1 lg:flex items-center justify-between gap-6  ">
+            <div className="w-full items-center justify-between gap-6 pb-0 pt-6 md:pb-1 lg:flex">
               <SocialSignin msg="Sign in with Google" icon={google} />
               <SocialSignin msg="Sign in with Facebook" icon={facebook} />
             </div>
 
-            <div className="w-full flex flex-col ">
-              <p className="text-xl leading-6 font-normal mb-2 lg:mt-6">Email</p>
-              <div
-                className="py-5 ps-4 pe-6 border-2 border-gray-300
-#CBD5E1] rounded-xl "
-              >
+            <div className="flex w-full flex-col">
+              <p className="mb-2 text-xl font-normal leading-6 lg:mt-6">
+                Email
+              </p>
+              <div className="#CBD5E1] rounded-xl border-2 border-gray-300 py-5 pe-6 ps-4">
                 <input
                   type="email"
-                  className="w-[366px] h-[22px] bg-transparent text-lg leading-5 font-normal text-
-              gray-600 outline-none"
+                  className="h-[22px] bg-transparent text-lg font-normal leading-5 text-gray-600 outline-none"
                   id="email"
                   name="email"
                   placeholder="Enter your email address"
@@ -65,23 +64,23 @@ export default function Login() {
                   onChange={(event) => setEmail(event.target.value)}
                 />
               </div>
-              <p className="text-red-500 text-md italic">
+
+              <p className="text-sm text-destructive">
                 {actionData?.errors?.email ? (
                   <em>{actionData?.errors.email}</em>
-                ) : null}
+                ) : undefined}
               </p>
             </div>
+
             <br />
 
-            <div className="w-full flex flex-col ">
-              <p className="text-xl leading-6 font-normal mb-2">Password</p>
-              <div
-                className="relative py-5 ps-4 pe-6 border-2 border-gray-300 rounded-xl"
-              >
+            <div className="flex w-full flex-col">
+              <p className="mb-2 text-xl font-normal leading-6">Password</p>
+              <div className="relative rounded-xl border-2 border-gray-300 py-5 pe-6 ps-4">
                 <input
-                  className="w-[366px] h-[22px] bg-transparent text-lg leading-5 font-normal text-
-              gray-600 outline-none"
+                  className="h-[22px] bg-transparent text-lg font-normal leading-5 text-gray-600 outline-none"
                   id="password"
+                  name="password"
                   type={showPassword ? "text" : "password"}
                   placeholder="Enter Password"
                   value={password}
@@ -89,7 +88,7 @@ export default function Login() {
                 />
 
                 <div
-                  className="absolute border-none outline-none inset-y-0 right-0 px-3 pt-5 text-black"
+                  className="absolute inset-y-0 right-0 border-none px-3 pt-5 text-secondary-foreground outline-none"
                   onClick={togglePasswordVisibility}
                 >
                   {showPassword ? (
@@ -99,64 +98,61 @@ export default function Login() {
                   )}
                 </div>
               </div>
-              <p className="text-red-500 text-xs italic">
+              <p className="text-sm text-destructive">
                 {actionData?.errors?.password ? (
                   <em>{actionData?.errors.password}</em>
-                ) : null}
+                ) : undefined}
               </p>
             </div>
 
-            <div className="w-full justify-between md:flex text-white mx-2">
-              <div className="flex gap-2 mt-2">
+            <div className="mx-2 w-full justify-between text-primary-foreground md:flex">
+              <div className="mt-2 flex gap-2">
                 <input type="checkbox" id="login-check" />
-                <div className="text-black"> Remember Me</div>
+                <div className="text-secondary-foreground"> Remember Me</div>
               </div>
-              <div className="text-gray-900 mt-2 cursor-pointer">
+              <div className="mt-2 cursor-pointer text-gray-900">
                 Forgot Password?
               </div>
             </div>
 
             <br />
-            <div className="w-full flex flex-col gap-8">
+            <div className="flex w-full flex-col gap-8">
               <button
-                className="w-full py-5 ps-4 pe-6 border-2 border-gray-300 hover:border-orange-500 rounded-xl text-white bg-orange-500 hover:bg-white hover:text-orange-500 font-medium focus:outline-none focus:shadow-outline text-base "
+                className="w-full rounded-xl border-2 border-gray-300 bg-primary py-5 pe-6 ps-4 text-base font-medium text-primary-foreground hover:border-primary hover:bg-primary-foreground hover:text-primary focus:shadow-outline focus:outline-none"
                 type="submit"
               >
                 Login
               </button>
 
               <button
-                className="w-full h-[64px] py-5 ps-4 pe-6 border-2 
-                border-gray-300 rounded-xl text-gray-900 bg-white hover:bg-[] hover:text-orange-500 font-medium focus:outline-none focus:shadow-outline"
+                className="h-[64px] w-full rounded-xl border-2 border-gray-300 bg-primary-foreground py-5 pe-6 ps-4 font-medium text-gray-900 hover:bg-[] hover:text-primary focus:shadow-outline focus:outline-none"
                 type="submit"
               >
                 Sign in with magic link
               </button>
             </div>
             <br />
-            <div className="flex text-center gap-2 items-center justify-center">
-              <p className="text-black">{`Don't have an account?`} </p>
+            <div className="flex items-center justify-center gap-2 text-center">
+              <p className="text-secondary-foreground">
+                {`Don't have an account?`}{" "}
+              </p>
               <a
                 href="Sign Up"
-                className="text-base text-orange-500 leading-[120%] font-bold"
+                className="text-base font-bold leading-[120%] text-primary"
               >
                 Sign Up
               </a>
             </div>
             <p className="text-center text-[13px]">
               By logging in, you agree to the{" "}
-              <span className="text-orange-500 text-base">
-                {" "}
-                Terms of Service
-              </span>{" "}
-              and{" "}
-              <span className="text-orange-500 text-base">Private Policy</span>
+              <span className="text-base text-primary"> Terms of Service</span>{" "}
+              and <span className="text-base text-primary">Private Policy</span>
             </p>
           </div>
         </Form>
       </div>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
@@ -171,21 +167,21 @@ export async function action({ request }: ActionFunctionArgs) {
     password: "",
   };
 
-  if (email.trim() == null || email == "") {
+  if (email.trim() == undefined || email == "") {
     errors.email = "Please enter your email address";
   }
   if (!email.includes("@")) {
-    errors.email = "Invalid email address";
+    errors.email = "Please enter a valid email";
   }
 
-  if (password.trim() == null || password == "") {
+  if (password.trim() == undefined || password == "") {
     errors.email = "Please enter your password";
   }
-  if (password.length < 6) {
+  if (password.trim().length < 6) {
     errors.password = "Password should be at least 6 characters";
   }
 
-  if (Object.keys(errors).length > 0) {
+  if (errors.email != "" || errors.password != "") {
     return json({ errors });
   }
 
