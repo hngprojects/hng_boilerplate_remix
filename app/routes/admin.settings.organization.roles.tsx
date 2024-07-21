@@ -2,6 +2,7 @@ import { Plus } from "lucide-react";
 import { useState } from "react";
 
 import { Button } from "~/components/ui/button";
+import CreateRoleModal from "~/components/ui/create-role-modal";
 import { Switch } from "~/components/ui/switch";
 
 type role = {
@@ -12,6 +13,7 @@ type role = {
 
 export default function Index() {
   const [active, setActive] = useState<string>("Administrator");
+  const [createRoleModal, setCreateRoleModal] = useState<boolean>(false);
 
   const roles: role[] = [
     { id: 0, name: "Guest", description: "Read-only access" },
@@ -20,6 +22,10 @@ export default function Index() {
     { id: 4, name: "Project lead", description: "Manage, coordinate, oversee" },
     { id: 5, name: "Administrator", description: "Full access, control" },
   ];
+
+  const handleCreateRoleModal = () => {
+    setCreateRoleModal(false);
+  };
 
   return (
     <div className="flex">
@@ -43,9 +49,19 @@ export default function Index() {
             <Button
               variant={"default"}
               className="flex items-center gap-2 bg-[#F97316] text-white"
+              onClick={() => setCreateRoleModal(true)}
             >
               <Plus color="white" size={20} /> Create roles
             </Button>
+
+            <div
+              className={`absolute left-0 top-0 h-full w-full items-center justify-center bg-black/[0.3] backdrop-blur-sm ${createRoleModal ? "flex" : "hidden"}`}
+            >
+              <CreateRoleModal
+                className=""
+                onClose={() => handleCreateRoleModal()}
+              />
+            </div>
           </div>
           <div className="border border-transparent border-b-[#CBD5E1] pb-4">
             <h1 className="mb-2 text-xl font-semibold">Permissions</h1>
