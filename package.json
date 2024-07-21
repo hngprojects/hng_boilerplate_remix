@@ -19,15 +19,14 @@
     "email:start": "email start"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@radix-ui/react-avatar": "^1.1.0",
-    "@radix-ui/react-dropdown-menu": "^2.1.1",
-=======
     "@hookform/resolvers": "^3.9.0",
+    "@mertasan/tailwindcss-variables": "^2.7.0",
+    "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-alert-dialog": "^1.1.1",
+    "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-label": "^2.1.0",
->>>>>>> 0c94655f2b8fa0170b63e941cc4debc374f089e9
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-switch": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.0",
     "@react-email/components": "^0.0.21",
     "@remix-run/css-bundle": "^2.10.3",
@@ -36,12 +35,13 @@
     "@remix-run/serve": "^2.10.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "isbot": "^4.1.0",
+    "isbot": "^4.4.0",
     "lucide-react": "^0.408.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-email": "^2.1.5",
     "react-hook-form": "^7.52.1",
+    "swiper": "^11.1.5",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"
@@ -51,8 +51,8 @@
     "@remix-run/dev": "^2.10.3",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
