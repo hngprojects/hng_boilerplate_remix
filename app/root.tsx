@@ -26,8 +26,8 @@ export function Layout({ children }: { children: ReactNode }) {
         <Links />
       </head>
       <body>
-        <div className="flex">
-          <main className="flex-1">{children}</main>,
+        <div>
+          <main>{children}</main>
           <ScrollRestoration />
           <Scripts />
         </div>
