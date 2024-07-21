@@ -1,90 +1,65 @@
-import { ChangeEvent, MouseEvent, useEffect, useState } from "react";
+import { FC, useState } from "react";
 
-import { Comment, NewCommentInput } from "./types";
+import Comments from "./Comments";
 
-import "../ui/index.css";
-
-import icon from "../../../public/Ellipse 2.svg";
-import { Button } from "../ui/button";
-
-interface TextInputProperties {
-  value: string;
-  onChange: (newValue: string) => void;
+interface Comment {
+  id: number;
+  comment: string;
+  author: string;
+  handle: string;
+  date: string;
 }
 
-export default function Input({ value, onChange }: TextInputProperties) {
-  const [newComment, setNewComment] = useState<string>("");
-  const [comments, setComments] = useState<Comment[]>([]);
+interface FooterCommentProperties {
+  comments: Comment[];
+  onAddComment: (comment: Comment) => void;
+}
 
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts/1/comments")
-      .then((response) => response.json())
-      .then((data) => setComments(data))
-      .catch((error) => console.error("Error fetching comments:", error));
-  }, []);
+const CommentSection: FC<FooterCommentProperties> = ({
+  comments,
+  onAddComment,
+}) => {
+  const [newCommentText, setNewCommentText] = useState<string>("");
+  const [author, setAuthor] = useState<string>("");
+  const [handle, setHandle] = useState<string>("");
 
-  const addComment = (newComment: NewCommentInput): Comment => {
-    const newCommentObject: Comment = {
-      id: Date.now(),
-      username: newComment.name,
-      image: icon,
-      handle: newComment.email,
-      comment: newComment.text,
-      timestamp: Date.now(),
-      className: "",
-    };
-    return newCommentObject;
+  const handleCommentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setNewCommentText(event.target.value);
   };
 
-  const handleCommentSubmit = (event: MouseEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const newCommentText = newComment.trim();
-    if (newCommentText) {
-      const newCommentObject = addComment({
-        name: "Username",
-        email: "user@example.com",
-        text: newCommentText,
-      });
-      setComments((previousComments) => [
-        ...previousComments,
-        newCommentObject,
-      ]);
-      setNewComment("");
-    }
-  };
+    const newComment: Comment = {
+      id: Date.now(),
+      comment: newCommentText,
+      author: author || "Anonymous",
+      handle: handle || "@unknown",
+      date: new Date().toLocaleString(),
+    };
 
-  const handleCommentChange = (comment: string) => {
-    setNewComment(comment);
-  };
-
-  const handleSubmit = () => {
-    onChange(newComment);
-    setNewComment("");
-  };
-
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    handleCommentChange(event.target.value);
+    onAddComment(newComment);
+    setNewCommentText("");
+    setAuthor("");
+    setHandle("");
   };
 
   return (
-    <div className="w-300 lg:full border-1 w-full border-solid border-[var(--neutral)] px-3 py-2 md:w-1/2">
-      <div className="flex gap-2">
-        <img src={icon} alt="icon" />
+    <div>
+      <Comments comments={comments} />
+      <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-2">
         <input
-          value={newComment}
-          onChange={handleInputChange}
           type="text"
-          id="comments"
-          placeholder="Type your comments here"
-          className="w-366px border-2 border-solid border-[var(--accent)] px-6 py-2 placeholder-opacity-50"
+          value={newCommentText}
+          onChange={handleCommentChange}
+          placeholder="Write a comment..."
+          className="border p-2"
         />
-        <Button
-          className="w-20 bg-[var(--accent)]"
-          onClick={handleCommentSubmit}
-        >
-          Submit
-        </Button>
-      </div>
+        <button type="submit" className="bg-[var(--accent)] p-2 text-white">
+          Add Comment
+        </button>
+      </form>
     </div>
   );
-}
+};
+
+export default CommentSection;
