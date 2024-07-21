@@ -40,7 +40,7 @@ function MemberManagement() {
     role: string;
   }
 
-  // demo user data
+  // demo users data
   const users: User[] = [
     {
       id: 1,
