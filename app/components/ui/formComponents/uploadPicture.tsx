@@ -23,9 +23,7 @@ export function UploadPicture() {
         }
       ></div>
       <div className="flex flex-col gap-1">
-        <Label className="text-[16px] font-[400] text-[#0A0A0A]">
-          Upload Picture
-        </Label>
+        <Label>Upload Picture</Label>
         <Label
           htmlFor="picture"
           className="cursor-pointer text-xs text-orange-500"

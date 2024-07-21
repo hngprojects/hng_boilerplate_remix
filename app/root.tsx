@@ -9,8 +9,8 @@ import {
 } from "@remix-run/react";
 import type { ReactNode } from "react";
 
-import FooterLight from "./components/ui/footerLight";
-import { AdminSideNavBar } from "./components/SuperAdminSideBar/SuperAdminSideNavBar";
+// import FooterLight from "./components/ui/footerLight";
+// import { AdminSideNavBar } from "./components/SuperAdminSideBar/SuperAdminSideNavBar";
 import { ModalProvider } from "./context/modalContext";
 import styles from "./styles/global.css?url";
 
@@ -32,7 +32,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <div className="flex">
           <main className="flex-1">
             {children}
-            <FooterLight />
+            {/* <FooterLight /> */}
           </main>
           ,
           <ScrollRestoration />

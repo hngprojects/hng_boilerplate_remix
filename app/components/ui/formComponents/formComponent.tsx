@@ -51,25 +51,19 @@ export function InputForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel
-                className={clsx(
-                  "font-inter text-[14px] font-[500] text-[#0F172A]",
-                  {
-                    "text-red-500": form.formState.errors.name,
-                  },
-                )}
+                className={clsx({
+                  "text-red-500": form.formState.errors.name,
+                })}
               >
-                name
+                Name
               </FormLabel>
               <FormControl>
                 <Input
-                  placeholder="shadcn"
+                  placeholder="e.g Joh Doe"
                   {...field}
-                  className={clsx(
-                    `${styles.placeholderCustom} placeholderCustom`,
-                    {
-                      "border-red-500": form.formState.errors.name,
-                    },
-                  )}
+                  className={clsx(`w-full ${styles.placholderCustom}`, {
+                    "border-red-500": form.formState.errors.name,
+                  })}
                 />
               </FormControl>
             </FormItem>
@@ -81,25 +75,19 @@ export function InputForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel
-                className={clsx(
-                  "font-inter text-[14px] font-[500] text-[#0F172A]",
-                  {
-                    "text-red-500": form.formState.errors.email,
-                  },
-                )}
+                className={clsx({
+                  "text-red-500": form.formState.errors.email,
+                })}
               >
                 Email
               </FormLabel>
               <FormControl>
                 <Input
-                  placeholder="shadcn"
+                  placeholder="e.g johndoe@gmail.com"
                   {...field}
-                  className={clsx(
-                    `${styles.placeholderCustom} placeholderCustom`,
-                    {
-                      "border-red-500": form.formState.errors.email,
-                    },
-                  )}
+                  className={clsx(`w-full ${styles.placholderCustom}`, {
+                    "border-red-500": form.formState.errors.email,
+                  })}
                 />
               </FormControl>
             </FormItem>
@@ -111,35 +99,25 @@ export function InputForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel
-                className={clsx(
-                  "font-inter text-[14px] font-[500] text-[#0F172A]",
-                  {
-                    "text-red-500": form.formState.errors.number,
-                  },
-                )}
+                className={clsx({
+                  "text-red-500": form.formState.errors.number,
+                })}
               >
                 Phone Number
               </FormLabel>
               <FormControl>
                 <Input
-                  placeholder="shadcn"
+                  placeholder="e.g 08123456789"
                   {...field}
-                  className={clsx(
-                    `${styles.placeholderCustom} placeholderCustom`,
-                    {
-                      "border-red-500": form.formState.errors.number,
-                    },
-                  )}
+                  className={clsx(`w-full ${styles.placholderCustom}`, {
+                    "border-red-500": form.formState.errors.number,
+                  })}
                 />
               </FormControl>
             </FormItem>
           )}
         />
-        <div className="flex pt-2">
-          <Button type="submit" className="font-inter ml-auto">
-            Add New User
-          </Button>
-        </div>
+        <Button type="submit">Add New User</Button>
       </form>
     </Form>
   );
