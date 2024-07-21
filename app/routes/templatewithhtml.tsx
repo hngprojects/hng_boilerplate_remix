@@ -1,6 +1,7 @@
 import { getImages } from "~/lib/utils/utils";
 import { useNavigate } from "@remix-run/react";
 import { useState } from "react";
+import Navbar from "~/Components/Navbar/Navbar";
 
 const Templatewithhtml = () => {
   const navigate = useNavigate();
@@ -22,7 +23,8 @@ const Templatewithhtml = () => {
   }
 
   return (
-    <>
+    <div>
+    `<Navbar className="mt-6" />
       <div className="flex gap-6">
         <div className="max-w-52 bg-graystyles">
           need's someones else component for this part
@@ -77,7 +79,7 @@ const Templatewithhtml = () => {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

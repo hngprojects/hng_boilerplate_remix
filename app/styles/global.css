@@ -4,7 +4,6 @@
 
 body {
   font-family: inter;
-  /* background-color: red; */
   height: 100vh;
 }
 
@@ -18,7 +17,6 @@ body {
 
 .mainSecContainer {
   display: flex;
-  /* grid-template-columns: 300px, 1fr; */
   margin-inline: auto;
 }
 
