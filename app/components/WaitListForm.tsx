@@ -27,24 +27,6 @@ export const action: ActionFunction = async ({ request }) => {
     return { error: "Name and valid email are required" };
   }
 
-  // Uncomment this block to test with a backend endpoint
-  // try {
-  //   const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({ name, email }),
-  //   });
-
-  //   if (!response.ok) {
-  //     throw new Error('Network response was not ok');
-  //   }
-
-  //   return { success: true };
-  // } catch (error) {
-  //   return { error: "Failed to submit the form" };
-  // }
 
   return { success: true };
 };
@@ -95,16 +77,14 @@ const WaitlistForm: React.FC = () => {
       {actionData?.success ? (
         <section className="waitlist-success h-[414.57px] w-[383.34px] lg:h-[406.8px] lg:w-[703.2px]">
           <div className="relative flex flex-col items-center justify-center">
-            <img
-              src="/Vector.png"
-              className="h-[179px] w-[177px] lg:h-[178px]"
-            />
-            <span className="thumbs-up">
+            <img src="/Vector.png" className="h-[179px] w-[177px] opacity-25" />
+
+            <span className="thumbs-up left-10 top-2">
               <ThumbsUp size={20} />
             </span>
           </div>
           <h3 className="text-center text-[24px] font-bold leading-[29.05px] text-[#525252] lg:text-[28px] lg:font-semibold lg:leading-[33.89px]">
-            You`re all signed up!
+            You&apos;re all signed up!
           </h3>
         </section>
       ) : (
@@ -112,7 +92,7 @@ const WaitlistForm: React.FC = () => {
           className={`form-section ${
             mounted && error
               ? "h-[406px] w-[383.34px] gap-[10px] p-[10px] lg:h-[373.78px] lg:w-[510px]"
-              : "h-[414.57px] w-[383.34px] gap-[10px] lg:h-[320px] lg:w-[510px] lg:gap-6"
+              : "h-[414.57px] w-[383.34px] flex-col items-center justify-center gap-5 rounded-md border p-7 lg:h-[320px] lg:w-[510px] lg:gap-6"
           }`}
         >
           <Form
@@ -138,7 +118,9 @@ const WaitlistForm: React.FC = () => {
               />
             </div>
             {mounted && error && (
-              <p className="error-text">{error.includes("Name") && error}</p>
+              <p className="xs text-red-500">
+                {error.includes("Name") && error}
+              </p>
             )}
             <div className="flex h-[97px] w-[320px] flex-col gap-[14.4px] lg:w-[490px]">
               <label
@@ -158,7 +140,9 @@ const WaitlistForm: React.FC = () => {
               />
             </div>
             {mounted && error && (
-              <p className="error-text">{error.includes("email") && error}</p>
+              <p className="xs text-red-500">
+                {error.includes("email") && error}
+              </p>
             )}
             <button
               type="submit"
@@ -169,7 +153,7 @@ const WaitlistForm: React.FC = () => {
             </button>
           </Form>
           {mounted && actionData?.success && (
-            <p className="success-text mt-2">
+            <p className="mt-2 text-green-500">
               Successfully joined the waitlist!
             </p>
           )}
