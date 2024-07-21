@@ -48,7 +48,7 @@ const Contact = () => {
                 </div>
             </div>
             <div className="bg-white h-[1px]"></div>
-            <div className="bg-black flex justify-center items-center h-[100px]">
+            <div className=" flex justify-center items-center h-[100px]">
                 <a href="/"><p className="mx-4">2024 All Rights Reserved</p></a>
                 <a href="/"><p className="mx-4">Privacy Policy <span>Terms of Use</span></p></a>
             </div>
