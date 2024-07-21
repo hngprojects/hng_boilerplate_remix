@@ -10,6 +10,7 @@ import {
 import type { ReactNode } from "react";
 
 import MobileSidebarComponent from "./components/sidebar/sidebar";
+import { AdminSideNavBar } from "./components/SuperAdminSideBar/SuperAdminSideNavBar";
 import styles from "./styles/global.css?url";
 
 export const links: LinksFunction = () => [
@@ -28,9 +29,12 @@ export function Layout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <MobileSidebarComponent />
-        {children}
-        <ScrollRestoration />
-        <Scripts />
+        <div className="flex">
+          <AdminSideNavBar />
+          <main className="flex-1">{children}</main>,
+          <ScrollRestoration />
+          <Scripts />
+        </div>
       </body>
     </html>
   );
