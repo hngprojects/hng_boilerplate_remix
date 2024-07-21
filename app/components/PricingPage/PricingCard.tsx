@@ -1,9 +1,16 @@
-import { ReactNode } from "react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "~/components/ui/card";
-import { Button } from "~/components/ui/button";
 import { Check, X } from "lucide-react";
 
-interface PricingCardProps {
+import { Button } from "~/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "~/components/ui/card";
+
+interface PricingCardProperties {
   title: string;
   price: string;
   period: string;
@@ -25,19 +32,29 @@ const PricingCard = ({
   borderColor,
   onClick,
   isSelected,
-}: PricingCardProps) => {
+}: PricingCardProperties) => {
   return (
-    <Card className={`max-w-[384px] w-full lg:w-[384px] ${isSelected ? borderColor : ""}`} onClick={onClick}>
+    <Card
+      className={`w-full max-w-sm lg:w-96 ${isSelected ? borderColor : ""}`}
+      onClick={onClick}
+    >
       <CardHeader className="space-y-3">
-        <CardTitle className="text-[25px]">{title}</CardTitle>
-        <CardTitle className="text-[39px] leading-none">
-          {price} <span className="text-[20px] font-light">/{period}</span>
+        <CardTitle className="text-2xl">{title}</CardTitle>
+        <CardTitle className="text-4xl leading-none">
+          {price} <span className="text-lg font-light">/{period}</span>
         </CardTitle>
-        <CardDescription className="w-[247px] text-[13px] leading-[23.4px]">{description}</CardDescription>
+        <CardDescription className="w-full text-sm leading-6 md:w-[247px]">
+          {description}
+        </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-4 my-5">
+      <CardContent className="my-5 space-y-4">
         {features.map((feature, index) => (
-          <CardDescription key={index} className={`flex items-center gap-3 ${feature.included ? 'text-accent-foreground' : 'text-accent'}`}>
+          <CardDescription
+            key={index}
+            className={`flex items-center gap-3 ${
+              feature.included ? "text-accent-foreground" : "text-accent"
+            }`}
+          >
             {feature.included ? <Check /> : <X />} {feature.text}
           </CardDescription>
         ))}

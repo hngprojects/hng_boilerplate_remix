@@ -1,9 +1,10 @@
 import { useState } from "react";
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
-import PricingCard from "./PricingCard";  // Adjust the path as needed
+import PricingCard from "./PricingCard";
 
 const PricingPage = () => {
-  const [selectedCard, setSelectedCard] = useState<string | null>(null);
+  const [selectedCard, setSelectedCard] = useState<string | undefined>();
 
   const handleCardClick = (cardName: string) => {
     setSelectedCard(cardName);
@@ -11,23 +12,30 @@ const PricingPage = () => {
 
   return (
     <main>
-      <div className="container flex flex-col items-center px-10 my-10">
-        <p className="bg-secondary px-[10px] py-[5px] rounded-lg text-[20px] font-light">Pricing</p>
-        <div className="max-w-[1021px] w-full mt-5 flex flex-col items-center text-center">
-          <h2 className="text-[28px] md:text-6xl leading-none font-semibold">
-            Simple and <span className="text-destructive">Affordable</span> Pricing Plan
+      <div className="container my-10 flex flex-col items-center px-8">
+        <p className="rounded-lg bg-secondary px-4 py-2 text-xl font-light">
+          Pricing
+        </p>
+        <div className="mt-5 flex w-full max-w-5xl flex-col items-center text-center">
+          <h2 className="text-2xl font-semibold leading-none md:text-6xl">
+            Simple and <span className="text-destructive">Affordable</span>{" "}
+            Pricing Plan
           </h2>
-          <p className="w-full md:w-4/5 font-light mt-5 text-lg leading-[21.78px] md:text-[28px] md:leading-[33.89px]">
-            Our flexible plans are designed to scale with your business. We have a plan for you.
+          <p className="mt-5 w-full text-lg font-light leading-tight md:w-9/12 md:text-2xl">
+            Our flexible plans are designed to scale with your business. We have
+            a plan for you.
           </p>
         </div>
 
         <Tabs defaultValue="account" className="mt-10">
-          <TabsList className="grid w-[384px] mx-auto grid-cols-2">
+          <TabsList className="mx-auto grid w-96 grid-cols-2">
             <TabsTrigger value="account">Monthly</TabsTrigger>
             <TabsTrigger value="password">Annual (save 20%)</TabsTrigger>
           </TabsList>
-          <TabsContent value="account" className="md:flex gap-5 mt-5 space-y-5 md:space-y-0">
+          <TabsContent
+            value="account"
+            className="mt-5 gap-5 space-y-5 md:flex md:space-y-0"
+          >
             <PricingCard
               title="Basic"
               price="$800"
@@ -65,7 +73,10 @@ const PricingPage = () => {
               isSelected={selectedCard === "premium-monthly"}
             />
           </TabsContent>
-          <TabsContent value="password" className="md:flex gap-5 mt-5 md:mt-0 space-y-5 md:space-y-0">
+          <TabsContent
+            value="password"
+            className="mt-5 gap-5 space-y-5 md:mt-0 md:flex md:space-y-0"
+          >
             <PricingCard
               title="Basic"
               price="$500"
