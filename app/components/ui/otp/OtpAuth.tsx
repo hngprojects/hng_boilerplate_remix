@@ -1,11 +1,18 @@
 import { Link } from "@remix-run/react";
-import React, { ChangeEvent, useRef, useState } from "react";
+import {
+  useRef,
+  useState,
+  type ChangeEvent,
+  type FC,
+  type KeyboardEventHandler,
+  type MouseEventHandler,
+} from "react";
 import { twMerge } from "tailwind-merge";
 
 import { Input, OtpAuthProperties } from "~/types/otpauth";
 import { Button } from "../button";
 
-const OtpAuth: React.FC<OtpAuthProperties> = ({
+const OtpAuth: FC<OtpAuthProperties> = ({
   isModalOpen = false,
   inputs = [],
   setIsModalOpen,
@@ -28,19 +35,19 @@ const OtpAuth: React.FC<OtpAuthProperties> = ({
       }
     };
 
-  const handleClose: React.MouseEventHandler<HTMLDivElement> = () => {
+  const handleClose: MouseEventHandler<HTMLDivElement> = () => {
     if (setIsModalOpen) {
       setIsModalOpen(false);
     }
   };
 
-  const handleSubmitForm: React.MouseEventHandler<HTMLButtonElement> = () => {
+  const handleSubmitForm: MouseEventHandler<HTMLButtonElement> = () => {
     if (handleSubmit) {
       handleSubmit(inputValues);
     }
   };
 
-  const handleKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (event) => {
+  const handleKeyDown: KeyboardEventHandler<HTMLDivElement> = (event) => {
     if (event.key === "Escape" && setIsModalOpen) {
       setIsModalOpen(false);
     }
