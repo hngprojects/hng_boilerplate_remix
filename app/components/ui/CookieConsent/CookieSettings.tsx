@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './CookieConsent.module.css';
 
 interface CookieSetting {
     title: string;
@@ -47,7 +48,7 @@ const CookiePreference: React.FC<CookiePreferenceProps> = ({
                             />
                         </div>
                     </div>
-                    <p className={`text-sm text-gray-600 ${isExpanded ? '' : 'hidden'}`}>
+                    <p className={`text-sm text-gray-600 ${isExpanded ? '' : 'hidden'} ${styles.inter}` }>
                         {description}
                     </p>
                     <hr className="my-6" />

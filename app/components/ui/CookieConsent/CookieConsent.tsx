@@ -4,17 +4,22 @@ import CookieSettings from "./CookieSettings";
 
 export default function CookieConsent(){
     const [isExpanded, setIsExpanded] = useState(false);
+    // const [saveCookieSettings, setSaveCookieSettings] = useState(false)
 
     const toggleExpand = () => {
         setIsExpanded(!isExpanded);
     };
+    // const handleClick = (e?:string) => {
+    //     e.preventDefault
+    //     setSaveCookieSettings(false)
+    // }
 
     return (
-        <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"'>
+        <div className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50`}>
             <div className={`${styles.modal} bg-white p-6 rounded-lg shadow-xl max-w-3xl w-full m-10`}>
                 <div className={`mb-6`}>
-                    <p className="text-xl font-semibold">Customize cookies</p>
-                    <p className="text-sm text-gray-600 mt-2 mb-10">
+                    <p className={`text-xl font-semibold ${styles.roboto}`}>Customize cookies</p>
+                    <p className={`text-sm text-gray-600 mt-2 mb-10 ${styles.inter}`}>
                         Cookies are small text files that are stored on your device when you visit websites. 
                         They are used to remember information about you, such as your login details, preferences, and browsing history. 
                         Cookies help enhance your browsing experience by allowing websites to remember your actions and preferences over time, 
@@ -34,7 +39,7 @@ export default function CookieConsent(){
                                         tabIndex={0}
                                         onKeyDown={(e) => {
                                             if (e.key === 'Enter' || e.key === ' ') {
-                                                toggleExpandimplement();
+                                                toggleExpand();
                                                 e.preventDefault()
                                             }
                                         }}
@@ -46,7 +51,7 @@ export default function CookieConsent(){
                                         />
                                     </div>
                                 </div>
-                                <p className={`text-sm text-gray-600 ${isExpanded ? '' : 'hidden'}`}>
+                                <p className={`text-sm text-gray-600 ${isExpanded ? '' : 'hidden'} ${styles.inter}`}>
                                     These cookies are essential for the website to function properly.
                                     They enable basic functions like page navigation, secure login, 
                                     and access to protected areas of the site. Without these cookies, 
@@ -59,7 +64,12 @@ export default function CookieConsent(){
                     </div>
                     <CookieSettings/>
                     <div className="flex justify-end mt-6">
-                        <button className="bg-orange-500 text-white py-2 px-4 rounded-lg">Save & Accept</button>
+                        <button 
+                            className="bg-orange-500 text-white py-2 px-4 rounded-lg"
+                            // onClick={handleClick}
+                            >
+                            Save & Accept
+                        </button>
                     </div>
                 </div>
             </div>
