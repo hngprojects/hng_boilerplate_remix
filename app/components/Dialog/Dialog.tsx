@@ -26,7 +26,7 @@ type DialogProperties = {
   variants: Variants | null | undefined;
 };
 
-export default function AlertDialogDemo({
+export default function Dialog({
   headerText,
   description,
   footer,
