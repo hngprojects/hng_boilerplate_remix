@@ -41,7 +41,9 @@
     "react-dom": "^18.2.0",
     "react-email": "^2.1.5",
     "react-hook-form": "^7.52.1",
+    "remix": "^2.10.3",
     "swiper": "^11.1.5",
+    "tailwind": "^4.0.0",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"
