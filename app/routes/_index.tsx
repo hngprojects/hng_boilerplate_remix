@@ -2,6 +2,8 @@ import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import { useState } from "react";
 
+import MenuButton from "~/components/sidebar/menu-button";
+import MobileSidebarComponent from "~/components/sidebar/sidebar";
 import { Button } from "~/components/ui/button";
 import CardPlatform from "~/components/ui/card/card-platform";
 import OtpAuth from "~/components/ui/otp/OtpAuth";
@@ -20,9 +22,22 @@ const handleSubmit = (values: Input[]) => {
 
 export default function Index() {
   const [openModal, setOpenModal] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  function handleToggleMenu() {
+    setIsMenuOpen((previous) => !previous);
+  }
   return (
     <div className="p-4 font-sans">
+      <div className="fixed left-0 h-full">
+        {isMenuOpen && <MobileSidebarComponent />}
+      </div>
+      <div className="fixed right-5 top-[50px] sm:hidden">
+        <MenuButton
+          IsMenuOpen={isMenuOpen}
+          handleToggleMenu={handleToggleMenu}
+        />
+      </div>
       <h1 className="text-3xl">Welcome to Remix</h1>
       <ul className="mt-4 list-disc space-y-2 pl-6">
         <li>
