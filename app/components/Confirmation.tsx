@@ -1,7 +1,10 @@
+/* eslint-disable unicorn/no-null */
+
 import React from "react";
+
 import styles from "~/styles/confirmation.module.css";
 
-interface ConfirmationProps {
+interface ConfirmationProperties {
   heading: string;
   description: string;
   cancelButtonLabel: string;
@@ -13,7 +16,7 @@ interface ConfirmationProps {
   variant: "basic" | "success" | "destructive" | "confirmation" | "error";
 }
 
-const ConfirmationBox: React.FC<ConfirmationProps> = ({
+const ConfirmationBox: React.FC<ConfirmationProperties> = ({
   heading,
   description,
   cancelButtonLabel,
@@ -43,7 +46,8 @@ const ConfirmationBox: React.FC<ConfirmationProps> = ({
                 viewBox="0 0 24 24"
                 fill="none"
                 className={styles.tick}
-                xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   d="M20 6L9 17L4 12"
                   stroke="#096012"
@@ -58,7 +62,8 @@ const ConfirmationBox: React.FC<ConfirmationProps> = ({
                 height="36"
                 viewBox="0 0 24 24"
                 className={styles.cross}
-                fill="none">
+                fill="none"
+              >
                 <path
                   d="M18 6L6 18"
                   stroke="#DC2626"
