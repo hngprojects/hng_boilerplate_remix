@@ -52,6 +52,10 @@ const config = {
           hover: "hsl(var(--subtle-hover))",
           foreground: "hsl(var(--subtle-foreground))",
         },
+        neutral: {
+          1: "hsl(var(--neutral-1))",
+          2: "hsl(var(--neutral-2))",
+        },
         loading: {
           DEFAULT: "hsl(var(--loading))",
           hover: "hsl(var(--loading-hover))",
@@ -84,12 +88,6 @@ const config = {
         error: "hsl(var(--error))",
         success: "hsl(var(--success))",
         warning: "hsl(var(--warning))",
-        neutral: {
-          dark: {
-            1: "hsl(var(--neutralColor-dark-1))",
-            2: "hsl(var(--neutralColor-dark-2))",
-          },
-        },
         stroke: {
           "colors-stroke": "hsl(var(--stroke-colors-stroke))",
         },
