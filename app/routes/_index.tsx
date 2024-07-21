@@ -22,15 +22,6 @@ export default function Index() {
   const imageUrl = "/public/images/herosectionImg.jpg"
 
   return (
-   <div>
-    <Header/>
-    <HeroSection imageUrl={imageUrl}/>
-    <BlogPost/>
-    <Footer/>
-
- 
-   </div>
-
   );
 }
 
