@@ -84,7 +84,7 @@ const CookieSettings: React.FC = () => {
     };
 
     const handleSave = () => {
-        console.log('Saved preferences:', checkedStates);
+        // console.log('Saved preferences:', checkedStates);
         setIsOpen(false);
     };
 
@@ -119,7 +119,12 @@ const CookieSettings: React.FC = () => {
                     ))}
                 </div>
                 <div className="mt-4 flex justify-end">
-                    <Button onClick={handleSave}>Save Preferences</Button>
+                    <Button 
+                        onClick={handleSave}
+                        className="bg-orange-500 hover:bg-orange-600 text-white"
+                        >
+                            Save Preferences
+                    </Button>
                 </div>
             </DialogContent>
         </Dialog>

@@ -45,3 +45,8 @@
 .hidden{
     display: none;
 }
+
+.orange-switch {
+    --switch-bg-active: 249 115 22;
+    --switch-bg-inactive: 253 186 116; /* This is orange-300 */
+  }

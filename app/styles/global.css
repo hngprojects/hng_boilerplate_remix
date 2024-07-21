@@ -59,6 +59,10 @@
   }
 }
 
+.orange-switch {
+  --switch-bg-active: 249 115 22; /* This is the RGB value for orange-500 */
+}
+
 @layer base {
   * {
     @apply border-border;
