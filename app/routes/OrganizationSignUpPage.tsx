@@ -130,7 +130,7 @@ export default function Signup() {
   return (
     <>
       <Head />
-      <div className="mb-[200px] flex items-center justify-center lg:mb-[400px]">
+      <div className="mb-[190px] flex items-center justify-center lg:mb-[400px]">
         <div className="max-w-mid mx-[25px] mt-[80px] h-[1010px] w-[342px] w-full gap-[24px] bg-white lg:m-3 lg:mt-[208px] lg:h-[836px] lg:w-[820px]">
           <h1 className="text-[#141414]-600 mb-6 hidden text-center text-[13px] lg:block lg:text-[32px]">
             Create Organisation Account
