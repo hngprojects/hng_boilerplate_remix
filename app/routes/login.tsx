@@ -117,14 +117,14 @@ export default function Login() {
             <br />
             <div className="flex w-full flex-col gap-8">
               <button
-                className="w-full rounded-xl border-2 border-gray-300 bg-primary py-5 pe-6 ps-4 text-base font-medium text-primary-foreground hover:border-primary hover:bg-primary-foreground hover:text-primary focus:shadow-outline focus:outline-none"
+                className="focus:shadow-outline w-full rounded-xl border-2 border-gray-300 bg-primary py-5 pe-6 ps-4 text-base font-medium text-primary-foreground hover:border-primary hover:bg-primary-foreground hover:text-primary focus:outline-none"
                 type="submit"
               >
                 Login
               </button>
 
               <button
-                className="h-[64px] w-full rounded-xl border-2 border-gray-300 bg-primary-foreground py-5 pe-6 ps-4 font-medium text-gray-900 hover:bg-[] hover:text-primary focus:shadow-outline focus:outline-none"
+                className="focus:shadow-outline h-[64px]w-full rounded-xl border-2 border-gray-300 bg-primary-foreground py-5 pe-6 ps-4 font-medium text-gray-900 hover:text-primary focus:outline-none"
                 type="submit"
               >
                 Sign in with magic link
