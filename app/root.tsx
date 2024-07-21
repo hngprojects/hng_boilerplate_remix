@@ -7,6 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import type { ReactNode } from "react";
 
 import MobileSidebarComponent from "./components/sidebar/sidebar";
 import { ThemeProvider } from "./context/ThemeContext";
@@ -17,7 +18,7 @@ export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>

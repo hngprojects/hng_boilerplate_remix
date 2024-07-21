@@ -1,18 +1,20 @@
+import type { FC } from "react";
+
 import { Button } from "./button";
 
-const FooterCookieConsent: React.FC = () => {
-  const handleAccept = () => {
-    console.log("Cookie consent accepted");
-  };
+const handleAccept = () => {
+  console.log("Cookie consent accepted");
+};
 
-  const handleReject = () => {
-    console.log("Cookie consent rejected");
-  };
+const handleReject = () => {
+  console.log("Cookie consent rejected");
+};
 
-  const handleSettings = () => {
-    console.log("Cookie settings opened");
-  };
+const handleSettings = () => {
+  console.log("Cookie settings opened");
+};
 
+const FooterCookieConsent: FC = () => {
   return (
     <div className="fixed bottom-0 w-full border-t border-gray-200 bg-white p-6 text-gray-900">
       <div className="flex flex-col items-start space-y-4 md:flex-row md:items-center md:justify-between md:space-x-4 md:space-y-0">
