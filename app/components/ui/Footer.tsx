@@ -5,7 +5,7 @@ export default function Footer() {
     <div className="bg-[#FAFAFA]">
       <footer className="w-full px-8 pb-8 pt-16 text-gray-700 md:px-24">
         <div className="mb-6 flex flex-row flex-wrap gap-12 lg:items-start lg:justify-evenly lg:gap-4">
-          <div className="w-full px-8 pb-8 pt-16 text-gray-700 text-center md:px-24">
+          <div className="w-full px-8 pb-8 pt-16 text-center text-gray-700 md:px-24">
             <h3 className="mb-5 text-lg font-bold">BoilerPlate</h3>
             <p className="text-sm font-semibold text-gray-800">
               Logo subject details and address
