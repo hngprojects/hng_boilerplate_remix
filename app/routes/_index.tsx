@@ -31,7 +31,7 @@ export default function Index() {
       <div className="fixed left-0 h-full">
         {isMenuOpen && <MobileSidebarComponent />}
       </div>
-      <div className="fixed right-5 top-[50px] sm:hidden">
+      <div className="fixed right-5 top-10 sm:hidden">
         <MenuButton
           IsMenuOpen={isMenuOpen}
           handleToggleMenu={handleToggleMenu}
