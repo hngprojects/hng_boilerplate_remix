@@ -167,7 +167,7 @@ export default function IntegrationsPage() {
           placeholder="Search"
           className="w-full rounded border px-4 py-2 md:w-20"
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={(event) => setSearchTerm(event.target.value)}
         />
       </div>
 
