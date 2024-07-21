@@ -6,7 +6,7 @@ import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 
-// Define the types for the form fields
+
 interface FormData {
   companyName: string;
   companyEmail: string;
