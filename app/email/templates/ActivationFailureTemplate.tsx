@@ -42,8 +42,12 @@ export const ActivationFailureEmail = ({
       <Tailwind>
         <Head />
         <Preview>{previewText}</Preview>
-        <Body className="mx-auto my-auto bg-white px-2">
-          <Container className="mx-auto my-[40px] max-w-[790px] font-sans">
+        {/*  */}
+        <Body
+          style={{ fontFamily: '"Inter", sans-serif' }}
+          className="mx-auto my-auto bg-white px-2"
+        >
+          <Container className="mx-auto my-[40px] max-w-[790px]">
             <Section className="m-0 h-[108px] bg-[#E1D6D666]">
               <Img
                 src={logoImage}
