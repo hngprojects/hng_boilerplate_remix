@@ -16,7 +16,7 @@ const handleSettings = () => {
 
 const FooterCookieConsent: FC = () => {
   return (
-    <div className="fixed bottom-0 w-full border-t border-gray-200 bg-white p-6 text-gray-900">
+    <div className="fixed left-0 bottom-0 w-full border-t border-gray-200 bg-white p-6 text-gray-900">
       <div className="flex flex-col items-start space-y-4 md:flex-row md:items-center md:justify-between md:space-x-4 md:space-y-0">
         <p className="flex flex-1 flex-col text-left text-sm">
           <span className="text-sm font-bold sm:text-xl">
