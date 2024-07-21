@@ -1,7 +1,11 @@
+import { ActionFunctionArgs } from "@remix-run/node";
+import { Link } from "@remix-run/react";
+import { CheckCircle2 } from "lucide-react";
+import { useEffect, useState } from "react";
+
 import {
   AlertDialog,
   AlertDialogAction,
-  AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogFooter,
@@ -9,20 +13,11 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "~/components/ui/alert-dialog";
-
-import { ActionFunctionArgs } from "@remix-run/node";
-import { CheckCircle2 } from "lucide-react";
 import { fields } from "../passwordSetting/fieldArray";
-import PasswordField from "./PasswordField";
-import { Link } from "@remix-run/react";
 import { usePasswordFunctions } from "../passwordSetting/functions/PasswordFunctions";
-import { useEffect, useState } from "react";
+import PasswordField from "./PasswordField";
 
-type FormData = {
-  [key: string]: string;
-};
-
-export default function PasswordSettingPage(props: FormData) {
+export default function PasswordSettingPage() {
   const {
     changeVisibility,
     clearForm,
@@ -37,8 +32,8 @@ export default function PasswordSettingPage(props: FormData) {
   } = usePasswordFunctions();
 
   //Checking if all my form fields are valid
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isWeak, setIsWeak] = useState(false);
+  const [, setIsSubmitting] = useState(false);
+  const [, setIsWeak] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
 
   useEffect(() => {
@@ -59,6 +54,7 @@ export default function PasswordSettingPage(props: FormData) {
     passwordMatchError,
   ]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleCurrentPasswordValidation = () => {
     const storedPassword = "storedPassword123";
 
@@ -73,7 +69,7 @@ export default function PasswordSettingPage(props: FormData) {
     if (formData.current_password) {
       handleCurrentPasswordValidation();
     }
-  }, [formData.current_password]);
+  }, [formData.current_password, handleCurrentPasswordValidation]);
 
   useEffect(() => {
     if (
@@ -93,26 +89,26 @@ export default function PasswordSettingPage(props: FormData) {
     newPasswordValidations.isLengthValid,
   ]);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
     setIsSubmitting(true);
 
     try {
-      const formData = new FormData(e.currentTarget);
+      const formData = new FormData(event.currentTarget);
 
       const request = new Request("/path-to-your-action-endpoint", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: new URLSearchParams(formData as any),
+        body: new URLSearchParams(formData as never),
       });
 
-      const params = {};
+      const parameters = {};
       const context = {};
 
-      const response = await action({ request, context, params });
+      const response = await action({ request, context, params: parameters });
 
       if (response) {
         //Succes response can be handle here
@@ -129,11 +125,11 @@ export default function PasswordSettingPage(props: FormData) {
   };
 
   return (
-    <div className="p-8 w-[100%] 2xl:w-[70.9%] flex flex-col gap-[32px] leading-[19.2px] text-[14px]">
+    <div className="flex w-[100%] flex-col gap-[32px] p-8 text-[14px] leading-[19.2px] 2xl:w-[70.9%]">
       <form
         method="post"
-        className="flex flex-col gap-6 w-full"
-        onSubmit={(e) => handleSubmit(e)}
+        className="flex w-full flex-col gap-6"
+        onSubmit={(event) => handleSubmit(event)}
       >
         <div className="flex flex-col">
           <h2 className="text-2xl font-semibold">Password setting</h2>
@@ -174,7 +170,7 @@ export default function PasswordSettingPage(props: FormData) {
                     }`}
                   ></span>
                   <span
-                    className={`h-[3px] w-[100px] bg-[#B6B6B6]  ${
+                    className={`h-[3px] w-[100px] bg-[#B6B6B6] ${
                       newPasswordValidations.isLengthValid
                         ? "bg-green-400"
                         : "bg-[#B6B6B6]"
@@ -226,7 +222,7 @@ export default function PasswordSettingPage(props: FormData) {
             {field.name === "confirmed_new_password" && (
               <div>
                 {passwordMatchError && (
-                  <p className="text-red-500 text-sm">
+                  <p className="text-sm text-red-500">
                     Password does not match
                   </p>
                 )}
@@ -234,18 +230,18 @@ export default function PasswordSettingPage(props: FormData) {
             )}
             {field.name === "current_password" &&
               currentPasswordValid === false && (
-                <p className="text-red-500 pt-2 text-[14px]">
+                <p className="pt-2 text-[14px] text-red-500">
                   Invalid password
                 </p>
               )}
           </div>
         ))}
-        <div className="w-max flex justify-between items-center gap-4">
+        <div className="flex w-max items-center justify-between gap-4">
           <AlertDialog>
             <AlertDialogTrigger className="w-max">
-              <div className="flex gap-6 items-center">
+              <div className="flex items-center gap-6">
                 <Link to="/">
-                  <button className="bg-white border border-border py-2 px-4 rounded-md">
+                  <button className="rounded-md border border-border bg-white px-4 py-2">
                     Cancel
                   </button>
                 </Link>
@@ -253,8 +249,8 @@ export default function PasswordSettingPage(props: FormData) {
                   type="submit"
                   disabled={!isFormValid}
                   className={` ${
-                    !isFormValid ? "bg-input text-black" : "bg-[#F97316]"
-                  } text-white rounded-md py-2 px-4`}
+                    isFormValid ? "bg-[#F97316]" : "bg-input text-black"
+                  } rounded-md px-4 py-2 text-white`}
                 >
                   Update Password
                 </button>

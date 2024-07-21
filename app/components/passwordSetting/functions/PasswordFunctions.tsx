@@ -24,7 +24,7 @@ export const usePasswordFunctions = () => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((previous) => ({ ...previous, [name]: value }));
 
     if (name === "new_password") {
       const containsNumber = /\d/.test(value);
@@ -39,7 +39,7 @@ export const usePasswordFunctions = () => {
 
       // Calculate number of requirements met
       const count = [containsNumber, containsUppercase, isLengthValid].filter(
-        Boolean
+        Boolean,
       ).length;
       setRequirementsMetCount(count);
 
@@ -50,18 +50,15 @@ export const usePasswordFunctions = () => {
 
     if (name === "confirmed_new_password") {
       // Check if confirmed password matches new password
-      if (value !== formData.new_password) {
-        setPasswordMatchError(true);
-      } else {
+      if (value === formData.new_password) {
         setPasswordMatchError(false);
+      } else {
+        setPasswordMatchError(true);
       }
     }
   };
 
-  const changeVisibility = (
-    event: React.MouseEvent<HTMLButtonElement>,
-    id: number
-  ) => {
+  const changeVisibility = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     setPasswordIsVisible(!passwordIsVisible);
   };
@@ -72,7 +69,7 @@ export const usePasswordFunctions = () => {
       confirmed_new_password: "",
     });
 
-    setIsFocused(false)
+    setIsFocused(false);
   };
   return {
     passwordIsVisible,
