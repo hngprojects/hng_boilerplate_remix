@@ -10,7 +10,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
-} from "~/components/ui/for";
+} from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { toast } from "~/components/ui/use-toast";
 import { Button } from "../button";
