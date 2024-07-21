@@ -11,6 +11,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@remix-run/css-bundle": "^2.10.3",
     "@remix-run/node": "^2.10.3",
@@ -20,6 +21,7 @@
     "clsx": "^2.1.1",
     "isbot": "^4.1.0",
     "lucide-react": "^0.408.0",
+    "pnpm": "^9.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.4.0",
