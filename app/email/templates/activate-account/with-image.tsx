@@ -1,6 +1,7 @@
 import { Button } from "@react-email/components";
 
 import TailwindWrapper from "../_components/tailwindWrapper";
+import HeroIcon from "../icons/heroIcon";
 import Layout from "../Layouts/Layout";
 
 interface propDataType {
@@ -16,13 +17,16 @@ const ViewActLink = (prop: propDataType) => {
     <>
       <TailwindWrapper>
         <Layout>
-          <div className="p-[56px]">
+          <div className="flex flex-col gap-[40px] p-[56px] lg:gap-[56px]">
+            <div>
+              <HeroIcon />
+            </div>
             <p className="block text-center text-[20px] font-semibold lg:text-[24px]">
               {prop.title}
             </p>
 
             <section className="flex flex-col gap-[56px]">
-              <div className="mb-56px">
+              <div>
                 <h6 className="mb-[32px] text-[16px] font-semibold lg:text-[18px]">{`Hi ${prop.name},`}</h6>
                 <p className="mb-[28px] text-[16px] font-normal">
                   {prop.message}
