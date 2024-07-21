@@ -9,7 +9,6 @@ import {
 } from "@remix-run/react";
 import type { ReactNode } from "react";
 
-import MobileSidebarComponent from "./components/sidebar/sidebar";
 import { AdminSideNavBar } from "./components/SuperAdminSideBar/SuperAdminSideNavBar";
 import styles from "./styles/global.css?url";
 
@@ -28,7 +27,6 @@ export function Layout({ children }: { children: ReactNode }) {
         <Links />
       </head>
       <body>
-        <MobileSidebarComponent />
         <div className="flex">
           <AdminSideNavBar />
           <main className="flex-1">{children}</main>,
