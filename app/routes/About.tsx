@@ -7,21 +7,21 @@ const About = () => {
       <section className="mx-auto max-w-7xl">
         <Header />
         <div className="mx-auto grid w-[365px] grid-cols-2 gap-10 rounded-2xl bg-[#F973161A] px-2 py-4 md:w-full md:grid-cols-4 lg:gap-[120px]">
-          <div className="flex flex-col gap-4 text-center text-[#F97316] md:block">
+          <div className="flex flex-col gap-4 text-center text-primary md:block">
             <div className="text-3xl font-bold lg:text-5xl">10 years</div>
             <div className="text-sm leading-4 lg:text-lg">In Business</div>
           </div>
-          <div className="flex flex-col gap-4 text-center text-[#F97316] md:block">
+          <div className="flex flex-col gap-4 text-center text-primary md:block">
             <div className="text-3xl font-bold lg:text-5xl">75,000+</div>
             <div className="text-sm leading-4 lg:text-lg">Customers</div>
           </div>
-          <div className="flex flex-col gap-4 text-center text-[#F97316] md:block">
+          <div className="flex flex-col gap-4 text-center text-primary md:block">
             <div className="text-3xl font-bold lg:text-5xl">100k+</div>
             <div className="text-sm leading-4 lg:text-lg">
               Monthly Blog Readers
             </div>
           </div>
-          <div className="flex flex-col gap-4 text-center text-[#F97316] md:block">
+          <div className="flex flex-col gap-4 text-center text-primary md:block">
             <div className="text-3xl font-bold lg:text-5xl">1.2m+</div>
             <div className="text-sm leading-4 lg:text-lg">Social Followers</div>
           </div>
@@ -31,7 +31,7 @@ const About = () => {
         <div className="my-16 flex flex-col items-center gap-8 px-0 md:flex-row md:px-5 lg:gap-28 lg:px-0">
           <div className="flex flex-col items-center gap-6 text-center md:items-start md:text-start">
             <div className="flex flex-col gap-3">
-              <p className="text-2xl font-bold capitalize leading-7 text-[#F97316] md:text-[28px] md:leading-8">
+              <p className="text-2xl font-bold capitalize leading-7 text-primary md:text-[28px] md:leading-8">
                 our services
               </p>
               <h3 className="relative w-[380px] text-3xl font-semibold capitalize leading-9 text-[#525252] md:text-[44px] md:leading-[53px] lg:w-[460px]">
@@ -43,7 +43,7 @@ const About = () => {
                 />
               </h3>
             </div>
-            <button className="w-fit rounded-lg bg-[#F97316] px-4 py-2 text-sm font-medium leading-6 text-white">
+            <button className="w-fit rounded-lg bg-primary px-4 py-2 text-sm font-medium leading-6 text-white">
               Contact us
             </button>
           </div>
@@ -63,7 +63,7 @@ const About = () => {
           </div>
           <div className="flex w-[382px] flex-col gap-4 px-4 text-center md:w-[50%] md:text-start lg:w-2/5 lg:gap-y-6 lg:px-0">
             <div className="flex flex-col gap-y-3">
-              <h3 className="text-2xl font-bold leading-7 text-[#F97316] lg:text-[28px] lg:leading-8">
+              <h3 className="text-2xl font-bold leading-7 text-primary lg:text-[28px] lg:leading-8">
                 Our mission
               </h3>
               <p className="text-3xl font-semibold leading-9 text-[#525252] lg:text-[44px] lg:leading-[55px]">
@@ -83,7 +83,7 @@ const About = () => {
         <div className="my-16 flex flex-col items-center justify-between gap-14 md:flex-row lg:gap-0">
           <div className="flex w-[382px] flex-col gap-4 px-4 text-center md:w-[50%] md:text-start lg:w-2/5 lg:gap-y-6 lg:px-0">
             <div className="flex flex-col gap-y-3">
-              <h3 className="text-2xl font-bold leading-7 text-[#F97316] lg:text-[28px] lg:leading-[33px]">
+              <h3 className="text-2xl font-bold leading-7 text-primary lg:text-[28px] lg:leading-[33px]">
                 Our Vision
               </h3>
               <p className="text-3xl font-semibold leading-9 text-[#525252] lg:text-[44px] lg:leading-[53px]">
@@ -115,7 +115,7 @@ const About = () => {
           </div>
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             <div className="flex flex-col gap-y-6 rounded-[10px] bg-[#F973161A] p-4">
-              <h3 className="text-center text-[28px] font-bold leading-8 text-[#F97316]">
+              <h3 className="text-center text-[28px] font-bold leading-8 text-primary">
                 Integrity
               </h3>
               <p className="text-center text-lg font-normal leading-5 text-[#525252] lg:text-start">
@@ -126,7 +126,7 @@ const About = () => {
               </p>
             </div>
             <div className="flex flex-col gap-y-6 rounded-[10px] bg-[#F973161A] p-4">
-              <h3 className="text-center text-[28px] font-bold leading-8 text-[#F97316]">
+              <h3 className="text-center text-[28px] font-bold leading-8 text-primary">
                 Customer-Centricity
               </h3>
               <p className="text-center text-lg font-normal leading-5 text-[#525252] lg:text-start">
@@ -138,7 +138,7 @@ const About = () => {
               </p>
             </div>
             <div className="flex flex-col gap-y-6 rounded-[10px] bg-[#F973161A] p-4">
-              <h3 className="text-center text-[28px] font-bold leading-8 text-[#F97316]">
+              <h3 className="text-center text-[28px] font-bold leading-8 text-primary">
                 Innovation
               </h3>
               <p className="text-center text-lg font-normal leading-5 text-[#525252] lg:text-start">
@@ -150,7 +150,7 @@ const About = () => {
               </p>
             </div>
             <div className="flex flex-col gap-6 rounded-[10px] bg-[#F973161A] p-4">
-              <h3 className="text-center text-[28px] font-bold leading-8 text-[#F97316]">
+              <h3 className="text-center text-[28px] font-bold leading-8 text-primary">
                 Excellence
               </h3>
               <p className="text-center text-lg font-normal leading-5 text-[#525252] lg:text-start">
@@ -252,7 +252,7 @@ const About = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex h-fit flex-col gap-4 bg-background pb-[14px] lg:w-72">
+              <div className="flex h-fit flex-col gap-4 bg-card pb-[14px] lg:w-72">
                 <div className="bg-[#D3D3D3]">
                   <img src="images/team-image3.png" alt="" />
                 </div>
@@ -288,7 +288,7 @@ const About = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex h-fit flex-col gap-4 bg-[#FAFAFA] pb-[14px] lg:w-72">
+              <div className="flex h-fit flex-col gap-4 bg-card pb-[14px] lg:w-72">
                 <div className="bg-[#D3D3D3]">
                   <img src="images/team-image4.png" alt="" />
                 </div>
@@ -338,7 +338,7 @@ const About = () => {
               Interested in joining out team? View our Job Listing page for
               openings and apply with an equal chance of working with us!
             </p>
-            <button className="w-fit rounded-[6px] bg-[#F97316] px-4 py-2 text-sm font-medium text-white">
+            <button className="w-fit rounded-[6px] bg-primary px-4 py-2 text-sm font-medium text-white">
               Join us
             </button>
           </div>
