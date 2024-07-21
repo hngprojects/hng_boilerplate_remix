@@ -1,6 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import { useState } from "react";
 
+import NoSearchResults from "~/components/NoSearchResults";
 import { Button } from "~/components/ui/button";
 import CardPlatform from "~/components/ui/card/card-platform";
 import OtpAuth from "~/components/ui/otp/OtpAuth";
@@ -80,6 +81,7 @@ export default function Index() {
         ]}
         handleSubmit={handleSubmit}
       />
+      <NoSearchResults searchText="hi" />
     </div>
   );
 }
