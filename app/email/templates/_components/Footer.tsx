@@ -43,16 +43,16 @@ export default function Footer() {
             Boilerplate.com. Want to change how you receive these emails?
           </span>
           <span>
-            You can{" "}
+            You can
             <Link
-              className="font-semibold text-black underline hover:no-underline"
+              className="pl-1 font-semibold text-black underline hover:no-underline"
               href="#"
             >
               Update your preference
-            </Link>{" "}
-            or{" "}
+            </Link>
+            or
             <Link
-              className="font-semibold text-black underline hover:no-underline"
+              className="pl-1 font-semibold text-black underline hover:no-underline"
               href="#"
             >
               Unsuscribe from this list.
