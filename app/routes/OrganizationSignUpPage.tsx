@@ -3,6 +3,8 @@ import { Form, Link, useActionData } from "@remix-run/react";
 import { useState } from "react";
 
 import { Button } from "~/components/ui/button";
+import Footer from "~/components/ui/footer";
+import Head from "~/components/ui/header";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 
@@ -127,8 +129,9 @@ export default function Signup() {
 
   return (
     <>
+      <Head />
       <div className="flex items-center justify-center">
-        <div className="max-w-mid mx-[25px] mt-[80px] h-[1010px] w-[342px] w-full gap-[24px] bg-white lg:m-3 lg:mt-[208px] lg:h-[836px] lg:w-[820px]">
+        <div className="max-w-mid mx-[25px] mb-[80px] mt-[80px] h-[1010px] w-[342px] w-full gap-[24px] bg-white lg:m-3 lg:mt-[208px] lg:h-[836px] lg:w-[820px]">
           <h1 className="text-[#141414]-600 mb-6 hidden text-center text-[13px] lg:block lg:text-[32px]">
             Create Organisation Account
           </h1>
@@ -369,6 +372,7 @@ export default function Signup() {
           </Form>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
