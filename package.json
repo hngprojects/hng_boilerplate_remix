@@ -41,6 +41,7 @@
     "react-dom": "^18.2.0",
     "react-email": "^2.1.5",
     "react-hook-form": "^7.52.1",
+    "react-router-dom": "^6.25.1",
     "remix": "^2.10.3",
     "swiper": "^11.1.5",
     "tailwind": "^4.0.0",
@@ -51,6 +52,8 @@
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
     "@remix-run/dev": "^2.10.3",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/react": "^16.0.0",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^7.16.1",
@@ -67,13 +70,15 @@
     "eslint-plugin-react-refresh": "^0.4.8",
     "eslint-plugin-unicorn": "^54.0.0",
     "eslint-plugin-unused-imports": "^3.2.0",
+    "jsdom": "^24.1.1",
     "postcss": "^8.4.38",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.1.6",
     "vite": "^5.1.0",
-    "vite-tsconfig-paths": "^4.2.1"
+    "vite-tsconfig-paths": "^4.2.1",
+    "vitest": "^2.0.3"
   },
   "engines": {
     "node": ">=20.0.0"
