@@ -1,6 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import { useState } from "react";
 
+import CommentBox from "~/components/CommentBox";
 import { Button } from "~/components/ui/button";
 import CardPlatform from "~/components/ui/card/card-platform";
 import OtpAuth from "~/components/ui/otp/OtpAuth";
@@ -15,6 +16,23 @@ export const meta: MetaFunction = () => {
 
 const handleSubmit = (values: Input[]) => {
   console.log({ values });
+};
+
+const commentData: {
+  userPicUrl: string;
+  userDisplayName: string;
+  userTagName: string;
+  commentContent: string;
+  likeCount: number;
+  pubDate: string;
+} = {
+  userPicUrl: "../public/images/comment-user-pic.svg",
+  userDisplayName: "Uduak Essien",
+  userTagName: "Uduess",
+  commentContent:
+    "Living a balanced lifestyle is essential. Focus on healthy eating, regular exercise, and mental well-being. A well-rounded lifestyle leads to a happier, more fulfilling life. Embrace positive habits and enjoy the journey.",
+  pubDate: `02 Jan, 2020 Wed 02:30pm`,
+  likeCount: 20,
 };
 
 export default function Index() {
@@ -56,6 +74,16 @@ export default function Index() {
             heading="Drive"
             description="Store, share, and collaborate on documents and files securely"
             containerClassName="max-w-[341px]"
+          />
+        </div>
+        <div className="p-2">
+          <CommentBox
+            userPicUrl={commentData.userPicUrl}
+            userDisplayName={commentData.userDisplayName}
+            userTagName={commentData.userTagName}
+            commentContent={commentData.commentContent}
+            pubDate={commentData.pubDate}
+            likeCount={commentData.likeCount}
           />
         </div>
         <li>

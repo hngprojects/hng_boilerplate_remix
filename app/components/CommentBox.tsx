@@ -5,7 +5,6 @@ type CommentProperties = {
   commentContent: string;
   pubDate: string;
   likeCount: number;
-  // setLikeCount: (like: number) => number;
 };
 
 const CommentBox = ({
@@ -15,8 +14,7 @@ const CommentBox = ({
   commentContent,
   pubDate,
   likeCount,
-}: // setLikeCount,
-CommentProperties) => {
+}: CommentProperties) => {
   return (
     <div className="flex w-full max-w-[54rem] items-start gap-[0.75rem] self-stretch rounded-[.5rem] border-[.8px] border-solid border-[#cbd5e1] bg-white px-[1rem] py-[1.2rem] lg:py-4">
       <img src={userPicUrl} alt="Profile Pic" className="h-10 w-10" />
