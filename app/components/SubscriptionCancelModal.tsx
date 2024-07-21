@@ -1,7 +1,14 @@
-import React from 'react';
-import { useNavigate } from '@remix-run/react';
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
-import { Button } from './ui/button';
+import { useNavigate } from "@remix-run/react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog";
+import { Button } from "./ui/button";
 
 interface SubscriptionCancelModalProperties {
   children: React.ReactNode;
@@ -10,7 +17,7 @@ interface SubscriptionCancelModalProperties {
 
 export default function SubscriptionCancelModal({
   children,
-  onReactivateSubscription
+  onReactivateSubscription,
 }: SubscriptionCancelModalProperties) {
   const navigate = useNavigate();
 
@@ -25,11 +32,13 @@ export default function SubscriptionCancelModal({
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Subscription Canceled</DialogTitle>
+          <DialogTitle>Subscription canceled</DialogTitle>
           <DialogDescription>
-            Your subscription has been successfully canceled. If you change your mind, you can reactivate your subscription anytime
+            Your subscription has been successfully canceled. If you change your
+            mind, you can reactivate your subscription anytime
           </DialogDescription>
         </DialogHeader>
+
         <DialogFooter>
           <Button variant="outline" onClick={onReactivateSubscription}>
             Reactivate Subscription
