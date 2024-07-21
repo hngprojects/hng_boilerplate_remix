@@ -16,14 +16,9 @@ import Navlink from "./navlink";
 
 export default function MobileSidebarComponent() {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
 
   function toggleExpanded() {
     setIsExpanded((previous) => !previous);
-  }
-
-  function toggleMenu() {
-    setIsMenuOpen((previous) => !previous);
   }
 
   return (
@@ -41,7 +36,7 @@ export default function MobileSidebarComponent() {
       >
         <Profile expanded={isExpanded} />
         <div
-          className={`flex gap-5 ${
+          className={`flex gap-12 ${
             isExpanded ? "items-center" : "flex-col items-start justify-center"
           }`}
         >
@@ -51,7 +46,7 @@ export default function MobileSidebarComponent() {
           >
             {isExpanded ? <ArrowLeft /> : <ArrowRight />}
           </button>
-          <MenuButton IsMenuOpen={isMenuOpen} handleToggleMenu={toggleMenu} />
+          <span></span>
         </div>
       </div>
 
