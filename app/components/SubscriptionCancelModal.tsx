@@ -5,7 +5,6 @@ import { useNavigate } from '@remix-run/react'
 
 
 interface SubscripptionCancelModalProperties {
-    onclick?: () => void
     children: React.ReactNode
     onReactivateSubscription?: () => void
 }
@@ -13,7 +12,6 @@ interface SubscripptionCancelModalProperties {
 
 export default function SubscripptionCancelModal({
     children,
-    onclick,
     onReactivateSubscription
 }: SubscripptionCancelModalProperties) {
     const navigate= useNavigate();
@@ -24,7 +22,7 @@ export default function SubscripptionCancelModal({
     return (
     <Dialog>
     <DialogTrigger asChild>
-      <Button variant="outline" onClick={onclick}>{children}</Button>
+      <Button variant="outline">{children}</Button>
     </DialogTrigger>
     <DialogContent className="sm:max-w-[425px]">
       <DialogHeader>
