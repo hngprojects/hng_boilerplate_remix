@@ -1,7 +1,6 @@
 import {FC} from "react";
 import CommentSection from "./CommentSection";
 
-type Props = {};
   
 interface Comment{
     id: number;
