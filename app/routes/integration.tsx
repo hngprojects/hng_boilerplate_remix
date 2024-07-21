@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import GoogleDrive from "/images/317713_drive_google_google drive_icon 1.svg";
 import Box from "/images/2993696_brand_brands_dropbox_logo_logos_icon 1.svg";
 import Jira from "/images/4373216_jira_logo_logos_icon 1.svg";
@@ -132,7 +133,7 @@ export default function IntegrationsPage() {
         every day
       </p>
 
-      <div className="mb-6 flex flex-wrap justify-between">
+      <div className="mb-6 space-y-6 flex flex-wrap justify-between">
         <div className="space-x-2">
           <button
             className={cn(
