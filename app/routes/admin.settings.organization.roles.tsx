@@ -2,11 +2,7 @@ import { Plus } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { Button } from "~/components/ui/button";
-<<<<<<< HEAD
-import { SuccessModal } from "~/components/ui/SuccessModel";
-=======
 import CreateRoleModal from "~/components/ui/create-role-modal";
->>>>>>> b5bb27a438e5825f58df819e9112ff09bd626d20
 import { Switch } from "~/components/ui/switch";
 
 type role = {
@@ -17,12 +13,8 @@ type role = {
 
 export default function Index() {
   const [active, setActive] = useState<string>("Administrator");
-<<<<<<< HEAD
-  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
-=======
   const [createRoleModal, setCreateRoleModal] = useState<boolean>(false);
   const reference = useRef<HTMLDivElement>(null);
->>>>>>> b5bb27a438e5825f58df819e9112ff09bd626d20
 
   const roles: role[] = [
     { id: 0, name: "Guest", description: "Read-only access" },
@@ -32,14 +24,6 @@ export default function Index() {
     { id: 5, name: "Administrator", description: "Full access, control" },
   ];
 
-<<<<<<< HEAD
-  const handleCreateRole = () => {
-    // Here you would typically handle the role creation logic
-    // For now, we'll just open the success modal
-    setIsSuccessModalOpen(true);
-  };
-
-=======
   const handleCreateRoleModal = () => {
     setCreateRoleModal(false);
   };
@@ -63,7 +47,6 @@ export default function Index() {
     };
   }, [setCreateRoleModal]);
 
->>>>>>> b5bb27a438e5825f58df819e9112ff09bd626d20
   return (
     <div className="flex">
       <div className="flex flex-1 flex-wrap items-start gap-6 px-[3%] py-[5%]">
@@ -86,11 +69,7 @@ export default function Index() {
             <Button
               variant="default"
               className="flex items-center gap-2 bg-[#F97316] text-white"
-<<<<<<< HEAD
-              onClick={handleCreateRole}
-=======
               onClick={() => setCreateRoleModal(true)}
->>>>>>> b5bb27a438e5825f58df819e9112ff09bd626d20
             >
               <Plus color="white" size={20} /> Create roles
             </Button>
@@ -161,11 +140,6 @@ export default function Index() {
           </div>
         </div>
       </div>
-
-      <SuccessModal
-        isOpen={isSuccessModalOpen}
-        onClose={() => setIsSuccessModalOpen(false)}
-      />
     </div>
   );
 }
