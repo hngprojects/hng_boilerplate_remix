@@ -1,3 +1,6 @@
+
+import { Link } from "@remix-run/react";
+
 import { Button } from "~/components/ui/button";
 import CardPlatform from "~/components/ui/card/card-platform";
 import { Input } from "~/types/otpauth";
@@ -64,6 +67,14 @@ export default function Index() {
           >
             Remix Docs
           </a>
+        </li>
+        <li>
+          <Link
+            className="text-blue-700 underline visited:text-purple-900"
+            to="/magic-success"
+          >
+            Magic Link Login Success
+          </Link>
         </li>
       </ul>
       <OtpAuth
