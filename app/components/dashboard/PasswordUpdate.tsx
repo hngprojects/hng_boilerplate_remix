@@ -1,6 +1,6 @@
 import { Form } from "@remix-run/react";
 import { CircleCheck, Eye, EyeOff } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ChangeEvent } from "react";
 
 import {
   AlertDialog,
@@ -53,7 +53,7 @@ const PasswordUpdate = () => {
     });
   };
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     const { name, value } = event.target;
     const value_: keyof PasswordValues = name as keyof PasswordValues;
