@@ -14,7 +14,7 @@ type role = {
 export default function Index() {
   const [active, setActive] = useState<string>("Administrator");
   const [createRoleModal, setCreateRoleModal] = useState<boolean>(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const reference = useRef<HTMLDivElement>(null);
 
   const roles: role[] = [
     { id: 0, name: "Guest", description: "Read-only access" },
@@ -28,20 +28,24 @@ export default function Index() {
     setCreateRoleModal(false);
   };
 
-  useEffect(() => { // OnClick outside event for create roles modal
+  useEffect(() => {
+    // OnClick outside event for create roles modal
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-      if (ref.current && !ref.current.contains(event.target as Node)) {
+      if (
+        reference.current &&
+        !reference.current.contains(event.target as Node)
+      ) {
         setCreateRoleModal(false);
       }
-    }
-    document.addEventListener('mouseup', handleClickOutside);
-    document.addEventListener('touchend', handleClickOutside);
+    };
+    document.addEventListener("mouseup", handleClickOutside);
+    document.addEventListener("touchend", handleClickOutside);
 
     return () => {
-      document.removeEventListener('mouseup', handleClickOutside);
-      document.removeEventListener('touchend', handleClickOutside);
+      document.removeEventListener("mouseup", handleClickOutside);
+      document.removeEventListener("touchend", handleClickOutside);
     };
-  }, [setCreateRoleModal])
+  }, [setCreateRoleModal]);
 
   return (
     <div className="flex">
@@ -73,7 +77,7 @@ export default function Index() {
             <div
               className={`absolute left-0 top-0 h-full w-full items-center justify-center bg-black/[0.3] backdrop-blur-sm ${createRoleModal ? "flex" : "hidden"}`}
             >
-              <div ref={ref}>
+              <div ref={reference}>
                 <CreateRoleModal
                   className=""
                   onClose={() => handleCreateRoleModal()}
