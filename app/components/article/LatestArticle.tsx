@@ -20,7 +20,7 @@ export default function LatestArticle({
 }) {
   return (
     <Link to={article.link}>
-      <article className="max-w-[792px] bg-[#fafafa] text-muted-foreground">
+      <article className="max-w-[792px] bg-[#fafafa] text-[#525252]">
         <div className="grid gap-6 py-4 md:grid-cols-5 md:py-8">
           <div className="order-2 space-y-2 md:order-1 md:col-span-3 md:space-y-4">
             <span className="inline-flex items-center justify-center gap-1.5 rounded-full bg-border py-1 pl-2.5 pr-3 text-xs font-bold">
