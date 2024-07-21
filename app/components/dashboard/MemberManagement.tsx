@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react";
-import { ArrowRight, Check, ChevronDown, Ellipsis, Search } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, Search, X } from "lucide-react";
 import { ChangeEvent, useEffect, useState } from "react";
 
 import DeleteMemberModal from "../ui/DeleteMemberModal";
@@ -77,27 +77,12 @@ function MemberManagement() {
       <>
         <p>{users.length} active members</p>
         {users
-          .filter((user) => {
-            const normalizedSearch = search.toLowerCase();
-            const normalizedFilter = filter.toLowerCase();
-            const normalizedRole = user.role.toLowerCase();
-
-            console.log("User role:", normalizedRole);
-
-            // Show all users if filter is "All"
-            if (normalizedFilter === "all") return true;
-
-            const isNameMatch = user.name
-              .toLowerCase()
-              .includes(normalizedSearch);
-            const isEmailMatch = user.email
-              .toLowerCase()
-              .includes(normalizedSearch);
-            const isRoleMatch = normalizedRole === normalizedFilter;
-
-            // Return true if any condition matches
-            return isNameMatch || isEmailMatch || isRoleMatch;
-          })
+          .filter(
+            (user) =>
+              user.name.toLowerCase().includes(search.toLowerCase()) ||
+              user.email.toLowerCase().includes(search.toLowerCase()) ||
+              user.role.toLowerCase() === filter.toLowerCase(),
+          )
           .map((user, index) => (
             <div
               className="mt-2 flex flex-row flex-wrap items-center"
@@ -119,7 +104,7 @@ function MemberManagement() {
 
               <div className="relative flex basis-1/3 flex-row justify-end">
                 <button onClick={() => handleMemberDelete(user.name)}>
-                  <Ellipsis />
+                  <X />
                 </button>
 
                 {isModalVisible && selectedUserName === user.name && (
@@ -134,7 +119,6 @@ function MemberManagement() {
     );
   };
 
-  // handle dropdown button (window close event)
   useEffect(() => {
     const handleClick = () => {
       setDisplay("none");
