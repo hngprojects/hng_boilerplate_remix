@@ -1,4 +1,5 @@
-import PasswordUpdate from "~/components/dashboard/PasswordUpdate";
+import PasswordUpdate from "~/Components/dashboard/PasswordUpdate";
+
 
 const DaashboardPasswordSettings = () => {
   return (
