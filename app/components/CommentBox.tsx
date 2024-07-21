@@ -45,7 +45,6 @@ const CommentBox = ({
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <button className="like-btn flex items-center gap-1 rounded-[.24863rem] border-[.669px] border-solid border-[#cbd5e1] bg-[#fafafa] px-[.33rem] py-1">
-            {/* <img src="../../public/images/comment-like-icon.svg" alt="like" /> */}
             <ThumbsUp size={20} strokeWidth={1.5} color="#0A0A0A" />
             <p className="font-inter">{likeCount !== 0 && likeCount}</p>
           </button>
