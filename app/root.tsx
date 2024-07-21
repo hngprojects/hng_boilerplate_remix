@@ -28,8 +28,10 @@ export function Layout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <div>
-          <main>{children}</main>
-          <FooterLight />
+          <main>
+            {children}
+            <FooterLight />
+          </main>
           <ScrollRestoration />
           <Scripts />
         </div>
