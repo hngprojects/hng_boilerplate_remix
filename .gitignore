@@ -4,5 +4,3 @@ node_modules
 /build
 .env
 *.DS_Store
-package-lock.json
-pnpm-lock.yaml
