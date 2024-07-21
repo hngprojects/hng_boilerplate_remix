@@ -17,7 +17,7 @@ export default function Navlink({
   const { pathname } = useLocation();
   return (
     <li
-      className={`flex cursor-pointer items-center gap-[0.81rem] transition duration-200 ease-in-out ${
+      className={`flex cursor-pointer items-center gap-[0.81rem] transition duration-200 ease-in-out hover:bg-[#F97316] hover:text-[#fafafa] ${
         pathname === path ? "bg-[#F97316] text-[#fafafa]" : ""
       } ${
         expanded
