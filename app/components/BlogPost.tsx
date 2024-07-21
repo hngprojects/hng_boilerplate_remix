@@ -1,4 +1,3 @@
-import React from "react";
 import RecentBlogCard from "./RecentBlogCard";
 import { Button } from "./ui/button";
 
@@ -55,8 +54,8 @@ const blogPosts = [
 
 const BlogPost = () => {
   return (
-    <section className="my-10  lg:px-[100px] md:px-10 overflow-hidden w-[100%]  flex flex-col">
-      <h3 className="my-5 px-4 text-[28px] font-bold text-[#525252]"> 
+    <section className="my-10 flex w-[100%] flex-col overflow-hidden md:px-10 lg:px-[100px]">
+      <h3 className="my-5 px-4 text-[28px] font-bold text-[#525252]">
         Recent Blog posts
       </h3>
       <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:pr-7">
@@ -64,8 +63,8 @@ const BlogPost = () => {
           <RecentBlogCard href={"/"} key={index} {...post} />
         ))}
       </div>
-      <div className="flex justify-center items-center my-11">
-        <Button className="bg-primary hover:default-foreground mt-4 px-7">
+      <div className="my-11 flex items-center justify-center">
+        <Button className="hover:default-foreground mt-4 bg-primary px-7">
           Show More Articles
         </Button>
       </div>

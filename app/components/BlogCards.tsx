@@ -10,7 +10,6 @@ interface BlogCardProperties {
   timeOfReading: string;
   blogImage: string;
   link: string;
-  hideEmptySpan?: boolean;
 }
 
 const BlogCard: FC<BlogCardProperties> = ({
@@ -23,7 +22,6 @@ const BlogCard: FC<BlogCardProperties> = ({
   timeOfReading,
   blogImage,
   link,
-  hideEmptySpan,
 }) => {
   return (
     <div className="m-4 max-w-sm overflow-hidden rounded shadow-lg lg:flex lg:max-w-full lg:flex-row">

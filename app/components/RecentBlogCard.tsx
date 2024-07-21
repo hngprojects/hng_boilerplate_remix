@@ -1,7 +1,6 @@
 import { Link } from "@remix-run/react";
-import React from "react";
 
-interface RecentBlogcardProps {
+interface RecentBlogcardProperties {
   title: string;
   date: string;
   timeRead: string;
@@ -19,7 +18,7 @@ const RecentBlogCard = ({
   image,
   description,
   variant,
-}: RecentBlogcardProps) => {
+}: RecentBlogcardProperties) => {
   const descriptionStyles = [
     "bg-[#f97316]",
     "bg-[#EAB308]",
@@ -29,28 +28,31 @@ const RecentBlogCard = ({
     "bg-[#EAB308]",
   ];
 
-  return(
-  <Link  to={href}>
-      <div className="bg-white rounded-md pt-3 px-2 w-[354px] h-[384px] relative">
+  return (
+    <Link to={href}>
+      <div className="relative h-[384px] w-[354px] rounded-md bg-white px-2 pt-3">
         <p
-          className={`text-white rounded-lg p-2 absolute top-7 left-5 ${
+          className={`absolute left-5 top-7 rounded-lg p-2 text-white ${
             descriptionStyles[variant % descriptionStyles.length]
           }`}
           style={{ padding: "5px 17px", borderRadius: "16px" }}
         >
           {description}
         </p>
-        <img src={image} alt="{title}" className="w-full h-[247px]  object-cover rounded-tl-[16px] rounded-tr-[16px]" />
-        <h5 className="text-[18px] font-bold  mb-1 p-2 text-[#525252]">{title}</h5>
-        <div className="flex justify-between mb-1 p-2 ">
-          <p className="text-gray-600 ">{date}</p>
-          <p className="text-gray-600 ">{timeRead}</p>
+        <img
+          src={image}
+          alt="{title}"
+          className="h-[247px] w-full rounded-tl-[16px] rounded-tr-[16px] object-cover"
+        />
+        <h5 className="mb-1 p-2 text-[18px] font-bold text-[#525252]">
+          {title}
+        </h5>
+        <div className="mb-1 flex justify-between p-2">
+          <p className="text-gray-600">{date}</p>
+          <p className="text-gray-600">{timeRead}</p>
         </div>
       </div>
-
-      
-
-  </Link>
+    </Link>
   );
 };
 

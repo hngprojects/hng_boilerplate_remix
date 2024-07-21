@@ -18,7 +18,7 @@ export default function Index() {
       <Header />
       <HeroSection />
       <BlogPost />
-      <Footer/>
+      <Footer />
     </div>
   );
 }
