@@ -95,10 +95,8 @@ const WaitlistForm: React.FC = () => {
       {actionData?.success ? (
         <section className="waitlist-success h-[414.57px] w-[383.34px] lg:h-[406.8px] lg:w-[703.2px]">
           <div className="relative flex flex-col items-center justify-center">
-            <img
-              src="/Vector.png"
-              className="h-[179px] w-[177px] opacity-25"
-            />
+            <img src="/Vector.png" className="h-[179px] w-[177px] opacity-25" />
+
             <span className="thumbs-up left-10 top-2">
               <ThumbsUp size={20} />
             </span>
