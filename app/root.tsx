@@ -1,3 +1,5 @@
+import { cssBundleHref } from "@remix-run/css-bundle";
+import { LinksFunction } from "@remix-run/node";
 import {
   Links,
   Meta,
@@ -5,16 +7,17 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import { LinksFunction } from "@remix-run/node";
+import type { ReactNode } from "react";
+
+import { AdminSideNavBar } from "./components/SuperAdminSideBar/SuperAdminSideNavBar";
 import styles from "./styles/global.css?url";
-import { cssBundleHref } from "@remix-run/css-bundle";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -24,9 +27,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
+        <div className="flex">
+          <AdminSideNavBar />
+          <main className="flex-1">{children}</main>,
+          <ScrollRestoration />
+          <Scripts />
+        </div>
       </body>
     </html>
   );

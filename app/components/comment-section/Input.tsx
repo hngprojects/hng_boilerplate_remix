@@ -1,52 +1,54 @@
+import { ChangeEvent, MouseEvent, useEffect, useState } from "react";
 
-import { ChangeEvent, useState, useEffect } from "react";
+import { Comment, NewCommentInput } from "./types";
+
 import "../ui/index.css";
-import { Button } from "../ui/button";
-import icon from "../../../public/Ellipse 2.svg";
 
-interface TextInputProps {
+import icon from "../../../public/Ellipse 2.svg";
+import { Button } from "../ui/button";
+
+interface TextInputProperties {
   value: string;
   onChange: (newValue: string) => void;
 }
 
-interface Comment {
-  id: number;
-  username: string;
-  image: string;
-  handle: string;
-  comment: string;
-  timestamp: number;
-}
-
-export default function Input({ value, onChange }: TextInputProps) {
+export default function Input({ value, onChange }: TextInputProperties) {
   const [newComment, setNewComment] = useState<string>("");
   const [comments, setComments] = useState<Comment[]>([]);
 
   useEffect(() => {
-   fetch("https://jsonplaceholder.typicode.com/posts/1/comments")
+    fetch("https://jsonplaceholder.typicode.com/posts/1/comments")
       .then((response) => response.json())
       .then((data) => setComments(data))
       .catch((error) => console.error("Error fetching comments:", error));
   }, []);
 
-  const addComment = (newComment) => {
-    const newCommentObj = {
+  const addComment = (newComment: NewCommentInput): Comment => {
+    const newCommentObject: Comment = {
       id: Date.now(),
-      username: `${newComment.name}`,
+      username: newComment.name,
       image: icon,
-      currentUser: `${newComment.email}`,
-      comment: `${newComment.body}`,
+      handle: newComment.email,
+      comment: newComment.text,
       timestamp: Date.now(),
+      className: "",
     };
-    return newCommentObj;
+    return newCommentObject;
   };
 
-  const handleCommentSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleCommentSubmit = (event: MouseEvent<HTMLFormElement>) => {
     event.preventDefault();
     const newCommentText = newComment.trim();
     if (newCommentText) {
-      const newCommentObj = addComment({ name: "Username", email: "user@example.com", text: newCommentText });
-      setComments((prevComments) => [...prevComments, newCommentObj]);
+      const newCommentObject = addComment({
+        name: "Username",
+        email: "user@example.com",
+        text: newCommentText,
+      });
+      setComments((previousComments) => [
+        ...previousComments,
+        newCommentObject,
+      ]);
       setNewComment("");
     }
   };
@@ -65,7 +67,7 @@ export default function Input({ value, onChange }: TextInputProps) {
   };
 
   return (
-    <div className="w-300  w-full md:w-1/2 lg:full px-3 py-2 border-1 border-solid border-[var(--neutral)]">
+    <div className="w-300 lg:full border-1 w-full border-solid border-[var(--neutral)] px-3 py-2 md:w-1/2">
       <div className="flex gap-2">
         <img src={icon} alt="icon" />
         <input
@@ -74,14 +76,15 @@ export default function Input({ value, onChange }: TextInputProps) {
           type="text"
           id="comments"
           placeholder="Type your comments here"
-          className="w-366px placeholder-opacity-50 py-2 px-6 border-2 border-solid border-[var(--accent)]"
+          className="w-366px border-2 border-solid border-[var(--accent)] px-6 py-2 placeholder-opacity-50"
         />
-        <Button className="bg-[var(--accent)] w-20" onClick={handleCommentSubmit}>
+        <Button
+          className="w-20 bg-[var(--accent)]"
+          onClick={handleCommentSubmit}
+        >
           Submit
         </Button>
       </div>
     </div>
   );
 }
-
-
