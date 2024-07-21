@@ -10,7 +10,7 @@ interface BlockProperties {
   children?: React.ReactNode;
 }
 
-const ReusableTemplateEditorBlock: React.FC<BlockProperties> = ({
+export const ReusableTemplateEditorBlock: React.FC<BlockProperties> = ({
   id,
   content,
   children,
@@ -51,4 +51,4 @@ const ReusableTemplateEditorBlock: React.FC<BlockProperties> = ({
   );
 };
 
-export default ReusableTemplateEditorBlock;
+// export default ReusableTemplateEditorBlock;

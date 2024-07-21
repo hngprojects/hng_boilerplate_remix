@@ -1,7 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import { useState } from "react";
 
-import { ReusableTemplateEditorBlock } from "~/components/template/templateEditorBlock";
+// import { ReusableTemplateEditorBlock } from "~/components/template/templateEditorBlock";
 import { Button } from "~/components/ui/button";
 import CardPlatform from "~/components/ui/card/card-platform";
 import OtpAuth from "~/components/ui/otp/OtpAuth";
@@ -68,7 +68,9 @@ export default function Index() {
           </a>
         </li>
       </ul>
-      <ReusableTemplateEditorBlock />
+      <div className="p-4 font-sans">
+        {/* <ReusableTemplateEditorBlock /> */}
+      </div>
       <OtpAuth
         isModalOpen={openModal}
         setIsModalOpen={() => setOpenModal(!openModal)}
