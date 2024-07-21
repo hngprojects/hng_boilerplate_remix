@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 import LatestArticle from "~/components/article/LatestArticle";
+import Button from "~/components/customButton/customButton";
 import Navbar from "~/components/static-navbar/static-navbar";
-import { Button } from "~/components/ui/button";
 import Footer from "~/components/ui/footer";
 import { Article, fetchArticles } from "./api-call";
 
@@ -49,9 +49,11 @@ export default function ArticlesPage() {
 
   return (
     <div className="">
-      <Navbar isUserAuthenticated={true} />
-      <div className="flex h-auto w-full flex-col gap-6 bg-primary-foreground px-6 py-9 text-muted-foreground lg:items-center">
-        <h1 className="text-[28px] font-bold">Latest Articles</h1>
+      <Navbar isUserAuthenticated={false} />
+      <div className="flex h-auto w-full flex-col gap-6 bg-background px-6 py-9 text-muted-foreground lg:items-center">
+        <h1 className="text-neutral-1 text-[28px] font-bold">
+          Latest Articles
+        </h1>
         <div>
           <ul className="flex flex-col gap-[10px]">
             {articles.map((article, index) => (
@@ -63,9 +65,6 @@ export default function ArticlesPage() {
               </li>
             ))}
           </ul>
-          {loading && (
-            <div className="w-full py-[20px] text-center">Loading...</div>
-          )}
         </div>
         <Button
           onClick={handleLoadMore}
