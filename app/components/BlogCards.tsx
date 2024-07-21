@@ -10,6 +10,8 @@ interface BlogCardProperties {
   timeOfReading: string;
   blogImage: string;
   link: string;
+  hideEmptySpan?: boolean;
+
 }
 
 const BlogCard: React.FC<BlogCardProperties> = ({
@@ -22,14 +24,21 @@ const BlogCard: React.FC<BlogCardProperties> = ({
   timeOfReading,
   blogImage,
   link,
+  hideEmptySpan,
+
+
 }) => {
   return (
     <div className="m-4 max-w-sm overflow-hidden rounded shadow-lg lg:flex lg:max-w-full lg:flex-row">
       <img className="w-full lg:order-2 lg:w-1/3" src={blogImage} alt={title} />
       <div className="p-4 lg:order-1 lg:w-2/3">
         <div className="mb-2 flex items-center">
-          <span className="mr-2 inline-block h-3 w-3 rounded-full bg-gray-400"></span>
-          <span className="text-sm font-semibold text-gray-700">{tag}</span>
+          {!hideEmptySpan && (
+            <span className="mr-2 inline-block h-3 w-3 rounded-full bg-gray-400"></span>
+
+          )}
+            <span className="text-sm font-semibold text-gray-700">{tag}</span>
+     
         </div>
         <div>
           <a href={link} className="text-black hover:text-blue-800">
