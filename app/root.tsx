@@ -1,16 +1,17 @@
+import { cssBundleHref } from "@remix-run/css-bundle";
+import { LinksFunction } from "@remix-run/node";
 import {
-	Links,
-	Meta,
-	Outlet,
-	Scripts,
-	ScrollRestoration,
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
 } from "@remix-run/react";
-import { LinksFunction } from "@remix-run/node";import type { ReactNode } from "react";
+
+import Footer from "./components/ui/Footer";import type { ReactNode } from "react";
 
 import { AdminSideNavBar } from "./components/SuperAdminSideBar/SuperAdminSideNavBar";
 import styles from "./styles/global.css?url";
-import { cssBundleHref } from "@remix-run/css-bundle";
-import Footer from "./components/ui/Footer";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
@@ -28,6 +29,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -36,5 +38,5 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-	return <Outlet />;
+  return <Outlet />;
 }
