@@ -1,10 +1,9 @@
 import { Button } from "@react-email/components";
 
 import TailwindWrapper from "../_components/tailwindWrapper";
-import HeroIcon from "../icons/heroIcon";
 import Layout from "../Layouts/Layout";
 
-interface propertyDataType {
+interface ActLinkProps {
   name: string;
   title: string;
   message: string;
@@ -12,14 +11,25 @@ interface propertyDataType {
   app_name: string;
 }
 
-const ViewActLink = (property: propertyDataType) => {
+const ViewActLink = (property: ActLinkProps) => {
   return (
     <>
       <TailwindWrapper>
         <Layout>
           <div className="flex flex-col gap-[40px] p-[56px] lg:gap-[56px]">
             <div>
-              <HeroIcon />
+              <div className="flex items-center justify-center md:hidden">
+                <img
+                  src="https://i.ibb.co/0JSztwD/Frame-13sm.png"
+                  alt="message-sent-20-1small"
+                />
+              </div>
+              <div className="hidden items-center justify-center md:flex">
+                <img
+                  src="https://i.ibb.co/59t3h8T/Frame-13.png"
+                  alt="message-sent-20-1big"
+                />
+              </div>
             </div>
             <p className="block text-center text-[20px] font-semibold lg:text-[24px]">
               {property.title}
@@ -59,4 +69,4 @@ ViewActLink.PreviewProps = {
     "We have sent you a new activation link for your Boilerplate account. Please click the button below to activate your account:",
   cta_text: "Activate My Account",
   app_name: "Boiler Plate",
-} satisfies propertyDataType;
+} satisfies ActLinkProps;

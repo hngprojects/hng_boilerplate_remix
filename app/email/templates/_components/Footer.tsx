@@ -1,30 +1,43 @@
-import { Link } from "@react-email/components";
-
-import Instagram from "../icons/instagram";
-import LinkedIn from "../icons/linkedIn";
-import Reddit from "../icons/reddit";
-import Tiktok from "../icons/tiktok";
-import Twitter from "../icons/twitter";
+import { Img, Link } from "@react-email/components";
 
 export default function Footer() {
+  const baseUrl = process.env.PATH
+    ? `${process.env.PATH}/public/images/`
+    : "localhost:3000/images/";
   return (
     <div className="m-auto w-[4/5] justify-center bg-[#F3EFEF] px-[48px] py-[32px] leading-[normal] tracking-[normal] lg:w-auto">
       <section className="mx-auto flex flex-col items-start justify-start gap-7 text-left text-sm">
         <div className="flex w-full items-center justify-center gap-[33px]">
           <Link>
-            <Twitter />
+            <Img
+              src="https://i.ibb.co/GdRNd9X/Social-Icons.png"
+              alt="twitter icon"
+            />
           </Link>
           <Link>
-            <Instagram />
+            <Img
+              src="https://i.ibb.co/0qnRyfv/Social-Iconsinstagram.png"
+              alt="twitter icon"
+            />
           </Link>
           <Link>
-            <Tiktok />
+            <Img
+              src="https://i.ibb.co/YDvzhcc/Social-Iconstiktok.png"
+              alt="twitter icon"
+            />
+          </Link>
+
+          <Link>
+            <Img
+              src="https://i.ibb.co/4KFW2kD/Social-Iconsreddit.png"
+              alt="twitter icon"
+            />
           </Link>
           <Link>
-            <Reddit />
-          </Link>
-          <Link>
-            <LinkedIn />
+            <Img
+              src="https://i.ibb.co/VQrbnxf/Social-Iconslinkedin.png"
+              alt="twitter icon"
+            />
           </Link>
         </div>
         <p className="text-[14px] text-[#5B5B5D]">
