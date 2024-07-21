@@ -18,7 +18,7 @@ const Header: FC = () => {
         </h3>
       </div>
 
-      <nav className="hidden space-x-[-14px] md:block">
+      <nav className="hidden space-x-[-14px] text-muted-foreground md:block md:space-x-[-40px]">
         <a
           href="#"
           className="px-8 py-2 text-center text-base font-medium leading-5"
@@ -43,10 +43,10 @@ const Header: FC = () => {
         <img src={notification} alt="notification" className="mr-2" />
       </div>
       <div className="hidden space-x-8 md:block">
-        <button className="h-11 rounded-md border border-destructive bg-background px-8 py-2 text-secondary-foreground">
+        <button className="h-11 rounded-md border border-primary bg-background px-8 py-2 text-secondary-foreground">
           Log In
         </button>
-        <button className="h-11 rounded-md bg-destructive px-8 py-2 text-background">
+        <button className="h-11 rounded-md bg-primary px-8 py-2 text-background">
           Get Started
         </button>
       </div>
