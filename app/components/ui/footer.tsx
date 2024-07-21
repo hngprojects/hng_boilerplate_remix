@@ -28,7 +28,7 @@ const Footer: FC = () => {
               placeholder="Enter Email"
               className="flex h-[50px] w-[316px] items-center rounded-[5px] bg-input px-2.5 text-sm font-normal tracking-[-1px] text-foreground"
             />
-            <button className="absolute right-0 mr-1.5 mt-[5px] h-10 w-[100px] rounded-[6px] bg-destructive text-primary-foreground">
+            <button className="absolute right-0 mr-1.5 mt-[5px] h-10 w-[100px] rounded-[6px] bg-primary text-primary-foreground">
               Subscribe
             </button>
           </form>
@@ -139,19 +139,19 @@ const Footer: FC = () => {
           <div>
             <h2>Follow Us</h2>
             <div className="flex">
-              <div className="mr-[7px] flex h-[22px] w-[22px] items-center justify-center rounded-full bg-destructive">
+              <div className="mr-[7px] flex h-[22px] w-[22px] items-center justify-center rounded-full bg-primary">
                 <img src={twitter} alt="twitter" className="h-3 w-3" />
               </div>
-              <div className="mr-[7px] flex h-[22px] w-[22px] items-center justify-center rounded-full bg-destructive">
+              <div className="mr-[7px] flex h-[22px] w-[22px] items-center justify-center rounded-full bg-primary">
                 <img src={youtube} alt="youtube" className="h-3 w-3" />
               </div>
-              <div className="mr-[7px] flex h-[22px] w-[22px] items-center justify-center rounded-full bg-destructive">
+              <div className="mr-[7px] flex h-[22px] w-[22px] items-center justify-center rounded-full bg-primary">
                 <img src={instagram} alt="instagram" className="h-3 w-3" />
               </div>
-              <div className="mr-[7px] flex h-[22px] w-[22px] items-center justify-center rounded-full bg-destructive">
+              <div className="mr-[7px] flex h-[22px] w-[22px] items-center justify-center rounded-full bg-primary">
                 <img src={linkedin} alt="linkedin" className="h-3 w-3" />
               </div>
-              <div className="mr-[7px] flex h-[22px] w-[22px] items-center justify-center rounded-full bg-destructive">
+              <div className="mr-[7px] flex h-[22px] w-[22px] items-center justify-center rounded-full bg-primary">
                 <img src={facebook} alt="facebook" className="h-3 w-3" />
               </div>
             </div>
@@ -167,7 +167,7 @@ const Footer: FC = () => {
               placeholder="Enter Email"
               className="flex h-11 w-[270px] items-center rounded-[5px] bg-background px-2.5 text-sm font-normal tracking-[-1px] text-primary"
             />
-            <button className="absolute right-0 my-[3px] mr-2.5 h-10 w-[100px] rounded-[6px] bg-destructive text-primary-foreground">
+            <button className="absolute right-0 my-[3px] mr-2.5 h-10 w-[100px] rounded-[6px] bg-primary text-primary-foreground">
               Subscribe
             </button>
           </form>
@@ -177,19 +177,19 @@ const Footer: FC = () => {
 
       <div className="flex flex-col items-center justify-between px-5 md:flex-row md:px-[120px]">
         <div className="hidden md:flex">
-          <div className="mr-[3px] flex h-10 w-10 items-center justify-center rounded-full bg-destructive">
+          <div className="mr-[3px] flex h-10 w-10 items-center justify-center rounded-full bg-primary">
             <img src={twitter} alt="twitter" />
           </div>
-          <div className="mr-[3px] flex h-10 w-10 items-center justify-center rounded-full bg-destructive">
+          <div className="mr-[3px] flex h-10 w-10 items-center justify-center rounded-full bg-primary">
             <img src={youtube} alt="youtube" />
           </div>
-          <div className="mr-[3px] flex h-10 w-10 items-center justify-center rounded-full bg-destructive">
+          <div className="mr-[3px] flex h-10 w-10 items-center justify-center rounded-full bg-primary">
             <img src={instagram} alt="instagram" />
           </div>
-          <div className="mr-[3px] flex h-10 w-10 items-center justify-center rounded-full bg-destructive">
+          <div className="mr-[3px] flex h-10 w-10 items-center justify-center rounded-full bg-primary">
             <img src={linkedin} alt="linkedin" />
           </div>
-          <div className="mr-[3px] flex h-10 w-10 items-center justify-center rounded-full bg-destructive">
+          <div className="mr-[3px] flex h-10 w-10 items-center justify-center rounded-full bg-primary">
             <img src={facebook} alt="facebook" />
           </div>
         </div>
