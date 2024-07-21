@@ -7,7 +7,7 @@ function ProfileSetting() {
   const [image] = useState("");
 
   return (
-    <main className="mx-auto flex flex-col gap-4 border-[1px] border-red-300">
+    <main className="mx-auto flex flex-col gap-4">
       <Photo image={image} />
       <Form image={image} />
     </main>
