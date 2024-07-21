@@ -5,62 +5,64 @@ import {
   Building2,
   Cpu,
   Monitor,
-  Moon,
   SlidersHorizontal,
-  Sun,
   User,
 } from "lucide-react";
 import { useState } from "react";
 
-import { useTheme } from "~/context/ThemeContext";
-import Logo from "../Logo";
+import Profile from "../Profile";
+import MenuButton from "./menu-button";
 import Navlink from "./navlink";
 
 export default function MobileSidebarComponent() {
   const [isExpanded, setIsExpanded] = useState(false);
-  const { isDark, toggleTheme } = useTheme();
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
+
+  function toggleExpanded() {
+    setIsExpanded((previous) => !previous);
+  }
 
   function toggleMenu() {
-    setIsExpanded((previous) => !previous);
+    setIsMenuOpen((previous) => !previous);
   }
 
   return (
     <aside
-      className={`fixed z-10 flex h-screen flex-col items-start gap-14 bg-primary text-primary-foreground transition duration-200 ease-in-out sm:hidden ${
+      className={`fixed z-10 flex h-screen flex-col items-start gap-14 bg-background transition duration-200 ease-in-out sm:hidden ${
         isExpanded ? "w-full" : "w-fit px-2"
-      } ${isDark ? "" : "dark"}`}
+      }`}
     >
       <div
         className={`flex w-full ${
           isExpanded
             ? "items-center justify-between"
             : "flex-col items-start justify-center gap-6"
-        } relative mt-2 px-[1.25rem]`}
+        } mt-6 px-[1.25rem]`}
       >
-        <Logo expanded={isExpanded} />
+        <Profile expanded={isExpanded} />
         <div
           className={`flex gap-5 ${
             isExpanded ? "items-center" : "flex-col items-start justify-center"
           }`}
         >
           <button
-            onClick={toggleTheme}
-            className={`${!isExpanded && "scale-75"}`}
-          >
-            {isDark ? <Sun /> : <Moon />}
-          </button>
-          <button
-            onClick={toggleMenu}
+            onClick={toggleExpanded}
             className={`${!isExpanded && "scale-75"}`}
           >
             {isExpanded ? <ArrowLeft /> : <ArrowRight />}
           </button>
+          <MenuButton IsMenuOpen={isMenuOpen} handleToggleMenu={toggleMenu} />
         </div>
       </div>
 
       <nav>
         <ul className="flex flex-col gap-[13px]">
-          <Navlink path="/" text="Home" icon={<User />} expanded={isExpanded} />
+          <Navlink
+            path="/home"
+            text="Home"
+            icon={<User />}
+            expanded={isExpanded}
+          />
           <Navlink
             path="/aboutus"
             text="About us"
