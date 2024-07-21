@@ -81,17 +81,14 @@ body {
   }
 }
 
-@font-face {
-  font-family: "inter";
-  src: url(" /fonts/Inter-Medium.ttf");
-}
+
 
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-["inter"];
+    @apply bg-background text-foreground ;
   }
   .input_style {
     @apply w-full h-14 flex flex-col pt-3 pr-16 pb-3 pl-3 text-gray-400 border border-gray-300 rounded-md shadow-sm outline-none;
