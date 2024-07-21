@@ -5347,6 +5347,7 @@ snapshots:
     optional: true
 
   '@esbuild/aix-ppc64@0.19.11':
+<<<<<<< HEAD
     optional: true
 
   '@esbuild/aix-ppc64@0.21.5':
