@@ -10,7 +10,6 @@ import {
 import type { ReactNode } from "react";
 
 import MobileSidebarComponent from "./components/sidebar/sidebar";
-import { ThemeProvider } from "./context/ThemeContext";
 import styles from "./styles/global.css?url";
 
 export const links: LinksFunction = () => [
@@ -28,10 +27,8 @@ export function Layout({ children }: { children: ReactNode }) {
         <Links />
       </head>
       <body>
-        <ThemeProvider>
-          <MobileSidebarComponent />
-          {children}
-        </ThemeProvider>
+        <MobileSidebarComponent />
+        {children}
         <ScrollRestoration />
         <Scripts />
       </body>
