@@ -1,11 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
-import { useState } from "react";
 
-import { Button } from "~/components/ui/button";
-import CardPlatform from "~/components/ui/card/card-platform";
-import OtpAuth from "~/components/ui/otp/OtpAuth";
-import { Input } from "~/types/otpauth";
+import ForgotPassword from "~/components/ForgotPasswordPage/ForgotPasswordPage";
 
 export const meta: MetaFunction = () => {
   return [
@@ -14,16 +9,16 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-const handleSubmit = (values: Input[]) => {
-  console.log({ values });
-};
+// const handleSubmit = (values: Input[]) => {
+//   console.log({ values });
+// };
 
 export default function Index() {
-  const [openModal, setOpenModal] = useState(false);
+  // const [openModal, setOpenModal] = useState(false);
 
   return (
     <div className="p-4 font-sans">
-      <h1 className="text-3xl">Welcome to Remix</h1>
+      {/* <h1 className="text-3xl">Welcome to Remix</h1>
       <ul className="mt-4 list-disc space-y-2 pl-6">
         <li>
           <a
@@ -83,7 +78,8 @@ export default function Index() {
           { name: "input6", value: "" },
         ]}
         handleSubmit={handleSubmit}
-      />
+      /> */}
+      <ForgotPassword></ForgotPassword>
     </div>
   );
 }
