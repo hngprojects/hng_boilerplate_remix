@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { Button } from "~/components/ui/button";
 import CardPlatform from "~/components/ui/card/card-platform";
+import OtpAuth from "~/components/ui/otp/OtpAuth";
 
 export const meta: MetaFunction = () => {
   return [
