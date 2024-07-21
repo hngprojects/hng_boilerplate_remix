@@ -10,16 +10,10 @@ import icon6 from "../../../public/comment.svg";
 import { Button } from "../ui/button";
 import Comments from "./Comments";
 
-interface Comment {
-  id: number;
-  text: string;
-  handle: any;
-  author: string;
-  date: string;
-}
+
 
 interface FooterCommentProps {
-  comments: Comment[];
+ comments:string;
   onAddComment: (comment: string) => void;
 }
 const CommentSection: FC<FooterCommentProps> = ({ comments, onAddComment }) => {
@@ -32,9 +26,9 @@ const CommentSection: FC<FooterCommentProps> = ({ comments, onAddComment }) => {
     setNewComment("");
   };
   return (
-    <div className=" border-2 border-solid  w-396 bg-[var(--bg-popover)]">
+    <div className=" border-2 border-solid  w-396 px-4 py-2 bg-[var(--bg-popover)]">
      <Comments comments={comments}/>
-     <Comments comments={comments} />
+     <Comments comments={comments}/>
       <div className="flex items-start flex-col flex-grow flex-basis-0">
         <Input value={newComment} onChange={handleInputChange} />
         <Button className="bg-[var(--accent)]">Submit</Button>

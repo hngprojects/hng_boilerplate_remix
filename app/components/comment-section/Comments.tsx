@@ -14,22 +14,20 @@ interface Comment {
   handle: any;
   author: string;
   date: string;
-  
+  className: string;
 }
 
 interface FooterCommentProps {
   comments: Comment[];
-
 }
-const Comments: FC<FooterCommentProps> = ({ comments,}) => {
- 
+const Comments: FC<FooterCommentProps> = ({ comments }) => {
   return (
-    <div className=" border-2 border-solid  w-396 bg-[var(--bg-popover)]">
+    <div className=" border-2 border-solid  w-full md:w-1/2 lg:full bg-[var(--bg-popover)]">
       <div className="px-2">
         <h4 className="text-xl font-medium leading-normal self-stretch w-full">
           Comments
         </h4>
-        {comments.map((comment) => (
+        {comments?.map((comment) => (
           <div
             key={comment.id}
             className="flex items-start flex-col flex-grow flex-basis-0 py-2 px-8 my-4 border-2 border-solid "
@@ -37,20 +35,20 @@ const Comments: FC<FooterCommentProps> = ({ comments,}) => {
             <div className="bg-[var(--popover)] ">
               <div className="flex gap-1">
                 <img src={icon1} alt="icon" />
-                <div>
-                  <strong className="text-var(--text-dark)]">
+                <div className="text-sm md:text-xl lg:text-3xl">
+                  <strong className="text-var(--text-dark)] md:text-xl lg:text-3xl">
                     {comment.author}
                   </strong>
-                  <p className="text-[var(--neutral)] text-sm font-medium leading-normal my-0">
+                  <p className="text-[var(--neutral)] text-sm md:text-xl lg:text-3xlfont-medium leading-normal my-0">
                     {comment.handle}
                   </p>
                 </div>
               </div>
-              <p className="text-[var(--text-primary)]text-14 font-normal leading-normal py-4 px-4">
+              <p className="text-[var(--text-primary)]text-14 md:text-xl lg:text-3xl font-normal leading-normal py-4 px-4">
                 {comment.text}
               </p>
               <span className="text-[var(--neutral)]">{comment.date}</span>
-              <div className="inline-flex gap-3">
+              <div className="inline-flex gap-3 md:text-xl lg:text-3xl">
                 <>
                   <img
                     src={icon2}
