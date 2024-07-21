@@ -62,7 +62,7 @@ export function InputForm() {
               </FormLabel>
               <FormControl>
                 <Input
-                  placeholder="shadcn"
+                  placeholder="e.g Joh Doe"
                   {...field}
                   className={clsx(
                     `${styles.placeholderCustom} placeholderCustom`,
@@ -92,7 +92,7 @@ export function InputForm() {
               </FormLabel>
               <FormControl>
                 <Input
-                  placeholder="shadcn"
+                  placeholder="e.g johndoe@gmail.com"
                   {...field}
                   className={clsx(
                     `${styles.placeholderCustom} placeholderCustom`,
@@ -122,7 +122,7 @@ export function InputForm() {
               </FormLabel>
               <FormControl>
                 <Input
-                  placeholder="shadcn"
+                  placeholder="e.g 08123456789"
                   {...field}
                   className={clsx(
                     `${styles.placeholderCustom} placeholderCustom`,
