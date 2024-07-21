@@ -1,9 +1,8 @@
-import { ActionFunction, json } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
 import SVG from "../../public/pana.png";
 import Subscription from "../components/EmailSubRenewal/EmailRenewal";
-import { sendSubscriptionRenewalEmail } from "../components/EmailSubRenewal/sendEmail";
 
 interface SubscriptionProperties {
   title: string;
@@ -31,31 +30,6 @@ export const loader = async () => {
   };
 
   return json(data);
-};
-
-export const action: ActionFunction = async ({ request }) => {
-  const formData = await request.formData();
-  const email = formData.get("email") as string;
-  const name = formData.get("name") as string;
-  const renewalDate = formData.get("renewalDate") as string;
-  const renewalPrice = formData.get("renewalPrice") as string;
-  const renewalPeriod = formData.get("renewalPeriod") as string;
-  const reviewSubscriptionLink = formData.get(
-    "reviewSubscriptionLink",
-  ) as string;
-  const renewSubscriptionLink = formData.get("renewSubscriptionLink") as string;
-
-  await sendSubscriptionRenewalEmail({
-    to: email,
-    name,
-    renewalDate,
-    renewalPrice,
-    renewalPeriod,
-    reviewSubscriptionLink,
-    renewSubscriptionLink,
-  });
-
-  return json({ success: true });
 };
 
 export default function Index() {
