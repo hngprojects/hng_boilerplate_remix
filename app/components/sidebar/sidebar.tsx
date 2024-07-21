@@ -1,6 +1,4 @@
 import {
-  ArrowLeft,
-  ArrowRight,
   Briefcase,
   Building2,
   Cpu,
