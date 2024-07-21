@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { XIcon } from "lucide-react";
+
 import { useModal } from "../../context/modalContext";
 import { InputForm } from "../ui/formComponents/formComponent";
 import { UploadPicture } from "../ui/formComponents/uploadPicture";
