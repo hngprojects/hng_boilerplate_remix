@@ -17,6 +17,15 @@ module.exports = {
       },
     },
     extend: {
+      width: {
+        '378' : '378px',
+      },
+      lineHeight: {
+        '29.05': '29.05px',
+      },
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

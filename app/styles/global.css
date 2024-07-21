@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '@fontsource/inter/400.css'; 
+@import '@fontsource/inter/500.css'; 
+@import '@fontsource/inter/600.css'; 
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
