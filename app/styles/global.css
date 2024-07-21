@@ -53,6 +53,11 @@ body {
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --backgroundColor: 0 15% 95%;
+    --darkText: 0 0% 6.67%;
+    --customOrange: 24 95% 53%;
+    --neutral-1: 0, 0%, 32%;
+    --neutral-2: 0, 0%, 4%;
   }
 
   .dark {
@@ -79,7 +84,12 @@ body {
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
+    --backgroundColor: 0 15% 95%;
+    --customOrange: 24 95% 53%;
+    --darkText: 0 0% 6.67%;
     --chart-5: 340 75% 55%;
+    --neutral-1: 0, 0%, 32%;
+    --neutral-2: 0, 0%, 4%;
   }
 }
 

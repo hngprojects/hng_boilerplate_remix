@@ -1,12 +1,9 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
-import { useState } from "react";
+
 import BlogPost from "~/components/BlogPost";
 import HeroSection from "~/components/HeroSection";
 import Footer from "~/components/ui/footer";
 import Header from "~/components/ui/header";
-
-
 
 export const meta: MetaFunction = () => {
   return [
@@ -15,26 +12,19 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-
-
-
 export default function Index() {
-  const imageUrl = "/public/images/herosectionImg.jpg"
-
   return (
-   <div>
-    <Header/>
-    <HeroSection imageUrl={imageUrl}/>
-    <BlogPost/>
-    <Footer/>
-
- 
-   </div>
-
+    <div>
+      <Header />
+      <HeroSection />
+      <BlogPost />
+      <Footer/>
+    </div>
   );
 }
 
-{/* <div className="p-4 font-sans">
+{
+  /* <div className="p-4 font-sans">
 <h1 className="text-3xl">Welcome to Remix</h1>
 <ul className="mt-4 list-disc space-y-2 pl-6">
   <li>
@@ -92,4 +82,5 @@ export default function Index() {
     { name: "input1", value: "" },
   ]}
   handleSubmit={handleSubmit}
-/> */}
+/> */
+}
