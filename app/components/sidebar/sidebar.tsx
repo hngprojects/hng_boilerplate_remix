@@ -11,7 +11,6 @@ import {
 import { useState } from "react";
 
 import Profile from "../Profile";
-import MenuButton from "./menu-button";
 import Navlink from "./navlink";
 
 export default function MobileSidebarComponent() {
