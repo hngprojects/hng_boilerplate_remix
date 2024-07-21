@@ -17,7 +17,7 @@ import Logo from "../Logo";
 import Navlink from "./navlink";
 
 export default function MobileSidebarComponent() {
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
   const { isDark, toggleTheme } = useTheme();
 
   function toggleMenu() {
