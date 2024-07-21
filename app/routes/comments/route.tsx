@@ -1,4 +1,3 @@
-import { useState } from "react";
 import CommentBox from "~/components/CommentBox";
 
 const CommentPage = () => {

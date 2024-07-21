@@ -21,7 +21,7 @@ export default function Index() {
   const [openModal, setOpenModal] = useState(false);
 
   return (
-     // Comment Box Implemented in "/app/components/CommentBox"
+    // Comment Box Implemented in "/app/components/CommentBox"
     // Comment Box UI to be found on the "/comments" route
     <div className="p-4 font-sans">
       <h1 className="text-3xl">Welcome to Remix</h1>
