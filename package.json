@@ -21,6 +21,7 @@
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-switch": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.0",
     "@react-email/components": "^0.0.21",
     "@remix-run/css-bundle": "^2.10.3",
