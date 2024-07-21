@@ -93,26 +93,26 @@ const WaitlistForm: React.FC = () => {
         </p>
       </section>
       {actionData?.success ? (
-        <section className="flex flex-col items-center justify-center rounded-md border p-7 gap-5 h-[414.57px] w-[383.34px] lg:h-[406.8px] lg:w-[703.2px]">
+        <section className="waitlist-success h-[414.57px] w-[383.34px] lg:h-[406.8px] lg:w-[703.2px]">
           <div className="relative flex flex-col items-center justify-center">
             <img
               src="/Vector.png"
-              className="opacity-25 h-[179px] w-[177px] lg:h-[178px]"
+              className="h-[179px] w-[177px] opacity-25"
             />
-            <span className="absolute top-20 left-10 -rotate-6">
+            <span className="thumbs-up left-10 top-2">
               <ThumbsUp size={20} />
             </span>
           </div>
           <h3 className="text-center text-[24px] font-bold leading-[29.05px] text-[#525252] lg:text-[28px] lg:font-semibold lg:leading-[33.89px]">
-            You're all signed up!
+            You&apos;re all signed up!
           </h3>
         </section>
       ) : (
         <section
-          className={`rounded-md border p-7 flex flex-col ${
+          className={`form-section ${
             mounted && error
               ? "h-[406px] w-[383.34px] gap-[10px] p-[10px] lg:h-[373.78px] lg:w-[510px]"
-              : "h-[414.57px] w-[383.34px] gap-[10px] lg:h-[320px] lg:w-[510px] lg:gap-6"
+              : "h-[414.57px] w-[383.34px] flex-col items-center justify-center gap-5 rounded-md border p-7 lg:h-[320px] lg:w-[510px] lg:gap-6"
           }`}
         >
           <Form
@@ -134,11 +134,13 @@ const WaitlistForm: React.FC = () => {
                 value={name}
                 onChange={(event) => setName(event.target.value)}
                 placeholder="Meghan Grace"
-                className="w-full h-14 flex flex-col pt-3 pr-16 pb-3 pl-3 text-gray-400 border border-gray-300 rounded-md shadow-sm outline-none"
+                className="input_style"
               />
             </div>
             {mounted && error && (
-              <p className="text-red-500 text-xs">{error.includes("Name") && error}</p>
+              <p className="xs text-red-500">
+                {error.includes("Name") && error}
+              </p>
             )}
             <div className="flex h-[97px] w-[320px] flex-col gap-[14.4px] lg:w-[490px]">
               <label
@@ -154,11 +156,13 @@ const WaitlistForm: React.FC = () => {
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 placeholder="Enter email"
-                className="w-full h-14 flex flex-col pt-3 pr-16 pb-3 pl-3 text-gray-400 border border-gray-300 rounded-md shadow-sm outline-none"
+                className="input_style"
               />
             </div>
             {mounted && error && (
-              <p className="text-red-500 text-xs">{error.includes("email") && error}</p>
+              <p className="xs text-red-500">
+                {error.includes("email") && error}
+              </p>
             )}
             <button
               type="submit"
@@ -169,7 +173,7 @@ const WaitlistForm: React.FC = () => {
             </button>
           </Form>
           {mounted && actionData?.success && (
-            <p className="text-green-500 mt-2">
+            <p className="mt-2 text-green-500">
               Successfully joined the waitlist!
             </p>
           )}
