@@ -18,8 +18,8 @@ const PricingPage = () => {
         </p>
         <div className="mt-5 flex w-full max-w-5xl flex-col items-center text-center">
           <h2 className="text-2xl font-semibold leading-none md:text-6xl">
-            Simple and <span className="text-destructive">Affordable</span>{" "}
-            Pricing Plan
+            Simple and <span className="text-primary">Affordable</span> Pricing
+            Plan
           </h2>
           <p className="mt-5 w-full text-lg font-light leading-tight md:w-9/12 md:text-2xl">
             Our flexible plans are designed to scale with your business. We have
@@ -50,7 +50,7 @@ const PricingPage = () => {
                 { text: "Custom integration", included: false },
               ]}
               buttonText="Continue"
-              borderColor="border-destructive"
+              borderColor="border-primary"
               onClick={() => handleCardClick("basic-monthly")}
               isSelected={selectedCard === "basic-monthly"}
             />
@@ -68,7 +68,7 @@ const PricingPage = () => {
                 { text: "Custom integration", included: true },
               ]}
               buttonText="Continue"
-              borderColor="border-destructive"
+              borderColor="border-primary"
               onClick={() => handleCardClick("premium-monthly")}
               isSelected={selectedCard === "premium-monthly"}
             />
@@ -91,7 +91,7 @@ const PricingPage = () => {
                 { text: "Custom integration", included: false },
               ]}
               buttonText="Continue"
-              borderColor="border-destructive"
+              borderColor="border-primary"
               onClick={() => handleCardClick("basic-annual")}
               isSelected={selectedCard === "basic-annual"}
             />
@@ -109,7 +109,7 @@ const PricingPage = () => {
                 { text: "Custom integration", included: true },
               ]}
               buttonText="Continue"
-              borderColor="border-destructive"
+              borderColor="border-primary"
               onClick={() => handleCardClick("premium-annual")}
               isSelected={selectedCard === "premium-annual"}
             />

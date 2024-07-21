@@ -60,7 +60,7 @@ const PricingCard = ({
         ))}
       </CardContent>
       <CardFooter className="w-full">
-        <Button className="w-full bg-destructive">{buttonText}</Button>
+        <Button className="w-full bg-primary">{buttonText}</Button>
       </CardFooter>
     </Card>
   );
