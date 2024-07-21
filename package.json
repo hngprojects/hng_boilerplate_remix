@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
+    "@mertasan/tailwindcss-variables": "^2.7.0",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.1",
@@ -40,6 +41,7 @@
     "react-dom": "^18.2.0",
     "react-email": "^2.1.5",
     "react-hook-form": "^7.52.1",
+    "swiper": "^11.1.5",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"
