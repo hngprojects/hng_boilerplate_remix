@@ -1,13 +1,11 @@
 import { getImages } from "~/lib/utils/utils";
 import { useState, useEffect } from "react";
-import Navbar from "~/Components/Navbar/Navbar";
+
+
 function Preview() {
   const [htmlContent, setHtmlContent] = useState("");
   const [allowEdit, setAllow] = useState(false);
-  const [htmlLink, setHtmlLink] = useState(localStorage.getItem("query"));
-
-  // if()
-
+  const [htmlLink, setHtmlLink] = useState(typeof window !=="undefined" ? localStorage.getItem("query") : "");
   useEffect(()=> {
     const fetchfile = async () => {
       if(!htmlLink){
@@ -25,39 +23,10 @@ function Preview() {
       }
     };
     fetchfile()
-  },[htmlLink?.length
-  ])
+  },[htmlLink?.length])
 
 
   return (
-    <>
-     <div className="flex flex-col gap-6 mt-3 mx-56">
-          <ul className="flex gap-4 text-nowrap">
-            <li className="flex items-center gap-3">
-              Choose starting point
-              <span>
-                <img
-                  src={getImages[0].arrow_right.imgLocation}
-                  alt="arrow right icon"
-                />
-              </span>
-            </li>
-            <li className="flex items-center gap-3">
-              Generate with html
-              <span>
-                <img
-                  src={getImages[0].arrow_right.imgLocation}
-                  alt="arrow right icon"
-                />
-              </span>
-            </li>
-            <li className="flex items-center text-textgray gap-3">
-             Preview Template
-            </li>
-          </ul>
-        </div>
-
-      <Navbar />
     <div className="flex gap-8">
       <div className="max-w-52 left bg-graystyles">
         need's someones else component for this part
@@ -113,7 +82,6 @@ function Preview() {
         </div>
       </div>
     </div>
-    </>
   );
 }
 

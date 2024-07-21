@@ -8,8 +8,7 @@ const Templatewithhtml = () => {
   const [htmlLink, setHtmlLink] = useState(null);
   const [query, setQuery] = useState("");
 
-  function handleNavigate(event: MouseEvent) {
-    event.preventDefault();
+  function handleNavigate() {
     if (query === "") {
       console.log("Please fill out with");
       return;
@@ -23,8 +22,8 @@ const Templatewithhtml = () => {
   }
 
   return (
-    <div>
-    `<Navbar className="mt-6" />
+    <div className="mt-6">
+      <Navbar/>
       <div className="flex gap-6">
         <div className="max-w-52 bg-graystyles">
           need's someones else component for this part
