@@ -58,7 +58,7 @@ const Subscription: React.FC<SubscriptionProperties> = ({
                 </span>
                 <span>{` will automatically renew on ${renewalDate}. To avoid being charged, you should cancel at least a day before the renewal date. To learn more or cancel, `}</span>
               </span>
-              <span className="font-semibold text-[#f97316]">
+              <span className="font-semibold text-primaryBadgeBg">
                 review subscription
               </span>
               <span>.</span>
