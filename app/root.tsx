@@ -8,9 +8,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
-import Footer from "./components/ui/Footer";import type { ReactNode } from "react";
-
-import { AdminSideNavBar } from "./components/SuperAdminSideBar/SuperAdminSideNavBar";
+import Footer from "./components/ui/Footer";
 import styles from "./styles/global.css?url";
 
 export const links: LinksFunction = () => [
