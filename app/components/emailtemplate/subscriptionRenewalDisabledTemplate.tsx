@@ -10,11 +10,12 @@ import {
   Img,
   Head,
   Hr,
+  Preview,
 } from "@react-email/components";
 
 interface SubmissionRenewalDissabledProps {
   Title?: string;
-  Name?: string;
+  Name: string;
   Image?: string;
   Date?: string;
   Plan?: string;
@@ -74,6 +75,7 @@ const SubscriptionRenewalTemplate = ({
       </Head>
       <Tailwind>
         <Body className="mx-auto bg-background text-foreground">
+          <Preview>Subscription Renewal for {Name}</Preview>
           <Container className="bg-backgroundColor py-8 mx-auto max-w-full">
             <table
               className="mx-auto py-8 my-8"
