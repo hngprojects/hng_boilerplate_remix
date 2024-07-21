@@ -1,29 +1,56 @@
-import { cn } from "../../lib/utils/cn";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "~/components/ui/alert-dialog";
+import { Button } from "~/components/ui/button";
+
+type Variants =
+  | "default"
+  | "destructive"
+  | "outline"
+  | "link"
+  | "ghost"
+  | "secondary";
 
 type DialogProperties = {
   headerText: string;
   description?: string;
   footer: React.ReactNode[];
+  triggerText: string;
+  variants: Variants | null | undefined;
 };
-const Dialog = ({ headerText, description, footer }: DialogProperties) => {
+
+export default function AlertDialogDemo({
+  headerText,
+  description,
+  footer,
+  triggerText,
+  variants,
+}: DialogProperties) {
   return (
-    <div className="flex w-auto max-w-[512px] flex-col gap-4 rounded-[6px] bg-white p-6">
-      <header className="flex flex-col gap-2">
-        <h2 className="text-lg font-semibold text-primary">{headerText}</h2>
-        {description && (
-          <p className="text-pretty text-sm font-normal leading-[1.05rem] text-muted-foreground">
-            {description}
-          </p>
-        )}
-      </header>
-      <footer className="flex w-full flex-row justify-end gap-2">
-        {footer.map((item, index) => (
-          <div key={index} className={cn("text-sm font-normal text-[#0F172A]")}>
-            {item}
-          </div>
-        ))}
-      </footer>
-    </div>
+    <AlertDialog>
+      <AlertDialogTrigger asChild>
+        <Button variant={variants}>{triggerText}</Button>
+      </AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>{headerText}</AlertDialogTitle>
+          <AlertDialogDescription>{description}</AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter className="gap-2">
+          {footer.map((item, index) => (
+            <AlertDialogAction key={index} asChild>
+              {item}
+            </AlertDialogAction>
+          ))}
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
   );
-};
-export default Dialog;
+}
