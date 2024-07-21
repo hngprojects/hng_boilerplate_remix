@@ -27,24 +27,6 @@ export const action: ActionFunction = async ({ request }) => {
     return { error: "Name and valid email are required" };
   }
 
-  // Uncomment this block to test with a backend endpoint
-  // try {
-  //   const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({ name, email }),
-  //   });
-
-  //   if (!response.ok) {
-  //     throw new Error('Network response was not ok');
-  //   }
-
-  //   return { success: true };
-  // } catch (error) {
-  //   return { error: "Failed to submit the form" };
-  // }
 
   return { success: true };
 };
