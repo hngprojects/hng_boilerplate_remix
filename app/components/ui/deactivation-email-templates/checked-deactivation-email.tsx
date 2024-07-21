@@ -49,14 +49,16 @@ const CheckedDeactivationEmail = ({
     const img = new Image();
     img.src = checkImageSource;
 
-    img.addEventListener("load", () => setCheckImageExists(true));
-    img.addEventListener("error", () => setCheckImageExists(false));
+    const handleLoad = () => setCheckImageExists(true);
+    const handleError = () => setCheckImageExists(false);
+
+    img.addEventListener("load", handleLoad);
+    img.addEventListener("error", handleError);
 
     // Cleanup the event listeners on component unmount
     return () => {
-      img.removeEventListener("load", () => setCheckImageExists(true));
-
-      img.removeEventListener("error", () => setCheckImageExists(false));
+      img.removeEventListener("load", handleLoad);
+      img.removeEventListener("error", handleError);
     };
   }, [checkImageSource]);
 
