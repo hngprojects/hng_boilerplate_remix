@@ -48,9 +48,7 @@ export default function Index() {
         <li>
           <Button>Hello</Button>
         </li>
-        <li>
-          <Button onClick={() => setOpenModal(true)}>Open OTP modal</Button>
-        </li>
+
         <li className="p-2">
           <CardPlatform
             logo="/images/g-drive-icon.svg"

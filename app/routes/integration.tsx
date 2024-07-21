@@ -1,9 +1,10 @@
-import IntegrationsComponent from '~/components/pages/integration';
+import IntegrationsComponent from "~/components/pages/integration";
 
-export default function Integration(){
+export default function Integration() {
+  // eslint-disable-next-line prettier/prettier
     return(
-        <>
-        <IntegrationsComponent/>
-        </>
-    )
+    <>
+      <IntegrationsComponent />
+    </>
+  );
 }
