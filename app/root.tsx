@@ -9,7 +9,7 @@ import {
 } from "@remix-run/react";
 import type { ReactNode } from "react";
 
-import { AdminSideNavBar } from "./components/SuperAdminSideBar/SuperAdminSideNavBar";
+// import { AdminSideNavBar } from "./components/SuperAdminSideBar/SuperAdminSideNavBar";
 import styles from "./styles/global.css?url";
 
 export const links: LinksFunction = () => [
@@ -28,7 +28,7 @@ export function Layout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <div className="flex">
-          <AdminSideNavBar />
+          {/* <AdminSideNavBar /> */}
           <main className="flex-1">{children}</main>,
           <ScrollRestoration />
           <Scripts />
