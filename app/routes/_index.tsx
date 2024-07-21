@@ -1,5 +1,4 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Button } from "~/Components/ui/button";
 // import fs from "fs/promises"
 import * as fs from "fs"
 // const fs = require("fs")
@@ -8,6 +7,11 @@ import { getImages } from '../lib/utils/utils'
 import { useNavigate } from "@remix-run/react";
 import Navbar from "~/Components/Navbar/Navbar";
 
+import { useState } from "react";
+
+import { Input } from "~/types/otpauth";
+import { Button } from "~/Components/ui/button";
+import OtpAuth from "~/Components/ui/otp/OtpAuth";
 
 export const meta: MetaFunction = () => {
   return [
@@ -16,7 +20,15 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+const [openModal, setOpenModal] = useState(false);
+
+
+const handleSubmit = (values: Input[]) => {
+  console.log({ values });
+};
+
 export default function Index() {
+
   const navigate = useNavigate();
 
   return (
@@ -60,6 +72,20 @@ export default function Index() {
           </div>
         </div>
       </div>
-    </>
-  );
+
+      <OtpAuth
+        isModalOpen={openModal}
+        setIsModalOpen={() => setOpenModal(!openModal)}
+        inputs={[
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+        ]}
+        handleSubmit={handleSubmit}
+      />
+
+    </>)
 }
