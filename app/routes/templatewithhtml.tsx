@@ -22,8 +22,8 @@ const Templatewithhtml = () => {
   }
 
   return (
-    <div className="mt-6">
-      <Navbar/>
+    <div  className="mt-6">
+    `<Navbar />
       <div className="flex gap-6">
         <div className="max-w-52 bg-graystyles">
           need's someones else component for this part

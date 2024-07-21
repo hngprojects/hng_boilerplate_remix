@@ -4,32 +4,7 @@ const Navbar = () => {
   return (
     <>
       <div className="flex flex-col h-24 borderbtm">
-        <div className="flex flex-col gap-6 mt-3 mx-56">
-          <ul className="flex gap-4 text-nowrap">
-            <li className="flex items-center gap-3">
-              Choose starting point
-              <span>
-                <img
-                  src={getImages[0].arrow_right.imgLocation}
-                  alt="arrow right icon"
-                />
-              </span>
-            </li>
-            <li className="flex items-center gap-3">
-              Generate with html
-              <span>
-                <img
-                  src={getImages[0].arrow_right.imgLocation}
-                  alt="arrow right icon"
-                />
-              </span>
-            </li>
-            <li className="flex items-center text-textgray gap-3">
-             Preview Template
-              
-            </li>
-          </ul>
-        </div>
+       
         <div className="flex justify-between mx-4">
           <ul className="flex justify-between items-center gap-8">
             <div className="flex items-center gap-3">

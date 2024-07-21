@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Button } from "~/Components/ui/button";
 // import fs from "fs/promises"
 import * as fs from "fs"
 // const fs = require("fs")
@@ -10,7 +11,6 @@ import Navbar from "~/Components/Navbar/Navbar";
 import { useState } from "react";
 import { Input } from "~/types/otpauth";
 import OtpAuth from "~/Components/ui/otp/OtpAuth";
-import {Button} from "~/Components/ui/button";
 import FooterCookieConsent from "~/Components/ui/footerCookieConsent";
 
 export const meta: MetaFunction = () => {
@@ -32,7 +32,7 @@ export default function Index() {
 
   return (
     <>
-    <Navbar/>
+    <Navbar />
       <div className="flex gap-6">
       
         <div className="max-w-52 bg-graystyles">
@@ -41,12 +41,12 @@ export default function Index() {
 
         <div className="flex flex-col gap-6 my-8">
           <div className="rounded borderstyles max-w-fit flex">
-            <button className="text-orange bg-graystyles text-sm text-nowrap font-medium max-w-full p-2">
+            <Button className="text-orange bg-graystyles text-sm text-nowrap font-medium max-w-full p-2">
               New Templates
-            </button>
-            <button className="text-sm max-w-full text-nowrap p-2">
+            </Button>
+            <Button className="text-sm max-w-full text-nowrap p-2">
               Manage Templates
-            </button>
+            </Button>
           </div>
           <div className="text-black">
             <h4 className="font-bold text-2xl">Create a New Template</h4>
@@ -69,7 +69,6 @@ export default function Index() {
                 <p>create an email template by choosing from our custom template library</p>
               </li>
             </ul>
-           
           </div>
         </div>
       </div>
