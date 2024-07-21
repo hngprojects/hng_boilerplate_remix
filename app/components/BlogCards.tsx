@@ -1,5 +1,3 @@
-import type { FC } from "react";
-
 interface BlogCardProperties {
   title: string;
   description: string;

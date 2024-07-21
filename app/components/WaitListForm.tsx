@@ -3,7 +3,7 @@ import { Form, useActionData } from "@remix-run/react";
 import { CheckCircle2, Mail, ThumbsUp } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
-import { Input } from "./ui/input"; 
+import { Input } from "./ui/input";
 
 interface ActionData {
   error?: string;
@@ -27,7 +27,6 @@ export const action: ActionFunction = async ({ request }) => {
     return { error: "Name and valid email are required" };
   }
 
-
   return { success: true };
 };
 
@@ -48,7 +47,6 @@ const WaitlistForm: React.FC = () => {
     if (!name) {
       setError("Your Name is required to proceed");
     } else if (validateEmail(email)) {
-      
       return true;
     } else {
       setError("Please input a valid email address");
