@@ -7,21 +7,22 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ imageUrl }) => {
   return (
-    <section
-      className={`relative h-[500px] overflow-hidden bg-contain bg-no-repeat px-6 lg:mx-20 lg:bg-cover`}
-      style={{ backgroundImage: `url(${imageUrl})` }}
-    >
-      <div className="absolute bottom-16 ">
-      <h5 className="inset-0 text-[40px] leading-[48px] font-bold text-white" >
+
+
+
+    <div className="relative flex items-center lg:w-[81%]  lg:mx-[120px]  w-full ">
+      <img src="/public/images/herosectionImg.jpg" alt="hero img" className="w-full" />
+      <div className="absolute  top-15 lg:bottom-16 px-10  ">
+      <h5 className="inset-0 text-3 lg:text-[36px] lg:leading-[48px] font-bold text-white " >
         Unlock Industry Insights: Get <br />
         Essential Tips & Boilerplate <br /> Hacks
       </h5>
 
-      <Button className="bg-orange-500 mt-4 px-7"> Read More</Button>
+      <Button className="bg-primary hover:default-foreground mt-4 px-7"> Read More</Button>
 
       </div>
-     
-    </section>
+      </div>
+
   );
 };
 

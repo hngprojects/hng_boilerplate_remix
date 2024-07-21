@@ -1,4 +1,4 @@
-import React from "react";
+import type { FC } from "react";
 
 interface BlogCardProperties {
   title: string;
@@ -14,7 +14,7 @@ interface BlogCardProperties {
 
 }
 
-const BlogCard: React.FC<BlogCardProperties> = ({
+const BlogCard: FC<BlogCardProperties> = ({
   title,
   description,
   date,

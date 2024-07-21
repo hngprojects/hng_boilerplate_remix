@@ -31,9 +31,9 @@ const RecentBlogCard = ({
 
   return(
   <Link  to={href}>
-      <div className="bg-white rounded-md pt-3 px-2 w-[384px] h-[384px] relative">
+      <div className="bg-white rounded-md pt-3 px-2 w-[354px] h-[384px] relative">
         <p
-          className={`text-white rounded-lg p-2 absolute top-5 ${
+          className={`text-white rounded-lg p-2 absolute top-7 left-5 ${
             descriptionStyles[variant % descriptionStyles.length]
           }`}
           style={{ padding: "5px 17px", borderRadius: "16px" }}
@@ -47,6 +47,8 @@ const RecentBlogCard = ({
           <p className="text-gray-600 ">{timeRead}</p>
         </div>
       </div>
+
+      
 
   </Link>
   );

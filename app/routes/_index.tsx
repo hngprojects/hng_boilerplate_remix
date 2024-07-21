@@ -1,12 +1,12 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
 import { useState } from "react";
 import BlogPost from "~/components/BlogPost";
 import HeroSection from "~/components/HeroSection";
+import Footer from "~/components/ui/footer";
+import Header from "~/components/ui/header";
 
-import { Button } from "~/components/ui/button";
-import CardPlatform from "~/components/ui/card/card-platform";
-import OtpAuth from "~/components/ui/otp/OtpAuth";
-import { Input } from "~/types/otpauth";
+
 
 export const meta: MetaFunction = () => {
   return [
@@ -23,13 +23,14 @@ export default function Index() {
 
   return (
    <div>
-    <div className="bg-orange-500">Header to be imported</div>
+    <Header/>
     <HeroSection imageUrl={imageUrl}/>
     <BlogPost/>
-    <div className="bg-orange-500">Footer to be be imported</div>
+    <Footer/>
 
  
    </div>
+
   );
 }
 

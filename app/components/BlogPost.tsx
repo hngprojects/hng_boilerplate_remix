@@ -1,66 +1,73 @@
 import React from "react";
-
-import BlogCard from "./BlogCards";
 import RecentBlogCard from "./RecentBlogCard";
+import { Button } from "./ui/button";
 
 const blogPosts = [
   {
     title: "The Power of Networking: How to Build Meaningful connections",
     date: "Jul 12, 2024",
     timeRead: "5 mins read",
-    image: "/public/images/business.jpg",
+    image: "/images/business.jpg",
     description: "Business",
-    link: "/post1",
+    variant: 0,
   },
   {
     title: "The Global Impact of Climate Change: A Look at the Evidence",
     date: "Jul 12, 2024",
     timeRead: "5 mins read",
-    image: "/public/nature.png",
+    image: "/images/nature.png",
     description: "World News",
-    link: "/post2",
+    variant: 1,
   },
   {
     title: "5 Easy and Delicious Recipes for Busy Weeknights",
     date: "Jul 12, 2024",
     timeRead: "5 mins read",
-    image: "/public/food1.jpg",
+    image: "/images/food1.jpg",
     description: "Food",
-    link: "/post3",
+    variant: 2,
   },
   {
     title: "5 Simple Habits to Improve Your Mental Wellbeing",
     date: "Jul 12, 2024",
     timeRead: "5 mins read",
-    image: "/public/yoga.jpg",
+    image: "/images/yoga.jpg",
     description: "Lifestyle",
-    link: "/post4",
+    variant: 3,
   },
   {
     title: "The Ultimate Guide to Dressing Stylishly with Fewer Clothes",
     date: "Jul 12, 2024",
     timeRead: "5 mins read",
-    image: "/public/fashion.jpg",
+    image: "/images/fashion.jpg",
     description: "Fashion",
-    link: "/post5",
+    variant: 4,
   },
   {
     title: "The Future of Travel: What Will the World Look Like in 2030?",
     date: "Jul 12, 2024",
     timeRead: "5 mins read",
-    image: "/public/person with glasses.jpg",
+    image: "/images/person with glasses.jpg",
     description: "World News",
+    variant: 5,
   },
 ];
 
 const BlogPost = () => {
   return (
-    <section>
-      <h3>Reacent Blog Posts</h3>
-      <div>
+    <section className="my-10  lg:px-[100px] md:px-10 overflow-hidden w-[100%]  flex flex-col">
+      <h3 className="my-5 px-4 text-[28px] font-bold text-[#525252]"> 
+        Recent Blog posts
+      </h3>
+      <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:pr-7">
         {blogPosts.map((post, index) => (
-          <RecentBlogCard key={index} {...post}/>
+          <RecentBlogCard href={"/"} key={index} {...post} />
         ))}
+      </div>
+      <div className="flex justify-center items-center my-11">
+        <Button className="bg-primary hover:default-foreground mt-4 px-7">
+          Show More Articles
+        </Button>
       </div>
     </section>
   );
