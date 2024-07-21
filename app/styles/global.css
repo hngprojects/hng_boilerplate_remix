@@ -87,6 +87,9 @@
     --neutral-1: 0, 0%, 32%;
     --neutral-2: 0, 0%, 4%;
   }
+  body{
+    font-family: 'Inter', sans-serif;
+  }
 }
 
 @layer base {
