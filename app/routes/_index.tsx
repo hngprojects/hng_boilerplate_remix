@@ -1,7 +1,10 @@
 import type { MetaFunction } from "@remix-run/node";
+import { useState } from "react";
 
 import { Button } from "~/components/ui/button";
 import CardPlatform from "~/components/ui/card/card-platform";
+import OtpAuth from "~/components/ui/otp/OtpAuth";
+import { Input } from "~/types/otpauth";
 
 export const meta: MetaFunction = () => {
   return [
@@ -10,7 +13,13 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+const handleSubmit = (values: Input[]) => {
+  console.log({ values });
+};
+
 export default function Index() {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <div className="p-4 font-sans">
       <h1 className="text-3xl">Welcome to Remix</h1>
@@ -36,6 +45,9 @@ export default function Index() {
           </a>
         </li>
         <Button>Hello</Button>
+        <div>
+          <Button onClick={() => setOpenModal(true)}>Open OTP modal</Button>
+        </div>
         <div className="p-2">
           <CardPlatform
             logo="/images/g-drive-icon.svg"
@@ -55,6 +67,19 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      <OtpAuth
+        isModalOpen={openModal}
+        setIsModalOpen={() => setOpenModal(!openModal)}
+        inputs={[
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+        ]}
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 }
