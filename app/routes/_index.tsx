@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Button } from "~/components/ui/button";
 import CardPlatform from "~/components/ui/card/card-platform";
 import OtpAuth from "~/components/ui/otp/OtpAuth";
+import ReusableToolTip from "~/components/ui/tooltip/ReuseableToolTip";
 import { Input } from "~/types/otpauth";
 
 export const meta: MetaFunction = () => {
@@ -89,6 +90,29 @@ export default function Index() {
         ]}
         handleSubmit={handleSubmit}
       />
+      <div className="flex gap-4">
+        <ReusableToolTip
+          triggerContent="Primary"
+          body="A description goes here"
+          colorVariant="primary"
+          arrowPosition="top"
+        />
+        <ReusableToolTip
+          triggerContent="Secondary"
+          head="This is a heading"
+          body="A description goes here and spans the length of 2 - 3 lines. Please keep your description brief for clarity."
+          colorVariant="secondary"
+          arrowPosition="bottom"
+        />
+        <ReusableToolTip
+          triggerContent="Neutral"
+          head="Another Heading"
+          body="Here is some more detailed information."
+          subtext="A sub-description goes here and spans the length of 2 - 3 lines. Please keep your description brief for clarity."
+          colorVariant="neutral"
+          arrowPosition="right"
+        />
+      </div>
     </div>
   );
 }
