@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 import LatestArticle from "~/components/article/LatestArticle";
-import Footer from "~/components/ui/footer";
 import Navbar from "~/components/static-navbar/static-navbar";
+import Footer from "~/components/ui/footer";
 import { Article, fetchArticles } from "./api-call";
 
 export default function ArticlesPage() {
