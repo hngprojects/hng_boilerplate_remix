@@ -1,14 +1,17 @@
 import { Button } from "./button";
 
 const FooterCookieConsent: React.FC = () => {
+  // eslint-disable-next-line unicorn/consistent-function-scoping
   const handleAccept = () => {
     console.log("Cookie consent accepted");
   };
 
+  // eslint-disable-next-line unicorn/consistent-function-scoping
   const handleReject = () => {
     console.log("Cookie consent rejected");
   };
 
+  // eslint-disable-next-line unicorn/consistent-function-scoping
   const handleSettings = () => {
     console.log("Cookie settings opened");
   };
@@ -23,7 +26,7 @@ const FooterCookieConsent: React.FC = () => {
           <span className="text-xs sm:text-base">
             Our website uses cookies to enhance your browsing experience,
             provide personalized content, and analyze site traffic. By clicking
-            "Accept All", you consent to our use of cookies.
+            &quot;Accept All&quot;, you consent to our use of cookies.
           </span>
         </p>
         <div className="grid grid-cols-2 place-content-center gap-2 sm:grid-cols-3">
