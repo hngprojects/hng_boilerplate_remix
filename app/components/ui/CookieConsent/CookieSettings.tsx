@@ -1,4 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "../dialog";
+import { Switch } from "../switch";
+import { Button } from "../button";
 
 interface CookieSetting {
     title: string;
@@ -25,53 +35,45 @@ const CookiePreference: React.FC<CookiePreferenceProps> = ({
     return (
         <div className="mb-6">
             <div className="flex justify-between items-start">
-                <div className="flex-grow pr-20">
+                <div className="flex-grow pr-4">
                     <div className="flex justify-between items-center mb-2">
-                        <p className="text-lg font-medium">{title}</p>
-                        <div 
-                            className="ml-4 cursor-pointer" 
-                            onClick={onToggle}  
-                            role="button" 
-                            tabIndex={0}
-                            onKeyDown={(e) => {
-                                if (e.key === 'Enter' || e.key === ' ') {
-                                    onToggle();
-                                    e.preventDefault()
-                                }
-                            }}
-                            aria-expanded={isExpanded}
-                        >
+                        <h3 className="text-lg font-medium">{title}</h3>
+                        <Button variant="ghost" size="sm" onClick={onToggle}>
                             <img 
                                 src={isExpanded ? '/chevron-down.svg' : '/chevron-up.svg'} 
                                 alt={isExpanded ? 'Collapse' : 'Expand'}
+                                className="w-4 h-4"
                             />
-                        </div>
+                        </Button>
                     </div>
-                    <p className={`text-sm text-gray-600 ${isExpanded ? '' : 'hidden'}`}>
-                        {description}
-                    </p>
-                    <hr className="my-6" />
+                    {isExpanded && (
+                        <p className="text-sm text-gray-600 mt-2">
+                            {description}
+                        </p>
+                    )}
                 </div>
-                <label className="relative inline-flex items-center cursor-pointer" htmlFor={id}>
-                    <input 
-                        type="checkbox" 
-                        className="sr-only peer" 
-                        id={id}
-                        checked={isChecked}
-                        onChange={(e) => onCheckChange(e.target.checked)}
-                    />
-                    <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-500"></div>
-                </label>
+                <Switch
+                    id={id}
+                    checked={isChecked}
+                    onCheckedChange={onCheckChange}
+                />
             </div>
+            <hr className="my-4" />
         </div>
     );
 };
 
 const CookieSettings: React.FC = () => {
+    const [isClient, setIsClient] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
     const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
     const [checkedStates, setCheckedStates] = useState<{ [key: string]: boolean }>({});
 
-    const cookieSettings = [
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    const cookieSettings: CookieSetting[] = [
         {
             title: "Performance Cookies",
             id: "pc",
@@ -97,21 +99,46 @@ const CookieSettings: React.FC = () => {
         setCheckedStates(prev => ({ ...prev, [id]: checked }));
     };
 
+    const handleSave = () => {
+        console.log('Saved preferences:', checkedStates);
+        setIsOpen(false);
+    };
+
+    if (!isClient) {
+        return null; // or a loading placeholder
+    }
+
     return (
-        <div>
-            {cookieSettings.map((setting, index) => (
-                <CookiePreference 
-                    key={index}
-                    title={setting.title}
-                    description={setting.description}
-                    isExpanded={expandedIndex === index}
-                    onToggle={() => handleToggle(index)}
-                    id={setting.id}
-                    isChecked={checkedStates[setting.id] || false}
-                    onCheckChange={(checked) => handleCheckChange(setting.id, checked)}
-                />
-            ))}
-        </div>
+        <Dialog open={isOpen} onOpenChange={setIsOpen}>
+            <DialogTrigger asChild>
+                <Button variant="outline">Cookie Settings</Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                    <DialogTitle>Cookie Settings</DialogTitle>
+                    <DialogDescription>
+                        Manage your cookie preferences here. You can enable or disable different types of cookies.
+                    </DialogDescription>
+                </DialogHeader>
+                <div className="mt-4">
+                    {cookieSettings.map((setting, index) => (
+                        <CookiePreference 
+                            key={index}
+                            title={setting.title}
+                            description={setting.description}
+                            isExpanded={expandedIndex === index}
+                            onToggle={() => handleToggle(index)}
+                            id={setting.id}
+                            isChecked={checkedStates[setting.id] || false}
+                            onCheckChange={(checked) => handleCheckChange(setting.id, checked)}
+                        />
+                    ))}
+                </div>
+                <div className="mt-4 flex justify-end">
+                    <Button onClick={handleSave}>Save Preferences</Button>
+                </div>
+            </DialogContent>
+        </Dialog>
     );
 };
 
