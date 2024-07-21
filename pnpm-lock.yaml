@@ -62,6 +62,9 @@ importers:
       lucide-react:
         specifier: ^0.408.0
         version: 0.408.0(react@18.3.1)
+      pretier:
+        specifier: ^0.0.1
+        version: 0.0.1
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -4631,6 +4634,9 @@ packages:
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+
+  pretier@0.0.1:
+    resolution: {integrity: sha512-sx6A34i/SbtIbiNrwwPJ9gpGKXfezVFFsv5/7v+qwu5vcwp6RJftQ60LvRbV4LQngUnJVRyU23AsUG3t+zNHEA==}
 
   prettier-linter-helpers@1.0.0:
     resolution: {integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==}
@@ -11154,6 +11160,8 @@ snapshots:
       source-map-js: 1.2.0
 
   prelude-ls@1.2.1: {}
+
+  pretier@0.0.1: {}
 
   prettier-linter-helpers@1.0.0:
     dependencies:

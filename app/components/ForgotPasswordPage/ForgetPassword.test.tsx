@@ -1,22 +1,25 @@
-import { render, screen } from '@testing-library/react';
-import ForgotPassword from './ForgotPasswordPage';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { describe, it, expect } from 'vitest';
+import { render, screen } from "@testing-library/react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { describe, expect, it } from "vitest";
 
-describe('ForgotPassword Component', () => {
-  it('renders Forgot Password page', () => {
+import ForgotPassword from "./ForgotPasswordPage";
+
+describe("ForgotPassword Component", () => {
+  it("renders Forgot Password page", () => {
     render(
       <Router>
         <ForgotPassword />
-      </Router>
+      </Router>,
     );
 
-    expect(screen.getByText(/Forgot Password/i)).toBeInTheDocument();
+    expect(screen.getByText(/forgot password/i)).toBeInTheDocument();
 
-    expect(screen.getByPlaceholderText(/Enter your email/i)).toBeInTheDocument();
+    expect(
+      screen.getByPlaceholderText(/enter your email/i),
+    ).toBeInTheDocument();
 
-    expect(screen.getByText(/Send/i)).toBeInTheDocument();
-    
-    expect(screen.getByText(/Login/i)).toBeInTheDocument();
+    expect(screen.getByText(/send/i)).toBeInTheDocument();
+
+    expect(screen.getByText(/login/i)).toBeInTheDocument();
   });
 });

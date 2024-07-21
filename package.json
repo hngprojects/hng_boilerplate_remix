@@ -37,6 +37,7 @@
     "clsx": "^2.1.1",
     "isbot": "^4.4.0",
     "lucide-react": "^0.408.0",
+    "pretier": "^0.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-email": "^2.1.5",
