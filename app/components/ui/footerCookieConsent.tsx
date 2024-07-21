@@ -1,3 +1,5 @@
+import type { FC } from "react";
+
 import { Button } from "./button";
 
 const handleAccept = () => {
