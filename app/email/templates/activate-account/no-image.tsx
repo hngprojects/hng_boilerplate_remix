@@ -28,7 +28,7 @@ const ViewActLink = (property: propertyDataType) => {
                   {property.message}
                 </p>
                 <div className="flex items-center justify-center">
-                  <Button className="estructive-foreground block inline cursor-pointer rounded-[8px] bg-[#F97316] px-10 py-2.5 text-base text-white">
+                  <Button className="bg-default-foreground block cursor-pointer rounded-[8px] bg-[#F97316] px-10 py-2.5 text-base text-white">
                     {property.cta_text}
                   </Button>
                 </div>
