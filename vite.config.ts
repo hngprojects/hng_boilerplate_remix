@@ -13,4 +13,24 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  resolve: {
+    alias: {
+      "~": "/app", // Adjust the alias to point to the 'app' folder
+    },
+  },
+  build: {
+    rollupOptions: {
+      external: [
+        // Exclude your test files from being bundled
+        "**/tests/**",
+      ],
+    },
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./setupTests.ts",
+    include: ["*.test.{js,ts,jsx,tsx}", "app/**/*.test.{js,ts,jsx,tsx}"],
+    exclude: ["node_modules/**", "dist/**"],
+  },
 });
