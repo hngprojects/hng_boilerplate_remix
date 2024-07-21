@@ -30,7 +30,7 @@ export default function Index() {
             className="text-blue-700 underline visited:text-purple-900"
             target="_blank"
             href="https://remix.run/start/quickstart"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             5m Quick Start
           </a>
@@ -40,40 +40,35 @@ export default function Index() {
             className="text-blue-700 underline visited:text-purple-900"
             target="_blank"
             href="https://remix.run/start/tutorial"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             30m Tutorial
           </a>
         </li>
-        <Button>Hello</Button>
-        <div>
-          <Button onClick={() => setOpenModal(true)}>Open OTP modal</Button>
-        </div>
-        <div className="p-2">
+        <li>
+          <Button>Hello</Button>
+        </li>
+
+        <li className="p-2">
           <CardPlatform
             logo="/images/g-drive-icon.svg"
             heading="Drive"
             description="Store, share, and collaborate on documents and files securely"
             containerClassName="max-w-[341px]"
           />
-        </div>
+        </li>
+        <li>
+          <Link to="/integration">Integrations</Link>
+        </li>
         <li>
           <a
             className="text-blue-700 underline visited:text-purple-900"
             target="_blank"
             href="https://remix.run/docs"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             Remix Docs
           </a>
-        </li>
-        <li>
-          <Link
-            className="text-blue-700 underline visited:text-purple-900"
-            to="/magic-success"
-          >
-            Magic Link Login Success
-          </Link>
         </li>
       </ul>
       <OtpAuth
@@ -81,11 +76,11 @@ export default function Index() {
         setIsModalOpen={() => setOpenModal(!openModal)}
         inputs={[
           { name: "input1", value: "" },
-          { name: "input1", value: "" },
-          { name: "input1", value: "" },
-          { name: "input1", value: "" },
-          { name: "input1", value: "" },
-          { name: "input1", value: "" },
+          { name: "input2", value: "" },
+          { name: "input3", value: "" },
+          { name: "input4", value: "" },
+          { name: "input5", value: "" },
+          { name: "input6", value: "" },
         ]}
         handleSubmit={handleSubmit}
       />
