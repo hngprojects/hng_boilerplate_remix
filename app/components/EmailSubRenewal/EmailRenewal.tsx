@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button }from "../../components/ui/button"
 
 interface SubscriptionProps {
   title: string;
@@ -74,9 +75,7 @@ const Subscription: React.FC<SubscriptionProps> = ({
               month.
             </div>
           </div>
-          <button className="rounded-lg bg-[#f97316] h-11 flex flex-row items-center justify-center py-2 px-10 box-border text-center text-white">
-            <div className="relative font-medium">{renewSubscriptionLink}</div>
-          </button>
+          <Button className="rounded-lg bg-[#f97316] h-11 flex flex-row items-center justify-center py-2 px-10 box-border text-center text-white">{renewSubscriptionLink}</Button>
         </div>
         <div className="self-stretch flex flex-col items-start justify-center gap-[8px] text-sm">
           <div className="self-stretch relative font-medium">Regards,</div>

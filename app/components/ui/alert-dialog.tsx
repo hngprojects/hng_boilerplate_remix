@@ -1,6 +1,6 @@
 "use client";
 
-import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
+import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 import { buttonVariants } from "app/components/ui/button";
 import { cn } from "app/lib/utils/cn";
 import {

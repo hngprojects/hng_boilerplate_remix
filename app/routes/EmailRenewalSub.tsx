@@ -1,17 +1,8 @@
 import { useLoaderData } from "@remix-run/react";
-import { json } from "@remix-run/node";
-// import { render } from "@react-email/render";
-// import nodemailer from "nodemailer";
-import Subscription from "../components/EmailRenewal";
+import { json, ActionFunction } from "@remix-run/node";
+import Subscription from "../components/EmailSubRenewal/EmailRenewal";
+import { sendSubscriptionRenewalEmail } from "../components/EmailSubRenewal/sendEmail"
 import SVG from "../../public/pana.png";
-
-
-// export const meta: MetaFunction = () => {
-//   return {
-//     title: "Subscription Page",
-//     description: "Manage your subscriptions",
-//   };
-// };
 
 
 interface SubscriptionProps {
@@ -43,26 +34,31 @@ export const loader = async () => {
  return json(data);
 };
 
+export const action: ActionFunction = async ({ request }) => {
+  const formData = await request.formData();
+  const email = formData.get('email') as string;
+  const name = formData.get('name') as string;
+  const renewalDate = formData.get('renewalDate') as string;
+  const renewalPrice = formData.get('renewalPrice') as string;
+  const renewalPeriod = formData.get('renewalPeriod') as string;
+  const reviewSubscriptionLink = formData.get('reviewSubscriptionLink') as string;
+  const renewSubscriptionLink = formData.get('renewSubscriptionLink') as string;
 
-//   const emailHtml = render(<Subscription {...data} />);
+  await sendSubscriptionRenewalEmail({
+    to: email,
+    name,
+    renewalDate,
+    renewalPrice,
+    renewalPeriod,
+    reviewSubscriptionLink,
+    renewSubscriptionLink,
+  });
 
-//   const transporter = nodemailer.createTransport({
-//     service: 'Gmail',
-//     auth: {
-//       user: 'your-email@gmail.com',
-//       pass: 'your-email-password',
-//     },
-//   });
+  return json({ success: true });
+};
 
-//   await transporter.sendMail({
-//     from: 'your-email@gmail.com',
-//     to: data.email,
-//     subject: data.title,
-//     html: emailHtml,
-//   });
 
-//   return json(data);
-// };
+
 
 export default function Index() {
   const data = useLoaderData<SubscriptionProps>();
