@@ -15,6 +15,6 @@ const Header: React.FC<HeaderProps> = ({ logo, cname }) => (
   </div>
 );
 
-export default Header;
+export default Header
 
 

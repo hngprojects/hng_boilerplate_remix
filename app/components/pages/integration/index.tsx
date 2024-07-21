@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { useState } from "react";
-import {mockPlatforms } from '~/data/admin'
+import {mockPlatforms } from 'public/images/data/admin'
 
 import { cn } from "~/lib/utils/cn";
 
