@@ -3,7 +3,6 @@ import { useState } from "react";
 
 import { Button } from "~/components/ui/button";
 import CardPlatform from "~/components/ui/card/card-platform";
-import GenerateEmailTemplate from "~/email/templates/generateNewTemplate";
 
 export const meta: MetaFunction = () => {
   return [
@@ -55,9 +54,7 @@ export default function Index() {
             containerClassName="max-w-[341px]"
           />
         </div>
-        <div className="p-2">
-          <GenerateEmailTemplate />
-        </div>
+        <div className="p-2"></div>
         <li>
           <a
             className="text-blue-700 underline visited:text-purple-900"
