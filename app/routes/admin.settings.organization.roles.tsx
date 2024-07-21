@@ -2,6 +2,7 @@ import { Plus } from "lucide-react";
 import { useState } from "react";
 
 import { Button } from "~/components/ui/button";
+import { SuccessModal } from "~/components/ui/SuccessModel";
 import { Switch } from "~/components/ui/switch";
 
 type role = {
@@ -12,6 +13,7 @@ type role = {
 
 export default function Index() {
   const [active, setActive] = useState<string>("Administrator");
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
 
   const roles: role[] = [
     { id: 0, name: "Guest", description: "Read-only access" },
@@ -20,6 +22,12 @@ export default function Index() {
     { id: 4, name: "Project lead", description: "Manage, coordinate, oversee" },
     { id: 5, name: "Administrator", description: "Full access, control" },
   ];
+
+  const handleCreateRole = () => {
+    // Here you would typically handle the role creation logic
+    // For now, we'll just open the success modal
+    setIsSuccessModalOpen(true);
+  };
 
   return (
     <div className="flex">
@@ -41,12 +49,14 @@ export default function Index() {
         <div className="flex-1 border border-transparent md:border-l-[#CBD5E1] md:pl-6">
           <div className="mb-8 flex justify-end">
             <Button
-              variant={"default"}
+              variant="default"
               className="flex items-center gap-2 bg-[#F97316] text-white"
+              onClick={handleCreateRole}
             >
               <Plus color="white" size={20} /> Create roles
             </Button>
           </div>
+
           <div className="border border-transparent border-b-[#CBD5E1] pb-4">
             <h1 className="mb-2 text-xl font-semibold">Permissions</h1>
             <p className="text-sm">See the list of permissions</p>
@@ -101,6 +111,11 @@ export default function Index() {
           </div>
         </div>
       </div>
+
+      <SuccessModal
+        isOpen={isSuccessModalOpen}
+        onClose={() => setIsSuccessModalOpen(false)}
+      />
     </div>
   );
 }
