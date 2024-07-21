@@ -1,10 +1,10 @@
-import Footer from "~/components/ui/footer";
+import FooterLight from "~/components/ui/footerLight";
 import Header from "~/components/ui/header";
 
 const PrivacyPage = () => {
   return (
     <div>
-      <Header></Header>
+      <Header />
       <div className="container flex h-[342px] flex-col items-center justify-center bg-foreground text-secondary">
         <h1 className="font-inter text-[28px] font-bold leading-[72.61px] md:text-[60px]">
           Privacy Policy
@@ -17,7 +17,7 @@ const PrivacyPage = () => {
       <div className="mx-auto mt-16 max-w-[1000px] p-5">
         <p>home &gt; Legal Terms &gt; Privacy</p>
         <div className="mt-10 flex flex-col-reverse justify-between gap-8 md:flex-row">
-          <div className="max-w-[6170px]">
+          <div className="max-w-[600px]">
             <div className="mt-10">
               <h3 className="text-[28px] font-bold text-gray-600">
                 Introduction
@@ -259,7 +259,7 @@ const PrivacyPage = () => {
             </div>
           </div>
 
-          <div className="mt-10 p-4 md:min-w-[316px]">
+          <div className="mt-10 p-4">
             <h3 className="font-inter text-[28px] font-bold text-[hsl(var(--muted-foreground))]">
               Table of Content
             </h3>
@@ -297,7 +297,7 @@ const PrivacyPage = () => {
             </ul>
           </div>
         </div>
-        <Footer></Footer>
+        <FooterLight />
       </div>
     </div>
   );
