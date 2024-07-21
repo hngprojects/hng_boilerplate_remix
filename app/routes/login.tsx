@@ -104,7 +104,6 @@ export default function Login() {
                 ) : undefined}
               </p>
             </div>
-
             <div className="mx-2 w-full justify-between text-primary-foreground md:flex">
               <div className="mt-2 flex gap-2">
                 <input type="checkbox" id="login-check" />
