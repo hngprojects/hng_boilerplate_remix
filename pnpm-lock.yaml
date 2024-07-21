@@ -632,8 +632,6 @@ packages:
   '@eslint/eslintrc@2.1.4':
     resolution: {integrity: sha512-269Z39MS6wVJtsoUl10L60WdkhJVdPG24Q4eZTH3nnF6lpvSShEK3wQjDX9JRWAUPvPh7COouPpU9IrqaZFvtQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-<<<<<<< HEAD
-=======
 
   '@eslint/eslintrc@3.1.0':
     resolution: {integrity: sha512-4Bfj15dVJdoy3RfZmmo86RK1Fwzn6SstsvK9JS+BaVKqC6QQQQyXekNaC+g+LKNgkQ+2VhGAzm6hO40AhMR3zQ==}
@@ -5347,7 +5345,6 @@ snapshots:
     optional: true
 
   '@esbuild/aix-ppc64@0.19.11':
-<<<<<<< HEAD
     optional: true
 
   '@esbuild/aix-ppc64@0.21.5':
@@ -5559,7 +5556,6 @@ snapshots:
   '@eslint-community/regexpp@4.11.0': {}
 
   '@eslint/eslintrc@2.1.4':
->>>>>>> upstream/dev
     dependencies:
       ajv: 6.12.6
       debug: 4.3.5
@@ -5790,7 +5786,6 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.24.8
       react: 18.3.1
-<<<<<<< HEAD
     dev: false
 
   /@remix-run/css-bundle@2.10.3:
@@ -5817,7 +5812,7 @@ snapshots:
         optional: true
       wrangler:
         optional: true
-=======
+
     optionalDependencies:
       '@types/react': 18.3.3
 
@@ -6403,7 +6398,6 @@ snapshots:
   '@remix-run/css-bundle@2.10.3': {}
 
   '@remix-run/dev@2.10.3(@remix-run/react@2.10.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.3))(@remix-run/serve@2.10.3(typescript@5.5.3))(@types/node@20.14.11)(terser@5.31.3)(typescript@5.5.3)(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))':
->>>>>>> upstream/dev
     dependencies:
       '@babel/core': 7.24.9
       '@babel/generator': 7.24.10
@@ -6759,7 +6753,6 @@ snapshots:
     resolution: {integrity: sha512-IfYcSBWE3hLpBg8+X2SEa8LVkJdJEkT2Ese2aaLs3ptGdVtABxndrMaxuFlQ1qdFf9Q5rDvDpxI3WwgvKFAsQA==}
     dev: true
 
-<<<<<<< HEAD
   /@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0)(eslint@8.57.0)(typescript@5.5.3):
     resolution: {integrity: sha512-oy9+hTPCUFpngkEZUSzbf9MxI65wbKFoQYsgPdILTfbUldp5ovUuphZVe4i30emU9M/kP+T64Di0mxl7dSw3MA==}
     engines: {node: ^16.0.0 || >=18.0.0}
@@ -6770,7 +6763,6 @@ snapshots:
     peerDependenciesMeta:
       typescript:
         optional: true
-=======
   '@types/unist@2.0.10': {}
 
   '@types/webpack@5.28.5(@swc/core@1.3.101(@swc/helpers@0.5.12))(esbuild@0.19.11)':
@@ -6785,7 +6777,6 @@ snapshots:
       - webpack-cli
 
   '@typescript-eslint/eslint-plugin@7.16.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0)(typescript@5.5.3)':
->>>>>>> upstream/dev
     dependencies:
       '@eslint-community/regexpp': 4.11.0
       '@typescript-eslint/parser': 7.16.1(eslint@8.57.0)(typescript@5.5.3)
