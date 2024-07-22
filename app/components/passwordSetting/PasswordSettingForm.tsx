@@ -91,7 +91,7 @@ export default function PasswordSetting() {
       if (response.ok) {
         // Form submission successful
         // You can display a success message or perform any other actions
-        console.log("Password updated successfully");
+        console.log(response);
       } else {
         // Form submission failed
         // You can display an error message or perform any other actions
