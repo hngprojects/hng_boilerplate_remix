@@ -2,15 +2,17 @@ import { useState } from "react";
 
 import DetailsForm from "~/components/DetailsForm";
 import PaymentForm from "~/components/PaymentForm";
-import Footer from "~/components/ui/footer";
-import Header from "~/components/ui/header";
+import PricingPaymentBreadCrumb from "~/components/PricingPaymentBreadCrumb";
+import Footer from "~/email/templates/_components/Footer";
 
 const Payment = () => {
   const [showSecondForm, setShowSecondForm] = useState(false);
 
   return (
     <div>
-      <Header />
+      <div className="mx-auto w-full">
+        <PricingPaymentBreadCrumb />
+      </div>
       <div className="max-w-screen mx-auto flex justify-between gap-20 bg-[#ffffff]">
         <div className="mx-auto flex w-10/12 flex-col gap-6 py-[5%] md:flex-row md:justify-between">
           <div className="w-full">
@@ -31,7 +33,7 @@ const Payment = () => {
           <div>
             <h2 className="mb-4">Payment Method</h2>
             {showSecondForm ? (
-              <div className="w-full rounded bg-[#ffffff] px-6 py-3 md:w-[588px]">
+              <div className="w-full rounded-md bg-[#ffffff] px-6 py-3 md:w-[588px]">
                 <PaymentForm setShowSecondForm={setShowSecondForm} />
               </div>
             ) : (

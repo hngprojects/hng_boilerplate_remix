@@ -1,4 +1,5 @@
-import { Button } from "~/components/ui/button";
+import { Link } from "@remix-run/react";
+
 import Container from "./Container";
 
 const FindSection = () => {
@@ -13,7 +14,9 @@ const FindSection = () => {
           budget. All plans include access to our comprehensive library of
           pre-built sections, drag-and-drop customization.
         </p>
-        <Button className="bg-primary">See Our Pricing Plan</Button>
+        <Link to="/PaymentInfo" className="bg-primary">
+          See Our Pricing Plan
+        </Link>
         <div className="absolute -left-[21rem] -top-64 -z-10 hidden h-[39.625rem] w-[39.625rem] rounded-full bg-[#FFD6D6] blur-[500px] md:flex"></div>
       </div>
     </Container>
