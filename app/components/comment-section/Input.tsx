@@ -1,5 +1,7 @@
 import { FC, useState } from "react";
 
+import "../../styles/global.css";
+
 import Comments from "./Comments";
 
 interface Comment {
@@ -52,9 +54,9 @@ const CommentSection: FC<FooterCommentProperties> = ({
           value={newCommentText}
           onChange={handleCommentChange}
           placeholder="Write a comment..."
-          className="border p-2"
+          className="border border-[var(--primary)] p-2"
         />
-        <button type="submit" className="bg-[var(--accent)] p-2 text-white">
+        <button type="submit" className="bg-[var(--primary)] p-2 text-white">
           Add Comment
         </button>
       </form>

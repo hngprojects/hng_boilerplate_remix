@@ -1,4 +1,5 @@
 import { FC } from "react";
+import "../../styles/global.css";
 
 import CommentSection from "./CommentSection";
 
@@ -41,7 +42,7 @@ const App: FC = () => {
     sampleComments.push(newComment);
   };
   return (
-    <div>
+    <div className="font-family('Inter')">
       <CommentSection comments={sampleComments} onAddComment={addComment} />
     </div>
   );
