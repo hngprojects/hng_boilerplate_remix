@@ -1,4 +1,4 @@
-import { A11y, Autoplay, EffectFade } from "swiper/modules";
+import { A11y, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -14,9 +14,8 @@ const ImageSlider = () => {
         delay: 2500,
         disableOnInteraction: false,
       }}
-      effect={"fade"}
       speed={3000}
-      modules={[Autoplay, EffectFade, A11y]}
+      modules={[Autoplay, A11y]}
       className="mySwiper md:rounded-lg"
     >
       <SwiperSlide className="w-full">
