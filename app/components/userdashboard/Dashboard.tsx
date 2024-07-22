@@ -3,6 +3,7 @@ import date from "/images/date.png";
 import revenue from "/images/revenue.png";
 import sales from "/images/sales.png";
 import subscript from "/images/subscript.png";
+import '../../styles/new.css';
 
 import BarComponent from "./barchart";
 

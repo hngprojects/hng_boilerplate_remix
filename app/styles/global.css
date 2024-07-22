@@ -130,14 +130,3 @@
     @apply absolute left-10 top-20 -rotate-6;
   }
 }
-
-#shadxs {
-  box-shadow: 0 0 1px rgba(77, 77, 77, 0.5);
-}
-
-#shadsm {
-  box-shadow: 0 0 3px rgba(77, 77, 77, 0.5);
-}
-#shadlg {
-  box-shadow: 0 0 6px rgba(77, 77, 77, 0.5);
-}
