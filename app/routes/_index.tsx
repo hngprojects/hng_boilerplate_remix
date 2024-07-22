@@ -1,59 +1,26 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Button } from "~/components/ui/button";
-import CardPlatform from "~/components/ui/card/card-platform";
+
+import FindSection from "~/components/pages/home/FindSection";
+import HeroSection from "~/components/pages/home/HeroSection";
+import HowSection from "~/components/pages/home/HowSection";
+import TestimonialsSection from "~/components/pages/home/TestimonialsSection";
+import UsersSection from "~/components/pages/home/UsersSection";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
+    { title: "Remix Boilerplate" },
     { name: "description", content: "Welcome to Remix!" },
   ];
 };
 
 export default function Index() {
   return (
-    <div className="font-sans p-4">
-      <h1 className="text-3xl">Welcome to Remix</h1>
-      <ul className="list-disc mt-4 pl-6 space-y-2">
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/start/quickstart"
-            rel="noreferrer"
-          >
-            5m Quick Start
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/start/tutorial"
-            rel="noreferrer"
-          >
-            30m Tutorial
-          </a>
-        </li>
-        <Button>Hello</Button>
-        <div className="p-2">
-          <CardPlatform
-            logo="/images/g-drive-icon.svg"
-            heading="Drive"
-            description="Store, share, and collaborate on documents and files securely"
-            containerClassName="max-w-[341px]"
-          />
-        </div>
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/docs"
-            rel="noreferrer"
-          >
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
+    <>
+      <HeroSection />
+      <UsersSection />
+      <HowSection />
+      <TestimonialsSection />
+      <FindSection />
+    </>
   );
 }

@@ -1,20 +1,28 @@
+import { cssBundleHref } from "@remix-run/css-bundle";
+import { LinksFunction } from "@remix-run/node";
 import {
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "@remix-run/react";
-import { LinksFunction } from "@remix-run/node";
+import type { ReactNode } from "react";
+
+import FooterLight from "./components/ui/footerLight";
+import Header from "./components/ui/header";
 import styles from "./styles/global.css?url";
-import { cssBundleHref } from "@remix-run/css-bundle";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout({ children }: { children: ReactNode }) {
+  const location = useLocation();
+  const pagesWithNoFooter = ["/dashboard/password-settings"];
+  const showFooter = !pagesWithNoFooter.includes(location.pathname);
   return (
     <html lang="en">
       <head>
@@ -24,9 +32,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
+        <div>
+          <main>
+            <Header />
+            {children}
+            {showFooter && <FooterLight />}
+          </main>
+          <ScrollRestoration />
+          <Scripts />
+        </div>
       </body>
     </html>
   );
