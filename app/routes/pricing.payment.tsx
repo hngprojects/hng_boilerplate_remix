@@ -28,7 +28,7 @@ const Payment = () => {
           <div>
             <h2 className="mb-4">Payment Method</h2>
             {showSecondForm ? (
-              <div className="w-full rounded bg-[#ffffff] px-6 py-3 md:w-[588px]">
+              <div className="w-full rounded-md bg-[#ffffff] px-6 py-3 md:w-[588px]">
                 <PaymentForm setShowSecondForm={setShowSecondForm} />
               </div>
             ) : (
