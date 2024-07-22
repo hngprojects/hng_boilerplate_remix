@@ -1,16 +1,17 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-
-import { CheckIcon } from "~/components/icons/CheckIcon";
-import { CloseIcon } from "~/components/icons/CloseIcon";
-import { Button } from "~/components/ui/button";
 
 interface SuccessModalProperties {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export const SuccessModal = ({ isOpen, onClose }: SuccessModalProperties) => {
+export const SuccessModal: React.FC<SuccessModalProperties> = ({
+  isOpen,
+  onClose,
+}) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -27,7 +28,19 @@ export const SuccessModal = ({ isOpen, onClose }: SuccessModalProperties) => {
           <div className="relative mb-4 h-16">
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="flex h-16 w-16 items-center justify-center rounded-full border-4 border-green-500 bg-green-100">
-                <CheckIcon className="h-8 w-8 text-green-800" />
+                <svg
+                  className="h-8 w-8 text-green-800"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
               </div>
             </div>
             <button
@@ -35,7 +48,19 @@ export const SuccessModal = ({ isOpen, onClose }: SuccessModalProperties) => {
               className="absolute right-0 top-0 text-gray-600 hover:text-gray-800"
               aria-label="Close"
             >
-              <CloseIcon className="h-6 w-6" />
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
             </button>
           </div>
           <div className="text-center">
@@ -43,13 +68,12 @@ export const SuccessModal = ({ isOpen, onClose }: SuccessModalProperties) => {
             <p className="mb-6 text-gray-600">
               You have created your new role successfully!
             </p>
-            <Button
+            <button
               onClick={onClose}
-              variant="default"
-              className="w-full bg-[#F97316] text-white hover:bg-[#F97316]/90"
+              className="w-full rounded bg-[#F97316] px-4 py-2 text-white hover:bg-[#F97316]/90 focus:outline-none focus:ring-2 focus:ring-[#F97316] focus:ring-offset-2"
             >
               Continue
-            </Button>
+            </button>
           </div>
         </div>
       </div>
