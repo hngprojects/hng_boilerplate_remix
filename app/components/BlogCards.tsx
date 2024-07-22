@@ -1,5 +1,3 @@
-import React from "react";
-
 interface BlogCardProperties {
   title: string;
   description: string;
@@ -29,6 +27,7 @@ const BlogCard: React.FC<BlogCardProperties> = ({
       <div className="p-4 lg:order-1 lg:w-2/3">
         <div className="mb-2 flex items-center">
           <span className="mr-2 inline-block h-3 w-3 rounded-full bg-gray-400"></span>
+
           <span className="text-sm font-semibold text-gray-700">{tag}</span>
         </div>
         <div>
