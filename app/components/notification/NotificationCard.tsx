@@ -37,7 +37,7 @@ const NotificationCard = ({
   unreadMessageCount = notificationPreview.length,
 }: notification) => {
   return (
-    <div className="max-w-[378px] rounded-lg border border-solid border-slate-300 bg-white p-6 font-inter shadow-sm">
+    <div className="font-inter max-w-[378px] rounded-lg border border-solid border-slate-300 bg-white p-6 shadow-sm">
       <p className="leading-29.05 text-2xl font-semibold text-[#0A0A0A]">
         Notifications
       </p>

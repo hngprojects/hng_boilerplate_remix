@@ -1,6 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import { useState } from "react";
+
 import { Button } from "~/components/ui/button";
 import CardPlatform from "~/components/ui/card/card-platform";
 import OtpAuth from "~/components/ui/otp/OtpAuth";
