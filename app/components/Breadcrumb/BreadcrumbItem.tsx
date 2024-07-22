@@ -1,13 +1,13 @@
-import React from "react";
 import { Link } from "@remix-run/react";
+import React from "react";
 
-interface BreadcrumbItemProps {
+interface BreadcrumbItemProperties {
   name: string;
   link: string;
   isCurrent: boolean;
 }
 
-const BreadcrumbItem: React.FC<BreadcrumbItemProps> = ({
+const BreadcrumbItem: React.FC<BreadcrumbItemProperties> = ({
   name,
   link,
   isCurrent,

@@ -7,11 +7,11 @@ interface Page {
   link: string;
 }
 
-interface BreadcrumbProps {
+interface BreadcrumbProperties {
   pages: Page[];
 }
 
-const Breadcrumb: React.FC<BreadcrumbProps> = ({ pages }) => {
+const Breadcrumb: React.FC<BreadcrumbProperties> = ({ pages }) => {
   return (
     <nav aria-label="breadcrumb" className="flex items-center">
       {pages.map((page, index) => (
@@ -22,7 +22,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ pages }) => {
             isCurrent={index === pages.length - 1}
           />
           {index < pages.length - 1 && (
-            <span className="flex items-center mx-2">
+            <span className="mx-2 flex items-center">
               <BreadcrumbSeparator />
             </span>
           )}
