@@ -1,5 +1,6 @@
-import { FC, useState } from "react";
 import { Form } from "@remix-run/react";
+import { FC, useState } from "react";
+
 import CreateRoleModal from "./CreateRoleModal";
 
 interface CreateRoleFormProperties {
@@ -13,7 +14,7 @@ const CreateRoleForm: FC<CreateRoleFormProperties> = ({ isOpen, onClose }) => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    // Handle form submission logic here
+
     onClose();
   };
 
