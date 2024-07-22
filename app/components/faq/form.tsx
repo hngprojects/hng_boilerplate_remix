@@ -41,7 +41,7 @@ function QuestionForm() {
   };
 
   return (
-    <div className="font-inter flex w-full flex-col gap-7 sm:max-w-[min(calc(100%-40px),_676px)] md:mx-auto md:gap-16">
+    <div className="flex w-full flex-col gap-7 font-inter sm:max-w-[min(calc(100%-40px),_676px)] md:mx-auto md:gap-16">
       <div className="flex flex-col gap-4 text-center md:gap-2">
         <h6
           className="text-xl font-bold leading-6 text-primary md:text-[28px] md:leading-[34px]"
