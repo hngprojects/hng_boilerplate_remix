@@ -1,10 +1,6 @@
-import FooterLight from "~/components/ui/footerLight";
-import Header from "~/components/ui/header";
-
 const PrivacyPage = () => {
   return (
     <div>
-      <Header />
       <div className="container flex h-[342px] flex-col items-center justify-center bg-foreground text-secondary">
         <h1 className="font-inter text-[28px] font-bold leading-[72.61px] md:text-[60px]">
           Privacy Policy
@@ -298,7 +294,6 @@ const PrivacyPage = () => {
           </div>
         </div>
       </div>
-      <FooterLight />
     </div>
   );
 };
