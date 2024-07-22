@@ -147,7 +147,7 @@ export default function HelpCenter() {
   }, []);
 
   return (
-    <div className="max-w-[1440px] bg-[#FAFAFA]">
+    <div className="max-w-[1440px] bg-background">
       <section className="w-full bg-[#F973161A] p-6 text-center md:px-0 md:py-[100px]">
         <h1 className="text-xl font-medium leading-[24.2px] text-[#0A0A0A] md:text-[#525252]">
           Help Center
@@ -198,7 +198,7 @@ export default function HelpCenter() {
       </section>
 
       <section className="p-6 text-center md:py-20">
-        <h2 className="text-[24px] font-bold leading-[29.05px] text-[#F97316] md:text-[28px] md:leading-[33.89px]">
+        <h2 className="text-[24px] font-bold leading-[29.05px] text-primary md:text-[28px] md:leading-[33.89px]">
           Browse by topics
         </h2>
         <div className="my mx-auto grid max-w-[1200px] grid-cols-1 md:grid-cols-2 md:gap-x-6 md:gap-y-0 lg:grid-cols-3">
@@ -274,14 +274,14 @@ export default function HelpCenter() {
         </div>
 
         <div className="mx-auto p-6 text-center md:max-w-[600px]">
-          <h2 className="text-2xl font-bold leading-[29.05px] text-[#F97316] md:text-[28px] md:leading-[33.89px]">
+          <h2 className="text-2xl font-bold leading-[29.05px] text-primary md:text-[28px] md:leading-[33.89px]">
             Didn’t find an answer?
           </h2>
           <p className="py-5 text-[16px] text-[#525252] md:text-lg md:leading-[21.78px] md:text-[#0A0A0A]">
             Contact us for more inquires and information about our services.
           </p>
           <Button
-            className="bg-[#F97316]"
+            className="bg-primary"
             size="lg"
             onClick={() => redirect("/contact-us")}
           >
