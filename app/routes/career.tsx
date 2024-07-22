@@ -39,10 +39,10 @@ const dummyJobListings = (page: number) => {
 
 export const loader: LoaderFunction = async ({ request }) => {
   const url = new URL(request.url);
-  const page = parseInt(url.searchParams.get("page") || "1", 10);
+  const page = Number.parseInt(url.searchParams.get("page") || "1", 10);
   const jobListings = dummyJobListings(page);
 
-  if (isNaN(page) || page < 1 || page > jobListings.totalPages) {
+  if (Number.isNaN(page) || page < 1 || page > jobListings.totalPages) {
     throw new Response("Page not found", { status: 404 });
   }
 
@@ -51,8 +51,8 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 const CareerPage: React.FC = () => {
   const { jobListings } = useLoaderData<LoaderData>();
-  const [searchParams] = useSearchParams();
-  const currentPage = parseInt(searchParams.get("page") || "1", 10);
+  const [searchParameters] = useSearchParams();
+  const currentPage = Number.parseInt(searchParameters.get("page") || "1", 10);
   const totalPages = jobListings.totalPages;
 
   const [maxPagesToShow, setMaxPagesToShow] = useState(3);
@@ -96,8 +96,8 @@ const CareerPage: React.FC = () => {
       start = Math.max(1, totalPages - maxPagesToShow + 1);
     }
 
-    for (let i = start; i <= end; i++) {
-      pageNumbers.push(i);
+    for (let index = start; index <= end; index++) {
+      pageNumbers.push(index);
     }
 
     if (start > 1) {
@@ -142,11 +142,8 @@ const CareerPage: React.FC = () => {
             </PaginationItem>
             {generatePageNumbers().map((page, index) =>
               page === "ellipsis" ? (
-                <PaginationItem>
-                  <PaginationEllipsis
-                    key={index}
-                    className="flex items-center"
-                  />
+                <PaginationItem key={index}>
+                  <PaginationEllipsis className="flex items-center" />
                 </PaginationItem>
               ) : (
                 <PaginationItem key={index} className="mx-1">
