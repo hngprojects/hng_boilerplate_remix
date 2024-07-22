@@ -6,6 +6,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "@remix-run/react";
 import type { ReactNode } from "react";
 
@@ -19,6 +20,9 @@ export const links: LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: ReactNode }) {
+  const location = useLocation();
+  const pagesWithNoFooter = ["/dashboard/password-settings"];
+  const showFooter = !pagesWithNoFooter.includes(location.pathname);
   return (
     <html lang="en">
       <head>
@@ -32,7 +36,7 @@ export function Layout({ children }: { children: ReactNode }) {
           <main>
             <Header />
             {children}
-            <FooterLight />
+            {showFooter && <FooterLight />}
           </main>
           <ScrollRestoration />
           <Scripts />
