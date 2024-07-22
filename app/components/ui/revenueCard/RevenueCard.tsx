@@ -13,7 +13,11 @@ const RevenueCard: React.FC<RevenueCardProperties> = ({ revenue, change }) => {
           <h1 className="text-[14px] font-medium leading-[16.94px]">
             Total Revenue
           </h1>
-          <img className="h-[24px] w-[24px]" src="/images/doller.png" alt="" />
+          <img
+            className="h-[24px] w-[24px]"
+            src="/images/doller.png"
+            alt="doller-sign"
+          />
         </div>
 
         <h4 className="mb-1 text-[24px] font-semibold leading-[29.05px] text-[#0A0A0A]">
