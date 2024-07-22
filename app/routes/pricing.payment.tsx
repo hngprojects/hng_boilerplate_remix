@@ -1,14 +1,17 @@
+import { Header } from "@radix-ui/react-accordion";
 import { useState } from "react";
 
 import DetailsForm from "~/components/DetailsForm";
 import PaymentForm from "~/components/PaymentForm";
 import PricingPaymentBreadCrumb from "~/components/PricingPaymentBreadCrumb";
+import Footer from "~/components/ui/footer";
 
 const Payment = () => {
   const [showSecondForm, setShowSecondForm] = useState(false);
 
   return (
     <div>
+      <Header />
       <div className="mx-auto w-full">
         <PricingPaymentBreadCrumb />
       </div>
@@ -43,6 +46,7 @@ const Payment = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
