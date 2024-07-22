@@ -1,7 +1,4 @@
 import type { MetaFunction } from "@remix-run/node";
-
-import Success from "~/components/success_page/Success";
-
 import { Button } from "~/components/ui/button";
 
 export const meta: MetaFunction = () => {
@@ -12,11 +9,8 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-
   return (
-
       <div className="p-4 font-sans">
-        <Success />
         <h1 className="text-3xl">Welcome to Remix</h1>
       <ul className="list-disc mt-4 pl-6 space-y-2">
         <li>
