@@ -9,7 +9,6 @@ import {
 } from "@remix-run/react";
 import type { ReactNode } from "react";
 
-import FooterLight from "./components/ui/footerLight";
 import styles from "./styles/global.css?url";
 
 export const links: LinksFunction = () => [
