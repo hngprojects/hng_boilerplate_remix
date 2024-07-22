@@ -7,11 +7,11 @@ function HowSection() {
     <Container Element="section" wrapperClass="md:bg-white">
       <div className="flex flex-col items-center gap-7 pb-7 pt-0 text-center md:flex-row md:gap-8 md:pb-24 md:pt-16 md:text-start">
         <div className="w-full">
-          <h3 className="mb-4 text-xl font-bold leading-tight text-neutral-2 md:mb-6 md:text-[2.75rem]">
+          <h3 className="text-neutral-2 mb-4 text-xl font-bold leading-tight md:mb-6 md:text-[2.75rem]">
             <span className="block text-primary md:inline">How It Works: </span>
             Experience the benefits of using our product with every step.
           </h3>
-          <p className="text-sm text-neutral-1 md:w-4/5 md:text-xl">
+          <p className="text-neutral-1 text-sm md:w-4/5 md:text-xl">
             We designed our product to simplify your life. It offers a
             comprehensive solution. Here&apos;s how it works and how it benefits
             you at each stage.
@@ -34,7 +34,7 @@ function HowSection() {
                     </span>
                     Pre-Built Sections
                   </header>
-                  <p className="text-sm leading-tight text-neutral-1 md:text-lg">
+                  <p className="text-neutral-1 text-sm leading-tight md:text-lg">
                     Leverage pre-built sections like &quot;Features,&quot;
                     &quot;Benefits,&quot; &quot;Pricing,&quot; and
                     &quot;Testimonials&quot; to showcase your product
@@ -58,7 +58,7 @@ function HowSection() {
                     </span>
                     Scalable Foundation
                   </header>
-                  <p className="text-sm leading-tight text-neutral-1 md:text-lg">
+                  <p className="text-neutral-1 text-sm leading-tight md:text-lg">
                     Our boilerplate is designed to grow with your product.
                     Easily add new features and functionalities as needed.
                   </p>
@@ -80,7 +80,7 @@ function HowSection() {
                     </span>
                     Easy Customization
                   </header>
-                  <p className="text-sm leading-tight text-neutral-1 md:text-lg">
+                  <p className="text-neutral-1 text-sm leading-tight md:text-lg">
                     Tailor the experience to your specific needs and preferences
                     for maximum results.
                   </p>

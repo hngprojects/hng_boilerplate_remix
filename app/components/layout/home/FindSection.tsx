@@ -5,10 +5,10 @@ const FindSection = () => {
   return (
     <Container Element="section">
       <div className="relative flex flex-col items-center justify-center py-24 pb-14 text-center md:pb-24">
-        <h3 className="mb-2 text-[1.75rem] font-medium text-neutral-2 md:text-[2.75rem] md:font-bold">
+        <h3 className="text-neutral-2 mb-2 text-[1.75rem] font-medium md:text-[2.75rem] md:font-bold">
           Find The Perfect Fit
         </h3>
-        <p className="max-w-[45rem] pb-14 text-base leading-tight text-neutral-1 md:pb-8 md:text-xl">
+        <p className="text-neutral-1 max-w-[45rem] pb-14 text-base leading-tight md:pb-8 md:text-xl">
           Choose the boilerplate plan that best suits your project needs and
           budget. All plans include access to our comprehensive library of
           pre-built sections, drag-and-drop customization.

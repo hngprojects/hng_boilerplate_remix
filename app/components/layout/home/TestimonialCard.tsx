@@ -16,7 +16,7 @@ const TestimonialCard = ({
   rating,
 }: CardProperties) => {
   return (
-    <div className="flex h-full max-w-[22.5rem] flex-col items-center justify-center gap-6 rounded-[0.375rem] border border-primary bg-white px-8 py-10 text-neutral-2">
+    <div className="text-neutral-2 flex h-full max-w-[22.5rem] flex-col items-center justify-center gap-6 rounded-[0.375rem] border border-primary bg-white px-8 py-10">
       <p className="text-center text-sm">“{comment}”</p>
       <div className="flex gap-[0.3rem]">
         {Array.from({ length: rating }, (_, index) => (

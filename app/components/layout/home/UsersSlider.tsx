@@ -41,7 +41,7 @@ const UsersSlider = () => {
         },
       }}
       modules={[Autoplay]}
-      className="mySwiper w-full text-[1.69375rem] font-semibold text-neutral-1"
+      className="mySwiper text-neutral-1 w-full text-[1.69375rem] font-semibold"
     >
       <SwiperSlide>
         <li className="flex items-center justify-center gap-2">

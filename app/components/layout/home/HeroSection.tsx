@@ -11,7 +11,7 @@ const HeroSection = () => {
         <div className="absolute -left-[28.75rem] -top-80 -z-10 hidden h-[39.625rem] w-[39.625rem] rounded-full bg-[#6DC347] opacity-0 blur-[500px] md:flex"></div>
         <div className="absolute -top-[31rem] right-40 -z-10 hidden h-[39.625rem] w-[39.625rem] rounded-full bg-[#FFD6D6] blur-[500px] md:flex"></div>
         <div className="flex w-full flex-col items-center justify-center text-center lg:items-start lg:text-left">
-          <h3 className="text-[2rem] font-bold text-neutral-2 md:text-6xl">
+          <h3 className="text-neutral-2 text-[2rem] font-bold md:text-6xl">
             Focus on What Matters. We&apos;ve Got the Foundation Covered.
           </h3>
           <div className="mb-8 mt-2 hidden w-full sm:flex lg:w-fit">
@@ -24,7 +24,7 @@ const HeroSection = () => {
               alt="curve vector"
             />
           </div>
-          <p className="px-4 text-base leading-tight text-neutral-2 md:px-0 md:text-[1.75rem] md:text-neutral-1">
+          <p className="text-neutral-2 md:text-neutral-1 px-4 text-base leading-tight md:px-0 md:text-[1.75rem]">
             Streamline your processes with a boilerplate built for efficiency
             and optimal productivity.
           </p>
@@ -43,7 +43,7 @@ const HeroSection = () => {
               <h6 className="mb-1 text-[0.625rem] text-[#A9A7B6] md:mb-2 md:text-xs">
                 Boilerplate
               </h6>
-              <p className="text-xs font-medium text-neutral-1 md:text-base">
+              <p className="text-neutral-1 text-xs font-medium md:text-base">
                 Built to Last...
               </p>
             </div>
