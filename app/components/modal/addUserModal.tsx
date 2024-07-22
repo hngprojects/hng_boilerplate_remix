@@ -1,4 +1,4 @@
-import {ChangeEvent, FormEvent, useState } from "react"
+import { ChangeEvent, FormEvent, useState } from "react";
 
 interface AddUserContentProperties {
   toggleShow: (show: boolean) => void;
@@ -26,7 +26,7 @@ const AddUserContent: React.FC<AddUserContentProperties> = ({ toggleShow }) => {
     const newErrors = {
       name: "",
       email: "",
-      phoneNumber: ""
+      phoneNumber: "",
     };
 
     if (!name.trim()) {
@@ -60,7 +60,7 @@ const AddUserContent: React.FC<AddUserContentProperties> = ({ toggleShow }) => {
       <h2 className="text-xl">Add new user</h2>
       <p className="text-loading-hover">Create a new user</p>
       <div className="flex">
-        <div className="bg-[hsl(0,0%,85%) my-5 h-20 w-20 rounded-full ">
+        <div className="my-5 h-20 w-20 rounded-full bg-[hsl(0,0%,85%)]">
           <input
             type="file"
             alt=""
@@ -71,7 +71,7 @@ const AddUserContent: React.FC<AddUserContentProperties> = ({ toggleShow }) => {
           <p>Upload Picture</p>
           <div className="relative">
             <p className="absolute text-primary">Click to upload</p>
-            <input type="file" className="w-28 opacity-0 " />
+            <input type="file" className="w-28 opacity-0" />
           </div>
         </div>
       </div>
@@ -110,9 +110,9 @@ const AddUserContent: React.FC<AddUserContentProperties> = ({ toggleShow }) => {
             placeholder="e.g 08123456789"
             className="my-2 rounded-lg border-2 p-2 outline-[#CBD5E1] focus:border-none"
           />
-          {
-           errors.phoneNumber && <p className="text-error">{errors.phoneNumber}</p>
-           }
+          {errors.phoneNumber && (
+            <p className="text-error">{errors.phoneNumber}</p>
+          )}
         </div>
       </div>
       <div className="flex justify-end">

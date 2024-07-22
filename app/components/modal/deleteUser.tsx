@@ -26,7 +26,7 @@ const DeleteUserContent: React.FC<DeleteUserContentProperties> = ({
           Cancel
         </Button>
         <Button
-          className="m-2 bg-error hover:bg-error"
+          className="bg-error hover:bg-error m-2"
           onClick={() => toggleShow(false)}
         >
           Delete
