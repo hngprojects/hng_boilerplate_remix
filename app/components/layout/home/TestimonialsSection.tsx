@@ -79,10 +79,10 @@ const TestimonialsSection = () => {
       <div className="relative py-1 md:py-28">
         <header className="mb-7s mb-7 flex flex-col items-center justify-between md:mb-14 md:flex-row">
           <div className="w-full text-center md:w-1/2 md:text-start">
-            <h5 className="text-neutral-2 mb-2 text-2xl font-medium md:mb-3 md:text-[2.75rem] md:font-bold">
+            <h5 className="mb-2 text-2xl font-medium text-neutral-2 md:mb-3 md:text-[2.75rem] md:font-bold">
               Client Testimonials
             </h5>
-            <p className="text-neutral-1 text-sm leading-tight md:text-xl">
+            <p className="text-sm leading-tight text-neutral-1 md:text-xl">
               Don&apos;t just take our word for it - see what actual users of
               our product have to say about their experience.
             </p>
