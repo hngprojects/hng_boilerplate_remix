@@ -3,8 +3,6 @@ import { Form, Link, useActionData } from "@remix-run/react";
 import { useState } from "react";
 
 import { Button } from "~/components/ui/button";
-import Footer from "~/components/ui/footer";
-import Head from "~/components/ui/header";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 
@@ -129,10 +127,9 @@ export default function Signup() {
 
   return (
     <>
-      <Head />
-      <div className="mb-[190px] flex items-center justify-center lg:mb-[400px]">
-        <div className="max-w-mid mx-[25px] mt-[80px] h-[1010px] w-[342px] w-full gap-[24px] bg-white lg:m-3 lg:mt-[208px] lg:h-[836px] lg:w-[820px]">
-          <h1 className="text-[#141414]-600 mb-6 hidden text-center text-[13px] lg:block lg:text-[32px]">
+      <div className="flex items-center justify-center bg-white">
+        <div className="max-w-mid mx-[25px] mb-[50px] mt-[80px] h-[1010px] w-[342px] w-full gap-[24px] lg:m-3 lg:mb-[250px] lg:mt-[110px] lg:h-[836px] lg:w-[820px]">
+          <h1 className="text-[#141414]-600 mb-6 hidden text-center text-[13px] font-bold lg:block lg:text-[32px]">
             Create Organisation Account
           </h1>
           <h1 className="text-[24px] font-bold lg:hidden">Sign up</h1>
@@ -140,7 +137,7 @@ export default function Signup() {
             Create an account to get started with us.
           </p>
           <Form method="post" className="gap-[24px]" onSubmit={handleSubmit}>
-            <div className="mb-4">
+            <div className="mb-4 p-2">
               <Label
                 htmlFor="company_name"
                 className="text-[#0A0A0A]-400 block text-[13px] lg:text-[20px]"
@@ -372,7 +369,6 @@ export default function Signup() {
           </Form>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
