@@ -1,19 +1,19 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 
-// import { useState } from "react";
+import { useState } from "react";
 
 import AddUserModal from "~/components/addUserModel/addUserModal";
-// import BlogPost from "~/components/BlogPost";
-// import HeroSection from "~/components/HeroSection";
+import BlogPost from "~/components/BlogPost";
+import HeroSection from "~/components/HeroSection";
 import { Button } from "~/components/ui/button";
 import CardPlatform from "~/components/ui/card/card-platform";
-// import Footer from "~/components/ui/footer";
-// import Header from "~/components/ui/header";
-// import OtpAuth from "~/components/ui/otp/OtpAuth";
+import Footer from "~/components/ui/footer";
+import Header from "~/components/ui/header";
+import OtpAuth from "~/components/ui/otp/OtpAuth";
 import { useModal } from "~/context/modalContext";
 
-// import { Input } from "~/types/otpauth";
+import { Input } from "~/types/otpauth";
 
 export const meta: MetaFunction = () => {
   return [
@@ -23,7 +23,7 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  // const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   const { handleOpen } = useModal();
   return (
     <div className="p-4 font-sans">
@@ -51,7 +51,7 @@ export default function Index() {
         </li>
         <Button>Hello</Button>
         <div>
-          {/* <Button onClick={() => setOpenModal(true)}>Open OTP modal</Button> */}
+          <Button onClick={() => setOpenModal(true)}>Open OTP modal</Button>
         </div>
         <div className="p-2">
           <CardPlatform
@@ -80,7 +80,7 @@ export default function Index() {
           </Link>
         </li>
       </ul>
-      {/* <OtpAuth
+      <OtpAuth
         isModalOpen={openModal}
         setIsModalOpen={() => setOpenModal(!openModal)}
         inputs={[
@@ -92,7 +92,7 @@ export default function Index() {
           { name: "input1", value: "" },
         ]}
         handleSubmit={handleSubmit}
-      /> */}
+      />
       {/* ADDED THE MODAL HERE FOR TESTING USER PAGE NOT AVAILABLE, REMOVE AND ASSIGN TO THE PROPER PAGE */}
       <AddUserModal />
       {/* MODAL OPEN BUTTON< PLEASE REMOVE AND ASSIGN TO THE PROPER PAGE*/}
