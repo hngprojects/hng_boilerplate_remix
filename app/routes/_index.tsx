@@ -4,7 +4,7 @@ import { FaCheck, FaTimes } from "react-icons/fa";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Badge Component" },
+    { title: "Badge" },
     { name: "description", content: "Badge component!" },
   ];
 };
