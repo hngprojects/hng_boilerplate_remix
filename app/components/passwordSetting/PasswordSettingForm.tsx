@@ -40,10 +40,7 @@ export default function PasswordSetting() {
   const watchForConfirmPassword = watch("confirmPassword", "");
   const watchForCurrentPassword = watch("currentPassword");
 
-  const maskedNewPassword = "*".repeat(watchForNewPassword.length);
-  const maskedConfirmPassword = "*".repeat(watchForConfirmPassword.length);
-  const maskedCurrentPassword = "*".repeat(watchForCurrentPassword.length);
-
+ 
   //Toggle submit diasbled to true if all field have value more than 8
   const isFormDisabled =
     watchForNewPassword.length < 8 ||
@@ -128,7 +125,6 @@ export default function PasswordSetting() {
                   required: true,
                 })}
                 type={inputType}
-                value={maskedCurrentPassword}
               />
               <Button
                 className="absolute right-[1em] bg-transparent text-[#939393] hover:bg-transparent"
@@ -162,7 +158,6 @@ export default function PasswordSetting() {
                 {...register("newPassword", {
                   required: true,
                 })}
-                value={maskedNewPassword}
               />
               <Button
                 className="absolute right-[1em] bg-transparent text-[#939393] hover:bg-transparent"
@@ -231,7 +226,6 @@ export default function PasswordSetting() {
                   required: true,
                 })}
                 type={inputType}
-                value={maskedConfirmPassword}
               />
               <Button
                 className="absolute right-[1em] bg-transparent text-[#939393] hover:bg-transparent"
