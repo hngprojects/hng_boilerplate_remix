@@ -74,6 +74,27 @@ const PasswordUpdate = () => {
       handlePasswordValidation(actualValue[value_]);
     }
   };
+  const isFormValid = () => {
+    return (
+      actualValue.currentPassword.length >= 5 &&
+      validation.hasUppercase &&
+      validation.hasNumber &&
+      validation.hasMinLength &&
+      actualValue.newPassword === actualValue.confirmPassword
+    );
+  };
+  const handleClick = () => {
+    setActualValue({
+      currentPassword: "",
+      newPassword: "",
+      confirmPassword: "",
+    });
+    setDisplayValue({
+      currentPassword: "",
+      newPassword: "",
+      confirmPassword: "",
+    });
+  };
   useEffect(() => {
     const inputs = document.querySelectorAll<HTMLInputElement>(".psw-input");
     for (const element of inputs) {
@@ -263,6 +284,7 @@ const PasswordUpdate = () => {
             <Button
               type="submit"
               variant="outline"
+              onClick={handleClick}
               size="default"
               className="h-12 w-24 rounded-lg bg-transparent text-base font-bold text-black"
             >
@@ -271,20 +293,10 @@ const PasswordUpdate = () => {
             <AlertDialogTrigger asChild>
               <Button
                 type="submit"
-                onClick={() => {
-                  setActualValue({
-                    currentPassword: "",
-                    newPassword: "",
-                    confirmPassword: "",
-                  });
-                  setDisplayValue({
-                    currentPassword: "",
-                    newPassword: "",
-                    confirmPassword: "",
-                  });
-                }}
+                onClick={handleClick}
                 variant="default"
                 size="default"
+                disabled={!isFormValid()}
                 className="h-12 w-44 rounded-lg bg-[rgba(249,115,22,1)] text-base font-bold text-white"
               >
                 Update Password

@@ -27,8 +27,7 @@ export function Layout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <div className="flex">
-          <main className="flex-1">{children}</main>
-          ,
+          <main className="flex-1">{children}</main>,
           <ScrollRestoration />
           <Scripts />
         </div>

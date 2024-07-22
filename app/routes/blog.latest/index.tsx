@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 import LatestArticle from "~/components/article/LatestArticle";
 import Button from "~/components/customButton/customButton";
-import Navbar from "~/components/static-navbar/static-navbar";
 import { Article, fetchArticles } from "./api-call";
 
 export default function ArticlesPage() {
@@ -48,9 +47,8 @@ export default function ArticlesPage() {
 
   return (
     <div className="">
-      <Navbar isUserAuthenticated={false} />
       <div className="flex h-auto w-full flex-col gap-6 bg-background px-6 py-9 text-muted-foreground lg:items-center">
-        <h1 className="text-neutral-1 text-[28px] font-bold">
+        <h1 className="text-[28px] font-bold text-neutral-1">
           Latest Articles
         </h1>
         <div>

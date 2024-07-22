@@ -1,14 +1,15 @@
 import type { MetaFunction } from "@remix-run/node";
 
-import BlogPost from "~/components/BlogPost";
-import HeroSection from "~/components/HeroSection";
-import Footer from "~/components/ui/footer";
-import Header from "~/components/ui/header";
+import FindSection from "~/components/pages/home/FindSection";
+import HeroSection from "~/components/pages/home/HeroSection";
+import HowSection from "~/components/pages/home/HowSection";
+import TestimonialsSection from "~/components/pages/home/TestimonialsSection";
+import UsersSection from "~/components/pages/home/UsersSection";
 import SuperAdminNavBar from "~/components/SuperAdminNavBar/SuperAdminNavbar";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
+    { title: "Remix Boilerplate" },
     { name: "description", content: "Welcome to Remix!" },
   ];
 };
@@ -17,10 +18,11 @@ export default function Index() {
   return (
     <div>
       <SuperAdminNavBar />
-      <Header />
       <HeroSection />
-      <BlogPost />
-      <Footer />
+      <UsersSection />
+      <HowSection />
+      <TestimonialsSection />
+      <FindSection />
     </div>
   );
 }
