@@ -24,25 +24,30 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Cache npm modules
+      - name: Cache pnpm modules
         uses: actions/cache@v3
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-npm-
+            ${{ runner.os }}-pnpm-
 
-      - name: Install npm
-        run: npm install -g npm@9
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Lint code
-        run: npm run lint
+        run: pnpm lint
+
+      - name: Build email
+        run: pnpm email:build
 
       - name: Build project
-        run: npm run build
+        run: pnpm build
 
   deploy:
     runs-on: ubuntu-latest
