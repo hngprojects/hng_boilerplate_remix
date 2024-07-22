@@ -3,6 +3,7 @@ import { useState } from "react";
 import DetailsForm from "~/components/DetailsForm";
 import PaymentForm from "~/components/PaymentForm";
 import PricingPaymentBreadCrumb from "~/components/PricingPaymentBreadCrumb";
+import Footer from "~/email/templates/_components/Footer";
 
 const Payment = () => {
   const [showSecondForm, setShowSecondForm] = useState(false);
@@ -43,6 +44,7 @@ const Payment = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
