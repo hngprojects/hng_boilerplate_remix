@@ -11,7 +11,6 @@ import type { ReactNode } from "react";
 
 import { AdminSideNavBar } from "./components/SuperAdminSideBar/SuperAdminSideNavBar";
 import styles from "./styles/global.css?url";
-import InvoiceEmail from "./email/templates/invoice-email-temp/InvoiceEmail";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
