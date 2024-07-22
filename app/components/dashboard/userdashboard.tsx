@@ -2,8 +2,8 @@
 import avatar from "/images/avatar.png";
 import drop from "/images/drop.png";
 import logo from "/images/logo.png";
-import menu from "/images/menu.png";
-import notification from "/images/notification.png";
+import menu from "/images/Menu.png";
+import notification from "/images/Notification.png";
 import question from "/images/question.png";
 import search from "/images/search.png";
 import { useEffect, useState } from "react";

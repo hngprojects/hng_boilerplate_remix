@@ -67,7 +67,7 @@ export default function BarComponent() {
         <ChartTooltip content={<ChartTooltipContent />} />
         <Bar
           dataKey="desktop"
-          fill="var(--color-desktop)"
+          fill="#F97316"
           radius={4}
           width={20}
           barSize={300}
