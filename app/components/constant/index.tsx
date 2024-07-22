@@ -1,4 +1,4 @@
-import { IFormState, IFormError } from "../typings";
+import { IFormError, IFormState } from "../typings";
 
 export enum FormField {
   bio = "bio",
@@ -12,7 +12,8 @@ export const defaultFormError: IFormError = {
   [FormField.bio]: undefined,
 };
 
-export const defaultAlert: { message: string | undefined; classType?: string } = {
-  message: undefined,
-  classType: undefined,
-};
+export const defaultAlert: { message: string | undefined; classType?: string } =
+  {
+    message: undefined,
+    classType: undefined,
+  };
