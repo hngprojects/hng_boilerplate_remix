@@ -6,10 +6,10 @@ import {
   Heading,
   Html,
   Img,
+  Link,
   Section,
   Tailwind,
   Text,
-  Link
 } from "@react-email/components";
 
 import DetailTable from "~/components/InvoiceEmail/DetailTable";
@@ -132,11 +132,10 @@ const InvoiceEmail = ({
 
                   <div className="py-6">
                     <Link>
-                    <Button className="align-center mx-auto flex w-[142px] justify-center rounded-lg bg-[#F97316] px-[8px] py-[10px] font-bold text-[#FAF8F8]">
-                      Pay Now
-                    </Button>
+                      <Button className="align-center mx-auto flex w-[142px] justify-center rounded-lg bg-[#F97316] px-[8px] py-[10px] font-bold text-[#FAF8F8]">
+                        Pay Now
+                      </Button>
                     </Link>
-                   
                   </div>
                 </div>
 
