@@ -1,6 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
-
-import ForgotPassword from "~/components/ForgotPasswordPage/ForgotPasswordPage";
+import { Button } from "~/components/ui/button";
+import CardPlatform from "~/components/ui/card/card-platform";
 
 export const meta: MetaFunction = () => {
   return [
@@ -9,23 +9,17 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-// const handleSubmit = (values: Input[]) => {
-//   console.log({ values });
-// };
-
 export default function Index() {
-  // const [openModal, setOpenModal] = useState(false);
-
   return (
-    <div className="p-4 font-sans">
-      {/* <h1 className="text-3xl">Welcome to Remix</h1>
-      <ul className="mt-4 list-disc space-y-2 pl-6">
+    <div className="font-sans p-4">
+      <h1 className="text-3xl">Welcome to Remix</h1>
+      <ul className="list-disc mt-4 pl-6 space-y-2">
         <li>
           <a
             className="text-blue-700 underline visited:text-purple-900"
             target="_blank"
             href="https://remix.run/start/quickstart"
-            rel="noopener noreferrer"
+            rel="noreferrer"
           >
             5m Quick Start
           </a>
@@ -35,51 +29,31 @@ export default function Index() {
             className="text-blue-700 underline visited:text-purple-900"
             target="_blank"
             href="https://remix.run/start/tutorial"
-            rel="noopener noreferrer"
+            rel="noreferrer"
           >
             30m Tutorial
           </a>
         </li>
-        <li>
-          <Button>Hello</Button>
-        </li>
-
-        <li className="p-2">
+        <Button>Hello</Button>
+        <div className="p-2">
           <CardPlatform
             logo="/images/g-drive-icon.svg"
             heading="Drive"
             description="Store, share, and collaborate on documents and files securely"
             containerClassName="max-w-[341px]"
           />
-        </li>
-        <li>
-          <Link to="/integration">Integrations</Link>
-        </li>
+        </div>
         <li>
           <a
             className="text-blue-700 underline visited:text-purple-900"
             target="_blank"
             href="https://remix.run/docs"
-            rel="noopener noreferrer"
+            rel="noreferrer"
           >
             Remix Docs
           </a>
         </li>
       </ul>
-      <OtpAuth
-        isModalOpen={openModal}
-        setIsModalOpen={() => setOpenModal(!openModal)}
-        inputs={[
-          { name: "input1", value: "" },
-          { name: "input2", value: "" },
-          { name: "input3", value: "" },
-          { name: "input4", value: "" },
-          { name: "input5", value: "" },
-          { name: "input6", value: "" },
-        ]}
-        handleSubmit={handleSubmit}
-      /> */}
-      <ForgotPassword></ForgotPassword>
     </div>
   );
 }
