@@ -1,9 +1,9 @@
+import account from "/images/account.png";
+import logo1 from "/images/logodesktop.png";
+import logo2 from "/images/logomobile.png";
+import notification from "/images/notification.png";
 import { FC, useState } from "react";
 
-import account from "../../../public/images/account.png";
-import logo1 from "../../../public/images/logodesktop.png";
-import logo2 from "../../../public/images/logomobile.png";
-import notification from "../../../public/images/notification.png";
 import MenuButton from "../sidebar/menu-button";
 import MobileSidebarComponent from "../sidebar/sidebar";
 
@@ -23,14 +23,14 @@ const Header: FC = () => {
       )}
       <div className="flex items-center justify-center">
         <img src={logo1} alt="logo" className="mr-2.5 hidden lg:block" />
-        <div className="mr-6">
+        <div className="mr-6 md:hidden">
           <MenuButton
-            IsMenuOpen={isMenuOpen}
+            isMenuOpen={isMenuOpen}
             handleToggleMenu={handleToggleMenu}
           />
         </div>
         <img src={logo2} alt="logo" className="mr-2.5 block md:hidden" />
-        <h3 className="text-center text-[1.75rem] font-semibold leading-8 text-muted-foreground">
+        <h3 className="text-center text-2xl font-semibold leading-8 text-muted-foreground md:text-[1.75rem]">
           HNG Boilerplate
         </h3>
       </div>
