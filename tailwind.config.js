@@ -48,6 +48,10 @@ const tailwindConfig = {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        neutral: {
+          1: "hsl(var(--neutral-1))",
+          2: "hsl(var(--neutral-2))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
