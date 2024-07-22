@@ -1,18 +1,22 @@
 import type { MetaFunction } from "@remix-run/node";
 import { useState } from "react";
-import { Button } from "~/components/ui/button";
-import CardPlatform from "~/components/ui/card/card-platform";
-import Modal from "~/components/modal/modal";
 import AddUserContent from "~/components/modal/addUserModal";
-import DeleteUserContent from "~/components/modal/deleteUser";
+import { Button } from "~/components/ui/button";
+import Modal from "~/components/modal/modal";
+import CardPlatform from "~/components/ui/card/card-platform";
+import OtpAuth from "~/components/ui/otp/OtpAuth";
+import { Input } from "~/types/otpauth";
 
 export const meta: MetaFunction = () => {
-
 
   return [
     { title: "New Remix App" },
     { name: "description", content: "Welcome to Remix!" },
   ];
+};
+
+const handleSubmit = (values: Input[]) => {
+  console.log({ values });
 };
 
 export default function Index() {
@@ -21,10 +25,12 @@ export default function Index() {
   const toggleShow = (show: boolean) => {
     setShow(show);
   };
+  const [openModal, setOpenModal] = useState(false);
+
   return (
-    <div className="font-sans p-4">
+    <div className="p-4 font-sans">
       <h1 className="text-3xl">Welcome to Remix</h1>
-      <ul className="list-disc mt-4 pl-6 space-y-2">
+      <ul className="mt-4 list-disc space-y-2 pl-6">
         <li>
           <a
             className="text-blue-700 underline visited:text-purple-900"
@@ -46,6 +52,9 @@ export default function Index() {
           </a>
         </li>
         <Button>Hello</Button>
+        <div>
+          <Button onClick={() => setOpenModal(true)}>Open OTP modal</Button>
+        </div>
         <div className="p-2">
           <CardPlatform
             logo="/images/g-drive-icon.svg"
@@ -65,16 +74,29 @@ export default function Index() {
           </a>
         </li>
       </ul>
-      <button
-        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-200"
+      <Button
+        className="rounded bg-primary px-4 py-2 mt-4 text-white transition duration-200 hover:bg-primary"
         onClick={() => toggleShow(true)}
       >
-        Open Modal
-      </button>
+        Add user
+      </Button>
+      {/* Toggle modal */}
       <Modal show={show} toggleShow={toggleShow}>
-        {/* <AddUserContent toggleShow={toggleShow} /> */}
-        <DeleteUserContent />
+        <AddUserContent show={show} toggleShow={toggleShow}/>
       </Modal>
+      <OtpAuth
+        isModalOpen={openModal}
+        setIsModalOpen={() => setOpenModal(!openModal)}
+        inputs={[
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+          { name: "input1", value: "" },
+        ]}
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 }
