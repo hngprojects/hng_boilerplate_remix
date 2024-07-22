@@ -1,6 +1,4 @@
-import { Button } from "~/components/ui/button";
-import { Input } from "~/components/ui/input";
-import { Textarea } from "~/components/ui/textarea";
+import ContactForm from "~/components/contactUs/contactForm";
 
 export default function Waitlist() {
   return (
@@ -13,64 +11,7 @@ export default function Waitlist() {
           <p className="text-[18px] text-[#525252] lg:text-[28px]">{`Let's Build Your Product Together`}</p>
         </header>
         <div className="grid gap-[50px] lg:grid-cols-[1.3fr_1fr] lg:gap-[100px]">
-          <form className="flex flex-1 flex-col gap-[32px] rounded-[6px] lg:border-[1px] lg:border-[#52525233] lg:bg-[#fafafa] lg:p-8">
-            <fieldset>
-              <label
-                htmlFor="name"
-                className="mb-[4px] inline-block text-[14px] leading-[16px] lg:mb-[8px]"
-              >
-                Name
-              </label>
-              <Input
-                name="name"
-                id="name"
-                type="text"
-                className="h-[48px] bg-[#fefefe] lg:h-[64px]"
-              />
-            </fieldset>
-            <fieldset>
-              <label
-                htmlFor="email"
-                className="mb-[4px] inline-block text-[14px] leading-[16px] lg:mb-[8px]"
-              >
-                Email
-              </label>
-              <Input
-                name="email"
-                id="email"
-                type="email"
-                className="h-[48px] bg-[#fefefe] lg:h-[64px]"
-              />
-            </fieldset>
-            <fieldset>
-              <label
-                htmlFor="phone"
-                className="mb-[4px] inline-block text-[14px] leading-[16px] lg:mb-[8px]"
-              >
-                Phone
-              </label>
-              <Input
-                name="phone"
-                type="tel"
-                id="phone"
-                className="h-[48px] bg-[#fefefe] lg:h-[64px]"
-              />
-            </fieldset>
-            <fieldset>
-              <label
-                htmlFor="message"
-                className="mb-[4px] inline-block text-[14px] leading-[16px] lg:mb-[8px]"
-              >
-                Message
-              </label>
-              <Textarea
-                name="phone"
-                id="phone"
-                className="h-[169px] resize-none bg-[#fefefe]"
-              />
-            </fieldset>
-            <Button size="lg">Send</Button>
-          </form>
+          <ContactForm />
           <div className="max-w-[420px]">
             <div className="mb-[15px] rounded-[6px] border-[1px] border-[#52525233] bg-[#fafafa] p-[24px] lg:p-[32px]">
               <h1 className="mb-[16px] text-[20px] font-bold text-[#525252] lg:mb-[33px] lg:text-[28px]">
