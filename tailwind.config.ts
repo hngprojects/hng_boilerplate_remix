@@ -1,5 +1,9 @@
 import type { Config } from "tailwindcss";
 
+
+
+
+
 const config = {
   darkMode: ["class"],
   content: [
@@ -57,6 +61,9 @@ const config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        shadxs: "0 1px rgba(77, 77, 77, 0.5)",
+        shadsm: "0 0 3px rgba(77, 77, 77, 0.5)",
+        shadlg: "0 0 6px rgba(77, 77, 77, 0.5)",
       },
       keyframes: {
         "accordion-down": {
