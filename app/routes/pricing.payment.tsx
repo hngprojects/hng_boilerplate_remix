@@ -10,7 +10,9 @@ const Payment = () => {
 
   return (
     <div>
-      <Header />
+      <div className="bg-secondary-foreground">
+        <Header />
+      </div>
       <div className="max-w-screen mx-auto flex justify-between gap-20 bg-[#ffffff]">
         <div className="mx-auto flex w-10/12 flex-col gap-6 py-[5%] md:flex-row md:justify-between">
           <div className="w-full">
@@ -31,7 +33,7 @@ const Payment = () => {
           <div>
             <h2 className="mb-4">Payment Method</h2>
             {showSecondForm ? (
-              <div className="w-full rounded bg-[#ffffff] px-6 py-3 md:w-[588px]">
+              <div className="w-full rounded bg-[#ffffff] px-8 py-3 md:w-[588px]">
                 <PaymentForm setShowSecondForm={setShowSecondForm} />
               </div>
             ) : (
@@ -42,7 +44,9 @@ const Payment = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <div className="bg-backgroundColor">
+        <Footer />
+      </div>
     </div>
   );
 };
