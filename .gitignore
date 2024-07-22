@@ -1,6 +1,6 @@
 node_modules
 /.react-email
-
 /.cache
 /build
 .env
+*.DS_Store
