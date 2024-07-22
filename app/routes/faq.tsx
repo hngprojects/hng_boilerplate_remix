@@ -14,10 +14,10 @@ function FAQPage() {
           <li className="text-primary">FAQ</li>
         </ul>
         <div className="text-center">
-          <h2 className="!text-neutral-1 text-[28px] font-bold leading-8 text-[#525252] md:text-6xl md:leading-[1.2]">
+          <h2 className="text-[28px] font-bold leading-8 text-[#525252] md:text-6xl">
             Frequently asked questions
           </h2>
-          <h6 className="!text-neutral-1 mt-2.5 text-lg font-medium leading-5 text-[#525252] md:mt-3 md:text-[28px] md:leading-8">
+          <h6 className="mt-2.5 text-lg font-medium leading-5 text-[#525252] md:mt-3 md:text-[28px] md:leading-8">
             Questions you might ask about our product
           </h6>
         </div>
