@@ -3,8 +3,6 @@ import { redirect } from "@remix-run/react";
 import React, { useEffect, useRef, useState } from "react";
 
 import { Button } from "~/components/ui/button";
-import Footer from "~/components/ui/footer";
-import Header from "~/components/ui/header";
 
 export const meta: MetaFunction = () => {
   return [
@@ -150,9 +148,6 @@ export default function HelpCenter() {
 
   return (
     <div className="max-w-[1440px] bg-[#FAFAFA]">
-      {/* ======> import Header component <====== */}
-      <Header />
-
       <section className="w-full bg-[#F973161A] p-6 text-center md:px-0 md:py-[100px]">
         <h1 className="text-xl font-medium leading-[24.2px] text-[#0A0A0A] md:text-[#525252]">
           Help Center
@@ -294,9 +289,6 @@ export default function HelpCenter() {
           </Button>
         </div>
       </section>
-
-      {/* ======> import Footer component <====== */}
-      <Footer />
     </div>
   );
 }
