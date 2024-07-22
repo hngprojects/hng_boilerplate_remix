@@ -57,7 +57,7 @@ const PaymentForm = (properties: PaymentFormProperties) => {
             name="radioGroup"
             id=""
             value={"Debit/Credit Card"}
-            className="h-5 w-5 border accent-primary checked:bg-white"
+            className="h-5 w-5 border accent-primary checked:bg-transparent"
           />
           <label htmlFor="" className="text-gray-600">
             Debit/Credit Card
