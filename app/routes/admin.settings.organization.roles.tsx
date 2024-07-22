@@ -67,7 +67,7 @@ export default function Index() {
         <div className="flex-1 border border-transparent md:border-l-[#CBD5E1] md:pl-6">
           <div className="mb-8 flex justify-end">
             <Button
-              variant={"default"}
+              variant="default"
               className="flex items-center gap-2 bg-[#F97316] text-white"
               onClick={() => setCreateRoleModal(true)}
             >
@@ -85,6 +85,7 @@ export default function Index() {
               </div>
             </div>
           </div>
+
           <div className="border border-transparent border-b-[#CBD5E1] pb-4">
             <h1 className="mb-2 text-xl font-semibold">Permissions</h1>
             <p className="text-sm">See the list of permissions</p>
