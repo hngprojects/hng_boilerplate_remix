@@ -5,7 +5,7 @@ const Contact = () => {
     <div>
         
         <div className='bg-black text-white'>
-            <div className="max-w-[1100px] mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div className="max-w-[1000px] mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-6">
                 <div className="lg:col-span-1">
                     <h6 className='font-medium text-xl py-5'>BoilerPlate</h6>
                     <ul>
