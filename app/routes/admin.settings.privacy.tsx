@@ -14,10 +14,10 @@ const PrivacyPage = () => {
         </p>
       </div>
 
-      <div className="mx-auto mt-16 max-w-[1000px] p-5">
+      <div className="mx-auto mt-16 p-5 lg:max-w-[1000px]">
         <p>home &gt; Legal Terms &gt; Privacy</p>
-        <div className="mt-10 flex flex-col-reverse justify-between gap-8 md:flex-row">
-          <div className="max-w-[600px]">
+        <div className="mt-10 flex flex-col-reverse justify-between gap-8 lg:flex-row">
+          <div className="lg:max-w-[600px]">
             <div className="mt-10">
               <h3 className="text-[28px] font-bold text-gray-600">
                 Introduction
@@ -297,8 +297,8 @@ const PrivacyPage = () => {
             </ul>
           </div>
         </div>
-        <FooterLight />
       </div>
+      <FooterLight />
     </div>
   );
 };
