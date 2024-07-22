@@ -1,8 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 @layer base {
   :root {
@@ -22,7 +25,8 @@
     --muted-foreground: 215.4 16.3% 46.9%;
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 30, 100%, 50%;
+    --destructive:  30, 100%, 50%
+    ;
 
     --destructive-hover: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
@@ -86,47 +90,50 @@
     --neutral-1: 0, 0%, 32%;
     --neutral-2: 0, 0%, 4%;
   }
-  body {
-    font-family: "Inter", sans-serif;
+  body{
+    font-family: 'Inter', sans-serif;
   }
 }
+
+
 
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground ;
   }
   .input_style {
-    @apply flex h-14 w-full flex-col rounded-md border border-gray-300 pb-3 pl-3 pr-16 pt-3 text-gray-400 shadow-sm outline-none;
+    @apply w-full h-14 flex flex-col pt-3 pr-16 pb-3 pl-3 text-gray-400 border border-gray-300 rounded-md shadow-sm outline-none;
   }
   .error-text {
-    @apply text-xs text-red-500;
+    @apply text-red-500 text-xs;
   }
   .success-text {
     @apply text-green-500;
   }
+ 
 }
 
 @layer components {
   .form-section {
-    @apply flex flex-col rounded-md border p-7;
+    @apply rounded-md border p-7 flex flex-col;
   }
-
+  
   .button {
-    @apply flex items-center justify-center rounded-md bg-[#f97316] px-5 py-2 text-sm font-bold text-white shadow-sm;
+    @apply flex items-center justify-center bg-[#f97316] text-white text-sm font-bold rounded-md shadow-sm py-2 px-5;
   }
-
+  
   .waitlist-success {
-    @apply flex flex-col items-center justify-center gap-5 rounded-md border p-7;
+    @apply flex flex-col items-center justify-center rounded-md border p-7 gap-5;
   }
 
   .waitlist-success img {
     @apply opacity-25;
   }
-
+  
   .waitlist-success .thumbs-up {
-    @apply absolute left-10 top-20 -rotate-6;
+    @apply absolute top-20 left-10 -rotate-6;
   }
 }
