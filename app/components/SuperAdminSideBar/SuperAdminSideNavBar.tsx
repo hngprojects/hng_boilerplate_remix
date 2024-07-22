@@ -38,7 +38,7 @@ export function AdminSideNavBar() {
   );
 
   return (
-    <nav className="h-screen w-64 bg-[#FDFDFD]">
+    <nav className="h-screen w-64 bg-[#FDFDFD] max-lg:hidden">
       {!isSettingsOpen && (
         <div className="flex items-center p-4">
           <img src="/icons/shadcn.png" alt="Logo" className="mr-2 h-8 w-8" />
