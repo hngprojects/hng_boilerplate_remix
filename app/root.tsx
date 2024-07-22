@@ -10,6 +10,7 @@ import {
 import type { ReactNode } from "react";
 
 import styles from "./styles/global.css?url";
+import InvoiceEmail from "./email/templates/invoice-email-temp/InvoiceEmail";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
@@ -26,6 +27,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <Links />
       </head>
       <body>
+        <InvoiceEmail/>
         <div className="flex">
           <main className="flex-1">{children}</main>
           ,

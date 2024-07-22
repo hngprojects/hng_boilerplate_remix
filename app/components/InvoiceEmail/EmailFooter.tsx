@@ -1,10 +1,8 @@
-import { Link, Img, Section } from "@react-email/components";
-
-
+import { Img, Link } from "@react-email/components";
 
 export default function EmailFooter() {
   return (
-    <div className="m-auto w-[4/5] justify-center bg-[#F3EFEF] px-[48px] py-[32px] leading-[normal] tracking-[normal] ">
+    <div className="m-auto w-[4/5] justify-center bg-[#F3EFEF] px-[48px] py-[32px] leading-[normal] tracking-[normal]">
       <div className="mx-auto flex flex-col items-start justify-start gap-7 text-left text-sm">
         <div className="flex w-full items-center justify-center gap-[33px]">
           <Link>
@@ -12,22 +10,15 @@ export default function EmailFooter() {
           </Link>
           <Link>
             <Img src="/public/icons/instagram.svg" />
-
-
           </Link>
           <Link>
             <Img src="/public/icons/tiktok.svg" />
-
-
           </Link>
           <Link>
-          <Img src="/public/icons/reddit.svg"/>
-
+            <Img src="/public/icons/reddit.svg" />
           </Link>
           <Link>
-           <Img src="/public/icons/linkedin.svg"/>
-
-
+            <Img src="/public/icons/linkedin.svg" />
           </Link>
         </div>
         <p className="text-[14px] text-[#5B5B5D]">
@@ -66,4 +57,3 @@ export default function EmailFooter() {
     </div>
   );
 }
-
