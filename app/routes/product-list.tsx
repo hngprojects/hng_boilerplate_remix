@@ -1,5 +1,3 @@
- 
-
 import RevenueCard from "~/components/ui/revenueCard/RevenueCard";
 
 const App: React.FC = () => {

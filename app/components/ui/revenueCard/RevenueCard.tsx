@@ -1,5 +1,3 @@
-
-
 import { Card, CardContent, CardDescription } from "./cardComponent";
 
 interface RevenueCardProperties {
