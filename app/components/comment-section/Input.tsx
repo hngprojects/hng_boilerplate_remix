@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 
-import Comments from "./Comments";
 import { Button } from "../../components/ui/button";
+import Comments from "./Comments";
 
 interface Comment {
   id: number;
@@ -47,7 +47,7 @@ const CommentSection: FC<FooterCommentProperties> = ({
   return (
     <div>
       <Comments comments={comments} />
-      <form onSubmit={handleSubmit} className="mt-4 w-3/4 flex flex-col gap-2">
+      <form onSubmit={handleSubmit} className="mt-4 flex w-3/4 flex-col gap-2">
         <input
           type="text"
           value={newCommentText}
@@ -56,7 +56,7 @@ const CommentSection: FC<FooterCommentProperties> = ({
           className="border border-[var(--primary)] p-2"
         />
         <Button type="submit" className="by-primary p-2 text-white">
-           Comment
+          Comment
         </Button>
       </form>
     </div>

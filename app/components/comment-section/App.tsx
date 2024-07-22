@@ -2,7 +2,6 @@ import { FC } from "react";
 
 import CommentSection from "./CommentSection";
 
-
 interface Comment {
   id: number;
   author: string;

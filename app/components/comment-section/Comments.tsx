@@ -1,11 +1,11 @@
 import { FC } from "react";
 
+import back from "../../../public/back.svg";
 import commentIcon from "../../../public/comment.svg";
 import userIcon from "../../../public/Ellipse 2.svg";
 import notOk from "../../../public/notOk.svg";
 import ok from "../../../public/ok.svg";
 import share from "../../../public/share.svg";
-import back from "../../../public/back.svg";
 import { Comment } from "./types";
 
 interface FooterCommentProperties {
@@ -13,7 +13,7 @@ interface FooterCommentProperties {
 }
 const Comments: FC<FooterCommentProperties> = ({ comments }) => {
   return (
-    <div className="lg:full w-full border-2 border-solid rounded bg-popover md:w-1/2">
+    <div className="lg:full w-full rounded border-2 border-solid bg-popover md:w-1/2">
       <div className="px-2">
         <h4 className="w-full self-stretch text-xl font-medium leading-normal">
           Comments
@@ -21,7 +21,7 @@ const Comments: FC<FooterCommentProperties> = ({ comments }) => {
         {comments.map((comment) => (
           <div
             key={comment.id}
-            className="flex-basis-0 my-4 rounded-md flex flex-grow flex-col items-start border-2 border-solid px-8 py-2"
+            className="flex-basis-0 my-4 flex flex-grow flex-col items-start rounded-md border-2 border-solid px-8 py-2"
           >
             <div className="bg-popover">
               <div className="flex gap-1">
@@ -30,12 +30,12 @@ const Comments: FC<FooterCommentProperties> = ({ comments }) => {
                   <strong className="dark:text-neutral-1 md:text-xl lg:text-3xl">
                     {comment.author}
                   </strong>
-                  <p className="lg:text-3xl font-medium my-0 text-sm leading-normal text-neutral-2 md:text-xl">
+                  <p className="my-0 text-sm font-medium leading-normal text-neutral-2 md:text-xl lg:text-3xl">
                     {comment.handle}
                   </p>
                 </div>
               </div>
-              <p className="text-muted-foreground text-14 px-4 py-4 font-normal leading-normal md:text-xl lg:text-3xl">
+              <p className="text-14 px-4 py-4 font-normal leading-normal text-muted-foreground md:text-xl lg:text-3xl">
                 {comment.comment}
               </p>
               <span className="text-[var(--neutral-1)]">{comment.date}</span>
