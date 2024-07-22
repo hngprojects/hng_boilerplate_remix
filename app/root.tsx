@@ -10,6 +10,7 @@ import {
 import type { ReactNode } from "react";
 
 import FooterLight from "./components/ui/footerLight";
+import Header from "./components/ui/header";
 import styles from "./styles/global.css?url";
 
 export const links: LinksFunction = () => [
@@ -29,6 +30,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <body>
         <div>
           <main>
+            <Header />
             {children}
             <FooterLight />
           </main>
