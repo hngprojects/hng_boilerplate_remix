@@ -2,10 +2,10 @@
 import avatar from "/images/avatar.png";
 import drop from "/images/drop.png";
 import logo from "/images/logo.png";
-import menu from "/images/spec/Menu.png";
-import notification from "/images/spec/Notification.png";
 import question from "/images/question.png";
 import search from "/images/search.png";
+import menu from "/images/spec/Menu.png";
+import notification from "/images/spec/Notification.png";
 import { useEffect, useState } from "react";
 
 import Dashboard from "../userdashboard/Dashboard";
@@ -100,7 +100,7 @@ function Navbar() {
 function Sidebar({ on }: { on: boolean }) {
   return (
     <aside
-      className={`absolute top-0 flex h-screen w-full flex-row items-start z-50 duration-1000 ${on ? "left-0" : "-left-full"}`}
+      className={`absolute top-0 z-50 flex h-screen w-full flex-row items-start duration-1000 ${on ? "left-0" : "-left-full"}`}
     >
       <div className="flex h-full w-[85%] flex-col items-start bg-[#E4E4E7]">
         <div className="flex w-full flex-row items-center justify-between p-8">
