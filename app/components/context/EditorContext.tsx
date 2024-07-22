@@ -13,14 +13,14 @@ const EditorContext = createContext<EditorContextType | undefined>(undefined);
 export const EditorProvider: React.FC<{
   children: React.ReactNode;
   className?: string;
-}> = ({ children, className = "" }) => {
+}> = ({ children }) => {
   const [blocks, setBlocks] = useState<string[]>([
     // "Block1",
     // "Block2",
     // "Block3",
   ]);
 
-  const [logo, setLogo] = useState<string | null>(null);
+  const [logo, setLogo] = useState<string | null>();
   const [fileInputKey, setFileInputKey] = useState<number>(0); // Key to force re-render of file input
 
   // Handle file selection
@@ -38,7 +38,7 @@ export const EditorProvider: React.FC<{
   // Trigger file input click
   const handleClick = () => {
     setFileInputKey((previousKey) => previousKey + 1); // Change key to reset file input
-    document.querySelector("#logo-upload-input")?.click();
+    document.querySelector("#logo-upload-input");
   };
 
   const moveBlockUp = (index: number) => {
