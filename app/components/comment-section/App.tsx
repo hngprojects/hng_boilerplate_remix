@@ -1,7 +1,7 @@
 import { FC } from "react";
-import "../../styles/global.css";
 
 import CommentSection from "./CommentSection";
+
 
 interface Comment {
   id: number;

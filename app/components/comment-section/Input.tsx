@@ -1,8 +1,7 @@
 import { FC, useState } from "react";
 
-import "../../styles/global.css";
-
 import Comments from "./Comments";
+import { Button } from "../../components/ui/button";
 
 interface Comment {
   id: number;
@@ -48,7 +47,7 @@ const CommentSection: FC<FooterCommentProperties> = ({
   return (
     <div>
       <Comments comments={comments} />
-      <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-2">
+      <form onSubmit={handleSubmit} className="mt-4 w-3/4 flex flex-col gap-2">
         <input
           type="text"
           value={newCommentText}
@@ -56,9 +55,9 @@ const CommentSection: FC<FooterCommentProperties> = ({
           placeholder="Write a comment..."
           className="border border-[var(--primary)] p-2"
         />
-        <button type="submit" className="bg-[var(--primary)] p-2 text-white">
-          Add Comment
-        </button>
+        <Button type="submit" className="by-primary p-2 text-white">
+           Comment
+        </Button>
       </form>
     </div>
   );

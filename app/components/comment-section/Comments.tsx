@@ -1,12 +1,11 @@
 import { FC } from "react";
-import "../../styles/global.css";
 
-import icon5 from "../../../public/back.svg";
-import icon6 from "../../../public/comment.svg";
-import icon1 from "../../../public/Ellipse 2.svg";
-import icon3 from "../../../public/notOk.svg";
-import icon2 from "../../../public/ok.svg";
-import icon4 from "../../../public/share.svg";
+import commentIcon from "../../../public/comment.svg";
+import userIcon from "../../../public/Ellipse 2.svg";
+import notOk from "../../../public/notOk.svg";
+import ok from "../../../public/ok.svg";
+import share from "../../../public/share.svg";
+import back from "../../../public/back.svg";
 import { Comment } from "./types";
 
 interface FooterCommentProperties {
@@ -14,7 +13,7 @@ interface FooterCommentProperties {
 }
 const Comments: FC<FooterCommentProperties> = ({ comments }) => {
   return (
-    <div className="lg:full w-full border-2 border-solid bg-[var(--popover)] md:w-1/2">
+    <div className="lg:full w-full border-2 border-solid rounded bg-popover md:w-1/2">
       <div className="px-2">
         <h4 className="w-full self-stretch text-xl font-medium leading-normal">
           Comments
@@ -22,49 +21,49 @@ const Comments: FC<FooterCommentProperties> = ({ comments }) => {
         {comments.map((comment) => (
           <div
             key={comment.id}
-            className="flex-basis-0 my-4 flex flex-grow flex-col items-start border-2 border-solid px-8 py-2"
+            className="flex-basis-0 my-4 rounded-md flex flex-grow flex-col items-start border-2 border-solid px-8 py-2"
           >
-            <div className="bg-[var(--popover)]">
+            <div className="bg-popover">
               <div className="flex gap-1">
-                <img src={icon1} alt="icon" />
+                <img src={userIcon} alt="icon" />
                 <div className="text-sm md:text-xl lg:text-3xl">
-                  <strong className="text-[var(--neutral-1)]dark md:text-xl lg:text-3xl">
+                  <strong className="dark:text-neutral-1 md:text-xl lg:text-3xl">
                     {comment.author}
                   </strong>
-                  <p className="lg:text-3xlfont-medium my-0 text-sm leading-normal text-[var(--neutral-2)] md:text-xl">
+                  <p className="lg:text-3xl font-medium my-0 text-sm leading-normal text-neutral-2 md:text-xl">
                     {comment.handle}
                   </p>
                 </div>
               </div>
-              <p className="text-[var(--muted-foreground)]text-14 px-4 py-4 font-normal leading-normal md:text-xl lg:text-3xl">
+              <p className="text-muted-foreground text-14 px-4 py-4 font-normal leading-normal md:text-xl lg:text-3xl">
                 {comment.comment}
               </p>
               <span className="text-[var(--neutral-1)]">{comment.date}</span>
               <div className="inline-flex gap-3 md:text-xl lg:text-3xl">
                 <>
                   <img
-                    src={icon2}
+                    src={ok}
                     alt="icon"
                     className="border-2 border-solid p-1"
                   />
                   <img
-                    src={icon3}
+                    src={notOk}
                     alt="icon"
                     className="border-2 border-solid p-1"
                   />
                 </>
                 <img
-                  src={icon4}
+                  src={share}
                   alt="icon"
                   className="border-2 border-solid p-1"
                 />
                 <img
-                  src={icon5}
+                  src={back}
                   alt="icon"
                   className="border-2 border-solid p-1"
                 />
                 <img
-                  src={icon6}
+                  src={commentIcon}
                   alt="icon"
                   className="border-2 border-solid p-1"
                 />
