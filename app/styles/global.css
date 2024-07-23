@@ -24,7 +24,9 @@
     --muted-foreground: 215.4 16.3% 46.9%;
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84% 60%;
+    --destructive:  30, 100%, 50%
+    ;
+
     --destructive-hover: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
     --subtle: 210 40% 96%;
@@ -92,12 +94,46 @@
   }
 }
 
+
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground ;
+  }
+  .input_style {
+    @apply w-full h-14 flex flex-col pt-3 pr-16 pb-3 pl-3 text-gray-400 border border-gray-300 rounded-md shadow-sm outline-none;
+  }
+  .error-text {
+    @apply text-red-500 text-xs;
+  }
+  .success-text {
+    @apply text-green-500;
+  }
+  
+}
+
+@layer components {
+  .form-section {
+    @apply rounded-md border p-7 flex flex-col;
+  }
+  
+  .button {
+    @apply flex items-center justify-center bg-[#f97316] text-white text-sm font-bold rounded-md shadow-sm py-2 px-5;
+  }
+  
+  .waitlist-success {
+    @apply flex flex-col items-center justify-center rounded-md border p-7 gap-5;
+  }
+
+  .waitlist-success img {
+    @apply opacity-25;
+  }
+  
+  .waitlist-success .thumbs-up {
+    @apply absolute top-20 left-10 -rotate-6;
   }
   
 }
