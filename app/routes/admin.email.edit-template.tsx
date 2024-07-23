@@ -1,11 +1,10 @@
 import { useNavigate } from "@remix-run/react";
 import { useState } from "react";
+
 import Button from "~/components/customButton/customButton";
 import accordian from "../../public/icons/accordion.png";
 
 const EditTemplate = () => {
-  const [htmlContent, setHtmlContent] = useState("");
-  const [allowEdit, setAllow] = useState(false);
   const navigate = useNavigate();
 
   const [content, setContent] = useState(
@@ -17,11 +16,10 @@ const EditTemplate = () => {
   );
   const [isEditing, setIsEditing] = useState(false);
 
-  const handleChange = (e: any) => {
-    setContent(e.target.value);
-    setBrandHtml(e.target.value);
+  const handleChange = (event) => {
+    setContent(event.target.value);
+    setBrandHtml(event.target.value);
   };
-
 
   const toggleEdit = () => {
     setIsEditing(!isEditing);
@@ -83,9 +81,11 @@ const EditTemplate = () => {
                       type="text"
                       value={content}
                       onChange={handleChange}
-                      className="w-fit outline-none "
+                      className="w-fit outline-none"
                     />
-                    <Button className="ml-6 bg-slate-200" onClick={toggleEdit}>Save</Button>
+                    <Button className="ml-6 bg-slate-200" onClick={toggleEdit}>
+                      Save
+                    </Button>
                   </div>
                 ) : (
                   <div>
@@ -98,9 +98,9 @@ const EditTemplate = () => {
                 <br />
                 <br />
               </li>
-                <Button className="w-32 font-bold text-background ">
-                  Register Here
-                </Button>
+              <Button className="w-32 font-bold text-background">
+                Register Here
+              </Button>
             </ul>
           </div>
         </div>
