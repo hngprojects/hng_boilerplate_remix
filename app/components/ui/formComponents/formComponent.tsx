@@ -117,7 +117,9 @@ export function InputForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Add New User</Button>
+        <div className="flex pt-3">
+          <Button type="submit" className="ml-auto" >Add New User</Button>
+        </div>
       </form>
     </Form>
   );
