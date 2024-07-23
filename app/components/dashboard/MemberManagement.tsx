@@ -1,21 +1,13 @@
 import { Link } from "@remix-run/react";
-import { ArrowRight, Check, ChevronDown, Ellipsis, Search } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, Search } from "lucide-react";
 import { ChangeEvent, useEffect, useState } from "react";
 
-import DeleteMemberModal from "../ui/DeleteMemberModal";
+import UserList from "./UserList";
 
 function MemberManagement() {
   const [search, setSearch] = useState<string>("");
   const [filter, setFilter] = useState<string>("All");
   const [display, setDisplay] = useState<string>("none");
-  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
-  const [selectedUserName, setSelectedUserName] = useState<string>("");
-
-  // handle member delete modal
-  const handleMemberDelete = (userName: string): void => {
-    setSelectedUserName(userName);
-    setIsModalVisible(true);
-  };
 
   // search
   const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
@@ -29,95 +21,7 @@ function MemberManagement() {
     "Suspended",
     "Left workspace",
   ];
-
-  interface User {
-    id: number;
-    name: string;
-    email: string;
-    isAdmin: boolean;
-    isUser: boolean;
-    isGuest: boolean;
-    role: string;
-  }
-
-  // demo users data
-  const users: User[] = [
-    {
-      id: 1,
-      name: "john doe",
-      email: "johndoe@gmail.test",
-      isAdmin: true,
-      isUser: false,
-      isGuest: false,
-      role: "members",
-    },
-    {
-      id: 2,
-      name: "tester",
-      email: "johndoe@gmail.test",
-      isAdmin: false,
-      isUser: true,
-      isGuest: false,
-      role: "suspended",
-    },
-    {
-      id: 3,
-      name: "rest2",
-      email: "rohndoe@gmail.test",
-      isAdmin: false,
-      isUser: true,
-      isGuest: false,
-      role: "left workspace",
-    },
-  ];
-
   // demo card design for users
-  const userList = () => {
-    return (
-      <>
-        <p>{users.length} active members</p>
-        {users
-          .filter(
-            (user) =>
-              user.name.toLowerCase().includes(search.toLowerCase()) ||
-              user.email.toLowerCase().includes(search.toLowerCase()) ||
-              user.role.toLowerCase() === filter.toLowerCase(),
-          )
-          .map((user, index) => (
-            <div
-              className="mt-2 flex flex-row flex-wrap items-center"
-              key={index}
-            >
-              <div className="flex basis-2/3 flex-row items-center justify-between">
-                <div className="flex flex-row items-center">
-                  <div className="min:w-32 min:h-32 rounded-full border bg-gray-500 p-10"></div>
-                  <div className="mx-2 flex flex-col">
-                    <p>{user.name}</p>
-                    <p>{user.email}</p>
-                  </div>
-                </div>
-                <p className="flex flex-row items-center">
-                  {user.isAdmin ? "Admin" : user.isGuest ? "Guest" : "Users"}
-                  <ChevronDown />
-                </p>
-              </div>
-
-              <div className="relative flex basis-1/3 flex-row justify-end">
-                <button onClick={() => handleMemberDelete(user.name)}>
-                  <Ellipsis />
-                </button>
-
-                {isModalVisible && selectedUserName === user.name && (
-                  <div className="absolute">
-                    <DeleteMemberModal memberName={selectedUserName} />
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
-      </>
-    );
-  };
 
   useEffect(() => {
     const handleClick = () => {
@@ -224,7 +128,7 @@ function MemberManagement() {
         </div>
       </div>
 
-      {userList()}
+      <UserList search={search} filter={filter} />
     </div>
   );
 }
