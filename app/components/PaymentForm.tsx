@@ -57,9 +57,11 @@ const PaymentForm = (properties: PaymentFormProperties) => {
             name="radioGroup"
             id=""
             value={"Debit/Credit Card"}
-            className="h-5 w-5 border accent-primary checked:bg-white"
+            className="h-5 w-5 border accent-primary checked:bg-transparent"
           />
-          <label htmlFor="">Debit/Credit Card</label>
+          <label htmlFor="" className="text-gray-600">
+            Debit/Credit Card
+          </label>
         </div>
         <hr />
         <div className="flex gap-2 p-3">
@@ -70,7 +72,9 @@ const PaymentForm = (properties: PaymentFormProperties) => {
             value={"Paypal"}
             className="h-5 w-5 border accent-primary checked:bg-white"
           />
-          <label htmlFor="">Paypal</label>
+          <label htmlFor="" className="text-gray-600">
+            Paypal
+          </label>
         </div>
       </div>
       <div className="mb-4">
@@ -158,6 +162,13 @@ const PaymentForm = (properties: PaymentFormProperties) => {
       </div>
       <div>
         <Button className="m-auto w-full">Confirm and Pay</Button>
+        <small className="text-gray-800">
+          Your subscription will renew automatically every month as one payment
+          of $800. <br />
+          Cancel it anytime from your subscription settings. By clicking
+          &quot;Confirm and Pay&quot;, you agree to the
+          <span className="text-primary"> Terms and Conditions</span>
+        </small>
       </div>
     </form>
   );
