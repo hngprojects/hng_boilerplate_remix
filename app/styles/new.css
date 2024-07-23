@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #shadxs {
   box-shadow: 0 0 1px rgba(77, 77, 77, 0.5);
 }
@@ -8,3 +9,14 @@
 #shadlg {
   box-shadow: 0 0 6px rgba(77, 77, 77, 0.5);
 }
+=======
+ #shadxs{
+    border-radius:0 1px rgba(77, 77, 77, 0.5),
+}
+#shadsm{
+    border-radius:0 3px rgba(77, 77, 77, 0.5),
+}
+#shadlg{
+    border-radius:0 6px rgba(77, 77, 77, 0.5),
+}
+>>>>>>> 7fedd62 (feat: #41 - user dashboard page added)

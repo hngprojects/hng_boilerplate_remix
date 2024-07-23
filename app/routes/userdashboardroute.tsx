@@ -1,4 +1,4 @@
-import UserDashboardPage from "~/components/dashboard/userdashboard";
+import UserDashboardPage from '../components/userDashboardPage/userdashboard';
 
 export default function UserdashboardRoute() {
   return <UserDashboardPage />;

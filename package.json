@@ -43,6 +43,10 @@
     "react-email": "^2.1.5",
     "react-hook-form": "^7.52.1",
     "recharts": "^2.12.7",
+<<<<<<< HEAD
+=======
+    "shadcn-ui": "^0.8.0",
+>>>>>>> 7fedd62 (feat: #41 - user dashboard page added)
     "swiper": "^11.1.5",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
