@@ -2,12 +2,17 @@ import { useState } from "react";
 
 import DetailsForm from "~/components/DetailsForm";
 import PaymentForm from "~/components/PaymentForm";
+import PricingPaymentBreadCrumb from "~/components/PricingPaymentBreadCrumb";
+import Footer from "~/email/templates/_components/Footer";
 
 const Payment = () => {
   const [showSecondForm, setShowSecondForm] = useState(false);
 
   return (
     <div>
+      <div className="mx-auto w-full">
+        <PricingPaymentBreadCrumb />
+      </div>
       <div className="max-w-screen mx-auto flex justify-between gap-20 bg-[#ffffff]">
         <div className="mx-auto flex w-10/12 flex-col gap-6 py-[5%] md:flex-row md:justify-between">
           <div className="w-full">
@@ -39,6 +44,7 @@ const Payment = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
