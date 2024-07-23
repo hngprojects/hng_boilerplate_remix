@@ -12,9 +12,9 @@ import {
   Text,
 } from "@react-email/components";
 
-import DetailTable from "~/components/InvoiceEmail/DetailTable";
-import EmailFooter from "~/components/InvoiceEmail/EmailFooter";
-import OrderSummaryTable from "~/components/InvoiceEmail/OrderSummaryTable";
+import DetailTable from "~/components/EmailSubRenewal/InvoiceEmail/DetailTable";
+import EmailFooter from "~/components/EmailSubRenewal/InvoiceEmail/EmailFooter";
+import OrderSummaryTable from "~/components/EmailSubRenewal/InvoiceEmail/OrderSummaryTable";
 import { invoiceDetails, orderSummary, paymentDetails } from "./data";
 
 interface infoProperties {
