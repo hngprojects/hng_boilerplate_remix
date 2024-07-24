@@ -1,6 +1,8 @@
+import { FC, HTMLAttributes } from "react";
+
 import { cn } from "~/lib/utils/cn";
 
-export const Card: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+export const Card: FC<HTMLAttributes<HTMLDivElement>> = ({
   className,
   ...properties
 }) => (
@@ -13,23 +15,22 @@ export const Card: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   />
 );
 
-export const CardContent: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+export const CardContent: FC<HTMLAttributes<HTMLDivElement>> = ({
   className,
   ...properties
 }) => <div className={cn("", className)} {...properties} />;
 
-export const CardHeader: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+export const CardHeader: FC<HTMLAttributes<HTMLDivElement>> = ({
   className,
   ...properties
 }) => <div className={cn("border", className)} {...properties} />;
 
-export const CardTitle: React.FC<React.HTMLAttributes<HTMLHeadingElement>> = ({
+export const CardTitle: FC<HTMLAttributes<HTMLHeadingElement>> = ({
   className,
   ...properties
 }) => <h2 className={cn("text-lg font-bold", className)} {...properties} />;
 
-export const CardDescription: React.FC<
-  React.HTMLAttributes<HTMLParagraphElement>
-> = ({ className, ...properties }) => (
-  <p className={cn("text-sm text-gray-500", className)} {...properties} />
-);
+export const CardDescription: FC<HTMLAttributes<HTMLParagraphElement>> = ({
+  className,
+  ...properties
+}) => <p className={cn("text-sm text-gray-500", className)} {...properties} />;
