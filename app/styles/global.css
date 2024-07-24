@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -112,7 +113,7 @@
   .success-text {
     @apply text-green-500;
   }
-  
+ 
 }
 
 @layer components {
@@ -135,5 +136,4 @@
   .waitlist-success .thumbs-up {
     @apply absolute top-20 left-10 -rotate-6;
   }
-  
 }
