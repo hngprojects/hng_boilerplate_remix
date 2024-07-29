@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+.overall {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+button {
+    cursor: pointer;
+}
+
+.header {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.container {
+    border: 1px solid #CBD5E1;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 480px;
+    padding: 24px;
+    border-radius: 20px;
+    background-color: #FAFAFA;
+    margin: 1rem 1rem;
+}
+
+.basic .first,
+.confirmation .first,
+.destructive .first {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+
+}
+
+
+.cancel {
+    font-size: 16px;
+    color: #525252;
+}
+
+.desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: #475569;
+    padding-bottom: 16px;
+}
+
+.confirm {
+    border-radius: 6px;
+    padding: 8px 16px;
+    color: white;
+}
+
+.basic .confirm {
+
+    background-color: #0F172A;
+    width: 100%;
+}
+
+.basic .cancel {
+    display: none;
+
+}
+
+.confirmation .cancel,
+.destructive .cancel {
+    display: block;
+    min-width: max-content;
+    padding-right: 20px;
+}
+
+.error .cancel {
+    width: 100%;
+
+}
+
+.success .cancel {
+    display: none;
+}
+
+.confirmation .second,
+.destructive .second,
+.success .second {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error .second {
+    display: flex;
+    gap: 8px;
+}
+
+.confirmation .confirm,
+.destructive .confirm,
+.success .confirm,
+.error .confirm {
+    width: 100%;
+}
+
+.success .writing,
+.error .writing {
+    text-align: center;
+}
+
+.success .close,
+.error .close {
+    display: none;
+}
+
+
+
+.success .basic {
+    background-color: #0F172A;
+    color: white;
+}
+
+.success .confirm {
+    background-color: #0F172A;
+    color: white;
+}
+
+.destructive .confirm {
+    background-color: #EF4444;
+    color: white;
+}
+
+.confirmation .confirm {
+    background-color: #0F172A;
+    color: white;
+}
+
+.error .confirm {
+    background-color: #0F172A;
+    color: white;
+}
+
+.success .icons,
+.error .icons {
+    display: flex;
+    justify-content: space-between;
+    padding: 38px 0 20px 0;
+}
+
+.icons {
+    display: none;
+}
+
+.cancel1 {
+    visibility: hidden;
+}
+
+.cross {
+    display: none;
+}
+
+
+.error .cross {
+    display: block;
+}
+
+.error .cancel {
+    background-color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #E2E8F0;
+}
+
+.error .tick {
+    display: none;
+}
+
+
+@media screen and (max-width: 400px) {
+
+    .error .second,
+    .destructive .second,
+    .confirmation .second {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+
+
+    .destructive .cancel,
+    .confirmation .cancel {
+        padding-right: 0px;
+
+    }
+}

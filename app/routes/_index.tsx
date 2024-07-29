@@ -1,3 +1,4 @@
+
 import type { MetaFunction } from "@remix-run/node";
 
 import FindSection from "~/components/pages/home/FindSection";
