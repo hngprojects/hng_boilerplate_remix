@@ -5,6 +5,7 @@ import HeroSection from "~/components/pages/home/HeroSection";
 import HowSection from "~/components/pages/home/HowSection";
 import TestimonialsSection from "~/components/pages/home/TestimonialsSection";
 import UsersSection from "~/components/pages/home/UsersSection";
+import SuperAdminNavBar from "~/components/SuperAdminNavBar/SuperAdminNavbar";
 
 export const meta: MetaFunction = () => {
   return [
@@ -15,12 +16,13 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <>
+    <div>
+      <SuperAdminNavBar />
       <HeroSection />
       <UsersSection />
       <HowSection />
       <TestimonialsSection />
       <FindSection />
-    </>
+    </div>
   );
 }
